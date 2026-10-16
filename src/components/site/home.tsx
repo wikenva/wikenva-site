@@ -51,31 +51,16 @@ export function HomePage() {
         </div>
       </section>
 
-      <Section
-        id="decouvrir"
-        eyebrow="Découvrir"
-        title="Découvrir WIKENVA"
-        lede="Un même espace pour les personnes qui créent, qui lisent et qui veulent participer. Le catalogue de produits n'est pas encore ouvert."
-      >
+      <Section id="decouvrir" eyebrow="Découvrir" title="Découvrir WIKENVA" lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert.">
         <RoleBoard />
-        <p className="mt-6 max-w-2xl text-muted">
-          {tr("Les produits numériques visés sont d'abord des ebooks halal, puis d'autres créations annoncées officiellement. Aucune boutique n'est active sur ce site aujourd'hui.")}
-        </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <TextLink to="/vision">{tr("En savoir plus")}</TextLink>
-          <TextLink to="/communaute" variant="ghost">
-            {text.community}
-          </TextLink>
+          <TextLink to="/communaute" variant="ghost">{text.community}</TextLink>
           <PlatformButton />
         </div>
       </Section>
 
-      <Section
-        eyebrow="Mission"
-        title="Notre mission et notre vision"
-        lede={narrative.mission[0]}
-        className="border-y border-line bg-panel/40"
-      >
+      <Section eyebrow="Mission" title="Notre mission et notre vision" lede="Créer, partager et découvrir au même endroit." className="border-y border-line bg-panel/40">
         <div className="grid gap-4 md:grid-cols-2">
           <article className="rounded-3xl border border-line bg-ink p-6">
             <h3 className="font-display text-2xl font-semibold">{tr("Mission")}</h3>
@@ -86,39 +71,26 @@ export function HomePage() {
             <p className="mt-3 text-muted">{tr(narrative.vision[2])}</p>
           </article>
         </div>
-        <TextLink to="/vision" variant="ghost" className="mt-6 w-fit">
-          {tr("Lire la vision")}
-        </TextLink>
+        <TextLink to="/vision" variant="ghost" className="mt-6 w-fit">{tr("Lire la vision")}</TextLink>
       </Section>
 
-      <Section eyebrow="Fonctionnement" title="Comment fonctionne WIKENVA ?" lede="Quatre repères. L'application de vente n'est pas encore ouverte.">
+      <Section eyebrow="Fonctionnement" title="Comment ça marche" lede="La vente n'est pas encore ouverte.">
         <ol className="grid gap-4 md:grid-cols-2">
-          <Step index="1" title="Comprendre le projet" text="La vision, le livre blanc et les pages du site disent ce qui est confirmé. Ce qui manque est indiqué, pas inventé." />
-          <Step index="2" title="Les produits numériques" text="La marketplace d'ebooks halal est en préparation. Il n'y a pas encore de catalogue à parcourir ni d'achat sur ce site." />
-          <Step index="3" title="La communauté" text="Les annonces officielles passent par les canaux Facebook, WhatsApp, Telegram et X publiés sur la page Communauté." />
-          <Step index="4" title="Participer" text="Les trois parcours — investir, devenir partenaire, programme actionnaires — sont distincts. Aucun ne promet un rendement." />
+          <Step index="1" title="Comprendre le projet" text="Le site dit ce qui est confirmé. Le reste n'est pas inventé." />
+          <Step index="2" title="Les produits numériques" text="Les ebooks halal sont en préparation. Aucun achat sur ce site." />
+          <Step index="3" title="La communauté" text="Les annonces passent par Facebook, WhatsApp, Telegram et X." />
+          <Step index="4" title="Participer" text="Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts." />
         </ol>
       </Section>
 
-      <Section
-        id="partenariat"
-        eyebrow="Partenaires"
-        title="Devenir partenaire"
-        lede="Pendant la promotion SidraStart, qui se termine le 30 novembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification."
-        className="border-y border-line bg-panel"
-      >
-        <p className="max-w-3xl text-muted">
-          {tr(
-            "Les personnes qui investissent au minimum 1 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 30 novembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.",
-          )}
-        </p>
+      <Section id="partenariat" eyebrow="Partenaires" title="Devenir partenaire" lede="Jusqu'au 30 novembre 2026. La demande est vérifiée." className="border-y border-line bg-panel">
         <ol className="mt-6 grid gap-3">
           {[
-            "Lire les conditions de partenariat sur cette page.",
-            "Ouvrir la fiche officielle du projet sur SidraStart.",
-            "Investir au minimum 1 000 SDA depuis son propre compte SidraStart.",
-            "Envoyer les informations demandées pour la vérification. Ne jamais transmettre une clé privée ou un mot de passe.",
-            "Attendre la confirmation du statut. Une demande envoyée n'est pas une approbation.",
+            "Lire les conditions.",
+            "Ouvrir la fiche SidraStart.",
+            "Investir au minimum 1 000 SDA depuis son compte.",
+            "Envoyer la demande. Ne jamais donner une clé privée.",
+            "Attendre la confirmation.",
           ].map((item, index) => (
             <li key={item} className="flex gap-4 rounded-2xl border border-line bg-ink px-4 py-4">
               <span className="font-display text-lg font-semibold text-gold">{index + 1}</span>
@@ -128,18 +100,15 @@ export function HomePage() {
         </ol>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <TextLink to="/partenaires">{tr("Devenir partenaire")}</TextLink>
-          <ExternalLink href={site.investUrl ?? ""} variant="ghost">
-            {text.invest}
-          </ExternalLink>
+          <ExternalLink href={site.investUrl ?? ""} variant="ghost">{text.invest}</ExternalLink>
         </div>
       </Section>
 
-      <Section id="parcours" eyebrow="Parcours" title="Trois parcours, trois décisions" lede="Investir, devenir partenaire et rejoindre le programme actionnaires ne sont pas la même chose. Aucun de ces parcours ne promet un rendement.">
+      <Section id="parcours" eyebrow="Parcours" title="Trois parcours, trois décisions" lede="Trois décisions distinctes. Aucun rendement n'est promis.">
         <PathBoard />
       </Section>
 
-      <Section eyebrow="SidraChain" title="SidraChain et SidraStart" lede="WIKENVA s'inscrit dans l'écosystème SidraChain. La fiche publique du projet s'appelle Digital Marketplace Ebook Halal.">
-        <p className="max-w-2xl text-muted">{tr(narrative.place[0])}</p>
+      <Section eyebrow="SidraChain" title="SidraChain et SidraStart" lede="WIKENVA fait partie de SidraChain.">
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <ExternalLink href={site.sidrachainUrl} variant="ghost">{text.sidra}</ExternalLink>
           <ExternalLink href={site.investUrl ?? ""} variant="gold">{text.invest}</ExternalLink>
@@ -148,11 +117,11 @@ export function HomePage() {
 
       <Section eyebrow="FAQ" title="Questions fréquentes" className="border-t border-line">
         <div className="grid gap-3">
-          <Faq q="Qu'est-ce que WIKENVA ?" a="Une marketplace d'ebooks halal en préparation, dans l'écosystème SidraChain. Elle vise à réunir auteurs, lecteurs, créateurs, entrepreneurs et partenaires." />
-          <Faq q="Peut-on déjà acheter un ebook ?" a="Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits." />
-          <Faq q="Comment devenir partenaire avant le 30 novembre 2026 ?" a="Investir au minimum 1 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement." />
-          <Faq q="Investir, partenaire et actionnaire, est-ce la même chose ?" a="Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 1 000 SDA, avec vérification, jusqu'au 30 novembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti." />
-          <Faq q="Un investissement garantit-il un rendement ?" a="Non. Les crypto-actifs peuvent perdre toute leur valeur. Ce site ne promet aucun rendement et ne constitue pas un conseil en investissement." />
+          <Faq q="Qu'est-ce que WIKENVA ?" a="Une marketplace d'ebooks halal, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires." />
+          <Faq q="Peut-on déjà acheter un ebook ?" a="Non. Ce site présente le projet. Il ne vend pas encore." />
+          <Faq q="Comment devenir partenaire avant le 30 novembre 2026 ?" a="Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée." />
+          <Faq q="Investir, partenaire et actionnaire, est-ce la même chose ?" a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 1 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti." />
+          <Faq q="Un investissement garantit-il un rendement ?" a="Non. Ce site ne promet aucun rendement." />
           <Faq q="Où lire les documents et nous écrire ?" a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant." />
         </div>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
