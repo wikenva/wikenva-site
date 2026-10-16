@@ -42,9 +42,9 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
           {tr("Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.")}
         </p>
       ) : null}
-      <p className="mt-3 text-center text-sm leading-snug">
-        <span className="font-semibold text-fg">{tr("Minimum 1 000 SDA sur SidraStart pour être partenaire.")}</span>
-        <span className="mt-1 block font-display text-base text-gold">{tr("Tout change après cette date.")}</span>
+      <p className="mt-3 text-center text-sm leading-relaxed">
+        <span className="font-semibold">{tr("Minimum 1 000 SDA sur SidraStart pour être partenaire.")}</span>
+        <span className="mt-1 block text-gold">{tr("Tout change après cette date.")}</span>
       </p>
     </div>
   );
