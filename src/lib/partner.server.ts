@@ -7,9 +7,11 @@ import { receptionStatus } from "@/lib/interest-config";
 import { partnerProfiles, type PartnerInput, type PartnerList, type PartnerLookup, type PartnerStatus, type PartnerSubmitResult } from "@/lib/partner";
 
 function currentReception() {
+  const databaseUrl =
+    process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.DATABASE_URL_UNPOOLED;
   return receptionStatus({
-    databaseUrl: process.env.DATABASE_URL,
-    authEnabled: process.env.VITE_AUTH_ENABLED,
+    databaseUrl,
+    authEnabled: "true",
     adminEmails: process.env.WIKENVA_ADMIN_EMAILS?.trim() || configuredAdminEmails,
     notifyWebhook: process.env.WIKENVA_NOTIFY_WEBHOOK,
   });
