@@ -120,12 +120,12 @@ export function HomePage() {
         id="partenariat"
         eyebrow="Partenaires"
         title="Devenir partenaire"
-        lede="Pendant la promotion SidraStart, qui se termine le 24 décembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification."
+        lede="Pendant la promotion SidraStart, qui se termine le 30 novembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification."
         className="border-y border-line bg-panel"
       >
         <p className="max-w-3xl text-muted">
           {tr(
-            "Les personnes qui investissent au minimum 3 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 24 décembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.",
+            "Les personnes qui investissent au minimum 3 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 30 novembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.",
           )}
         </p>
         <ol className="mt-6 grid gap-3">
@@ -186,12 +186,12 @@ export function HomePage() {
             a="Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits."
           />
           <Faq
-            q="Comment devenir partenaire avant le 24 décembre 2026 ?"
+            q="Comment devenir partenaire avant le 30 novembre 2026 ?"
             a="Investir au minimum 3 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement."
           />
           <Faq
             q="Investir, partenaire et actionnaire, est-ce la même chose ?"
-            a="Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 3 000 SDA, avec vérification, jusqu'au 24 décembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti."
+            a="Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 3 000 SDA, avec vérification, jusqu'au 30 novembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti."
           />
           <Faq
             q="Un investissement garantit-il un rendement ?"
@@ -236,7 +236,7 @@ function Step({ index, title, text }: { index: string; title: string; text: stri
   return (
     <li className="rounded-3xl border border-line bg-panel p-5">
       <p className="font-display text-sm font-semibold text-gold">{index}</p>
-      <h3 className="mt-2 font-display text-xl font-semibold">{tr(title)}</h3>
+      <h3 className="mt-4 font-display text-xl font-semibold">{tr(title)}</h3>
       <p className="mt-2 text-sm text-muted">{tr(text)}</p>
     </li>
   );
