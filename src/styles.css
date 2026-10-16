@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #07101c;
+  --color-panel: #101c33;
+  --color-panel-2: #172844;
+  --color-line: #2a3d5c;
+  --color-fg: #f4f7fb;
+  --color-muted: #b7c6da;
+  --color-faint: #8ea3bf;
+  --color-blue: #2f7bff;
+  --color-blue-deep: #1b56c9;
+  --color-gold: #e8b23a;
+  --color-ivory: #ffffff;
+  --color-danger: #ffb4b4;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  button,
+  [role="button"],
+  summary {
+    cursor: pointer;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.7s ease both;
+}
+
+.d1 {
+  animation-delay: 0.05s;
+}
+
+.d2 {
+  animation-delay: 0.12s;
+}
+
+.d3 {
+  animation-delay: 0.2s;
+}
+
+.d4 {
+  animation-delay: 0.28s;
+}
+
+#boot {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  background: #07101c;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+html.is-ready #boot {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.boot-mark {
+  width: min(16rem, 70vw);
+  height: auto;
+}
+
+.boot-spin {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 1.25rem auto 0;
+  border: 2px solid #2a3d5c;
+  border-top-color: #e8b23a;
+  border-radius: 999px;
+  animation: boot-spin 0.7s linear infinite;
+}
+
+.boot-label {
+  margin: 0.75rem 0 0;
+  color: #b7c6da;
+  font-family: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@keyframes boot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-spin {
+    animation: none;
+    border-color: #e8b23a;
+  }
+}
+
+@media print {
+  #boot {
+    display: none;
+  }
+}
+
+@keyframes partner-shine {
+  0% {
+    transform: translateX(-130%);
+  }
+  55%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  .paper,
+  .paper * {
+    background: #ffffff !important;
+    color: #07101c !important;
+  }
+}

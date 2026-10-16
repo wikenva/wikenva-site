@@ -1,0 +1,750 @@
+/** Traductions anglaises. La clé est le texte français affiché. */
+export const en: Record<string, string> = {
+  "À compléter": "To be completed",
+  "À préciser": "To be specified",
+  "Une vision claire, un écosystème pour tous.": "A clear vision, an ecosystem for everyone.",
+  "100 000 000 actions": "100,000,000 shares",
+  "1 000 € en SDA": "1,000 EUR in SDA",
+
+  Projet: "Project",
+  Développement: "Development",
+  "Annonce officielle": "Official announcement",
+  Partenariat: "Partnership",
+  Événement: "Event",
+  "Feuille de route": "Roadmap",
+  Publication: "Publication",
+  Toutes: "All",
+  Catégories: "Categories",
+
+  "Page officielle": "Official page",
+  "Compte officiel": "Official account",
+  "Chaîne WhatsApp": "WhatsApp channel",
+  "Chaîne officielle": "Official channel",
+  "Canal officiel": "Official channel",
+
+  "Contributeurs SDA": "SDA contributors",
+  "Contributeurs en espèces": "Cash contributors",
+  "Contributeurs de l'équipe": "Team contributors",
+  Total: "Total",
+  "16,5 %": "16.5%",
+  "33 %": "33%",
+  "34 %": "34%",
+  "16 500 000 actions": "16,500,000 shares",
+  "33 000 000 actions": "33,000,000 shares",
+  "34 000 000 actions": "34,000,000 shares",
+
+  Fondation: "Foundation",
+  "Phase 1 — Fondation": "Phase 1 — Foundation",
+  "Établir la base publique du projet : identité, informations confirmées et premiers documents.":
+    "Establish the project's public base: identity, confirmed information and the first documents.",
+  "Présentation officielle de WIKENVA": "Official presentation of WIKENVA",
+  "Ouverture de ce site comme source d'information": "Opening this site as the information source",
+  "Préparation des documents qui seront publiés après validation":
+    "Preparing the documents that will be published after validation",
+  "Phase 2 — Développement": "Phase 2 — Development",
+  "Faire avancer les briques du projet. Les livrables techniques seront nommés ici lorsqu'ils seront annoncés.":
+    "Move the building blocks of the project forward. Technical deliverables will be named here when they are announced.",
+  "Décrire les développements officiellement engagés": "Describe the developments that have officially started",
+  "Publier les mises à jour au fil de l'eau": "Publish updates as they happen",
+  "Relier chaque avancée à une information vérifiable": "Link each step to information that can be checked",
+  Communauté: "Community",
+  "Phase 3 — Communauté": "Phase 3 — Community",
+  "Rassembler les personnes qui suivent WIKENVA et ouvrir les canaux officiels de discussion.":
+    "Bring together the people following WIKENVA and open the official discussion channels.",
+  "Publier les comptes officiels dès qu'ils sont confirmés": "Publish the official accounts as soon as they are confirmed",
+  "Partager les annonces au même endroit": "Share announcements in one place",
+  "Rendre les échanges identifiables": "Make exchanges identifiable",
+  Expansion: "Expansion",
+  "Phase 4 — Expansion": "Phase 4 — Expansion",
+  "Élargir la portée du projet. Aucun marché, partenariat ou calendrier n'est indiqué tant qu'il n'est pas officiel.":
+    "Widen the project's reach. No market, partnership or timetable is stated until it is official.",
+  "Annoncer les étapes d'élargissement lorsqu'elles existent": "Announce expansion steps when they exist",
+  "Documenter les collaborations confirmées": "Document confirmed collaborations",
+  "Mettre à jour la feuille de route en conséquence": "Update the roadmap accordingly",
+  Écosystème: "Ecosystem",
+  "Phase 5 — Écosystème": "Phase 5 — Ecosystem",
+  "Relier le token, la communauté, les partenaires et les outils de WIKENVA en un ensemble cohérent.":
+    "Connect the token, the community, partners and WIKENVA tools into one coherent whole.",
+  "Décrire chaque brique lorsqu'elle est définie": "Describe each building block when it is defined",
+  "Expliquer le rôle du WIKENVA TOKEN sans extrapoler": "Explain the role of the WIKENVA TOKEN without guessing",
+  "Offrir une lecture unique au public et aux partenaires": "Give the public and partners one clear reading",
+
+  Auteurs: "Authors",
+  Lecteurs: "Readers",
+  "Créateurs de contenu": "Content creators",
+  Concepteurs: "Designers",
+  Entrepreneurs: "Entrepreneurs",
+  "Choisissez un rôle": "Choose a role",
+  "Les auteurs peuvent partager leurs livres et leurs idées.": "Authors can share their books and their ideas.",
+  "Les lecteurs peuvent découvrir des œuvres et enrichir leurs connaissances.":
+    "Readers can discover works and deepen their knowledge.",
+  "Les créateurs de contenu peuvent valoriser leur créativité.": "Content creators can give value to their creativity.",
+  "Les concepteurs de produits digitaux peuvent présenter et développer leurs créations.":
+    "Digital product designers can present and develop their creations.",
+  "Les entrepreneurs peuvent saisir de nouvelles opportunités et collaborer.":
+    "Entrepreneurs can take new opportunities and collaborate.",
+  "Les communautés peuvent échanger, apprendre et grandir ensemble.":
+    "Communities can exchange, learn and grow together.",
+
+  "La vision de WIKENVA est de réunir, dans un même écosystème, les auteurs, les lecteurs, les créateurs de contenu, les concepteurs de produits digitaux, les entrepreneurs et bien d'autres acteurs du numérique.":
+    "WIKENVA's vision is to bring together, in one ecosystem, authors, readers, content creators, digital product designers, entrepreneurs and many other people in the digital world.",
+  "WIKENVA veut rapprocher les talents, les idées et les opportunités au sein d'un écosystème numérique ouvert sur le monde.":
+    "WIKENVA wants to bring talents, ideas and opportunities closer together in a digital ecosystem open to the world.",
+  "Un espace pour les créateurs, une communauté pour les lecteurs, des opportunités pour tous.":
+    "A space for creators, a community for readers, opportunities for everyone.",
+  "Donner à chacun la possibilité de créer, de partager, de découvrir et de développer ses projets.":
+    "Give everyone the chance to create, share, discover and develop their projects.",
+  "WIKENVA est aussi une marketplace digitale d'ebooks halal. Ensemble, l'ambition est de construire un avenir numérique où chaque talent peut trouver sa place.":
+    "WIKENVA is also a digital marketplace for halal ebooks. Together, the aim is to build a digital future where every talent can find a place.",
+  "Auteurs, lecteurs, créateurs, concepteurs et entrepreneurs évoluent souvent chacun de leur côté. Les talents, les idées et les opportunités restent dispersés.":
+    "Authors, readers, creators, designers and entrepreneurs often work apart. Talents, ideas and opportunities stay scattered.",
+  "WIKENVA cherche à les rapprocher dans un même espace, sans promettre de résultat chiffré tant qu'il n'est pas officiel.":
+    "WIKENVA seeks to bring them together in one space, without promising a numbered result until it is official.",
+  "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook Halal.":
+    "WIKENVA belongs to the SidraChain ecosystem. The official website of that ecosystem is sidrachain.com. Investing goes through SidraStart, on the Digital Marketplace Ebook Halal listing.",
+  "Le symbole du token, l'adresse du contrat, l'offre et le modèle économique ne sont pas encore renseignés ici. Aucune licence, aucun agrément et aucune statistique ne sont affichés tant qu'ils n'ont pas été fournis.":
+    "The token symbol, contract address and economic model are not filled in here yet. No licence, approval or statistic is shown until it has been provided.",
+
+  "12 octobre 2026": "12 October 2026",
+  "La fiche du projet est ouverte sur SidraStart": "The project listing is open on SidraStart",
+  "WIKENVA, marketplace digitale d'ebooks halal, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.":
+    "WIKENVA, a digital marketplace for halal ebooks, is presented in the SidraChain ecosystem. Investing goes through SidraStart.",
+  "WIKENVA est une marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. La fiche publique du projet porte le nom Digital Marketplace Ebook Halal.":
+    "WIKENVA is a digital marketplace for halal ebooks, in the SidraChain ecosystem. The public project listing is named Digital Marketplace Ebook Halal.",
+  "Le bouton Investir de ce site ouvre cette fiche sur SidraStart. Aucun rendement n'est promis ici, et les données du token qui ne sont pas encore officielles restent indiquées « À compléter ».":
+    "The Invest button on this site opens that listing on SidraStart. No yield is promised here, and token data that is not yet official stays marked “To be completed”.",
+  "L'espace d'information WIKENVA est en ligne": "The WIKENVA information space is online",
+  "Le site officiel rassemble la présentation du projet. Les prochaines nouvelles y seront publiées lorsqu'elles seront confirmées.":
+    "The official site gathers the presentation of the project. The next news will be published here when it is confirmed.",
+  "WIKENVA ouvre son espace d'information public. On y trouve la vision du projet, la feuille de route, la fiche du WIKENVA TOKEN, les documents officiels et les voies prévues pour la communauté, les investisseurs et les partenaires.":
+    "WIKENVA opens its public information space. It holds the project vision, the roadmap, the WIKENVA TOKEN sheet, official documents and the planned paths for the community, investors and partners.",
+  "Les développements, partenariats, événements et nouvelles étapes de la feuille de route seront ajoutés ici au moment où ils seront annoncés. Tant qu'une information n'est pas confirmée, le site l'indique par la mention « À compléter » plutôt que de la supposer.":
+    "Developments, partnerships, events and new roadmap steps will be added here when they are announced. Until a fact is confirmed, the site marks it “To be completed” rather than assuming it.",
+  "Aucune performance, aucune donnée de marché et aucun lien d'investissement ne sont publiés dans cette annonce.":
+    "No performance, market data or investment link is published in this announcement.",
+
+  "Document de référence du projet. Le fichier officiel sera proposé à la lecture et au téléchargement dès sa publication.":
+    "The project's reference document. The official file will be offered to read and download as soon as it is published.",
+  "Fiche du token": "Token sheet",
+  "Nom, symbole, blockchain, offre totale, contrat et tokenomics. Les champs non confirmés restent ouverts.":
+    "Name, symbol, blockchain, total supply, contract and tokenomics. Unconfirmed fields stay open.",
+  "Les cinq phases publiques du projet. Les statuts et les dates seront complétés par les annonces officielles.":
+    "The five public phases of the project. Statuses and dates will be completed by official announcements.",
+  "Fiche SidraStart": "SidraStart listing",
+  "Page du projet Digital Marketplace Ebook Halal sur SidraStart, dans l'écosystème SidraChain.":
+    "The Digital Marketplace Ebook Halal project page on SidraStart, in the SidraChain ecosystem.",
+  "Site officiel de l'écosystème SidraChain.": "Official website of the SidraChain ecosystem.",
+
+  Éditeur: "Publisher",
+  "Le nom de l'éditeur, la forme juridique, le siège, le numéro d'immatriculation et le directeur de la publication sont à compléter. Ils ne sont pas inventés sur ce site.":
+    "The publisher's name, legal form, registered office, registration number and publication director are to be completed. They are not invented on this site.",
+  "Éditeur — À compléter. Siège — À compléter. Contact — À compléter. Directeur de la publication — À compléter.":
+    "Publisher — To be completed. Office — To be completed. Contact — To be completed. Publication director — To be completed.",
+  Hébergement: "Hosting",
+  "Les coordonnées de l'hébergeur seront publiées ici dès qu'elles seront confirmées. Hébergeur — À compléter.":
+    "The host's details will be published here as soon as they are confirmed. Host — To be completed.",
+  "Propriété intellectuelle": "Intellectual property",
+  "Le nom WIKENVA, le logo et les contenus publiés sur ce site sont réservés. Toute reproduction non autorisée est interdite.":
+    "The name WIKENVA, the logo and the content published on this site are reserved. Any unauthorised reproduction is forbidden.",
+  "Exactitude des informations": "Accuracy of information",
+  "Les informations sont publiées au fur et à mesure de leur confirmation. La mention « À compléter » signifie que la donnée officielle n'est pas encore renseignée. Elle ne doit pas être lue comme une information définitive.":
+    "Information is published as it is confirmed. “To be completed” means the official fact is not filled in yet. It must not be read as a final statement.",
+
+  "Nature du site": "Nature of the site",
+  "Ce site présente WIKENVA et le WIKENVA TOKEN à titre d'information. Il ne constitue pas, en lui-même, une offre au public de titres, de parts ou de crypto-actifs, ni un conseil en investissement, juridique ou fiscal.":
+    "This site presents WIKENVA and the WIKENVA TOKEN for information. By itself it is not a public offer of securities, shares or crypto-assets, nor investment, legal or tax advice.",
+  Investissement: "Investment",
+  "Le bouton « Investir maintenant » ouvre la fiche du projet sur SidraStart, dans l'écosystème SidraChain. Cette redirection n'est pas, en elle-même, une offre émise par ce site.":
+    "The “Invest now” button opens the project listing on SidraStart, in the SidraChain ecosystem. That redirect is not, by itself, an offer issued by this site.",
+  "Aucun rendement, aucune plus-value et aucune liquidité ne sont promis.":
+    "No yield, capital gain or liquidity is promised.",
+  "Évolution des contenus": "Changes to content",
+  "Les textes, la feuille de route, les actualités et les documents peuvent être mis à jour. Seule la version publiée sur ce site fait foi pour la communication publique de WIKENVA, une fois les éléments confirmés.":
+    "Texts, the roadmap, news and documents may be updated. Only the version published on this site is the reference for WIKENVA's public communication, once the facts are confirmed.",
+  Limitation: "Limitation",
+  "Les contenus sont fournis en l'état. Il appartient à chacune et chacun de vérifier les documents officiels avant toute décision.":
+    "Content is provided as it stands. Each person should check the official documents before any decision.",
+
+  "Perte possible": "Possible loss",
+  "Les crypto-actifs sont volatils. Leur valeur peut baisser fortement, jusqu'à une perte totale. N'engagez pas de sommes dont la perte serait insupportable.":
+    "Crypto-assets are volatile. Their value can fall sharply, down to a total loss. Do not commit money you cannot afford to lose.",
+  "Aucun rendement promis": "No yield promised",
+  "WIKENVA ne promet pas de rendement, de dividende, de rachat ou de performance. Une candidature au programme actionnaires n'est pas un investissement réalisé et ne confère aucun droit par elle-même.":
+    "WIKENVA does not promise yield, a dividend, a buyback or performance. An application to the shareholder programme is not a completed investment and grants no right by itself.",
+  "Risques techniques et de liquidité": "Technical and liquidity risks",
+  "Un contrat, un réseau ou un marché peut être défaillant, indisponible ou illiquide. L'adresse du contrat du WIKENVA TOKEN sera publiée ici lorsqu'elle sera officielle. Jusque-là, elle n'est pas communiquée.":
+    "A contract, a network or a market can fail, be unavailable or be illiquid. The WIKENVA TOKEN contract address will be published here when it is official. Until then, it is not given.",
+  "Cadre réglementaire": "Regulatory framework",
+  "Le cadre applicable aux crypto-actifs peut changer. Aucune licence, aucun agrément et aucun statut réglementaire ne sont revendiqués sur ce site tant qu'ils n'ont pas été officiellement communiqués.":
+    "The rules that apply to crypto-assets can change. No licence, approval or regulatory status is claimed on this site until it has been officially stated.",
+  "Ce site ne conseille pas": "This site does not advise",
+  "Les informations publiées ne remplacent pas un conseil personnalisé. En cas de doute, rapprochez-vous d'un professionnel habilité.":
+    "Published information does not replace personal advice. If in doubt, speak to a qualified professional.",
+
+  Responsable: "Controller",
+  "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — À compléter.":
+    "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — To be completed.",
+  "Formulaire actionnaires": "Shareholder form",
+  "Le formulaire demande un nom complet, un email, un nom d'utilisateur SidraChain s'il est indiqué, un montant envisagé en SDA et un message facultatif, ainsi que deux confirmations : lecture des risques, et absence de rendement promis.":
+    "The form asks for a full name, an email, a SidraChain username if given, an amount considered in SDA and an optional message, plus two confirmations: that the risk warning was read, and that no yield is promised.",
+  "Le bouton Investir maintenant ouvre la fiche du projet sur SidraStart. Il n'identifie pas le visiteur et ne confirme pas un investissement. Si la personne accepte de communiquer ses coordonnées, le nom, l'e-mail, l'identifiant SidraChain et le montant en SDA ne sont enregistrés que lorsque la base durable, la connexion administrateur et la liste des CEO autorisés sont configurées. Sans cette configuration, rien n'est enregistré et aucune notification n'est envoyée. Les coordonnées restent réservées à ces administrateurs.":
+    "The Invest now button opens the project page on SidraStart. It does not identify the visitor and does not confirm an investment. If the person agrees to share contact details, the name, email, SidraChain username and amount in SDA are stored only when the durable database, administrator sign-in and the authorized CEO list are configured. Without that setup, nothing is stored and no notification is sent. Contact details stay limited to those administrators.",
+  "Signaler un intérêt": "Signal interest",
+  "Un clic sur Investir ouvre SidraStart. Il ne communique ni votre identité ni la confirmation d'un investissement. Vous pouvez, si vous l'acceptez, laisser vos coordonnées aux administrateurs de WIKENVA.":
+    "A click on Invest opens SidraStart. It shares neither your identity nor confirmation of an investment. If you agree, you can leave your contact details for WIKENVA's administrators.",
+  "Communiquer mes coordonnées": "Share my contact details",
+  "J'accepte de communiquer ces coordonnées aux administrateurs autorisés de WIKENVA. Cela ne confirme pas un investissement.":
+    "I agree to share these contact details with WIKENVA's authorized administrators. This does not confirm an investment.",
+  "Envoyer aux administrateurs": "Send to the administrators",
+  "Confirmez que vous acceptez de communiquer vos coordonnées.": "Confirm that you agree to share your contact details.",
+  "Demande non enregistrée": "Request not recorded",
+  "Aucune notification n'a été envoyée. La réception n'est pas encore opérationnelle.":
+    "No notification was sent. Reception is not operational yet.",
+  "Base durable : renseigner DATABASE_URL.": "Durable database: set DATABASE_URL.",
+  "Connexion des administrateurs : activer VITE_AUTH_ENABLED.": "Administrator sign-in: turn on VITE_AUTH_ENABLED.",
+  "Accès CEO : renseigner WIKENVA_ADMIN_EMAILS avec les e-mails autorisés.":
+    "CEO access: set WIKENVA_ADMIN_EMAILS with the authorized email addresses.",
+  "Notification : WIKENVA_NOTIFY_WEBHOOK, une adresse https. Sans elle, aucun avis n'est envoyé.":
+    "Notification: WIKENVA_NOTIFY_WEBHOOK, an https address. Without it, no notice is sent.",
+  "Demande enregistrée.": "Request recorded.",
+  "Statut : reçue.": "Status: received.",
+  "Un avis a été envoyé, sans vos coordonnées. Cela ne confirme pas un investissement.":
+    "A notice was sent, without your contact details. This does not confirm an investment.",
+  "Aucun e-mail n'a été envoyé. Les administrateurs autorisés pourront consulter la demande. Cela ne confirme pas un investissement.":
+    "No email was sent. Authorized administrators will be able to view the request. This does not confirm an investment.",
+  "Espace administrateurs": "Administrator space",
+  "Réception non opérationnelle": "Reception is not operational",
+  "Aucune demande n'est consultable et aucune notification n'est envoyée tant que ces éléments ne sont pas configurés.":
+    "No request can be viewed and no notification is sent until these items are configured.",
+  "Accès réservé": "Restricted access",
+  "Connectez-vous avec un compte dont l'e-mail figure dans WIKENVA_ADMIN_EMAILS. Les coordonnées ne sont pas affichées aux autres visiteurs.":
+    "Sign in with an account whose email is listed in WIKENVA_ADMIN_EMAILS. Contact details are not shown to other visitors.",
+  "Aucune demande reçue": "No request received",
+  "L'espace est ouvert. Aucune intention ni candidature n'a encore été enregistrée.":
+    "The space is open. No intention or application has been recorded yet.",
+  "Intérêt pour contribuer au projet sur SidraStart": "Interest in contributing to the project on SidraStart",
+  "Candidature au programme actionnaires WIKENVA": "Application to the WIKENVA shareholder programme",
+  "Nom non fourni": "Name not provided",
+  "Non fourni": "Not provided",
+  "Non renseigné": "Not stated",
+  Réception: "Received",
+  "Télécharger la fiche d'actionnariat": "Download the shareholder sheet",
+  "Indiquez la référence reçue et le même e-mail. Le résultat ne montre pas les autres candidatures.":
+    "Enter the reference you received and the same email. The result does not show other applications.",
+  "Voir le statut": "See the status",
+  "Le suivi n'est pas disponible tant que la réception n'est pas configurée.":
+    "Tracking is not available until reception is configured.",
+  "Aucune candidature ne correspond à cette référence et à cet e-mail.":
+    "No application matches this reference and email.",
+  "Votre candidature est reçue. Elle n'est pas encore validée. Cela ne confirme pas un investissement et ne crée aucun droit.":
+    "Your application has been received. It is not validated yet. This does not confirm an investment and creates no right.",
+  "Votre candidature est validée par un CEO autorisé. Cela ne confirme pas un investissement et ne garantit ni des parts ni un rendement.":
+    "Your application has been validated by an authorized CEO. This does not confirm an investment and guarantees neither shares nor a return.",
+  "Votre candidature n'a pas été validée.": "Your application was not validated.",
+  "Reçue, en attente de validation": "Received, waiting for validation",
+  Validée: "Validated",
+  "Non validée": "Not validated",
+  "Valider la candidature": "Validate the application",
+  "Refuser la candidature": "Decline the application",
+  "La validation est réservée à un CEO connecté avec un e-mail autorisé.":
+    "Validation is limited to a signed-in CEO with an authorized email.",
+  "Valider une candidature ne confirme pas un investissement et ne crée ni parts ni rendement.":
+    "Validating an application does not confirm an investment and creates neither shares nor a return.",
+  "Durée et effacement": "Retention and deletion",
+  "Sur cet appareil, la personne peut effacer chaque demande depuis la page Actionnaires. Lorsque le contact officiel sera publié, une demande d'accès, de rectification ou d'effacement pourra lui être adressée.":
+    "On this device, the person can delete each request from the Shareholders page. When the official contact is published, a request for access, correction or deletion can be sent to it.",
+  "Cookies et mesure d'audience": "Cookies and audience measurement",
+  "Ce site ne décrit pas de cookie publicitaire. Aucun outil de mesure d'audience n'est déclaré ici. S'il en est ajouté un, cette page sera mise à jour.":
+    "This site does not describe an advertising cookie. No audience-measurement tool is declared here. If one is added, this page will be updated.",
+  "Politique de confidentialité": "Privacy policy",
+  "Ce que le site recueille réellement, et ce qu'il ne transmet pas encore.":
+    "What the site actually collects, and what it does not send yet.",
+  Transparence: "Transparency",
+  "Mentions légales": "Legal notice",
+  "L'identité de l'éditeur et de l'hébergeur sera complétée. Elle n'est pas supposée.":
+    "The publisher's and the host's identity will be completed. It is not assumed.",
+  "Conditions d'utilisation": "Terms of use",
+  "Ce site informe. Il ne promet pas un investissement, un rendement ou un droit.":
+    "This site informs. It does not promise an investment, a yield or a right.",
+  "Avertissement sur les risques": "Risk warning",
+  "À lire avant d'utiliser un lien d'investissement, lorsqu'il existera, ou de déposer une candidature.":
+    "Read this before using an investment link, when one exists, or before sending an application.",
+
+  "Écosystème SidraChain": "SidraChain ecosystem",
+  "Marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. Elle réunit auteurs, lecteurs, créateurs, et d'autres encore.":
+    "A digital marketplace for halal ebooks, in the SidraChain ecosystem. It brings together authors, readers, creators, and others.",
+  "Terre reliée par un réseau doré, visuel d'ouverture de WIKENVA.":
+    "Earth linked by a gold network, the opening visual of WIKENVA.",
+  "Visuel d'ouverture. Il évoque un réseau mondial. Il ne représente pas un partenariat, une cotation ou une donnée de marché.":
+    "Opening visual. It suggests a worldwide network. It does not show a partnership, a listing or market data.",
+  Vision: "Vision",
+  "Un écosystème pour tous.": "An ecosystem for everyone.",
+  "Lire la vision": "Read the vision",
+  "Plans de verre bleu et ligne dorée, évocation de la direction à long terme de WIKENVA.":
+    "Blue glass planes and a gold line, suggesting WIKENVA's long-term direction.",
+  "Livre ouvert de verre bleu et or, sur un socle transparent.":
+    "An open book of blue glass and gold, on a clear stand.",
+  "Cinq phases, à compléter par les étapes officielles.": "Five phases, to be completed with the official steps.",
+  "La structure est en place. Les statuts, dates et livrables suivront les annonces de WIKENVA.":
+    "The structure is in place. Statuses, dates and deliverables will follow WIKENVA's announcements.",
+  "WIKENVA TOKEN": "WIKENVA TOKEN",
+  "La fiche du token, sans chiffre inventé.": "The token sheet, with no invented figure.",
+  "L'offre confirmée est de 100 000 000 actions. Le symbole, la blockchain, le contrat et l'utilité restent ouverts.":
+    "The confirmed supply is 100,000,000 shares. The symbol, blockchain, contract and utility stay open.",
+  "Ouvrir la fiche complète": "Open the full sheet",
+  Investisseurs: "Investors",
+  "Un cadre d'information, pas une promesse.": "A frame for information, not a promise.",
+  "Vision, objectifs, feuille de route et documents sont rassemblés ici. Investir ouvre la fiche du projet sur SidraStart. Aucun rendement n'est promis.":
+    "Vision, goals, roadmap and documents are gathered here. Invest opens the project listing on SidraStart. No yield is promised.",
+  "Programme actionnaires": "Shareholder programme",
+  "Manifester un intérêt, sans droit automatique.": "Show an interest, with no automatic right.",
+  "Le programme décrit les conditions, le fonctionnement, les documents et les risques. Le formulaire recueille un nom, un email, un nom d'utilisateur SidraChain s'il est disponible, un montant envisagé en SDA et un message facultatif.":
+    "The programme describes the conditions, how it works, the documents and the risks. The form collects a name, an email, a SidraChain username if available, an amount considered in SDA and an optional message.",
+  "Devenir actionnaire": "Become a shareholder",
+  "Pour devenir actionnaire, connectez-vous, puis inscrivez-vous sur la plateforme WIKENVA. Le formulaire reste fermé avant ces deux étapes.":
+    "To become a shareholder, sign in, then register on the WIKENVA platform. The form stays closed until both steps are done.",
+  "Connexion et inscription": "Sign in and register",
+  "Connexion et inscription.": "Sign in and register.",
+  "Connexion et inscription — WIKENVA": "Sign in and register — WIKENVA",
+  "Connectez-vous, puis inscrivez-vous sur la plateforme WIKENVA avant de déposer une candidature actionnaire.":
+    "Sign in, then register on the WIKENVA platform before submitting a shareholder application.",
+  Compte: "Account",
+  "La connexion ouvre un compte. L'inscription l'enregistre sur la plateforme WIKENVA. Aucune de ces étapes ne confirme un investissement.":
+    "Sign-in opens an account. Registration saves it on the WIKENVA platform. Neither step confirms an investment.",
+  "Étape 1": "Step 1",
+  "Étape 2": "Step 2",
+  Connexion: "Sign in",
+  "Connectez-vous pour créer votre compte sur la plateforme WIKENVA. Cela ne confirme pas un investissement.":
+    "Sign in to create your account on the WIKENVA platform. This does not confirm an investment.",
+  "Votre compte est connecté. Terminez l'inscription pour ouvrir le formulaire.":
+    "Your account is signed in. Finish registration to open the form.",
+  "Terminer l'inscription": "Finish registration",
+  "Compte inscrit": "Registered account",
+  "L'inscription est enregistrée. Vous pouvez déposer une candidature. Cela ne confirme pas un investissement et ne crée aucun droit.":
+    "Registration is saved. You can submit an application. This does not confirm an investment and creates no right.",
+  "Se déconnecter": "Sign out",
+  "La déconnexion n'a pas abouti. Réessayez.": "Sign-out did not finish. Try again.",
+  "La connexion n'est pas activée. Le formulaire reste fermé.": "Sign-in is not enabled. The form stays closed.",
+  "Inscription sur la plateforme": "Registration on the platform",
+  "Votre compte est connecté. Inscrivez-vous pour accéder au formulaire actionnaires. Cette inscription ne confirme pas un investissement.":
+    "Your account is signed in. Register to open the shareholder form. This registration does not confirm an investment.",
+  "Je confirme mon inscription sur la plateforme WIKENVA pour déposer une candidature. Cela ne crée aucun droit.":
+    "I confirm my registration on the WIKENVA platform in order to submit an application. This creates no right.",
+  "S'inscrire": "Register",
+  "Indiquez votre nom et confirmez l'inscription.": "Enter your name and confirm the registration.",
+  "Connectez-vous avant de vous inscrire.": "Sign in before registering.",
+  "L'inscription n'a pas été enregistrée. Le formulaire reste fermé.":
+    "The registration was not saved. The form stays closed.",
+  "Cet e-mail est celui du compte inscrit sur la plateforme.": "This email belongs to the account registered on the platform.",
+  "White paper": "White paper",
+  "Livre blanc de WIKENVA, version de relecture.": "WIKENVA white paper, review draft.",
+  "Le document est lisible sur cette page. Il sépare les faits confirmés de ce qui reste à confirmer. Ce n'est pas encore une version figée, et aucun rendement n'est promis.":
+    "The document can be read on this page. It separates confirmed facts from what is still to be confirmed. It is not a frozen version, and no yield is promised.",
+  "La lecture et le téléchargement s'activeront lorsque le fichier officiel sera relié. En attendant, les boutons expliquent qu'il n'est pas encore disponible.":
+    "Reading and downloading will turn on when the official file is linked. Until then, the buttons explain that it is not available yet.",
+  Actualités: "News",
+  "Les annonces officielles, au fur et à mesure.": "Official announcements, as they come.",
+  "Projet, développement, partenariats, événements et étapes de la feuille de route : uniquement lorsqu'ils sont confirmés.":
+    "Project, development, partnerships, events and roadmap steps: only when they are confirmed.",
+  "Voir toutes les actualités": "See all news",
+  "Suivez notre communauté": "Follow our community",
+  "Facebook, Twitter, WhatsApp et Telegram. Chaque bouton ouvre le canal officiel.":
+    "Facebook, Twitter, WhatsApp and Telegram. Each button opens the official channel.",
+
+  "Aucune phase n'est présentée comme achevée. Les dates et les livrables précis seront ajoutés avec les annonces officielles.":
+    "No phase is shown as finished. Precise dates and deliverables will be added with the official announcements.",
+  "Voir la feuille de route": "See the roadmap",
+  Nom: "Name",
+  Symbole: "Symbol",
+  Blockchain: "Blockchain",
+  "Offre totale": "Total supply",
+  "Adresse du contrat": "Contract address",
+  "Utilité du token": "Token utility",
+  "À compléter. Le rôle du WIKENVA TOKEN sera décrit ici lorsqu'il sera officiellement défini. Aucune utilité n'est supposée.":
+    "To be completed. The role of the WIKENVA TOKEN will be described here when it is officially defined. No utility is assumed.",
+  Tokenomics: "Tokenomics",
+  "À compléter. La répartition officielle — parts, vestings, éventuelles réserves — sera publiée ici sans estimation.":
+    "To be completed. The official allocation — shares, vestings, any reserves — will be published here without an estimate.",
+  "Offre confirmée : 100 000 000 actions WIKENVA. Les calendriers de vesting ne sont pas encore publiés.":
+    "Confirmed supply: 100,000,000 WIKENVA shares. Vesting schedules are not published yet.",
+  Allocation: "Allocation",
+  Part: "Share",
+  Quantité: "Quantity",
+  "WIKENVA — Une vision claire, un écosystème à construire.":
+    "WIKENVA — A clear vision, an ecosystem to build.",
+  "Visuel conceptuel du WIKENVA TOKEN : médaille bleue et or portant le logo officiel.":
+    "Conceptual visual of the WIKENVA TOKEN: a blue and gold medal carrying the official logo.",
+  "Visuel conceptuel du token. Il ne représente pas une pièce ayant cours légal ni une valeur de marché.":
+    "Conceptual visual of the token. It is not legal tender and it does not show a market value.",
+  "Logo officiel WIKENVA": "Official WIKENVA logo",
+  "En préparation, en attendant la confirmation officielle": "In preparation, pending official confirmation",
+  "À confirmer officiellement": "To be officially confirmed",
+  "Pas encore disponible": "Not yet available",
+  "Projet en préparation, lancement sur SidraStart en attente": "Project in preparation, launch on SidraStart pending",
+  Statut: "Status",
+  "Copie désactivée": "Copy disabled",
+  "L'offre totale est de 100 000 000 de tokens. Le projet est en préparation : le symbole, la blockchain et l'adresse du contrat ne sont pas encore officiels.":
+    "The total supply is 100,000,000 tokens. The project is in preparation: the symbol, the blockchain and the contract address are not official yet.",
+  "L'offre totale est de 100 000 000 de tokens. Le symbole, la blockchain et l'adresse du contrat attendent une confirmation officielle. Le token n'est pas présenté comme déployé.":
+    "The total supply is 100,000,000 tokens. The symbol, the blockchain and the contract address await official confirmation. The token is not presented as deployed.",
+  "Adresse copiée": "Address copied",
+  "Copier l'adresse": "Copy address",
+  "La plateforme officielle d'investissement de WIKENVA n'est pas encore reliée. Aucun lien externe n'est proposé tant qu'une adresse officielle n'a pas été configurée.":
+    "WIKENVA's official investment platform is not linked yet. No external link is offered until an official address has been set.",
+  "Le white paper officiel n'est pas encore disponible. La lecture et le téléchargement seront activés lorsque le document sera publié.":
+    "The official white paper is not available yet. Reading and downloading will be turned on when the document is published.",
+  "Investir maintenant": "Invest now",
+  "Télécharger le white paper": "Download the white paper",
+  "La promotion SidraStart se termine le": "The SidraStart promotion ends on",
+  "Sélectionner un pays": "Select a country",
+  "Devenir partenaire": "Become a partner",
+  "Rechercher un pays, un indicatif ou un code ISO": "Search a country, a dial code or an ISO code",
+  "Nom, indicatif ou code ISO": "Name, dial code or ISO code",
+  "Aucun pays": "No country",
+  "Sélectionnez votre pays de résidence.": "Select your country of residence.",
+  "Indicatif du numéro": "Number dial code",
+  "Facultatif. Ce choix ne confirme pas qu'un compte WhatsApp est actif.":
+    "Optional. This choice does not confirm that a WhatsApp account is active.",
+  "Numéro, sans répéter l'indicatif": "Number, without repeating the dial code",
+  "Sélectionnez l'indicatif du numéro.": "Select the number's dial code.",
+  "Ce numéro n'est pas valide pour l'indicatif choisi. Il n'est pas vérifié comme un compte WhatsApp.":
+    "This number is not valid for the selected dial code. It is not verified as a WhatsApp account.",
+  "Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.":
+    "This promotion has closed. The countdown is no longer shown. The programme may be revised.",
+  jours: "days",
+  heures: "hours",
+  minutes: "minutes",
+  secondes: "seconds",
+  "La promotion SidraStart se termine le 25 décembre 2026. Ensuite, le programme pourra être révisé. Aucune nouvelle condition n'est annoncée ici.":
+    "The SidraStart promotion ends on 25 December 2026. After that, the programme may be revised. No new terms are announced here.",
+  "Devenir partenaire — WIKENVA": "Become a partner — WIKENVA",
+  "Manifester un intérêt à collaborer avec WIKENVA. Les conditions officielles d'un partenariat ne sont pas encore publiées.":
+    "Show an interest in working with WIKENVA. Official partnership terms are not published yet.",
+  "Devenir partenaire.": "Become a partner.",
+  "Auteurs, créateurs, concepteurs et entrepreneurs peuvent manifester un intérêt. Les conditions officielles d'un partenariat ne sont pas encore publiées. Aucun contrat, avantage ou rendement n'est promis.":
+    "Authors, creators, designers and entrepreneurs can show an interest. Official partnership terms are not published yet. No contract, benefit or yield is promised.",
+  "Ce que cela signifie aujourd'hui": "What this means today",
+  "Le bouton n'ouvre pas un programme déjà défini. Il présente l'intention de WIKENVA d'accueillir des partenaires. Les modalités seront publiées lorsqu'elles seront officielles.":
+    "The button does not open a programme that is already defined. It states WIKENVA's intention to welcome partners. The terms will be published when they are official.",
+  "Lire le white paper": "Read the white paper",
+  "Aucune actualité pour le moment": "No news for the moment",
+  "Les nouvelles du projet, les mises à jour, les annonces, les partenariats et les événements confirmés apparaîtront ici.":
+    "Project news, updates, announcements, partnerships and confirmed events will appear here.",
+  Lire: "Read",
+  Ouvrir: "Open",
+  "Lien officiel — À compléter": "Official link — To be completed",
+  Consulter: "View",
+  "Document — À compléter": "Document — To be completed",
+
+  "Réunir auteurs, lecteurs, créateurs de contenu, concepteurs de produits digitaux, entrepreneurs et bien d'autres acteurs du numérique.":
+    "Bring together authors, readers, content creators, digital product designers, entrepreneurs and many other people in the digital world.",
+  "La vision": "The vision",
+  "La mission": "The mission",
+  "Le problème": "The problem",
+  "La place dans l'écosystème": "Place in the ecosystem",
+  "Plans de verre bleu traversés d'une ligne dorée.": "Blue glass planes crossed by a gold line.",
+  "Visuel d'accompagnement. Il n'illustre pas un lieu, un produit ou un partenariat réel.":
+    "Supporting visual. It does not depict a real place, product or partnership.",
+  "Ce que cet espace rend possible": "What this space makes possible",
+  "Voir comment ces objectifs se lisent dans la feuille de route": "See how these goals read in the roadmap",
+
+  "Investisseurs et partenaires": "Investors and partners",
+  "Lire le projet avant toute décision.": "Read the project before any decision.",
+  "WIKENVA est une marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. Investir ouvre la fiche du projet sur SidraStart. Ce site ne promet aucun rendement.":
+    "WIKENVA is a digital marketplace for halal ebooks, in the SidraChain ecosystem. Invest opens the project listing on SidraStart. This site promises no yield.",
+  "« Investir maintenant » ouvre la fiche Digital Marketplace Ebook Halal sur SidraStart. Vérifiez cette page avant toute décision.":
+    "“Invest now” opens the Digital Marketplace Ebook Halal listing on SidraStart. Check that page before any decision.",
+  Objectifs: "Goals",
+  "Modèle économique": "Economic model",
+  "À compléter. Le modèle économique sera présenté lorsqu'il sera officiellement défini. Aucune hypothèse de revenus n'est affichée.":
+    "To be completed. The economic model will be presented when it is officially defined. No revenue assumption is shown.",
+  "Documents officiels": "Official documents",
+  "Avant toute décision": "Before any decision",
+  "Les crypto-actifs peuvent perdre toute leur valeur.": "Crypto-assets can lose all their value.",
+  "Aucun rendement, rachat ou dividende n'est promis.": "No yield, buyback or dividend is promised.",
+  "Les champs « À compléter » ne sont pas des données manquantes à deviner : elles ne sont pas encore officielles.":
+    "Fields marked “To be completed” are not missing facts to guess: they are not official yet.",
+  "Vérifiez les documents publiés et, si besoin, un conseil indépendant.":
+    "Check the published documents and, if needed, independent advice.",
+  "L'avertissement complet est sur la page": "The full warning is on the",
+  Risques: "Risks",
+  page: "page",
+
+  "Les informations du token, rien que les informations confirmées.":
+    "The token information, and only the confirmed information.",
+  "L'offre est de 100 000 000 actions WIKENVA. Le symbole, la blockchain et l'adresse du contrat restent à compléter.":
+    "The supply is 100,000,000 WIKENVA shares. The symbol, blockchain and contract address remain to be completed.",
+  "Cinq phases, prêtes à recevoir les vraies étapes.": "Five phases, ready to receive the real steps.",
+  "Sélectionnez une phase pour en lire l'intention. Les statuts restent « À préciser » tant que WIKENVA n'a pas annoncé où en est le projet.":
+    "Select a phase to read its intent. Statuses stay “To be specified” until WIKENVA has announced where the project stands.",
+  "Les pièces officielles, au fur et à mesure.": "The official documents, as they are published.",
+  "White paper, fiche du token et feuille de route. Un document externe n'est lié que lorsqu'il est publié.":
+    "White paper, token sheet and roadmap. An external document is linked only when it is published.",
+  Documents: "Documents",
+  "Facebook, Twitter, WhatsApp, Telegram.": "Facebook, Twitter, WhatsApp, Telegram.",
+  "Les quatre canaux sont alignés. Chaque bouton ouvre l'adresse officielle.":
+    "The four channels are aligned. Each button opens the official address.",
+  "Le document de référence, lorsqu'il sera publié.": "The reference document, when it is published.",
+  "Le white paper décrira le projet, le token et les conditions applicables. Tant que le fichier officiel n'est pas relié, les boutons indiquent qu'il n'est pas disponible.":
+    "The white paper will describe the project, the token and the applicable conditions. Until the official file is linked, the buttons state that it is not available.",
+  "Ce document fera foi pour la description officielle de WIKENVA. Il n'est pas remplacé ici par un résumé inventé. Dès qu'un lien de lecture ou de téléchargement sera configuré, les boutons ouvriront ce fichier, et aucun autre.":
+    "This document will be the reference for the official description of WIKENVA. It is not replaced here by an invented summary. As soon as a reading or download link is set, the buttons will open that file, and no other.",
+
+  "Ce qui est annoncé, et seulement cela.": "What is announced, and only that.",
+  "Nouvelles du projet, développement, annonces officielles, partenariats, événements, étapes de la feuille de route et publications importantes.":
+    "Project news, development, official announcements, partnerships, events, roadmap steps and important publications.",
+  "Actualité introuvable": "News item not found",
+  "Cette publication n'existe pas ou a été retirée.": "This publication does not exist or has been removed.",
+  "Cette page n'existe pas.": "This page does not exist.",
+  "Le lien est peut-être ancien. Revenez à l'accueil officiel.": "The link may be old. Return to the official home page.",
+  "Retour à l'accueil": "Back to home",
+
+  "Sécurité des contributions et procédure d'investissement": "Security of contributions and investment procedure",
+  "Les investissements doivent passer directement par SidraStart, et non par un membre de WIKENVA.":
+    "Investments must go directly through SidraStart, and not through a WIKENVA member.",
+  "Investissement minimum": "Minimum investment",
+  "Part prévue des revenus de la plateforme": "Planned share of platform revenue",
+  "Conditions du programme à officialiser": "Programme conditions still to be made official",
+  "WIKENVA prévoit d'allouer 15 % des revenus de la plateforme aux actionnaires de la plateforme WIKENVA, selon les modalités officielles qui seront définies et publiées. Cette part n'est pas un rendement garanti.":
+    "WIKENVA plans to allocate 15% of platform revenue to shareholders of the WIKENVA platform, under official terms that will be defined and published. This share is not a guaranteed yield.",
+  "Actionnaires de la plateforme": "Platform shareholders",
+  "Programme SidraStart": "SidraStart programme",
+  "Part des actions confirmée par SidraStart": "Share of the equity confirmed by SidraStart",
+  "Confirmé par la plateforme SidraStart": "Confirmed by the SidraStart platform",
+  "Les 34 % des actions sont confirmés par la plateforme SidraStart. Cette allocation est distincte des 15 % des revenus de la plateforme prévus pour les actionnaires WIKENVA. Elle n'est pas un rendement garanti.":
+    "The 34% of the shares is confirmed by the SidraStart platform. This allocation is separate from the 15% of platform revenue planned for WIKENVA shareholders. It is not a guaranteed yield.",
+  "Ce programme permet de manifester un intérêt. L'envoi d'une candidature ne garantit ni l'acceptation, ni l'obtention de parts, ni un rendement financier.":
+    "This programme lets you express interest. Sending an application guarantees neither acceptance, nor shares, nor a financial return.",
+  "La part de 15 % est une allocation prévue des revenus de la plateforme, sous réserve des conditions définitives. Elle n'est pas un droit déjà acquis et ce n'est pas un rendement garanti. Déposer une candidature ne crée aucun droit de vote, de titre ou de gouvernance.":
+    "The 15% share is a planned allocation of platform revenue, subject to the final conditions. It is not a right already acquired and it is not a guaranteed yield. Filing an application creates no voting, title or governance right.",
+  "Ce programme permet de manifester un intérêt. Il n'accorde aucun droit, aucun titre et aucun rendement par le seul envoi du formulaire.":
+    "This programme lets you show an interest. Sending the form alone grants no right, no title and no yield.",
+  "Conditions d'éligibilité": "Eligibility",
+  "En attente de confirmation officielle": "Waiting for official confirmation",
+  "Les autres conditions officielles sont à compléter. Elles seront listées ici dès leur publication.":
+    "The other official conditions are to be completed. They will be listed here as soon as they are published.",
+  Fonctionnement: "How it works",
+  "La candidature exprime un intérêt à participer au programme actionnaires ou partenaires de la plateforme WIKENVA. L'examen, les vérifications et toute décision appartiennent à WIKENVA, selon des règles qui seront publiées avec les documents officiels.":
+    "The application expresses an interest in joining the shareholder or partner programme of the WIKENVA platform. Review, checks and any decision belong to WIKENVA, under rules that will be published with the official documents.",
+  "Droits associés": "Associated rights",
+  "Aucun droit de vote, de revenu, de titre ou de gouvernance n'est décrit à ce stade. Déposer une candidature n'en crée aucun.":
+    "No voting, income, title or governance right is described at this stage. Sending an application creates none.",
+  "Droits officiels — À compléter": "Official rights — To be completed",
+  Processus: "Process",
+  "Lire l'avertissement sur les risques et les conditions de cette page.":
+    "Read the risk warning and the conditions on this page.",
+  "Déposer une candidature : nom, email, pays, montant envisagé, message.":
+    "Send an application: name, email, country, amount considered, message.",
+  "Conserver la référence affichée après l'envoi.": "Keep the reference shown after sending.",
+  "Attendre un échange via le canal officiel, lorsqu'il sera activé. Les pièces demandées seront alors celles publiées par WIKENVA.":
+    "Wait for a reply through the official channel, when it is turned on. The documents requested will then be those published by WIKENVA.",
+  "Documents nécessaires": "Documents required",
+  "Liste officielle — À compléter. Aucune pièce n'est exigée tant que WIKENVA ne l'a pas publiée.":
+    "Official list — To be completed. No document is required until WIKENVA has published it.",
+  "Risques et conditions": "Risks and conditions",
+  "Une candidature peut ne pas aboutir. Elle ne constitue pas un investissement, ni une réservation, ni une promesse de rendement. Les crypto-actifs peuvent perdre toute valeur. Le programme peut évoluer ou ne pas être ouvert.":
+    "An application may not succeed. It is not an investment, a reservation or a promise of yield. Crypto-assets can lose all their value. The programme may change or may not open.",
+  "Lire l'avertissement complet": "Read the full warning",
+
+  "Indiquez votre nom.": "Enter your name.",
+  "Indiquez un email valide.": "Enter a valid email.",
+  "Indiquez votre pays.": "Enter your country.",
+  "Indiquez un montant envisagé.": "Enter an amount you are considering.",
+  "Précisez votre message en au moins 20 caractères.": "Write your message in at least 20 characters.",
+  "Confirmez avoir lu l'avertissement sur les risques.": "Confirm that you have read the risk warning.",
+  "Confirmez qu'aucun rendement n'est promis.": "Confirm that no yield is promised.",
+  "Le canal officiel n'a pas répondu. La demande est conservée sur cet appareil, elle n'a pas été transmise.":
+    "The official channel did not respond. The request is kept on this device and was not sent.",
+  "Demande enregistrée": "Request saved",
+  "Elle a été transmise au canal officiel.": "It was sent to the official channel.",
+  "Elle reste sur cet appareil uniquement. Elle ne crée aucun droit et ne constitue pas un investissement.":
+    "It stays on this device only. It creates no right and it is not an investment.",
+  "Déposer une autre demande": "Send another request",
+  Email: "Email",
+  Pays: "Country",
+  "Montant envisagé": "Amount considered",
+  "Indiquez le montant et la devise. Aucun minimum n'est appliqué tant qu'il n'est pas officiellement confirmé.":
+    "State the amount and the currency. No minimum applies until it is officially confirmed.",
+  Message: "Message",
+  "J'ai lu l'avertissement sur les risques liés aux crypto-actifs.": "I have read the warning about crypto-asset risks.",
+  "Je comprends qu'aucun rendement n'est promis et que cette demande n'est pas un investissement garanti.":
+    "I understand that no yield is promised and that this request is not a guaranteed investment.",
+  "Envoi…": "Sending…",
+  "Demandes conservées sur cet appareil": "Requests kept on this device",
+  "Chargement…": "Loading…",
+  "Aucune demande enregistrée dans ce navigateur.": "No request saved in this browser.",
+  Transmise: "Sent",
+  "Locale uniquement": "On this device only",
+  "Effacer de cet appareil": "Delete from this device",
+  "Après validation, la demande est envoyée au canal officiel configuré par WIKENVA. Elle ne garantit ni suite favorable, ni droit, ni rendement.":
+    "After you submit, the request is sent to the official channel set by WIKENVA. It guarantees neither a positive reply, nor a right, nor a yield.",
+  "Le canal officiel de réception n'est pas encore configuré. La demande est alors conservée uniquement dans ce navigateur. Vous pouvez l'effacer. Elle n'est pas transmise à WIKENVA et ne crée aucun droit.":
+    "The official receiving channel is not set up yet. The request is then kept only in this browser. You can delete it. It is not sent to WIKENVA and it creates no right.",
+  Référence: "Reference",
+
+  "WIKENVA — Site officiel": "WIKENVA — Official site",
+  "Vision — WIKENVA": "Vision — WIKENVA",
+  "Feuille de route — WIKENVA": "Roadmap — WIKENVA",
+  "Investisseurs — WIKENVA": "Investors — WIKENVA",
+  "Actualités — WIKENVA": "News — WIKENVA",
+  "Communauté — WIKENVA": "Community — WIKENVA",
+  "Programme actionnaires — WIKENVA": "Shareholder programme — WIKENVA",
+  "White paper — WIKENVA": "White paper — WIKENVA",
+  "Documents officiels — WIKENVA": "Official documents — WIKENVA",
+  "Mentions légales — WIKENVA": "Legal notice — WIKENVA",
+  "Confidentialité — WIKENVA": "Privacy — WIKENVA",
+  "Conditions — WIKENVA": "Terms — WIKENVA",
+  "Risques — WIKENVA": "Risks — WIKENVA",
+  "Page introuvable — WIKENVA": "Page not found — WIKENVA",
+  "Condition indiquée": "Stated condition",
+  "Un seuil de": "A threshold of",
+  "a été évoqué. Il n'est pas une condition du programme tant que WIKENVA ne l'a pas confirmé. Aucun minimum n'est donc exigé dans le formulaire.":
+    "has been mentioned. It is not a condition of the programme until WIKENVA confirms it. No minimum is therefore required in the form.",
+  "Investir sur SidraStart": "Invest on SidraStart",
+  "Nous contacter": "Contact us",
+  "En savoir plus": "Learn more",
+  "Découvrir WIKENVA": "Discover WIKENVA",
+  "WIKENVA réunit auteurs, lecteurs, créateurs et partenaires autour de la création, de la découverte et de la vente de produits numériques. C'est une marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.":
+    "WIKENVA brings together authors, readers, creators and partners around creating, discovering and selling digital products. It is a halal ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
+  "Un même espace pour les personnes qui créent, qui lisent et qui veulent participer. Le catalogue de produits n'est pas encore ouvert.":
+    "One place for people who create, who read and who want to take part. The product catalogue is not open yet.",
+  "Les produits numériques visés sont d'abord des ebooks halal, puis d'autres créations annoncées officiellement. Aucune boutique n'est active sur ce site aujourd'hui.":
+    "The digital products in view are first halal ebooks, then other works announced officially. No shop is active on this site today.",
+  "Notre mission et notre vision": "Our mission and our vision",
+  Mission: "Mission",
+  "Comment fonctionne WIKENVA ?": "How does WIKENVA work?",
+  "Quatre repères. L'application de vente n'est pas encore ouverte.":
+    "Four markers. The sales application is not open yet.",
+  "Comprendre le projet": "Understand the project",
+  "La vision, le livre blanc et les pages du site disent ce qui est confirmé. Ce qui manque est indiqué, pas inventé.":
+    "The vision, the white paper and the site pages say what is confirmed. What is missing is marked, not invented.",
+  "Les produits numériques": "Digital products",
+  "La marketplace d'ebooks halal est en préparation. Il n'y a pas encore de catalogue à parcourir ni d'achat sur ce site.":
+    "The halal ebook marketplace is being prepared. There is not yet a catalogue to browse or a purchase on this site.",
+  "La communauté": "The community",
+  "Les annonces officielles passent par les canaux Facebook, WhatsApp, Telegram et X publiés sur la page Communauté.":
+    "Official announcements go through the Facebook, WhatsApp, Telegram and X channels published on the Community page.",
+  Participer: "Take part",
+  "On peut demander à devenir partenaire, ou ouvrir la fiche du projet sur SidraStart. Aucun rendement n'est promis.":
+    "You can ask to become a partner, or open the project page on SidraStart. No yield is promised.",
+  "Pendant la promotion SidraStart, qui se termine le 24 décembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification.":
+    "During the SidraStart promotion, which ends on 24 December 2026, a partnership request can be submitted. It still has to be verified.",
+  "Les personnes qui investissent au minimum 3 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 24 décembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.":
+    "People who invest at least 3,000 SDA in the Digital Marketplace Ebook Halal project, from their own SidraStart account, can ask for partner status. The investment is made on SidraStart, not on this site. After 24 December 2026 the conditions may change: they are not defined yet. No yield is guaranteed.",
+  "Lire les conditions de partenariat sur cette page.": "Read the partnership conditions on this page.",
+  "Ouvrir la fiche officielle du projet sur SidraStart.": "Open the official project page on SidraStart.",
+  "Investir au minimum 3 000 SDA depuis son propre compte SidraStart.":
+    "Invest at least 3,000 SDA from your own SidraStart account.",
+  "Envoyer les informations demandées pour la vérification. Ne jamais transmettre une clé privée ou un mot de passe.":
+    "Send the information requested for verification. Never send a private key or a password.",
+  "Attendre la confirmation du statut. Une demande envoyée n'est pas une approbation.":
+    "Wait for confirmation of the status. A submitted request is not an approval.",
+  "SidraChain et SidraStart": "SidraChain and SidraStart",
+  "WIKENVA s'inscrit dans l'écosystème SidraChain. La fiche publique du projet s'appelle Digital Marketplace Ebook Halal.":
+    "WIKENVA belongs to the SidraChain ecosystem. The public project page is called Digital Marketplace Ebook Halal.",
+  "Questions fréquentes": "Frequently asked questions",
+  "Qu'est-ce que WIKENVA ?": "What is WIKENVA?",
+  "Une marketplace d'ebooks halal en préparation, dans l'écosystème SidraChain. Elle vise à réunir auteurs, lecteurs, créateurs, entrepreneurs et partenaires.":
+    "A halal ebook marketplace being prepared, in the SidraChain ecosystem. It aims to bring together authors, readers, creators, entrepreneurs and partners.",
+  "Peut-on déjà acheter un ebook ?": "Can I already buy an ebook?",
+  "Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits.":
+    "No. The application is being prepared. This site presents the project. It does not sell products yet.",
+  "Comment devenir partenaire avant le 24 décembre 2026 ?": "How do I become a partner before 24 December 2026?",
+  "Investir au minimum 3 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement.":
+    "Invest at least 3,000 SDA on the SidraStart page from your account, then submit a request on the Partners page. The request is checked. It is not accepted automatically.",
+  "Un investissement garantit-il un rendement ?": "Does an investment guarantee a yield?",
+  "Non. Les crypto-actifs peuvent perdre toute leur valeur. Ce site ne promet aucun rendement et ne constitue pas un conseil en investissement.":
+    "No. Crypto-assets can lose all their value. This site promises no yield and is not investment advice.",
+  "Où lire les documents et nous écrire ?": "Where do I read the documents and write to you?",
+  "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant.":
+    "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. No general email address is published yet.",
+  "Aller plus loin": "Go further",
+  "La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.":
+    "The roadmap, the token, the news and the documents remain available. They are not repeated here.",
+  "Les cinq phases publiques du projet.": "The five public phases of the project.",
+  "Les annonces confirmées, au fur et à mesure.": "Confirmed announcements, as they come.",
+  "Livre blanc, fiche du token et liens Sidra.": "White paper, token sheet and Sidra links.",
+  "Lire les conditions de partenariat.": "Read the partnership conditions.",
+  "Cette page décrit la promotion en cours. Elle ne valide aucune candidature.":
+    "This page describes the current promotion. It does not approve any application.",
+  "Ouvrir la fiche officielle sur SidraStart.": "Open the official page on SidraStart.",
+  "Le projet s'appelle Digital Marketplace Ebook Halal. Les conditions de contribution sont celles publiées là-bas.":
+    "The project is called Digital Marketplace Ebook Halal. The contribution conditions are those published there.",
+  "Investir depuis son propre compte.": "Invest from your own account.",
+  "Minimum de 3 000 SDA pendant la promotion, qui se termine le 24 décembre 2026. L'investissement ne se fait pas sur ce site.":
+    "A minimum of 3,000 SDA during the promotion, which ends on 24 December 2026. The investment is not made on this site.",
+  "Fournir les informations de vérification.": "Provide the information for verification.",
+  "Le formulaire demande un nom, un e-mail et, si vous le souhaitez, une référence publique de transaction. N'envoyez jamais une clé privée ou un mot de passe.":
+    "The form asks for a name, an email and, if you wish, a public transaction reference. Never send a private key or a password.",
+  "Attendre la confirmation du statut.": "Wait for confirmation of the status.",
+  "La demande part en attente. Seule une décision d'un administrateur autorisé confirme le partenariat. Après le 24 décembre 2026, les conditions pourront changer et ne sont pas encore définies.":
+    "The request starts as pending. Only a decision by an authorised administrator confirms the partnership. After 24 December 2026 the conditions may change and are not defined yet.",
+  "Que se passera-t-il après la clôture de la promotion ?": "What happens after the promotion closes?",
+  "La promotion SidraStart se termine le 24 décembre 2026. Ensuite, les conditions pourront être révisées. Aucune nouvelle condition n'est déjà définie ici.":
+    "The SidraStart promotion ends on 24 December 2026. The conditions may then be revised. No new condition is already defined here.",
+  "Les trois parcours — investir, devenir partenaire, programme actionnaires — sont distincts. Aucun ne promet un rendement.":
+    "The three paths — investing, becoming a partner, the shareholder programme — are separate. None promises a yield.",
+  "Trois parcours, trois décisions": "Three paths, three decisions",
+  "Investir, devenir partenaire et rejoindre le programme actionnaires ne sont pas la même chose. Aucun de ces parcours ne promet un rendement.":
+    "Investing, becoming a partner and joining the shareholder programme are not the same thing. None of these paths promises a yield.",
+  "Ouvre la fiche Digital Marketplace Ebook Halal. L'investissement se fait sur votre compte SidraStart. Il ne vous inscrit pas comme partenaire et ne vous donne pas le statut d'actionnaire.":
+    "Opens the Digital Marketplace Ebook Halal page. The investment is made on your SidraStart account. It does not register you as a partner and it does not make you a shareholder.",
+  "Jusqu'au 24 décembre 2026, après au moins 3 000 SDA investis sur SidraStart, une demande peut être vérifiée. Le statut n'est pas automatique. Les conditions d'après cette date ne sont pas définies.":
+    "Until 24 December 2026, after at least 3,000 SDA invested on SidraStart, a request can be checked. The status is not automatic. The conditions after that date are not defined.",
+  "WIKENVA prévoit d'allouer 15 % des revenus de la plateforme aux actionnaires, selon des modalités encore à publier. Ce n'est pas la promotion à 3 000 SDA, et ce n'est pas un rendement garanti.":
+    "WIKENVA plans to allocate 15% of platform revenue to shareholders, under terms still to be published. This is not the 3,000 SDA promotion, and it is not a guaranteed yield.",
+  "Vous êtes sur le parcours partenaire": "You are on the partner path",
+  "Ce formulaire demande le statut de partenaire. Il ne remplace pas l'investissement sur SidraStart et il ne crée pas le statut d'actionnaire.":
+    "This form asks for partner status. It does not replace the investment on SidraStart and it does not create shareholder status.",
+  "Ce qui est publié": "What is published",
+  "Le site présente le projet WIKENVA. Le contact public passe par les canaux officiels indiqués sur la page Communauté : Facebook, WhatsApp, Telegram et X.":
+    "The site presents the WIKENVA project. Public contact goes through the official channels listed on the Community page: Facebook, WhatsApp, Telegram and X.",
+  "Aucune adresse e-mail générale n'est publiée. N'envoyez pas de message à une adresse supposée.":
+    "No general email address is published. Do not write to an address you only assume exists.",
+  "Éditeur — non publié": "Publisher — not published",
+  "La forme juridique, le siège, le numéro d'immatriculation et le directeur de la publication ne figurent dans aucun document officiel déjà intégré. Ils ne sont pas inventés ici.":
+    "The legal form, the registered office, the registration number and the publication director are not in any official document already included. They are not invented here.",
+  "Dès que WIKENVA les confirme, ils remplaceront cette mention.":
+    "As soon as WIKENVA confirms them, they will replace this notice.",
+  "Hébergeur — non publié": "Host — not published",
+  "Le nom et l'adresse de l'hébergeur ne sont pas encore confirmés. Ils seront ajoutés ici, et seulement à ce moment-là.":
+    "The host's name and address are not confirmed yet. They will be added here, and only then.",
+  "Identité publiée et identité encore absente. Rien n'est supposé.":
+    "Published identity and identity still missing. Nothing is assumed.",
+  "Cette page parle de l'information investisseur et du programme actionnaires. La demande de partenaire est sur une autre page. Aucun rendement n'est promis.":
+    "This page is about investor information and the shareholder programme. The partner request is on another page. No yield is promised.",
+  "« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook Halal. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.":
+    "“Invest on SidraStart” opens the Digital Marketplace Ebook Halal page. It creates neither partner status nor shareholder status.",
+  "Ce programme n'est pas la promotion partenaire à 3 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.":
+    "This programme is not the 3,000 SDA partner promotion, and it is not the same as the investment made on SidraStart.",
+  "Ce formulaire n'est pas la demande de partenaire et il ne réalise pas l'investissement SidraStart. Connectez-vous pour l'ouvrir. La connexion ne confirme aucun versement.":
+    "This form is not the partner request and it does not make the SidraStart investment. Sign in to open it. Signing in does not confirm any payment.",
+  "Investir, partenaire et actionnaire, est-ce la même chose ?": "Are investing, partner and shareholder the same thing?",
+  "Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 3 000 SDA, avec vérification, jusqu'au 24 décembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti.":
+    "No. Investing is done on SidraStart. Partner status is requested after at least 3,000 SDA, with a check, until 24 December 2026. The shareholder programme refers to a planned 15% share of revenue, not yet defined, and it is not a guaranteed yield.",
+  "Le bouton « Investir sur SidraStart » ouvre la fiche du projet sur SidraStart, dans l'écosystème SidraChain. Cette redirection n'est pas, en elle-même, une offre émise par ce site.":
+    "The “Invest on SidraStart” button opens the project page on SidraStart, in the SidraChain ecosystem. That redirect is not, by itself, an offer issued by this site.",
+  "Vous êtes ici": "You are here",
+  "Sur SidraStart, pas sur ce site": "On SidraStart, not on this site",
+  "Demande sur ce site, après SidraStart": "Request on this site, after SidraStart",
+  "Autre formulaire, autres règles": "Another form, other rules",
+  "Vous ouvrez la fiche Digital Marketplace Ebook Halal et vous investissez depuis votre propre compte.":
+    "You open the Digital Marketplace Ebook Halal page and invest from your own account.",
+  "Cela ne crée pas le statut de partenaire et ne vous inscrit pas au programme actionnaires.":
+    "It does not create partner status and it does not enrol you in the shareholder programme.",
+  "Jusqu'au 24 décembre 2026, après au moins 3 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
+    "Until 24 December 2026, after at least 3,000 SDA invested on SidraStart, you can ask for a check.",
+  "La demande n'est pas l'investissement. Le statut n'est pas automatique. Ce n'est pas le programme actionnaires.":
+    "The request is not the investment. The status is not automatic. This is not the shareholder programme.",
+  "WIKENVA prévoit 15 % des revenus de la plateforme pour les actionnaires. Les modalités ne sont pas encore publiées.":
+    "WIKENVA plans 15% of platform revenue for shareholders. The terms are not published yet.",
+  "Ce n'est pas la promotion à 3 000 SDA. Ce n'est pas un rendement garanti. La part n'est pas encore acquise.":
+    "This is not the 3,000 SDA promotion. This is not a guaranteed yield. The share is not yet acquired.",
+  "Ce n'est pas. ": "This is not. ",
+  "Voir la demande partenaire": "See the partner request",
+  "Voir le programme actionnaires": "See the shareholder programme",
+  "Jusqu'au": "Until",
+  "Jusqu'à cette date, une demande de partenaire peut suivre un investissement d'au moins 3 000 SDA sur SidraStart. Aucun rendement n'est garanti.":
+    "Until that date, a partner request can follow an investment of at least 3,000 SDA on SidraStart. No yield is guaranteed.",
+  ".": ".",
+};
