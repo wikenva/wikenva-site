@@ -43,7 +43,7 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
         </p>
       ) : null}
       <p className="mt-4 border-t border-line pt-3 text-sm text-muted">
-        {tr("Jusqu'à cette date, une demande de partenaire peut suivre un investissement d'au moins 3 000 SDA sur SidraStart. Aucun rendement n'est garanti.")}
+        {tr("Jusqu'à cette date, une demande de partenaire peut suivre un investissement d'au moins 1 000 SDA sur SidraStart. Aucun rendement n'est garanti.")}
       </p>
     </div>
   );
