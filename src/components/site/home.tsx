@@ -19,12 +19,12 @@ export function HomePage() {
             <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Écosystème SidraChain")}</p>
             <h1 className="mt-3 font-display text-5xl leading-none font-semibold md:text-7xl">{site.name}</h1>
             <p className="mt-4 font-display text-xl text-gold">{tr(site.slogan)}</p>
-            <div className="mt-6 max-w-md rounded-3xl border border-gold/50 bg-panel p-4">
+            <div className="mt-5 max-w-sm rounded-2xl border border-gold/50 bg-panel p-3">
               <PromotionClock compact />
             </div>
             <p className="mt-4 max-w-xl text-base text-muted md:text-lg">
               {tr(
-                "WIKENVA réunit auteurs, lecteurs, créateurs et partenaires autour de la création, de la découverte et de la vente de produits numériques. C'est une marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.",
+                "Marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.",
               )}
             </p>
             <div className="mt-6 flex max-w-md flex-col gap-3">
@@ -93,26 +93,10 @@ export function HomePage() {
 
       <Section eyebrow="Fonctionnement" title="Comment fonctionne WIKENVA ?" lede="Quatre repères. L'application de vente n'est pas encore ouverte.">
         <ol className="grid gap-4 md:grid-cols-2">
-          <Step
-            index="1"
-            title="Comprendre le projet"
-            text="La vision, le livre blanc et les pages du site disent ce qui est confirmé. Ce qui manque est indiqué, pas inventé."
-          />
-          <Step
-            index="2"
-            title="Les produits numériques"
-            text="La marketplace d'ebooks halal est en préparation. Il n'y a pas encore de catalogue à parcourir ni d'achat sur ce site."
-          />
-          <Step
-            index="3"
-            title="La communauté"
-            text="Les annonces officielles passent par les canaux Facebook, WhatsApp, Telegram et X publiés sur la page Communauté."
-          />
-          <Step
-            index="4"
-            title="Participer"
-            text="Les trois parcours — investir, devenir partenaire, programme actionnaires — sont distincts. Aucun ne promet un rendement."
-          />
+          <Step index="1" title="Comprendre le projet" text="La vision, le livre blanc et les pages du site disent ce qui est confirmé. Ce qui manque est indiqué, pas inventé." />
+          <Step index="2" title="Les produits numériques" text="La marketplace d'ebooks halal est en préparation. Il n'y a pas encore de catalogue à parcourir ni d'achat sur ce site." />
+          <Step index="3" title="La communauté" text="Les annonces officielles passent par les canaux Facebook, WhatsApp, Telegram et X publiés sur la page Communauté." />
+          <Step index="4" title="Participer" text="Les trois parcours — investir, devenir partenaire, programme actionnaires — sont distincts. Aucun ne promet un rendement." />
         </ol>
       </Section>
 
@@ -150,65 +134,30 @@ export function HomePage() {
         </div>
       </Section>
 
-      <Section
-        id="parcours"
-        eyebrow="Parcours"
-        title="Trois parcours, trois décisions"
-        lede="Investir, devenir partenaire et rejoindre le programme actionnaires ne sont pas la même chose. Aucun de ces parcours ne promet un rendement."
-      >
+      <Section id="parcours" eyebrow="Parcours" title="Trois parcours, trois décisions" lede="Investir, devenir partenaire et rejoindre le programme actionnaires ne sont pas la même chose. Aucun de ces parcours ne promet un rendement.">
         <PathBoard />
       </Section>
 
-      <Section
-        eyebrow="SidraChain"
-        title="SidraChain et SidraStart"
-        lede="WIKENVA s'inscrit dans l'écosystème SidraChain. La fiche publique du projet s'appelle Digital Marketplace Ebook Halal."
-      >
+      <Section eyebrow="SidraChain" title="SidraChain et SidraStart" lede="WIKENVA s'inscrit dans l'écosystème SidraChain. La fiche publique du projet s'appelle Digital Marketplace Ebook Halal.">
         <p className="max-w-2xl text-muted">{tr(narrative.place[0])}</p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <ExternalLink href={site.sidrachainUrl} variant="ghost">
-            {text.sidra}
-          </ExternalLink>
-          <ExternalLink href={site.investUrl ?? ""} variant="gold">
-            {text.invest}
-          </ExternalLink>
+          <ExternalLink href={site.sidrachainUrl} variant="ghost">{text.sidra}</ExternalLink>
+          <ExternalLink href={site.investUrl ?? ""} variant="gold">{text.invest}</ExternalLink>
         </div>
       </Section>
 
       <Section eyebrow="FAQ" title="Questions fréquentes" className="border-t border-line">
         <div className="grid gap-3">
-          <Faq
-            q="Qu'est-ce que WIKENVA ?"
-            a="Une marketplace d'ebooks halal en préparation, dans l'écosystème SidraChain. Elle vise à réunir auteurs, lecteurs, créateurs, entrepreneurs et partenaires."
-          />
-          <Faq
-            q="Peut-on déjà acheter un ebook ?"
-            a="Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits."
-          />
-          <Faq
-            q="Comment devenir partenaire avant le 30 novembre 2026 ?"
-            a="Investir au minimum 1 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement."
-          />
-          <Faq
-            q="Investir, partenaire et actionnaire, est-ce la même chose ?"
-            a="Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 1 000 SDA, avec vérification, jusqu'au 30 novembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti."
-          />
-          <Faq
-            q="Un investissement garantit-il un rendement ?"
-            a="Non. Les crypto-actifs peuvent perdre toute leur valeur. Ce site ne promet aucun rendement et ne constitue pas un conseil en investissement."
-          />
-          <Faq
-            q="Où lire les documents et nous écrire ?"
-            a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant."
-          />
+          <Faq q="Qu'est-ce que WIKENVA ?" a="Une marketplace d'ebooks halal en préparation, dans l'écosystème SidraChain. Elle vise à réunir auteurs, lecteurs, créateurs, entrepreneurs et partenaires." />
+          <Faq q="Peut-on déjà acheter un ebook ?" a="Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits." />
+          <Faq q="Comment devenir partenaire avant le 30 novembre 2026 ?" a="Investir au minimum 1 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement." />
+          <Faq q="Investir, partenaire et actionnaire, est-ce la même chose ?" a="Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 1 000 SDA, avec vérification, jusqu'au 30 novembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti." />
+          <Faq q="Un investissement garantit-il un rendement ?" a="Non. Les crypto-actifs peuvent perdre toute leur valeur. Ce site ne promet aucun rendement et ne constitue pas un conseil en investissement." />
+          <Faq q="Où lire les documents et nous écrire ?" a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant." />
         </div>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <TextLink to="/white-paper" variant="ghost">
-            {tr("Lire le white paper")}
-          </TextLink>
-          <TextLink to="/communaute" variant="ghost">
-            {tr("Nous contacter")}
-          </TextLink>
+          <TextLink to="/white-paper" variant="ghost">{tr("Lire le white paper")}</TextLink>
+          <TextLink to="/communaute" variant="ghost">{tr("Nous contacter")}</TextLink>
         </div>
       </Section>
 
@@ -216,9 +165,7 @@ export function HomePage() {
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
           <Eyebrow>Suite</Eyebrow>
           <h2 className="font-display text-3xl font-semibold">{tr("Aller plus loin")}</h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            {tr("La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.")}
-          </p>
+          <p className="mt-3 max-w-2xl text-muted">{tr("La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.")}</p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             <More to="/feuille-de-route" title="Feuille de route" text="Les cinq phases publiques du projet." />
             <More to="/token" title="WIKENVA TOKEN" text="La fiche du token, sans chiffre inventé." />
