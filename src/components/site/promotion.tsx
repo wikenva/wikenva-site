@@ -25,9 +25,9 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
   const year = when.toLocaleDateString(locale, { year: "numeric", timeZone: zone });
 
   return (
-    <div>
+    <div className="text-center">
       <p className="text-[11px] font-semibold tracking-[0.18em] text-gold uppercase">{tr("Partenaire")}</p>
-      <div className="mt-2 flex items-end gap-2">
+      <div className="mt-2 flex items-end justify-center gap-2">
         <p className={compact ? "font-display text-4xl leading-none font-semibold tabular-nums" : "font-display text-5xl leading-none font-semibold tabular-nums"}>
           {day}
         </p>
@@ -42,8 +42,9 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
           {tr("Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.")}
         </p>
       ) : null}
-      <p className="mt-3 text-sm text-muted">
-        {tr("Minimum 1 000 SDA sur SidraStart pour être partenaire. Tout change après cette date.")}
+      <p className="mt-3 text-center text-sm leading-snug">
+        <span className="font-semibold text-fg">{tr("Minimum 1 000 SDA sur SidraStart pour être partenaire.")}</span>
+        <span className="mt-1 block font-display text-base text-gold">{tr("Tout change après cette date.")}</span>
       </p>
     </div>
   );
