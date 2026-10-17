@@ -147,7 +147,7 @@ function Shell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 md:h-16 md:px-8">
           <Link to="/" className="flex min-w-0 items-center">
             <img
-              src="/media/logo-mark-ui.webp"
+              src="/media/logo-official.jpg"
               alt="WIKENVA"
               width={480}
               height={266}
