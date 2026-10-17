@@ -50,12 +50,12 @@ function PartnersPage() {
         title="Devenez partenaire de WIKENVA."
         lede="Participez au développement de l'économie numérique au sein de l'écosystème SidraChain."
       />
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-8 md:px-8">
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <a href="#candidature" className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink">
+      <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-1 gap-8 px-5 py-8 md:px-8">
+        <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row">
+          <a href="#candidature" className="inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink sm:flex-1">
             {tr("Devenir partenaire")}
           </a>
-          <a href="#programme" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold">
+          <a href="#programme" className="inline-flex min-h-12 w-full items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold sm:flex-1">
             {tr("Comprendre le programme")}
           </a>
         </div>
