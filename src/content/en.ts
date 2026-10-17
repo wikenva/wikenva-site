@@ -909,6 +909,28 @@ export const en: Record<string, string> = {
   "Acheter et vendre des produits numériques licites. La boutique n'est pas encore ouverte. Aucun rendement n'est promis.": "Buy and sell lawful digital products. The shop is not open yet. No yield is promised.",
   "Une plateforme de produits numériques licites, dans le respect des valeurs islamiques. La boutique n'est pas encore ouverte.": "A platform for lawful digital products, in line with Islamic values. The shop is not open yet.",
   "Commerce numérique de produits licites, dans le respect des valeurs islamiques. L'application est encore en préparation.": "Digital trade in lawful products, in line with Islamic values. The application is still being prepared.",
+
+  "Découvrir SidraChain": "Discover SidraChain",
+  "Découvrez le projet SidraChain, son fondateur, sa technologie blockchain et les initiatives de son écosystème.": "Discover the SidraChain project, its founder, its blockchain technology and the initiatives of its ecosystem.",
+  "Logo SidraChain": "SidraChain logo",
+  "Écosystème": "Ecosystem",
+  "Le projet, son fondateur et ses initiatives. À lire avant toute participation. Aucun rendement n'est promis.": "The project, its founder and its initiatives. Read this before taking part. No yield is promised.",
+  "Portrait du Dr. Mohammed Al Jefairi.": "Portrait of Dr. Mohammed Al Jefairi.",
+  "Dr. Mohammed Al Jefairi": "Dr. Mohammed Al Jefairi",
+  "Présenté comme le fondateur de SidraChain": "Presented as the founder of SidraChain",
+  "Le Dr. Mohammed Al Jefairi, souvent désigné par les initiales MJ, est présenté comme un entrepreneur, inventeur et auteur qatari associé au projet SidraChain.": "Dr. Mohammed Al Jefairi, often referred to by the initials MJ, is presented as a Qatari entrepreneur, inventor and author associated with the SidraChain project.",
+  "Ces informations sont données sous réserve de vérification des sources officielles. Cette page ne les présente pas comme un document certifié.": "This information is given subject to verification against official sources. This page does not present it as a certified document.",
+  "La blockchain SidraChain": "The SidraChain blockchain",
+  "SidraChain est présenté comme un projet de blockchain. Son objectif affiché est de rapprocher cette technologie des principes de la finance islamique, et de développer un écosystème numérique inspiré des valeurs de la charia. Cette page ne présente pas cette approche comme une certification officielle.": "SidraChain is presented as a blockchain project. Its stated aim is to bring this technology closer to the principles of Islamic finance, and to develop a digital ecosystem inspired by the values of sharia. This page does not present that approach as an official certification.",
+  "Le système de récompenses": "The rewards system",
+  "SidraChain décrit, sur ses supports officiels, un mécanisme de récompenses pour les participants. Les montants, la fréquence et les conditions d'utilisation sont ceux publiés par SidraChain. Cette page n'en ajoute aucun et n'en garantit aucun.": "SidraChain describes, on its official materials, a rewards mechanism for participants. The amounts, the frequency and the terms of use are those published by SidraChain. This page adds none and guarantees none.",
+  "SidraStart et les autres initiatives": "SidraStart and the other initiatives",
+  "SidraStart est l'espace où la fiche WIKENVA est publiée, sous le nom Digital Marketplace Ebook. Les autres initiatives sont celles que SidraChain publie sur son site officiel. Seules ces sources font foi.": "SidraStart is where the WIKENVA page is published, under the name Digital Marketplace Ebook. The other initiatives are those SidraChain publishes on its official website. Only those sources are authoritative.",
+  "L'ambition de WIKENVA": "WIKENVA's aim",
+  "WIKENVA souhaite contribuer à la découverte de cet écosystème et encourager chacun à se renseigner avant de participer. L'engagement est de partager des informations claires. Aucun rendement n'est promis.": "WIKENVA wants to help people discover this ecosystem and to encourage everyone to find out more before taking part. The commitment is to share clear information. No yield is promised.",
+  "WIKENVA et SidraChain — découvrir, comprendre et innover.": "WIKENVA and SidraChain — discover, understand and innovate.",
+  "Site officiel SidraChain": "Official SidraChain website",
+  "Fiche SidraStart": "SidraStart page",
 };
 
 
