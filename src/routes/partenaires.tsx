@@ -13,8 +13,10 @@ import {
   lookupPartner,
   partnerProfiles,
   submitPartner,
+  submitShop,
   type PartnerLookup,
   type PartnerSubmitResult,
+  type ShopSubmitResult,
 } from "@/lib/partner";
 
 export const Route = createFileRoute("/partenaires")({
@@ -393,11 +395,83 @@ function PartnerLookupPanel() {
       </form>
       {result?.unavailable ? <p className="mt-4 text-sm text-muted">{tr("Le suivi n'est pas disponible.")}</p> : null}
       {result && !result.unavailable && !result.found ? <p className="mt-4 text-sm text-muted">{tr("Aucune candidature ne correspond.")}</p> : null}
-      {result?.found && result.status === "approuvee" ? <ApprovedMark /> : null}
+      {result?.found && result.status === "approuvee" ? (
+        <>
+          <ApprovedMark />
+          <PartnerSpace partnerId={id} email={email} />
+        </>
+      ) : null}
       {result?.found && result.status && result.status !== "approuvee" ? (
         <p className="mt-4 text-sm font-semibold text-gold">{tr(statusCopy[result.status])}</p>
       ) : null}
+      {result?.found && result.status !== "approuvee" ? (
+        <p className="mt-3 text-sm text-muted">
+          {tr("Les fonctions premium et la demande de boutique sont réservées à un partenaire approuvé. Le statut n'est pas accordé automatiquement, et ce site ne vérifie pas le paiement SDA.")}
+        </p>
+      ) : null}
     </Panel>
+  );
+}
+
+function PartnerSpace({ partnerId, email }: { partnerId: string; email: string }) {
+  const tr = useTr();
+  const [shopName, setShopName] = useState("");
+  const [description, setDescription] = useState("");
+  const [pending, setPending] = useState(false);
+  const [result, setResult] = useState<ShopSubmitResult | null>(null);
+
+  async function onSubmit(event: FormEvent) {
+    event.preventDefault();
+    setPending(true);
+    try {
+      setResult(await submitShop({ data: { partnerId, email, shopName, description } }));
+    } finally {
+      setPending(false);
+    }
+  }
+
+  return (
+    <div className="mt-6 grid gap-4">
+      <div>
+        <h3 className="font-display text-xl font-semibold">{tr("Espace partenaire")}</h3>
+        <p className="mt-2 text-sm text-muted">
+          {tr("Fonctions premium : annonces réservées, demande de boutique et suivi du statut. La vente n'est pas ouverte.")}
+        </p>
+      </div>
+      <form className="grid gap-4" onSubmit={onSubmit}>
+        <h3 className="font-semibold">{tr("Demander l'ouverture d'une boutique")}</h3>
+        <p className="text-sm text-muted">
+          {tr("Présentez les articles que vous souhaitez proposer. La boutique n'est pas ouverte tant qu'un administrateur ne l'a pas approuvée. Aucun article n'est mis en vente ici.")}
+        </p>
+        <Field id="shop-name" label={tr("Nom de la boutique")} value={shopName} onChange={setShopName} />
+        <label className="grid gap-2 text-sm font-semibold" htmlFor="shop-description">
+          {tr("Description des articles")}
+          <textarea
+            id="shop-description"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+            className="min-h-28 rounded-2xl border border-line bg-ink px-3 py-3 font-normal"
+          />
+        </label>
+        <button type="submit" disabled={pending} className="min-h-12 rounded-2xl bg-gold px-5 text-sm font-semibold text-ink">
+          {pending ? tr("Chargement…") : tr("Envoyer la demande de boutique")}
+        </button>
+        {result?.recorded ? (
+          <p className="text-sm text-muted">
+            {tr("La demande de boutique est enregistrée. Elle n'ouvre pas la boutique.")} {result.id}
+          </p>
+        ) : null}
+        {result && !result.recorded && result.error === "closed" ? (
+          <p className="text-sm text-muted">{tr("Une boutique est déjà en cours pour ce partenaire.")}</p>
+        ) : null}
+        {result && !result.recorded && result.error === "match" ? (
+          <p className="text-sm text-muted">{tr("Seule une candidature approuvée peut demander une boutique.")}</p>
+        ) : null}
+        {result && !result.recorded && (result.error === "name" || result.error === "description") ? (
+          <p className="text-sm text-muted">{tr("Indiquez un nom et une description d'au moins 10 caractères.")}</p>
+        ) : null}
+      </form>
+    </div>
   );
 }
 
