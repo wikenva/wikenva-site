@@ -156,7 +156,15 @@ export function HomePage() {
         title="SidraChain et SidraStart"
         lede="WIKENVA fait partie de SidraChain."
       >
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6">
+          <TextLink to="/sidrachain" variant="gold" className="w-full sm:w-auto">
+            {tr("Découvrir SidraChain")}
+          </TextLink>
+          <p className="mt-3 max-w-xl text-sm text-muted">
+            {tr("Découvrez le projet SidraChain, son fondateur, sa technologie blockchain et les initiatives de son écosystème.")}
+          </p>
+        </div>
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
           <ExternalLink href={site.sidrachainUrl} variant="ghost">
             {text.sidra}
           </ExternalLink>
