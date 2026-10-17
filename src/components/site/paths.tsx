@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
 import { site } from "@/content/site";
 import { useTr } from "@/lib/locale";
 import { cn } from "@/lib/cn";
@@ -50,17 +51,129 @@ const paths: PathCard[] = [
   },
 ];
 
+export function HSlide({ label, children }: { label: string; children: ReactNode[] }) {
+  const count = children.length;
+  const [index, setIndex] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [reduced, setReduced] = useState(false);
+  const drag = useRef(0);
+  const start = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
+
+  function go(next: number) {
+    if (count < 1) return;
+    setIndex(((next % count) + count) % count);
+  }
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduced(query.matches);
+    apply();
+    query.addEventListener("change", apply);
+    return () => query.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
+    if (paused || dragging || reduced || count < 2) return;
+    const timer = window.setTimeout(() => setIndex((current) => (current + 1) % count), 5000);
+    return () => window.clearTimeout(timer);
+  }, [paused, dragging, reduced, count, index]);
+
+  function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse") return;
+    setPaused(true);
+    start.current = { x: event.clientX, y: event.clientY, locked: null };
+    drag.current = 0;
+  }
+
+  function onPointerMove(event: ReactPointerEvent<HTMLDivElement>) {
+    if (!start.current) return;
+    const dx = event.clientX - start.current.x;
+    const dy = event.clientY - start.current.y;
+    if (start.current.locked == null) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      start.current.locked = Math.abs(dx) > Math.abs(dy);
+      if (!start.current.locked) {
+        start.current = null;
+        return;
+      }
+      setDragging(true);
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+    drag.current = dx;
+    setOffset(dx);
+  }
+
+  function onPointerUp() {
+    const dx = drag.current;
+    const wasDragging = dragging || start.current?.locked === true;
+    start.current = null;
+    drag.current = 0;
+    setDragging(false);
+    setOffset(0);
+    setPaused(false);
+    if (!wasDragging) return;
+    if (dx <= -48) go(index + 1);
+    else if (dx >= 48) go(index - 1);
+  }
+
+  if (count === 0) return null;
+
+  return (
+    <div role="region" aria-roledescription="carousel" aria-label={label}>
+      <div
+        className="overflow-hidden"
+        style={{ touchAction: "pan-y" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
+        <div
+          className="flex items-stretch"
+          style={{
+            width: `${count * 100}%`,
+            transform: `translate3d(calc(${(-index * 100) / count}% + ${offset}px), 0, 0)`,
+            transition: dragging || reduced ? "none" : "transform 480ms cubic-bezier(.22,.8,.24,1)",
+          }}
+        >
+          {children.map((child, slide) => (
+            <div key={slide} className="shrink-0" style={{ width: `${100 / count}%` }} aria-hidden={slide !== index}>
+              {child}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="mt-3 flex justify-center gap-1.5">
+        {children.map((_, dot) => (
+          <button
+            key={dot}
+            type="button"
+            aria-label={`${label} ${dot + 1}`}
+            aria-current={dot === index}
+            onClick={() => go(dot)}
+            className="grid h-3 w-3 place-items-center"
+          >
+            <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function PathBoard({ here }: { here?: PathId }) {
   const tr = useTr();
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
+    <HSlide label={tr("Parcours")}>
       {paths.map((item) => {
         const current = here === item.id;
         return (
           <article
             key={item.id}
             className={cn(
-              "flex flex-col rounded-3xl border p-5",
+              "flex h-full flex-col rounded-3xl border p-5",
               current ? "border-gold bg-panel" : "border-line bg-ink",
             )}
           >
@@ -94,6 +207,6 @@ export function PathBoard({ here }: { here?: PathId }) {
           </article>
         );
       })}
-    </div>
+    </HSlide>
   );
 }
