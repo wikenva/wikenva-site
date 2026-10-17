@@ -671,8 +671,8 @@ export const en: Record<string, string> = {
   "Le projet s'appelle Digital Marketplace Ebook. Les conditions de contribution sont celles publiées là-bas.":
     "The project is called Digital Marketplace Ebook. The contribution conditions are those published there.",
   "Investir depuis son propre compte.": "Invest from your own account.",
-  "Minimum de 1 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site.":
-    "A minimum of 1,000 SDA during the promotion, which ends on 30 November 2026. The investment is not made on this site.",
+  "Minimum de 2 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site.":
+    "A minimum of 2,000 SDA during the promotion, which ends on 30 November 2026. The investment is not made on this site.",
   "Fournir les informations de vérification.": "Provide the information for verification.",
   "Le formulaire demande un nom, un e-mail et, si vous le souhaitez, une référence publique de transaction. N'envoyez jamais une clé privée ou un mot de passe.":
     "The form asks for a name, an email and, if you wish, a public transaction reference. Never send a private key or a password.",
@@ -715,8 +715,8 @@ export const en: Record<string, string> = {
     "This page is about investor information and the shareholder programme. The partner request is on another page. No yield is promised.",
   "« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.":
     "“Invest on SidraStart” opens the Digital Marketplace Ebook page. It creates neither partner status nor shareholder status.",
-  "Ce programme n'est pas la promotion partenaire à 1 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.":
-    "This programme is not the 1,000 SDA partner promotion, and it is not the same as the investment made on SidraStart.",
+  "Ce programme n'est pas la promotion partenaire à 2 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.":
+    "This programme is not the 2,000 SDA partner promotion, and it is not the same as the investment made on SidraStart.",
   "Ce formulaire n'est pas la demande de partenaire et il ne réalise pas l'investissement SidraStart. Connectez-vous pour l'ouvrir. La connexion ne confirme aucun versement.":
     "This form is not the partner request and it does not make the SidraStart investment. Sign in to open it. Signing in does not confirm any payment.",
   "Investir, partenaire et actionnaire, est-ce la même chose ?": "Are investing, partner and shareholder the same thing?",
@@ -732,14 +732,14 @@ export const en: Record<string, string> = {
     "You open the Digital Marketplace Ebook page and invest from your own account.",
   "Cela ne crée pas le statut de partenaire et ne vous inscrit pas au programme actionnaires.":
     "It does not create partner status and it does not enrol you in the shareholder programme.",
-  "Jusqu'au 30 novembre 2026, après au moins 1 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
-    "Until 30 November 2026, after at least 1,000 SDA invested on SidraStart, you can ask for a check.",
+  "Jusqu'au 30 novembre 2026, après au moins 2 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
+    "Until 30 November 2026, after at least 2,000 SDA invested on SidraStart, you can ask for a check.",
   "La demande n'est pas l'investissement. Le statut n'est pas automatique. Ce n'est pas le programme actionnaires.":
     "The request is not the investment. The status is not automatic. This is not the shareholder programme.",
   "WIKENVA prévoit 15 % des revenus de la plateforme pour les actionnaires. Les modalités ne sont pas encore publiées.":
     "WIKENVA plans 15% of platform revenue for shareholders. The terms are not published yet.",
-  "Ce n'est pas la promotion à 1 000 SDA. Ce n'est pas un rendement garanti. La part n'est pas encore acquise.":
-    "This is not the 1,000 SDA promotion. This is not a guaranteed yield. The share is not yet acquired.",
+  "Ce n'est pas la promotion à 2 000 SDA. Ce n'est pas un rendement garanti. La part n'est pas encore acquise.":
+    "This is not the 2,000 SDA promotion. This is not a guaranteed yield. The share is not yet acquired.",
   "Ce n'est pas. ": "This is not. ",
   "Voir la demande partenaire": "See the partner request",
   "Voir le programme actionnaires": "See the shareholder programme",
@@ -749,7 +749,7 @@ export const en: Record<string, string> = {
   ".": ".",
 
   "1 000 SDA": "1,000 SDA",
-  "1 000 SDA, pour la campagne de promotion en cours sur SidraStart. Ce minimum ne valide pas la candidature WIKENVA.": "1,000 SDA, for the current SidraStart promotion. This minimum does not approve a WIKENVA application.",
+  "2 000 SDA, pour la campagne de promotion en cours sur SidraStart. Ce minimum ne valide pas la candidature WIKENVA.": "2,000 SDA, for the current SidraStart promotion. This minimum does not approve a WIKENVA application.",
   "100 000 000 de tokens": "100,000,000 tokens",
   "Adresse e-mail": "Email address",
   "Approuvée": "Approved",
@@ -798,13 +798,17 @@ export const en: Record<string, string> = {
   "Il n'est pas publié ici. Le taux, le calcul, les conditions et la période ne sont pas confirmés. Aucun versement n'est simulé.": "It is not published here. The rate, the calculation, the conditions and the period are not confirmed. No payment is simulated.",
   "Indiquez votre nom complet.": "Enter your full name.",
   "Intentions et candidatures.": "Intentions and applications.",
-  "Investir au minimum 1 000 SDA depuis son compte.": "Invest at least 1,000 SDA from your own account.",
-  "Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée.": "Invest at least 1,000 SDA on SidraStart, then submit a request. It is checked.",
+  "Investir au minimum 2 000 SDA depuis son compte.": "Invest at least 2,000 SDA from your own account.",
+  "Investir au moins 2 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée.": "Invest at least 2,000 SDA on SidraStart, then submit a request. It is checked.",
   "Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts.": "Investing, becoming a partner and the shareholder programme are three separate paths.",
   "J'accepte les conditions publiées du partenariat. Les éléments non publiés ne sont pas acceptés comme des droits.": "I accept the published partnership terms. Unpublished items are not accepted as rights.",
   "J'accepte que mes coordonnées soient consultées par les administrateurs autorisés, conformément à la politique de confidentialité.": "I accept that my contact details may be read by authorised administrators, under the privacy policy.",
   "Je confirme mon inscription sur la plateforme WIKENVA. Cela ne crée aucun droit.": "I confirm my registration on the WIKENVA platform. This creates no right.",
   "Jusqu'au 30 novembre 2026. La demande est vérifiée.": "Until 30 November 2026. The request is checked.",
+  "Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée.": "Until 30 November 2026. Minimum 2,000 SDA. The request is checked.",
+  "Minimum de 2 000 SDA sur SidraStart pour devenir partenaire. 15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ce seuil ne confirme pas un partenariat et ne promet aucun rendement.": "A minimum of 2,000 SDA on SidraStart to become a partner. 15% of platform revenue is planned for the partnership programme, under the compensation terms set by the platform. 3% of revenue is set aside for zakat, in line with the principles of sharia and with transparent management. This threshold does not confirm a partnership and promises no yield.",
+  "15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.": "15% of platform revenue is planned for the partnership programme, under the compensation terms set by the platform. This share is not a guaranteed yield and no payment is simulated here.",
+  "3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente.": "3% of revenue is set aside for zakat, in line with the principles of sharia and with transparent management.",
   "L'inscription est enregistrée. Cela ne confirme pas un investissement et ne crée aucun droit.": "The registration is saved. It does not confirm an investment and it creates no right.",
   "L'usage précis des contributions sera publié lorsqu'il sera officiel. Il n'est pas détaillé sur cette page.": "The exact use of contributions will be published when it is official. It is not detailed on this page.",
   "La capture doit être une image PNG, JPEG ou WebP de moins de 1,2 Mo. Elle n'a pas été enregistrée.": "The screenshot must be a PNG, JPEG or WebP image under 1.2 MB. It was not saved.",
@@ -830,7 +834,7 @@ export const en: Record<string, string> = {
   "Lire les conditions.": "Read the terms.",
   "Marketplace d'ebooks, dans l'écosystème SidraChain. L'application est encore en préparation.": "An ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
   "Message de présentation": "Introduction",
-  "Minimum 1 000 SDA sur SidraStart pour être partenaire.": "Minimum 1,000 SDA on SidraStart to become a partner.",
+  "Minimum 2 000 SDA sur SidraStart pour être partenaire.": "Minimum 2,000 SDA on SidraStart to become a partner.",
   "Minimum indiqué pour la campagne de promotion en cours sur SidraStart. Ce seuil ne confirme pas un partenariat WIKENVA et ne promet aucun rendement.": "Minimum shown for the current SidraStart promotion. This threshold does not confirm a WIKENVA partnership and promises no yield.",
   "Minimum prévu : 1 000 SDA.": "Planned minimum: 1,000 SDA.",
   "Montant envisagé en SDA": "Planned amount in SDA",
@@ -840,7 +844,7 @@ export const en: Record<string, string> = {
   "Nom d'utilisateur SidraChain": "SidraChain username",
   "Non. Ce site ne promet aucun rendement.": "No. This site promises no yield.",
   "Non. Ce site présente le projet. Il ne vend pas encore.": "No. This site presents the project. It does not sell yet.",
-  "Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 1 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti.": "No. Investing is done on SidraStart. Partner status is requested after 1,000 SDA. The shareholder programme is a separate rule, with no guaranteed yield.",
+  "Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 2 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti.": "No. Investing is done on SidraStart. Partner status is requested after 2,000 SDA. The shareholder programme is a separate rule, with no guaranteed yield.",
   "Oui. Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est promis.": "Yes. Crypto-assets can lose all their value. No yield is promised.",
   "Ouvrez la fiche officielle du projet sur SidraStart depuis le bouton de cette page, puis suivez les étapes affichées là-bas.": "Open the official project page on SidraStart from the button on this page, then follow the steps shown there.",
   "Ouvrir la fiche SidraStart.": "Open the SidraStart page.",
@@ -849,7 +853,7 @@ export const en: Record<string, string> = {
   "Partenaire technique": "Technical partner",
   "Participer au développement": "Take part in the development",
   "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain.": "Take part in the digital economy within the SidraChain ecosystem.",
-  "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 1 000 SDA sur SidraStart.": "Take part in the digital economy within the SidraChain ecosystem. Promotional minimum: 1,000 SDA on SidraStart.",
+  "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 2 000 SDA sur SidraStart.": "Take part in the digital economy within the SidraChain ecosystem. Promotional minimum: 2,000 SDA on SidraStart.",
   "Pays de résidence": "Country of residence",
   "Quel est le minimum requis pour devenir partenaire pendant la promotion ?": "What is the minimum required to become a partner during the promotion?",
   "Refusée": "Declined",
