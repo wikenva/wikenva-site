@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { pageMeta } from "@/content/site";
-import { listCaptures, listInterests, type CaptureRow, type InterestList } from "@/lib/interest";
-import { decidePartner, listPartners, type PartnerList, type PartnerStatus } from "@/lib/partner";
+import { decideApplication, listCaptures, listInterests, type CaptureRow, type InterestList } from "@/lib/interest";
+import { decidePartner, decideShop, listPartners, listShops, type PartnerList, type PartnerStatus, type ShopList } from "@/lib/partner";
 import { signIn } from "@/lib/auth/client";
 import { GROK_PROVIDERS } from "@/lib/auth/providers";
 import { useTr } from "@/lib/locale";
@@ -146,6 +146,8 @@ function AdminPage() {
           </ul>
         ) : null}
         <PartnerQueue />
+        <ShopQueue />
+        {data?.authorized ? <ShareholderQueue requests={data.requests.filter((item) => item.kind === "actionnaire")} /> : null}
       </div>
     </SiteShell>
   );
@@ -225,6 +227,124 @@ function PartnerQueue() {
                       {tr(partnerStatusLabel[status])}
                     </button>
                   ))}
+                </div>
+              </Panel>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
+
+function ShopQueue() {
+  const tr = useTr();
+  const [data, setData] = useState<ShopList | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    listShops()
+      .then((next) => {
+        if (active) setData(next);
+      })
+      .catch(() => {
+        if (active) setData({ operational: false, authorized: false, shops: [] });
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  async function choose(id: string, status: PartnerStatus) {
+    const result = await decideShop({ data: { id, status } });
+    if (!result.ok) return;
+    setData((current) =>
+      current
+        ? { ...current, shops: current.shops.map((item) => (item.id === id ? { ...item, status } : item)) }
+        : current,
+    );
+  }
+
+  if (!data?.authorized) return null;
+
+  return (
+    <section className="grid gap-4">
+      <h2 className="font-display text-2xl font-semibold">{tr("Demandes de boutique")}</h2>
+      {data.shops.length === 0 ? (
+        <Panel>
+          <p className="text-sm text-muted">{tr("Aucune demande de boutique.")}</p>
+        </Panel>
+      ) : (
+        <ul className="grid gap-4">
+          {data.shops.map((item) => (
+            <li key={item.id}>
+              <Panel>
+                <p className="text-sm font-semibold text-gold">{tr(partnerStatusLabel[item.status])}</p>
+                <h3 className="mt-2 font-display text-2xl font-semibold">{item.shopName}</h3>
+                <p className="mt-2 text-sm text-muted">{item.email} · {item.partnerId}</p>
+                <p className="mt-3 text-sm">{item.description}</p>
+                <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
+                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                  {(Object.keys(partnerStatusLabel) as PartnerStatus[]).map((status) => (
+                    <button
+                      key={status}
+                      type="button"
+                      className="min-h-12 rounded-2xl border border-line px-4 text-sm font-semibold"
+                      onClick={() => choose(item.id, status)}
+                    >
+                      {tr(partnerStatusLabel[status])}
+                    </button>
+                  ))}
+                </div>
+              </Panel>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
+
+function ShareholderQueue({
+  requests,
+}: {
+  requests: Array<{ id: string; name: string | null; email: string; amount: string | null; status: string }>;
+}) {
+  const tr = useTr();
+  const [rows, setRows] = useState(requests);
+
+  async function choose(id: string, decision: "approuvee" | "refusee") {
+    const result = await decideApplication({ data: { id, decision } });
+    if (!result.ok) return;
+    setRows((current) => current.map((item) => (item.id === id ? { ...item, status: decision } : item)));
+  }
+
+  return (
+    <section className="grid gap-4">
+      <h2 className="font-display text-2xl font-semibold">{tr("Candidatures actionnaires")}</h2>
+      <p className="text-sm text-muted">
+        {tr("Aucun revenu n'est affiché. Une approbation ne confirme pas un versement.")}
+      </p>
+      {rows.length === 0 ? (
+        <Panel>
+          <p className="text-sm text-muted">{tr("Aucune candidature actionnaire.")}</p>
+        </Panel>
+      ) : (
+        <ul className="grid gap-4">
+          {rows.map((item) => (
+            <li key={item.id}>
+              <Panel>
+                <p className="text-sm font-semibold text-gold">{item.status}</p>
+                <h3 className="mt-2 font-display text-2xl font-semibold">{item.name || tr("Nom non fourni")}</h3>
+                <p className="mt-2 text-sm text-muted">{item.email}{item.amount ? ` · ${item.amount}` : ""}</p>
+                <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
+                <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                  <button type="button" className="min-h-12 rounded-2xl border border-line px-4 text-sm font-semibold" onClick={() => choose(item.id, "approuvee")}>
+                    {tr("Approuvée")}
+                  </button>
+                  <button type="button" className="min-h-12 rounded-2xl border border-line px-4 text-sm font-semibold" onClick={() => choose(item.id, "refusee")}>
+                    {tr("Refusée")}
+                  </button>
                 </div>
               </Panel>
             </li>
