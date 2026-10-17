@@ -21,6 +21,7 @@
 @layer base {
   html {
     color-scheme: dark;
+    scroll-padding-top: 4.5rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
