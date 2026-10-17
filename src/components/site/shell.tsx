@@ -237,7 +237,7 @@ function Shell({ children }: { children: ReactNode }) {
           </nav>
         ) : null}
       </header>
-      <main id="contenu">{children}</main>
+      <main id="contenu" className="min-w-0 overflow-x-hidden">{children}</main>
       <footer className="border-t border-neutral-200 bg-white pb-8 text-neutral-800 print:hidden">
         <div className="border-b border-[#16306e] bg-[#010b40]">
           <div className="mx-auto flex w-full max-w-6xl items-center px-5 py-4 md:px-8">
