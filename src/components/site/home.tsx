@@ -24,7 +24,7 @@ export function HomePage() {
             </div>
             <p className="mt-4 max-w-xl text-base text-muted md:text-lg">
               {tr(
-                "Marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.",
+                "Commerce numérique de produits licites, dans le respect des valeurs islamiques. L'application est encore en préparation.",
               )}
             </p>
             <div className="mt-6 flex max-w-md flex-col gap-3">
@@ -51,16 +51,28 @@ export function HomePage() {
         </div>
       </section>
 
-      <Section id="decouvrir" eyebrow="Découvrir" title="Découvrir WIKENVA" lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert.">
+      <Section
+        id="decouvrir"
+        eyebrow="Découvrir"
+        title="Découvrir WIKENVA"
+        lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert."
+      >
         <RoleBoard />
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <TextLink to="/vision">{tr("En savoir plus")}</TextLink>
-          <TextLink to="/communaute" variant="ghost">{text.community}</TextLink>
+          <TextLink to="/communaute" variant="ghost">
+            {text.community}
+          </TextLink>
           <PlatformButton />
         </div>
       </Section>
 
-      <Section eyebrow="Mission" title="Notre mission et notre vision" lede="Créer, partager et découvrir au même endroit." className="border-y border-line bg-panel/40">
+      <Section
+        eyebrow="Mission"
+        title="Notre mission et notre vision"
+        lede="Créer, partager et découvrir au même endroit."
+        className="border-y border-line bg-panel/40"
+      >
         <div className="grid gap-4 md:grid-cols-2">
           <article className="rounded-3xl border border-line bg-ink p-6">
             <h3 className="font-display text-2xl font-semibold">{tr("Mission")}</h3>
@@ -71,19 +83,43 @@ export function HomePage() {
             <p className="mt-3 text-muted">{tr(narrative.vision[2])}</p>
           </article>
         </div>
-        <TextLink to="/vision" variant="ghost" className="mt-6 w-fit">{tr("Lire la vision")}</TextLink>
+        <TextLink to="/vision" variant="ghost" className="mt-6 w-fit">
+          {tr("Lire la vision")}
+        </TextLink>
       </Section>
 
       <Section eyebrow="Fonctionnement" title="Comment ça marche" lede="La vente n'est pas encore ouverte.">
         <ol className="grid gap-4 md:grid-cols-2">
-          <Step index="1" title="Comprendre le projet" text="Le site dit ce qui est confirmé. Le reste n'est pas inventé." />
-          <Step index="2" title="Les produits numériques" text="Les ebooks halal sont en préparation. Aucun achat sur ce site." />
-          <Step index="3" title="La communauté" text="Les annonces passent par Facebook, WhatsApp, Telegram et X." />
-          <Step index="4" title="Participer" text="Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts." />
+          <Step
+            index="1"
+            title="Comprendre le projet"
+            text="Le site dit ce qui est confirmé. Le reste n'est pas inventé."
+          />
+          <Step
+            index="2"
+            title="Les produits numériques"
+            text="Les ebooks halal sont en préparation. Aucun achat sur ce site."
+          />
+          <Step
+            index="3"
+            title="La communauté"
+            text="Les annonces passent par Facebook, WhatsApp, Telegram et X."
+          />
+          <Step
+            index="4"
+            title="Participer"
+            text="Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts."
+          />
         </ol>
       </Section>
 
-      <Section id="partenariat" eyebrow="Partenaires" title="Devenir partenaire" lede="Jusqu'au 30 novembre 2026. La demande est vérifiée." className="border-y border-line bg-panel">
+      <Section
+        id="partenariat"
+        eyebrow="Partenaires"
+        title="Devenir partenaire"
+        lede="Jusqu'au 30 novembre 2026. La demande est vérifiée."
+        className="border-y border-line bg-panel"
+      >
         <ol className="mt-6 grid gap-3">
           {[
             "Lire les conditions.",
@@ -100,33 +136,70 @@ export function HomePage() {
         </ol>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <TextLink to="/partenaires">{tr("Devenir partenaire")}</TextLink>
-          <ExternalLink href={site.investUrl ?? ""} variant="ghost">{text.invest}</ExternalLink>
+          <ExternalLink href={site.investUrl ?? ""} variant="ghost">
+            {text.invest}
+          </ExternalLink>
         </div>
       </Section>
 
-      <Section id="parcours" eyebrow="Parcours" title="Trois parcours, trois décisions" lede="Trois décisions distinctes. Aucun rendement n'est promis.">
+      <Section
+        id="parcours"
+        eyebrow="Parcours"
+        title="Trois parcours, trois décisions"
+        lede="Trois décisions distinctes. Aucun rendement n'est promis."
+      >
         <PathBoard />
       </Section>
 
-      <Section eyebrow="SidraChain" title="SidraChain et SidraStart" lede="WIKENVA fait partie de SidraChain.">
+      <Section
+        eyebrow="SidraChain"
+        title="SidraChain et SidraStart"
+        lede="WIKENVA fait partie de SidraChain."
+      >
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <ExternalLink href={site.sidrachainUrl} variant="ghost">{text.sidra}</ExternalLink>
-          <ExternalLink href={site.investUrl ?? ""} variant="gold">{text.invest}</ExternalLink>
+          <ExternalLink href={site.sidrachainUrl} variant="ghost">
+            {text.sidra}
+          </ExternalLink>
+          <ExternalLink href={site.investUrl ?? ""} variant="gold">
+            {text.invest}
+          </ExternalLink>
         </div>
       </Section>
 
       <Section eyebrow="FAQ" title="Questions fréquentes" className="border-t border-line">
         <div className="grid gap-3">
-          <Faq q="Qu'est-ce que WIKENVA ?" a="Une marketplace d'ebooks halal, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires." />
-          <Faq q="Peut-on déjà acheter un ebook ?" a="Non. Ce site présente le projet. Il ne vend pas encore." />
-          <Faq q="Comment devenir partenaire avant le 30 novembre 2026 ?" a="Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée." />
-          <Faq q="Investir, partenaire et actionnaire, est-ce la même chose ?" a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 1 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti." />
-          <Faq q="Un investissement garantit-il un rendement ?" a="Non. Ce site ne promet aucun rendement." />
-          <Faq q="Où lire les documents et nous écrire ?" a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant." />
+          <Faq
+            q="Qu'est-ce que WIKENVA ?"
+            a="Une marketplace d'ebooks halal, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires."
+          />
+          <Faq
+            q="Peut-on déjà acheter un ebook ?"
+            a="Non. Ce site présente le projet. Il ne vend pas encore."
+          />
+          <Faq
+            q="Comment devenir partenaire avant le 30 novembre 2026 ?"
+            a="Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
+          />
+          <Faq
+            q="Investir, partenaire et actionnaire, est-ce la même chose ?"
+            a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 1 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti."
+          />
+          <Faq
+            q="Un investissement garantit-il un rendement ?"
+            a="Non. Ce site ne promet aucun rendement."
+          />
+          <Faq
+            q="Où lire les documents et nous écrire ?"
+            a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant."
+          />
         </div>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <TextLink to="/white-paper" variant="ghost">{tr("Lire le white paper")}</TextLink>
-          <TextLink to="/communaute" variant="ghost">{tr("Nous contacter")}</TextLink>
+          <TextLink to="/white-paper" variant="ghost">
+            {tr("Lire le white paper")}
+          </TextLink>
+          <TextLink to="/communaute" variant="ghost">
+            {tr("Nous contacter")}
+          </TextLink>
         </div>
       </Section>
 
@@ -134,7 +207,9 @@ export function HomePage() {
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
           <Eyebrow>Suite</Eyebrow>
           <h2 className="font-display text-3xl font-semibold">{tr("Aller plus loin")}</h2>
-          <p className="mt-3 max-w-2xl text-muted">{tr("La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.")}</p>
+          <p className="mt-3 max-w-2xl text-muted">
+            {tr("La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.")}
+          </p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             <More to="/feuille-de-route" title="Feuille de route" text="Les cinq phases publiques du projet." />
             <More to="/token" title="WIKENVA TOKEN" text="La fiche du token, sans chiffre inventé." />
