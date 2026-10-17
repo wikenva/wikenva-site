@@ -112,6 +112,18 @@ export const en: Record<string, string> = {
     "The token symbol, contract address and economic model are not filled in here yet. No licence, approval or statistic is shown until it has been provided.",
 
   "12 octobre 2026": "12 October 2026",
+  "17 octobre 2026": "17 October 2026",
+  "La promotion partenaire est ouverte": "The partner promotion is open",
+  "Jusqu'au 30 novembre 2026, le minimum est de 2 000 SDA sur SidraStart. La demande est vérifiée.":
+    "Until 30 November 2026, the minimum is 2,000 SDA on SidraStart. The request is checked.",
+  "WIKENVA ouvre une promotion pour devenir partenaire. Elle est valable jusqu'au 30 novembre 2026. Le minimum indiqué est de 2 000 SDA, investis depuis son propre compte sur SidraStart. L'investissement ne se fait pas sur ce site.":
+    "WIKENVA is opening a promotion to become a partner. It is valid until 30 November 2026. The stated minimum is 2,000 SDA, invested from your own account on SidraStart. The investment is not made on this site.",
+  "Atteindre ce minimum ne confirme pas le statut. Il faut déposer une demande. Seule une décision d'un administrateur autorisé confirme le partenariat.":
+    "Reaching this minimum does not confirm the status. A request must be submitted. Only a decision by an authorised administrator confirms the partnership.",
+  "WIKENVA prévoit 15 % des revenus de la plateforme pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ces parts ne sont pas un rendement garanti.":
+    "WIKENVA plans 15% of platform revenue for the partnership programme, under the compensation terms set by the platform. 3% of revenue is set aside for zakat, in line with the principles of sharia and with transparent management. These shares are not a guaranteed yield.",
+  "Après le 30 novembre 2026, les conditions pourront être révisées. Elles ne sont pas encore définies.":
+    "After 30 November 2026, the conditions may be revised. They are not defined yet.",
   "La fiche du projet est ouverte sur SidraStart": "The project listing is open on SidraStart",
   "WIKENVA, marketplace digitale d'ebooks, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.":
     "WIKENVA, a digital marketplace for ebooks, is presented in the SidraChain ecosystem. Investing goes through SidraStart.",
