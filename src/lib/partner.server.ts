@@ -4,7 +4,7 @@ import { assertSameSiteRequest } from "@/lib/auth/isolation.server";
 import { getSessionUser } from "@/lib/auth/verify.server";
 import { getSql } from "@/lib/db";
 import { receptionStatus } from "@/lib/interest-config";
-import { partnerProfiles, type PartnerInput, type PartnerList, type PartnerLookup, type PartnerStatus, type PartnerSubmitResult } from "@/lib/partner";
+import { partnerProfiles, type PartnerInput, type PartnerList, type PartnerLookup, type PartnerStatus, type PartnerSubmitResult, type ShopInput, type ShopList, type ShopSubmitResult } from "@/lib/partner";
 
 function currentReception() {
   const databaseUrl =
@@ -204,3 +204,100 @@ export async function decidePartnerApplication(
   const notified = await notify("wikenva.partner.updated", id, input.status);
   return { ok: true, notified };
 }
+
+export async function submitPartnerShop(input: ShopInput): Promise<ShopSubmitResult> {
+  assertSameSiteRequest();
+  const empty: ShopSubmitResult = { recorded: false, id: null, error: null };
+  const reception = currentReception();
+  if (!reception.operational) return { ...empty, error: "closed" };
+  const partnerId = clean(input.partnerId, 20).toUpperCase();
+  const email = clean(input.email, 160).toLowerCase();
+  const shopName = clean(input.shopName, 80);
+  const description = clean(input.description, 800);
+  if (!/^WK-[A-Z0-9]{8}$/.test(partnerId) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { ...empty, error: "match" };
+  if (shopName.length < 2) return { ...empty, error: "name" };
+  if (description.length < 10) return { ...empty, error: "description" };
+  const sql = await getSql();
+  const partners = await sql<{ email: string; status: string }>`
+    select email, status from partner_applications where id = ${partnerId} limit 1
+  `;
+  const partner = partners[0];
+  if (!partner || partner.email.trim().toLowerCase() !== email || partner.status !== "approuvee") {
+    return { ...empty, error: "match" };
+  }
+  const existing = await sql<{ id: string }>`
+    select id from partner_shops
+    where partner_id = ${partnerId} and status in ('en_attente', 'verification', 'approuvee')
+    limit 1
+  `;
+  if (existing.length > 0) return { ...empty, error: "closed" };
+  const id = `SH-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
+  await sql`
+    insert into partner_shops (id, partner_id, email, shop_name, description, status)
+    values (${id}, ${partnerId}, ${email}, ${shopName}, ${description}, ${"en_attente"})
+  `;
+  return { recorded: true, id, error: null };
+}
+
+export async function listPartnerShops(): Promise<ShopList> {
+  assertSameSiteRequest();
+  const reception = currentReception();
+  if (!reception.operational) return { operational: false, authorized: false, shops: [] };
+  const user = await getSessionUser();
+  const email = user?.email?.trim().toLowerCase() ?? "";
+  if (!email || !reception.admins.includes(email)) return { operational: true, authorized: false, shops: [] };
+  const sql = await getSql();
+  const rows = await sql<{
+    id: string;
+    created_at: string | Date;
+    partner_id: string;
+    email: string;
+    shop_name: string;
+    description: string;
+    status: string;
+    decided_at: string | Date | null;
+  }>`
+    select id, created_at, partner_id, email, shop_name, description, status, decided_at
+    from partner_shops
+    order by created_at desc
+    limit 100
+  `;
+  return {
+    operational: true,
+    authorized: true,
+    shops: rows.map((row) => ({
+      id: row.id,
+      createdAt: new Date(row.created_at).toISOString(),
+      partnerId: row.partner_id,
+      email: row.email,
+      shopName: row.shop_name,
+      description: row.description,
+      status: asStatus(row.status),
+      decidedAt: row.decided_at ? new Date(row.decided_at).toISOString() : null,
+    })),
+  };
+}
+
+export async function decidePartnerShop(
+  input: { id: string; status: PartnerStatus },
+  userId: string,
+): Promise<{ ok: boolean }> {
+  assertSameSiteRequest();
+  if (!["en_attente", "verification", "approuvee", "refusee"].includes(input.status)) return { ok: false };
+  const id = input.id.trim().toUpperCase();
+  if (!/^SH-[A-Z0-9]{8}$/.test(id)) return { ok: false };
+  const reception = currentReception();
+  if (!reception.operational) return { ok: false };
+  const sql = await getSql();
+  const users = await sql<{ email: string }>`select email from "user" where id = ${userId} limit 1`;
+  const email = users[0]?.email?.trim().toLowerCase() ?? "";
+  if (!email || !reception.admins.includes(email)) return { ok: false };
+  const updated = await sql<{ id: string }>`
+    update partner_shops
+    set status = ${input.status}, decided_at = now(), decided_by = ${email}
+    where id = ${id}
+    returning id
+  `;
+  return { ok: updated.length > 0 };
+}
+
