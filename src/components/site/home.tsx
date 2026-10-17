@@ -117,14 +117,14 @@ export function HomePage() {
         id="partenariat"
         eyebrow="Partenaires"
         title="Devenir partenaire"
-        lede="Jusqu'au 30 novembre 2026. La demande est vérifiée."
+        lede="Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée."
         className="border-y border-line bg-panel"
       >
         <ol className="mt-6 grid gap-3">
           {[
             "Lire les conditions.",
             "Ouvrir la fiche SidraStart.",
-            "Investir au minimum 1 000 SDA depuis son compte.",
+            "Investir au minimum 2 000 SDA depuis son compte.",
             "Envoyer la demande. Ne jamais donner une clé privée.",
             "Attendre la confirmation.",
           ].map((item, index) => (
@@ -178,11 +178,11 @@ export function HomePage() {
           />
           <Faq
             q="Comment devenir partenaire avant le 30 novembre 2026 ?"
-            a="Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
+            a="Investir au moins 2 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
           />
           <Faq
             q="Investir, partenaire et actionnaire, est-ce la même chose ?"
-            a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 1 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti."
+            a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 2 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti."
           />
           <Faq
             q="Un investissement garantit-il un rendement ?"
