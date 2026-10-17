@@ -113,23 +113,17 @@ function PresentationPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("Deux fonctions distinctes")}</h2>
-          <p className="mt-3 text-muted">
-            {tr("Ces deux portraits n'ont pas le même rôle. Le format est le même : visage entier, fond blanc, nom et fonction en dessous.")}
-          </p>
-          <div className="mt-5 grid gap-8 sm:grid-cols-2">
+          <h2 className="font-display text-2xl font-semibold">{tr("CEO de WIKENVA")}</h2>
+          <div className="mt-5 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
             <Portrait
               src="/media/wikenva-ceo.jpg"
               alt="Portrait de Félix Adjibodou, CEO de WIKENVA."
               name="Félix Adjibodou"
               role="CEO de WIKENVA"
             />
-            <Portrait
-              src="/media/sidra-founder.jpg"
-              alt="Portrait du Dr. Mohammed Al Jefairi."
-              name="Dr. Mohammed Al Jefairi"
-              role="Présenté comme le fondateur de SidraChain"
-            />
+            <p className="max-w-md text-muted">
+              {tr("Félix Adjibodou est le CEO de WIKENVA. Cette page présente uniquement son rôle dans le projet.")}
+            </p>
           </div>
         </section>
 
@@ -164,7 +158,10 @@ function PresentationPage() {
           <p className="mt-4 text-muted">
             {tr("SidraChain est un écosystème blockchain. WIKENVA souhaite s'y développer. Cette page ne présente pas un partenariat officiel.")}
           </p>
-          <div className="mt-5">
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <TextLink to="/sidrachain" variant="ghost" className="w-full sm:w-auto">
+              {tr("Découvrir SidraChain")}
+            </TextLink>
             <ExternalLink href={site.sidrachainUrl} variant="ghost" className="w-full sm:w-auto">
               {tr("Site officiel SidraChain")}
             </ExternalLink>
