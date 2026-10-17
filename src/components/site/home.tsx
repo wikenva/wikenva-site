@@ -1,11 +1,12 @@
-import { narrative, news, site, categoryLabels } from "@/content/site";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { Link } from "@tanstack/react-router";
+import { categoryLabels, narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
 import { PathBoard } from "./paths";
 import { PromotionClock } from "./promotion";
 import { ExternalLink, Eyebrow, PartnerButton, PlatformButton, Section, TextLink } from "./ui";
-import { Link } from "@tanstack/react-router";
 
 export function HomePage() {
   const { lang } = useLang();
@@ -21,32 +22,7 @@ export function HomePage() {
             <p className="mt-2 max-w-xl text-sm text-muted md:text-base">
               {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
             </p>
-            <div className="mt-5 max-h-[32rem] space-y-3 overflow-y-auto overscroll-y-auto pr-1 [scrollbar-color:rgba(232,178,58,0.45)_transparent] [scrollbar-width:thin]">
-              {news.map((item) => (
-                <article key={item.slug} className="rounded-2xl border border-line bg-panel p-4 md:p-5">
-                  {item.image ? (
-                    <img
-                      src={item.image}
-                      alt=""
-                      width={640}
-                      height={360}
-                      loading="lazy"
-                      decoding="async"
-                      className="mb-3 aspect-[16/9] w-full rounded-xl object-cover"
-                    />
-                  ) : null}
-                  <p className="text-xs font-semibold tracking-wide text-gold uppercase">
-                    {tr(categoryLabels[item.category])} · {tr(item.date)}
-                  </p>
-                  <h2 className="mt-2 font-display text-lg font-semibold md:text-xl">
-                    <Link to="/actualites/$slug" params={{ slug: item.slug }} className="hover:text-gold">
-                      {tr(item.title)}
-                    </Link>
-                  </h2>
-                  <p className="mt-2 text-sm text-muted">{tr(item.excerpt)}</p>
-                </article>
-              ))}
-            </div>
+            <NewsCarousel />
             <TextLink to="/actualites" variant="ghost" className="mt-4">
               {tr("Voir toutes les actualités")}
             </TextLink>
@@ -232,6 +208,128 @@ export function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function NewsCarousel() {
+  const tr = useTr();
+  const count = news.length;
+  const [index, setIndex] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const drag = useRef(0);
+  const start = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
+
+  function go(next: number) {
+    if (count < 1) return;
+    setIndex(((next % count) + count) % count);
+  }
+
+  function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    if (event.pointerType === "mouse") return;
+    start.current = { x: event.clientX, y: event.clientY, locked: null };
+    drag.current = 0;
+  }
+
+  function onPointerMove(event: ReactPointerEvent<HTMLDivElement>) {
+    if (!start.current) return;
+    const dx = event.clientX - start.current.x;
+    const dy = event.clientY - start.current.y;
+    if (start.current.locked == null) {
+      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+      start.current.locked = Math.abs(dx) > Math.abs(dy);
+      if (!start.current.locked) {
+        start.current = null;
+        return;
+      }
+      setDragging(true);
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+    drag.current = dx;
+    setOffset(dx);
+  }
+
+  function onPointerUp() {
+    if (!start.current && drag.current === 0 && !dragging) return;
+    const dx = drag.current;
+    start.current = null;
+    drag.current = 0;
+    setDragging(false);
+    setOffset(0);
+    if (dx <= -48) go(index + 1);
+    else if (dx >= 48) go(index - 1);
+  }
+
+  if (count === 0) return null;
+
+  return (
+    <div className="relative mt-5" role="region" aria-roledescription="carousel" aria-label={tr("Actualités WIKENVA")}>
+      <div
+        className="relative h-64 overflow-hidden rounded-3xl border border-line bg-panel sm:h-60"
+        style={{ touchAction: "pan-y" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
+        <div
+          className="flex h-full w-full"
+          style={{
+            transform: `translate3d(calc(${-index * 100}% + ${offset}px), 0, 0)`,
+            transition: dragging ? "none" : "transform 420ms cubic-bezier(.22,.8,.24,1)",
+          }}
+        >
+          {news.map((item, slide) => (
+            <article
+              key={item.slug}
+              className="flex h-full w-full shrink-0 basis-full flex-col overflow-hidden px-5 py-5 md:px-14"
+              aria-hidden={slide !== index}
+            >
+              <p className="text-xs font-semibold tracking-wide text-gold uppercase">
+                {tr(categoryLabels[item.category])} · {tr(item.date)}
+              </p>
+              <h2 className="mt-3 line-clamp-3 font-display text-xl font-semibold md:text-2xl">
+                <Link to="/actualites/$slug" params={{ slug: item.slug }} className="hover:text-gold">
+                  {tr(item.title)}
+                </Link>
+              </h2>
+              <p className="mt-3 line-clamp-4 text-sm text-muted">{tr(item.excerpt)}</p>
+            </article>
+          ))}
+        </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center gap-2">
+          {news.map((item, dot) => (
+            <button
+              key={item.slug}
+              type="button"
+              aria-label={tr("Actualité") + " " + (dot + 1)}
+              aria-current={dot === index}
+              onClick={() => go(dot)}
+              className={
+                "pointer-events-auto h-2 rounded-full transition-all " +
+                (dot === index ? "w-6 bg-gold" : "w-2 bg-white/35")
+              }
+            />
+          ))}
+        </div>
+      </div>
+      <button
+        type="button"
+        aria-label={tr("Actualité précédente")}
+        onClick={() => go(index - 1)}
+        className="absolute top-1/2 left-2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-gold md:grid"
+      >
+        <span aria-hidden>‹</span>
+      </button>
+      <button
+        type="button"
+        aria-label={tr("Actualité suivante")}
+        onClick={() => go(index + 1)}
+        className="absolute top-1/2 right-2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-lg text-gold md:grid"
+      >
+        <span aria-hidden>›</span>
+      </button>
+    </div>
   );
 }
 
