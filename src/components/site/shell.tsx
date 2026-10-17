@@ -239,21 +239,23 @@ function Shell({ children }: { children: ReactNode }) {
       </header>
       <main id="contenu">{children}</main>
       <footer className="border-t border-neutral-200 bg-white pb-8 text-neutral-800 print:hidden">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
-          <div>
+        <div className="border-b border-[#16306e] bg-[#010b40]">
+          <div className="mx-auto flex w-full max-w-6xl items-center px-5 py-4 md:px-8">
             <img
-              src="/media/logo.png"
+              src="/media/logo-official.jpg"
               alt="WIKENVA"
-              width={512}
-              height={512}
+              width={1024}
+              height={1024}
               loading="lazy"
               decoding="async"
-              className="h-14 w-auto"
+              className="h-16 w-16 rounded-2xl object-cover"
             />
-            <p className="mt-2 max-w-xs text-sm text-neutral-600">
-              {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
-            </p>
           </div>
+        </div>
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
+          <p className="max-w-xs text-sm text-neutral-600">
+            {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
+          </p>
           <nav aria-label={tr("Liens du bas de page")}>
             <ul className="flex flex-col gap-3 text-sm md:flex-row md:gap-6">
               <li>
