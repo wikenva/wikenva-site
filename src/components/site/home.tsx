@@ -4,7 +4,7 @@ import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
-import { PathBoard } from "./paths";
+import { PathBoard, HSlide } from "./paths";
 import { PromotionClock } from "./promotion";
 import { ExternalLink, Eyebrow, PartnerButton, PlatformButton, Section, TextLink } from "./ui";
 
@@ -118,7 +118,7 @@ export function HomePage() {
         lede="Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée."
         className="border-y border-line bg-panel"
       >
-        <ol className="mt-6 grid gap-3">
+        <HSlide label={tr("Devenir partenaire")}>
           {[
             "Lire les conditions.",
             "Ouvrir la fiche SidraStart.",
@@ -126,12 +126,12 @@ export function HomePage() {
             "Envoyer la demande. Ne jamais donner une clé privée.",
             "Attendre la confirmation.",
           ].map((item, index) => (
-            <li key={item} className="flex gap-4 rounded-2xl border border-line bg-ink px-4 py-4">
+            <div key={item} className="flex h-full items-center gap-4 rounded-2xl border border-line bg-ink px-4 py-4">
               <span className="font-display text-lg font-semibold text-gold">{index + 1}</span>
               <p>{tr(item)}</p>
-            </li>
+            </div>
           ))}
-        </ol>
+        </HSlide>
       </Section>
 
       <Section
