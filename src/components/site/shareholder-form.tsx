@@ -106,12 +106,12 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
   const amount = parseSda(values.amount);
   const nameOk = values.name.trim().length >= 2;
   const mailOk = emailOk(values.email);
-  const amountOk = amount !== null && amount >= 3000;
+  const amountOk = amount !== null && amount >= 1000;
   const ready = nameOk && mailOk && amountOk && values.continueToSidra;
   const nameError = values.name.trim().length > 0 && !nameOk ? "Indiquez votre nom complet." : undefined;
   const emailError = values.email.trim().length > 0 && !mailOk ? "Indiquez un email valide." : undefined;
   const amountError =
-    values.amount.trim().length > 0 && !amountOk ? "Le montant doit être supérieur ou égal à 3 000 SDA." : undefined;
+    values.amount.trim().length > 0 && !amountOk ? "Le montant doit être supérieur ou égal à 1 000 SDA." : undefined;
 
   function remove(id: string) {
     const next = saved.filter((item) => item.id !== id);
@@ -169,7 +169,7 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
       <Panel>
         <h2 className="font-display text-3xl font-semibold">Devenir actionnaire</h2>
         <p className="mt-3 text-muted">
-          Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 3 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.
+          Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 1 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.
         </p>
         <form className="mt-6 grid gap-5" onSubmit={onSubmit} noValidate>
             <Field
@@ -204,7 +204,7 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
               label="Montant envisagé en SDA"
               value={values.amount}
               error={amountError}
-              hint="Minimum prévu : 3 000 SDA."
+              hint="Minimum prévu : 1 000 SDA."
               inputMode="decimal"
               onChange={(value) => update("amount", value)}
             />
@@ -239,7 +239,7 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                 <div role="status">
                   <p className="font-display text-lg font-semibold text-gold">🚀 Poursuivez votre démarche avec WIKENVA</p>
                   <p className="mt-3 text-sm text-fg">
-                    Vous pouvez accéder au projet Digital Marketplace Ebook Halal sur SidraStart pour consulter les informations disponibles et découvrir les modalités de contribution au développement de la plateforme WIKENVA.
+                    Vous pouvez accéder au projet Digital Marketplace Ebook sur SidraStart pour consulter les informations disponibles et découvrir les modalités de contribution au développement de la plateforme WIKENVA.
                   </p>
                   <p className="mt-3 text-sm text-fg">
                     Cliquez sur le bouton ci-dessous pour accéder à la page du projet sur SidraStart et suivre les étapes proposées pour poursuivre votre démarche.
