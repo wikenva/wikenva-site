@@ -68,6 +68,14 @@ export function HomePage() {
       </Section>
 
       <Section
+        eyebrow="Statut"
+        title="WIKENVA est en cours de développement"
+        lede="Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert."
+      >
+        <TextLink to="/presentation">{tr("Voir la présentation")}</TextLink>
+      </Section>
+
+      <Section
         eyebrow="Mission"
         title="Notre mission et notre vision"
         lede="Créer, partager et découvrir au même endroit."
