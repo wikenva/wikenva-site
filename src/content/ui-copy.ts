@@ -5,7 +5,8 @@ const copy = {
     banner: "Aucun rendement n'est promis. Ce qui n'est pas officiel est indiqué « À compléter ».",
     invest: "Investir sur SidraStart",
     platform: "Plateforme WIKENVA",
-    platformBody: "L'application est en cours de préparation. Elle ouvrira bientôt un accès direct à la marketplace WIKENVA.",
+    platformBody:
+      "L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA.",
     platformSoon: "Bientôt disponible",
     platformFollow: "Suivre les annonces",
     understood: "Compris",
@@ -52,7 +53,8 @@ const copy = {
     banner: "No yield is promised. Anything not official is marked “To be completed”.",
     invest: "Invest on SidraStart",
     platform: "WIKENVA platform",
-    platformBody: "The application is being prepared. It will soon open a direct way into the WIKENVA marketplace.",
+    platformBody:
+      "The interface that brings together readers, content creators and the community is www.wikenva.com. It must be validated by the SidraChain core team before WIKENVA is integrated.",
     platformSoon: "Coming soon",
     platformFollow: "Follow updates",
     understood: "Got it",
