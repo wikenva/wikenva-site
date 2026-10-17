@@ -22,6 +22,7 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as PartenairesRouteImport } from './routes/partenaires'
 import { Route as RisquesRouteImport } from './routes/risques'
+import { Route as SidrachainRouteImport } from './routes/sidrachain'
 import { Route as TokenRouteImport } from './routes/token'
 import { Route as VisionRouteImport } from './routes/vision'
 import { Route as WhitePaperRouteImport } from './routes/white-paper'
@@ -94,6 +95,11 @@ const RisquesRoute = RisquesRouteImport.update({
   path: '/risques',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SidrachainRoute = SidrachainRouteImport.update({
+  id: '/sidrachain',
+  path: '/sidrachain',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TokenRoute = TokenRouteImport.update({
   id: '/token',
   path: '/token',
@@ -139,6 +145,7 @@ export interface FileRoutesByFullPath {
   '/mentions-legales': typeof MentionsLegalesRoute
   '/partenaires': typeof PartenairesRoute
   '/risques': typeof RisquesRoute
+  '/sidrachain': typeof SidrachainRoute
   '/token': typeof TokenRoute
   '/vision': typeof VisionRoute
   '/white-paper': typeof WhitePaperRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/mentions-legales': typeof MentionsLegalesRoute
   '/partenaires': typeof PartenairesRoute
   '/risques': typeof RisquesRoute
+  '/sidrachain': typeof SidrachainRoute
   '/token': typeof TokenRoute
   '/vision': typeof VisionRoute
   '/white-paper': typeof WhitePaperRoute
@@ -182,6 +190,7 @@ export interface FileRoutesById {
   '/mentions-legales': typeof MentionsLegalesRoute
   '/partenaires': typeof PartenairesRoute
   '/risques': typeof RisquesRoute
+  '/sidrachain': typeof SidrachainRoute
   '/token': typeof TokenRoute
   '/vision': typeof VisionRoute
   '/white-paper': typeof WhitePaperRoute
@@ -205,6 +214,7 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/partenaires'
     | '/risques'
+    | '/sidrachain'
     | '/token'
     | '/vision'
     | '/white-paper'
@@ -226,6 +236,7 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/partenaires'
     | '/risques'
+    | '/sidrachain'
     | '/token'
     | '/vision'
     | '/white-paper'
@@ -247,6 +258,7 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/partenaires'
     | '/risques'
+    | '/sidrachain'
     | '/token'
     | '/vision'
     | '/white-paper'
@@ -269,6 +281,7 @@ export interface RootRouteChildren {
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PartenairesRoute: typeof PartenairesRoute
   RisquesRoute: typeof RisquesRoute
+  SidrachainRoute: typeof SidrachainRoute
   TokenRoute: typeof TokenRoute
   VisionRoute: typeof VisionRoute
   WhitePaperRoute: typeof WhitePaperRoute
@@ -370,6 +383,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RisquesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sidrachain': {
+      id: '/sidrachain'
+      path: '/sidrachain'
+      fullPath: '/sidrachain'
+      preLoaderRoute: typeof SidrachainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/token': {
       id: '/token'
       path: '/token'
@@ -429,6 +449,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentionsLegalesRoute: MentionsLegalesRoute,
   PartenairesRoute: PartenairesRoute,
   RisquesRoute: RisquesRoute,
+  SidrachainRoute: SidrachainRoute,
   TokenRoute: TokenRoute,
   VisionRoute: VisionRoute,
   WhitePaperRoute: WhitePaperRoute,
