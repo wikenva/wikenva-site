@@ -21,7 +21,7 @@ export const Route = createFileRoute("/partenaires")({
   head: () =>
     pageMeta(
       "Devenez partenaire de WIKENVA",
-      "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 1 000 SDA sur SidraStart.",
+      "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 2 000 SDA sur SidraStart.",
     ),
   component: PartnersPage,
 });
@@ -86,9 +86,9 @@ function PartnersPage() {
 
         <Panel className="border-gold/50">
           <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Seuil actuel")}</p>
-          <p className="mt-2 font-display text-4xl font-semibold">1 000 SDA</p>
+          <p className="mt-2 font-display text-4xl font-semibold">2 000 SDA</p>
           <p className="mt-3 text-muted">
-            {tr("Minimum indiqué pour la campagne de promotion en cours sur SidraStart. Ce seuil ne confirme pas un partenariat WIKENVA et ne promet aucun rendement.")}
+            {tr("Minimum de 2 000 SDA sur SidraStart pour devenir partenaire. 15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ce seuil ne confirme pas un partenariat et ne promet aucun rendement.")}
           </p>
           <ExternalLink href={site.investUrl ?? ""} variant="gold" className="mt-5 w-full sm:w-auto">
             {tr("Investir sur SidraStart")}
@@ -100,7 +100,7 @@ function PartnersPage() {
           <ol className="mt-5 grid gap-4 md:grid-cols-2">
             <Step icon={Compass} index="1" title="Lire les conditions de partenariat." text="Cette page décrit la promotion en cours. Elle ne valide aucune candidature." />
             <Step icon={Megaphone} index="2" title="Ouvrir la fiche officielle sur SidraStart." text="Le projet s'appelle Digital Marketplace Ebook. Les conditions de contribution sont celles publiées là-bas." />
-            <Step icon={Wallet} index="3" title="Investir depuis son propre compte." text="Minimum de 1 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site." />
+            <Step icon={Wallet} index="3" title="Investir depuis son propre compte." text="Minimum de 2 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site." />
             <Step icon={ShieldCheck} index="4" title="Fournir les informations de vérification." text="Le formulaire demande un nom, un e-mail et, si vous le souhaitez, une référence publique de transaction. N'envoyez jamais une clé privée ou un mot de passe." />
             <Step icon={ShieldCheck} index="5" title="Attendre la confirmation du statut." text="La demande part en attente. Seule une décision d'un administrateur autorisé confirme le partenariat. Après le 30 novembre 2026, les conditions pourront changer et ne sont pas encore définies." />
           </ol>
@@ -124,7 +124,7 @@ function PartnersPage() {
             <Panel>
               <h3 className="font-semibold">{tr("Bonus de partenariat")}</h3>
               <p className="mt-2 text-sm text-muted">
-                {tr("Le taux, la base de calcul, les conditions d'attribution, le délai et la période de validité ne sont pas confirmés. Aucun bonus n'est affiché et aucun versement n'est simulé.")}
+                {tr("15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.")}
               </p>
             </Panel>
           </div>
@@ -140,6 +140,7 @@ function PartnersPage() {
             <li>{tr("L'usage précis des contributions sera publié lorsqu'il sera officiel. Il n'est pas détaillé sur cette page.")}</li>
             <li>{tr("Les conditions doivent rester compréhensibles. Celles qui manquent sont indiquées comme non publiées.")}</li>
             <li>{tr("WIKENVA se présente comme une marketplace d'ebooks et d'activités numériques licites.")}</li>
+            <li>{tr("3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente.")}</li>
             <li>{tr("Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est garanti.")}</li>
             <li>{tr("Les modalités financières doivent être vérifiées par une personne compétente en finance islamique. Ce site ne présente pas de certification de conformité à la charia.")}</li>
           </ul>
@@ -417,7 +418,7 @@ function ApprovedMark() {
 function Faq() {
   const tr = useTr();
   const items = [
-    ["Quel est le minimum requis pour devenir partenaire pendant la promotion ?", "1 000 SDA, pour la campagne de promotion en cours sur SidraStart. Ce minimum ne valide pas la candidature WIKENVA."],
+    ["Quel est le minimum requis pour devenir partenaire pendant la promotion ?", "2 000 SDA, pour la campagne de promotion en cours sur SidraStart. Ce minimum ne valide pas la candidature WIKENVA."],
     ["Comment participer à la campagne WIKENVA sur SidraStart ?", "Ouvrez la fiche officielle du projet sur SidraStart depuis le bouton de cette page, puis suivez les étapes affichées là-bas."],
     ["Comment fonctionne le bonus de partenariat ?", "Il n'est pas publié ici. Le taux, le calcul, les conditions et la période ne sont pas confirmés. Aucun versement n'est simulé."],
     ["Comment ma candidature sera-t-elle vérifiée ?", "Un CEO autorisé peut la consulter, la passer en vérification, l'approuver ou la refuser. Le statut de départ est « en attente »."],
