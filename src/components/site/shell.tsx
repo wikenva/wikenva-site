@@ -261,8 +261,8 @@ function Shell({ children }: { children: ReactNode }) {
               <a href="mailto:wikenva@gmail.com" className="font-semibold text-neutral-900 hover:underline">
                 wikenva@gmail.com
               </a>
-              <a href="tel:+22996412117" className="font-semibold text-neutral-900 hover:underline">
-                +229 96 41 21 17
+              <a href="tel:+2290196412117" className="font-semibold text-neutral-900 hover:underline">
+                +229 01 96 41 21 17
               </a>
             </p>
           </div>
