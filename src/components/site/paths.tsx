@@ -121,9 +121,9 @@ export function HSlide({ label, children }: { label: string; children: ReactNode
   if (count === 0) return null;
 
   return (
-    <div role="region" aria-roledescription="carousel" aria-label={label}>
+    <div className="w-full min-w-0" role="region" aria-roledescription="carousel" aria-label={label}>
       <div
-        className="overflow-hidden"
+        className="w-full min-w-0 overflow-hidden"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -131,15 +131,14 @@ export function HSlide({ label, children }: { label: string; children: ReactNode
         onPointerCancel={onPointerUp}
       >
         <div
-          className="flex items-stretch"
+          className="flex w-full min-w-0 items-stretch"
           style={{
-            width: `${count * 100}%`,
-            transform: `translate3d(calc(${(-index * 100) / count}% + ${offset}px), 0, 0)`,
+            transform: `translate3d(calc(${-index * 100}% + ${offset}px), 0, 0)`,
             transition: dragging || reduced ? "none" : "transform 480ms cubic-bezier(.22,.8,.24,1)",
           }}
         >
           {children.map((child, slide) => (
-            <div key={slide} className="shrink-0" style={{ width: `${100 / count}%` }} aria-hidden={slide !== index}>
+            <div key={slide} className="w-full shrink-0" style={{ flex: "0 0 100%" }} aria-hidden={slide !== index}>
               {child}
             </div>
           ))}
