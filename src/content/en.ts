@@ -1030,4 +1030,6 @@ export const en: Record<string, string> = {
   "Cela ne confirme pas un investissement sur SidraStart.": "This does not confirm an investment on SidraStart.",
   "Ce bouton transmet le nom, l'e-mail, l'identifiant SidraChain s'il est rempli et le montant aux administrateurs autorisés. Il ne confirme pas un investissement sur SidraStart.": "This button sends the name, the email, the SidraChain identifier if filled in, and the amount to authorised administrators. It does not confirm an investment on SidraStart.",
   "Transmise": "Sent",
+  "Félix Adjibodou est le CEO de WIKENVA. Cette page présente uniquement son rôle dans le projet.": "Félix Adjibodou is the CEO of WIKENVA. This page presents only his role in the project.",
+  "Retour à WIKENVA": "Back to WIKENVA",
 };
