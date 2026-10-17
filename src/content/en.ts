@@ -726,6 +726,8 @@ export const en: Record<string, string> = {
   "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
   "Gmail": "Gmail",
   "Numéro": "Phone",
+  "Entrepreneur": "Entrepreneur",
+  "Autre": "Other",
   "Éditeur — non publié": "Publisher — not published",
   "La forme juridique, le siège, le numéro d'immatriculation et le directeur de la publication ne figurent dans aucun document officiel déjà intégré. Ils ne sont pas inventés ici.":
     "The legal form, the registered office, the registration number and the publication director are not in any official document already included. They are not invented here.",
