@@ -24,6 +24,7 @@ const copy = {
     nav: {
       "/vision": "Vision",
       "/partenaires": "Partenaires",
+      "/presentation": "Présentation",
       "/communaute": "Communauté",
       "/feuille-de-route": "Feuille de route",
       "/token": "Token",
@@ -70,6 +71,7 @@ const copy = {
     nav: {
       "/vision": "Vision",
       "/partenaires": "Partners",
+      "/presentation": "Presentation",
       "/communaute": "Community",
       "/feuille-de-route": "Roadmap",
       "/token": "Token",
