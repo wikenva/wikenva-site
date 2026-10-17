@@ -123,7 +123,7 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
   if (count === 0) return null;
 
   return (
-    <div className={"w-full min-w-0 " + className} role="region" aria-roledescription="carousel" aria-label={label}>
+    <div className={"grid w-full min-w-0 max-w-full grid-cols-1 overflow-hidden " + className} role="region" aria-roledescription="carousel" aria-label={label}>
       <div
         className="w-full min-w-0 overflow-hidden"
         style={{ touchAction: "pan-y" }}
@@ -140,7 +140,7 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
           }}
         >
           {children.map((child, slide) => (
-            <div key={slide} className="w-full shrink-0" style={{ flex: "0 0 100%" }} aria-hidden={slide !== index}>
+            <div key={slide} className="min-w-0 max-w-full shrink-0 overflow-hidden" style={{ flex: "0 0 100%" }} aria-hidden={slide !== index}>
               {child}
             </div>
           ))}
