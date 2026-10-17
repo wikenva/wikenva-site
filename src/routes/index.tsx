@@ -9,10 +9,7 @@ export const Route = createFileRoute("/")({
       "WIKENVA — Site officiel",
       "Présentation officielle de WIKENVA et du WIKENVA TOKEN : vision, feuille de route, token, investisseurs et communauté.",
     ),
-    links: [
-      { rel: "preload", as: "image", href: "/media/logo-official.jpg" },
-      { rel: "preload", as: "image", href: "/media/globe.jpg" },
-    ],
+    links: [{ rel: "preload", as: "image", href: "/media/logo-official.jpg" }],
   }),
   component: function Home() {
     return (
