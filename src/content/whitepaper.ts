@@ -62,15 +62,15 @@ export const paperSections: PaperSection[] = [
       {
         type: "p",
         text: t(
-          "WIKENVA se décrit comme une marketplace digitale d'ebooks halal et, plus largement, comme un espace pour des produits numériques. Le slogan retenu est : « Une vision claire, un écosystème pour tous. »",
-          "WIKENVA describes itself as a digital marketplace for halal ebooks and, more broadly, as a place for digital products. The chosen slogan is: “A clear vision, an ecosystem for everyone.”",
+          "WIKENVA se décrit comme une marketplace digitale d'ebooks et, plus largement, comme un espace pour des produits numériques. Le slogan retenu est : « Une vision claire, un écosystème pour tous. »",
+          "WIKENVA describes itself as a digital marketplace for ebooks and, more broadly, as a place for digital products. The chosen slogan is: “A clear vision, an ecosystem for everyone.”",
         ),
       },
       {
         type: "p",
         text: t(
-          "Aujourd'hui, le projet dispose d'un site de présentation, d'une fiche sur SidraStart intitulée Digital Marketplace Ebook Halal, et de canaux communautaires publiés. L'application WIKENVA n'est pas en ligne. Aucune statistique d'usage n'est publiée, parce qu'aucune n'a été fournie.",
-          "Today the project has a presentation website, a SidraStart page titled Digital Marketplace Ebook Halal, and published community channels. The WIKENVA application is not online. No usage statistics are published, because none have been provided.",
+          "Aujourd'hui, le projet dispose d'un site de présentation, d'une fiche sur SidraStart intitulée Digital Marketplace Ebook, et de canaux communautaires publiés. L'application WIKENVA n'est pas en ligne. Aucune statistique d'usage n'est publiée, parce qu'aucune n'a été fournie.",
+          "Today the project has a presentation website, a SidraStart page titled Digital Marketplace Ebook, and published community channels. The WIKENVA application is not online. No usage statistics are published, because none have been provided.",
         ),
       },
     ],
@@ -191,8 +191,8 @@ export const paperSections: PaperSection[] = [
       {
         type: "p",
         text: t(
-          "WIKENVA se situe dans l'écosystème SidraChain. Le site de cet écosystème est sidrachain.com. La fiche de campagne indiquée est la page SidraStart du projet Digital Marketplace Ebook Halal.",
-          "WIKENVA sits in the SidraChain ecosystem. That ecosystem's website is sidrachain.com. The stated campaign page is the SidraStart page for Digital Marketplace Ebook Halal.",
+          "WIKENVA se situe dans l'écosystème SidraChain. Le site de cet écosystème est sidrachain.com. La fiche de campagne indiquée est la page SidraStart du projet Digital Marketplace Ebook.",
+          "WIKENVA sits in the SidraChain ecosystem. That ecosystem's website is sidrachain.com. The stated campaign page is the SidraStart page for Digital Marketplace Ebook.",
         ),
       },
       {
@@ -240,8 +240,8 @@ export const paperSections: PaperSection[] = [
       {
         type: "p",
         text: t(
-          "Une campagne de contribution est présentée sur SidraStart. Le seuil indiqué pour la promotion en cours est de 3 000 SDA, selon les conditions officielles de cette campagne. La date de fin indiquée pour cette promotion est le 25 décembre 2026.",
-          "A contribution campaign is presented on SidraStart. The threshold shown for the current promotion is 3,000 SDA, under that campaign's official conditions. The end date stated for this promotion is 25 December 2026.",
+          "Une campagne de contribution est présentée sur SidraStart. Le seuil indiqué pour la promotion en cours est de 1 000 SDA, selon les conditions officielles de cette campagne. La date de fin indiquée pour cette promotion est le 25 décembre 2026.",
+          "A contribution campaign is presented on SidraStart. The threshold shown for the current promotion is 1,000 SDA, under that campaign's official conditions. The end date stated for this promotion is 25 December 2026.",
         ),
       },
       {
@@ -261,8 +261,8 @@ export const paperSections: PaperSection[] = [
       {
         type: "p",
         text: t(
-          "WIKENVA exprime l'intention de proposer des activités numériques licites et des ebooks présentés comme halal. Les conditions d'une transaction doivent rester compréhensibles. Aucun rendement n'est garanti.",
-          "WIKENVA states an intention to offer lawful digital activities and ebooks presented as halal. The terms of a transaction should stay understandable. No yield is guaranteed.",
+          "WIKENVA exprime l'intention de proposer des activités numériques licites et des ebooks. Les conditions d'une transaction doivent rester compréhensibles. Aucun rendement n'est garanti.",
+          "WIKENVA states an intention to offer lawful digital activities and ebooks. The terms of a transaction should stay understandable. No yield is guaranteed.",
         ),
       },
       {
