@@ -29,7 +29,7 @@ function InvestorsPage() {
         <div className="flex flex-col gap-4">
           <InvestActions />
           <p className="text-sm text-muted">
-            {tr("« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook Halal. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.")}
+            {tr("« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.")}
           </p>
         </div>
         <PathBoard here="shareholder" />
@@ -37,7 +37,7 @@ function InvestorsPage() {
           <h2 className="font-display text-3xl font-semibold">{tr("Programme actionnaires")}</h2>
           <p className="mt-3 max-w-3xl text-muted">{tr(site.shareholderProgram.revenueNote)}</p>
           <p className="mt-3 max-w-3xl text-sm text-muted">
-            {tr("Ce programme n'est pas la promotion partenaire à 3 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.")}
+            {tr("Ce programme n'est pas la promotion partenaire à 1 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.")}
           </p>
           <div className="mt-6">
             <ShareholderAccess />
