@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
+import { Portrait } from "@/components/site/portrait";
 import { ExternalLink } from "@/components/site/ui";
 import { useTr } from "@/lib/locale";
 
@@ -54,18 +55,12 @@ function SidraChainPage() {
 
       <div className="mx-auto grid w-full max-w-3xl gap-10 px-5 py-8 md:px-8 md:py-12">
         <section>
-          <figure className="w-full max-w-[25rem]">
-            <img
-              src="/media/sidra-founder.jpg"
-              alt={tr("Portrait du Dr. Mohammed Al Jefairi.")}
-              width={800}
-              height={900}
-              decoding="async"
-              className="h-auto w-full bg-white object-contain"
-            />
-            <figcaption className="mt-4 font-display text-2xl font-semibold">{tr("Dr. Mohammed Al Jefairi")}</figcaption>
-          </figure>
-          <p className="mt-1 text-sm text-gold">{tr("Présenté comme le fondateur de SidraChain")}</p>
+          <Portrait
+            src="/media/sidra-founder.jpg"
+            alt="Portrait du Dr. Mohammed Al Jefairi."
+            name="Dr. Mohammed Al Jefairi"
+            role="Présenté comme le fondateur de SidraChain"
+          />
           <p className="mt-3 text-muted">
             {tr("Le Dr. Mohammed Al Jefairi, souvent désigné par les initiales MJ, est présenté comme un entrepreneur, inventeur et auteur qatari associé au projet SidraChain.")}
           </p>
