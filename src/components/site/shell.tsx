@@ -155,7 +155,7 @@ function Shell({ children }: { children: ReactNode }) {
               fetchPriority="high"
               className="h-9 w-9 shrink-0 rounded-lg object-cover md:h-10 md:w-10"
             />
-            <span className="truncate font-display text-sm font-semibold tracking-[0.16em] text-fg sm:text-base">
+            <span className="truncate font-display text-base font-semibold tracking-[0.08em] text-fg sm:text-lg">
               WIKENVA
             </span>
           </Link>
