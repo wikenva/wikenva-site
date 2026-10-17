@@ -97,8 +97,9 @@ html.is-ready #boot {
 }
 
 .boot-mark {
-  width: min(16rem, 70vw);
+  width: min(9rem, 46vw);
   height: auto;
+  animation: boot-in 0.8s cubic-bezier(0.22, 0.8, 0.24, 1) both, boot-float 2.4s ease-in-out 0.8s infinite;
 }
 
 .boot-spin {
@@ -127,9 +128,34 @@ html.is-ready #boot {
   }
 }
 
+@keyframes boot-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes boot-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .boot-mark,
   .boot-spin {
     animation: none;
+  }
+
+  .boot-spin {
     border-color: #e8b23a;
   }
 }
