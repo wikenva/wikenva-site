@@ -143,7 +143,7 @@ function Shell({ children }: { children: ReactNode }) {
       >
         {text.skip}
       </a>
-      <header className="sticky top-0 z-40 border-b border-line bg-ink/95 backdrop-blur print:hidden">
+      <header className="sticky top-0 z-40 border-b border-line bg-ink print:hidden">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 md:h-16 md:px-8">
           <Link to="/" aria-label="WIKENVA" className="flex min-w-0 items-center gap-2">
             <img
