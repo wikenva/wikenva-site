@@ -98,7 +98,7 @@ export function HomePage() {
           <Step
             index="2"
             title="Les produits numériques"
-            text="Les ebooks halal sont en préparation. Aucun achat sur ce site."
+            text="Les ebooks sont en préparation. Aucun achat sur ce site."
           />
           <Step
             index="3"
@@ -170,7 +170,7 @@ export function HomePage() {
         <div className="grid gap-3">
           <Faq
             q="Qu'est-ce que WIKENVA ?"
-            a="Une marketplace d'ebooks halal, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires."
+            a="Une marketplace d'ebooks, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires."
           />
           <Faq
             q="Peut-on déjà acheter un ebook ?"
