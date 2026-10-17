@@ -162,7 +162,7 @@ export function HomePage() {
         <div className="grid gap-3">
           <Faq
             q="Qu'est-ce que WIKENVA ?"
-            a="Une marketplace d'ebooks, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires."
+            a="L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA."
           />
           <Faq
             q="Peut-on déjà acheter un ebook ?"
