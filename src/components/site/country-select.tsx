@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { filterCountries, findCountry, type CountryOption } from "@/lib/countries";
-import { useTr } from "@/lib/locale";
+import { useLang, useTr } from "@/lib/locale";
 
 export function CountrySelect({
   id,
@@ -17,12 +17,13 @@ export function CountrySelect({
 }) {
   const listId = useId();
   const tr = useTr();
+  const { lang } = useLang();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const root = useRef<HTMLDivElement>(null);
-  const selected = findCountry(value);
-  const results = useMemo(() => filterCountries(query), [query]);
+  const selected = findCountry(value, lang);
+  const results = useMemo(() => filterCountries(query, lang), [query, lang]);
 
   useEffect(() => {
     if (!open) return;
