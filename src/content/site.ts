@@ -268,6 +268,19 @@ export const principles = [
 
 export const news: NewsItem[] = [
   {
+    slug: "interface-wikenva",
+    title: "L'interface WIKENVA est www.wikenva.com",
+    date: "17 octobre 2026",
+    category: "annonce",
+    excerpt:
+      "Elle réunira lecteurs, auteurs, créateurs et communauté. L'intégration attend l'examen de la Core Team de SidraChain.",
+    paragraphs: [
+      "Le site officiel de l'interface WIKENVA est www.wikenva.com. Cette plateforme a pour vocation de réunir les lecteurs, les auteurs, les créateurs de contenu, les créateurs de produits numériques et la communauté autour d'un écosystème de partage de connaissances, de collaboration et d'opportunités.",
+      "Avant toute intégration officielle à l'écosystème SidraChain, WIKENVA devra être présentée à la Core Team de SidraChain pour examen et validation, conformément aux procédures applicables.",
+      "L'ambition est de développer une plateforme structurée, professionnelle et utile à la communauté, tout en respectant les exigences de l'écosystème SidraChain.",
+    ],
+  },
+  {
     slug: "promotion-partenaire",
     title: "La promotion partenaire est ouverte",
     date: "17 octobre 2026",
