@@ -3,6 +3,9 @@ export const en: Record<string, string> = {
   "À compléter": "To be completed",
   "À préciser": "To be specified",
   "Une vision claire, un écosystème pour tous.": "A clear vision, an ecosystem for everyone.",
+  "Actualités WIKENVA": "WIKENVA News",
+  "Annonces, mises à jour et événements confirmés de la plateforme.":
+    "Confirmed announcements, updates and events from the platform.",
   "100 000 000 actions": "100,000,000 shares",
   "1 000 € en SDA": "1,000 EUR in SDA",
 
