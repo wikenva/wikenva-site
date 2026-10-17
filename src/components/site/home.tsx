@@ -1,10 +1,11 @@
-import { narrative, site } from "@/content/site";
+import { narrative, news, site, categoryLabels } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
 import { PathBoard } from "./paths";
 import { PromotionClock } from "./promotion";
 import { ExternalLink, Eyebrow, PartnerButton, PlatformButton, Section, TextLink } from "./ui";
+import { Link } from "@tanstack/react-router";
 
 export function HomePage() {
   const { lang } = useLang();
@@ -14,20 +15,58 @@ export function HomePage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-5 py-10 md:px-8 md:py-16 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-8 px-5 py-8 md:px-8 md:py-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="min-w-0">
+            <h1 className="font-display text-3xl font-semibold tracking-wide md:text-4xl">{tr("Actualités WIKENVA")}</h1>
+            <p className="mt-2 max-w-xl text-sm text-muted md:text-base">
+              {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
+            </p>
+            <div className="mt-5 max-h-[32rem] space-y-3 overflow-y-auto overscroll-y-auto pr-1 [scrollbar-color:rgba(232,178,58,0.45)_transparent] [scrollbar-width:thin]">
+              {news.map((item) => (
+                <article key={item.slug} className="rounded-2xl border border-line bg-panel p-4 md:p-5">
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt=""
+                      width={640}
+                      height={360}
+                      loading="lazy"
+                      decoding="async"
+                      className="mb-3 aspect-[16/9] w-full rounded-xl object-cover"
+                    />
+                  ) : null}
+                  <p className="text-xs font-semibold tracking-wide text-gold uppercase">
+                    {tr(categoryLabels[item.category])} · {tr(item.date)}
+                  </p>
+                  <h2 className="mt-2 font-display text-lg font-semibold md:text-xl">
+                    <Link to="/actualites/$slug" params={{ slug: item.slug }} className="hover:text-gold">
+                      {tr(item.title)}
+                    </Link>
+                  </h2>
+                  <p className="mt-2 text-sm text-muted">{tr(item.excerpt)}</p>
+                </article>
+              ))}
+            </div>
+            <TextLink to="/actualites" variant="ghost" className="mt-4">
+              {tr("Voir toutes les actualités")}
+            </TextLink>
+          </div>
           <div>
-            <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Écosystème SidraChain")}</p>
-            <h1 className="mt-3 font-display text-5xl leading-none font-semibold md:text-7xl">{site.name}</h1>
-            <p className="mt-4 font-display text-xl text-gold">{tr(site.slogan)}</p>
-            <div className="mt-5 max-w-sm rounded-2xl border border-gold/50 bg-panel p-3">
+            <figure className="overflow-hidden rounded-3xl border border-line">
+              <img
+                src="/media/globe.jpg"
+                alt={tr("Terre reliée par un réseau doré, visuel d'ouverture de WIKENVA.")}
+                width={1920}
+                height={768}
+                fetchPriority="high"
+                decoding="async"
+                className="aspect-[16/10] w-full object-cover"
+              />
+            </figure>
+            <div className="mt-4 max-w-sm rounded-2xl border border-gold/50 bg-panel p-3">
               <PromotionClock compact />
             </div>
-            <p className="mt-4 max-w-xl text-base text-muted md:text-lg">
-              {tr(
-                "Commerce numérique de produits licites, dans le respect des valeurs islamiques. L'application est encore en préparation.",
-              )}
-            </p>
-            <div className="mt-6 flex max-w-md flex-col gap-3">
+            <div className="mt-4 flex max-w-md flex-col gap-3">
               <a href="#decouvrir" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-ink">
                 {text.discover}
               </a>
@@ -37,17 +76,6 @@ export function HomePage() {
               </ExternalLink>
             </div>
           </div>
-          <figure className="overflow-hidden rounded-3xl border border-line">
-            <img
-              src="/media/globe.jpg"
-              alt={tr("Terre reliée par un réseau doré, visuel d'ouverture de WIKENVA.")}
-              width={1920}
-              height={768}
-              fetchPriority="high"
-              decoding="async"
-              className="aspect-[16/10] w-full object-cover"
-            />
-          </figure>
         </div>
       </section>
 
