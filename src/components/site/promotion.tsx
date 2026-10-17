@@ -43,7 +43,7 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
         </p>
       ) : null}
       <p className="mt-3 text-center text-sm leading-relaxed">
-        <span className="font-semibold">{tr("Minimum 1 000 SDA sur SidraStart pour être partenaire.")}</span>
+        <span className="font-semibold">{tr("Minimum 2 000 SDA sur SidraStart pour être partenaire.")}</span>
         <span className="mt-1 block text-gold">{tr("Tout change après cette date.")}</span>
       </p>
     </div>
