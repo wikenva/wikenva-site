@@ -145,7 +145,7 @@ function Shell({ children }: { children: ReactNode }) {
       </a>
       <header className="sticky top-0 z-40 border-b border-line bg-ink/95 backdrop-blur print:hidden">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 md:h-16 md:px-8">
-          <Link to="/" aria-label="WIKENVA" className="flex min-w-0 items-center gap-2.5">
+          <Link to="/" aria-label="WIKENVA" className="flex min-w-0 items-center gap-2">
             <img
               src="/media/logo-mark-ui.webp"
               alt=""
@@ -153,9 +153,9 @@ function Shell({ children }: { children: ReactNode }) {
               height={266}
               decoding="async"
               fetchPriority="high"
-              className="h-8 w-auto shrink-0 md:h-9"
+              className="h-6 w-auto shrink-0 md:h-7"
             />
-            <span className="truncate text-base font-semibold tracking-wide text-fg sm:text-lg">
+            <span className="truncate text-sm font-semibold tracking-wide text-fg sm:text-base">
               WIKENVA
             </span>
           </Link>
