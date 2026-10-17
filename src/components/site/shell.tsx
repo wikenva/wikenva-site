@@ -5,7 +5,6 @@ import { mainNav, moreNav, site, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { LocaleProvider, useLang, useTr, type Lang } from "@/lib/locale";
-import { SocialGrid } from "./blocks";
 import { ExternalLink, PartnerButton } from "./ui";
 
 function isActive(pathname: string, to: string) {
