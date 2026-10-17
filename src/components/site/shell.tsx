@@ -29,13 +29,13 @@ function LanguageMenu() {
     <div className="relative">
       <button
         type="button"
-        className="inline-flex h-12 items-center gap-1.5 rounded-full border border-line px-3 text-xs font-semibold tracking-wide"
+        className="inline-flex h-9 items-center gap-1 rounded-full border border-line px-2.5 text-[11px] font-semibold tracking-wide"
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={text.language}
         onClick={() => setOpen((value) => !value)}
       >
-        <Languages className="size-4" aria-hidden />
+        <Languages className="size-3.5" aria-hidden />
         {lang === "fr" ? "FR" : "EN"}
       </button>
       {open ? (
