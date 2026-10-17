@@ -33,34 +33,38 @@ function SidraChainPage() {
   return (
     <SiteShell>
       <header className="border-b border-line">
-        <div className="mx-auto w-full max-w-3xl px-5 py-8 md:px-8 md:py-12">
+        <div className="mx-auto flex w-full max-w-3xl flex-col items-start gap-6 px-5 py-8 sm:flex-row sm:items-center md:gap-8 md:px-8 md:py-12">
           <img
             src="/media/sidra-logo.png"
             alt={tr("Logo SidraChain")}
-            width={512}
-            height={512}
+            width={1024}
+            height={1024}
             decoding="async"
-            className="h-16 w-16 rounded-2xl border border-line object-contain sm:h-20 sm:w-20"
+            className="h-40 w-40 shrink-0 bg-black object-contain sm:h-44 sm:w-44"
           />
-          <p className="mt-5 text-sm font-semibold tracking-widest text-gold uppercase">{tr("Écosystème")}</p>
-          <h1 className="mt-2 font-display text-3xl font-semibold md:text-5xl">{tr("Découvrir SidraChain")}</h1>
-          <p className="mt-3 max-w-xl text-base text-muted">
-            {tr("Le projet, son fondateur et ses initiatives. À lire avant toute participation. Aucun rendement n'est promis.")}
-          </p>
+          <div>
+            <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Écosystème")}</p>
+            <h1 className="mt-2 font-display text-3xl font-semibold md:text-5xl">{tr("Découvrir SidraChain")}</h1>
+            <p className="mt-3 max-w-xl text-base text-muted">
+              {tr("Le projet, son fondateur et ses initiatives. À lire avant toute participation. Aucun rendement n'est promis.")}
+            </p>
+          </div>
         </div>
       </header>
 
       <div className="mx-auto grid w-full max-w-3xl gap-10 px-5 py-8 md:px-8 md:py-12">
         <section>
-          <img
-            src="/media/sidra-founder.jpg"
-            alt={tr("Portrait du Dr. Mohammed Al Jefairi.")}
-            width={400}
-            height={450}
-            decoding="async"
-            className="h-auto w-full max-w-[16rem] rounded-3xl border border-line object-contain"
-          />
-          <h2 className="mt-4 font-display text-2xl font-semibold">{tr("Dr. Mohammed Al Jefairi")}</h2>
+          <figure className="w-full max-w-[25rem]">
+            <img
+              src="/media/sidra-founder.jpg"
+              alt={tr("Portrait du Dr. Mohammed Al Jefairi.")}
+              width={800}
+              height={900}
+              decoding="async"
+              className="h-auto w-full bg-white object-contain"
+            />
+            <figcaption className="mt-4 font-display text-2xl font-semibold">{tr("Dr. Mohammed Al Jefairi")}</figcaption>
+          </figure>
           <p className="mt-1 text-sm text-gold">{tr("Présenté comme le fondateur de SidraChain")}</p>
           <p className="mt-3 text-muted">
             {tr("Le Dr. Mohammed Al Jefairi, souvent désigné par les initiales MJ, est présenté comme un entrepreneur, inventeur et auteur qatari associé au projet SidraChain.")}
