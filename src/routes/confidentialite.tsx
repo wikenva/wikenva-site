@@ -16,7 +16,7 @@ function PrivacyPage() {
     {
       heading: "Responsable",
       paragraphs: [
-        "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 96 41 21 17.",
+        "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 01 96 41 21 17.",
       ],
     },
     {
