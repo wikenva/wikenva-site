@@ -16,7 +16,7 @@ function PrivacyPage() {
     {
       heading: "Responsable",
       paragraphs: [
-        "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — À compléter.",
+        "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 96 41 21 17.",
       ],
     },
     {
@@ -28,7 +28,7 @@ function PrivacyPage() {
     {
       heading: "Durée et effacement",
       paragraphs: [
-        "Lorsque le contact officiel sera publié, une demande d'accès, de rectification ou d'effacement pourra lui être adressée.",
+        "Une demande d'accès, de rectification ou d'effacement peut être adressée à wikenva@gmail.com.",
       ],
     },
     {
