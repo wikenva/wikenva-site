@@ -94,23 +94,23 @@ export const en: Record<string, string> = {
     "A space for creators, a community for readers, opportunities for everyone.",
   "Donner à chacun la possibilité de créer, de partager, de découvrir et de développer ses projets.":
     "Give everyone the chance to create, share, discover and develop their projects.",
-  "WIKENVA est aussi une marketplace digitale d'ebooks halal. Ensemble, l'ambition est de construire un avenir numérique où chaque talent peut trouver sa place.":
-    "WIKENVA is also a digital marketplace for halal ebooks. Together, the aim is to build a digital future where every talent can find a place.",
+  "WIKENVA est aussi une marketplace digitale d'ebooks. Ensemble, l'ambition est de construire un avenir numérique où chaque talent peut trouver sa place.":
+    "WIKENVA is also a digital marketplace for ebooks. Together, the aim is to build a digital future where every talent can find a place.",
   "Auteurs, lecteurs, créateurs, concepteurs et entrepreneurs évoluent souvent chacun de leur côté. Les talents, les idées et les opportunités restent dispersés.":
     "Authors, readers, creators, designers and entrepreneurs often work apart. Talents, ideas and opportunities stay scattered.",
   "WIKENVA cherche à les rapprocher dans un même espace, sans promettre de résultat chiffré tant qu'il n'est pas officiel.":
     "WIKENVA seeks to bring them together in one space, without promising a numbered result until it is official.",
-  "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook Halal.":
-    "WIKENVA belongs to the SidraChain ecosystem. The official website of that ecosystem is sidrachain.com. Investing goes through SidraStart, on the Digital Marketplace Ebook Halal listing.",
+  "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook.":
+    "WIKENVA belongs to the SidraChain ecosystem. The official website of that ecosystem is sidrachain.com. Investing goes through SidraStart, on the Digital Marketplace Ebook listing.",
   "Le symbole du token, l'adresse du contrat, l'offre et le modèle économique ne sont pas encore renseignés ici. Aucune licence, aucun agrément et aucune statistique ne sont affichés tant qu'ils n'ont pas été fournis.":
     "The token symbol, contract address and economic model are not filled in here yet. No licence, approval or statistic is shown until it has been provided.",
 
   "12 octobre 2026": "12 October 2026",
   "La fiche du projet est ouverte sur SidraStart": "The project listing is open on SidraStart",
-  "WIKENVA, marketplace digitale d'ebooks halal, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.":
-    "WIKENVA, a digital marketplace for halal ebooks, is presented in the SidraChain ecosystem. Investing goes through SidraStart.",
-  "WIKENVA est une marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. La fiche publique du projet porte le nom Digital Marketplace Ebook Halal.":
-    "WIKENVA is a digital marketplace for halal ebooks, in the SidraChain ecosystem. The public project listing is named Digital Marketplace Ebook Halal.",
+  "WIKENVA, marketplace digitale d'ebooks, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.":
+    "WIKENVA, a digital marketplace for ebooks, is presented in the SidraChain ecosystem. Investing goes through SidraStart.",
+  "WIKENVA est une marketplace digitale d'ebooks, dans l'écosystème SidraChain. La fiche publique du projet porte le nom Digital Marketplace Ebook.":
+    "WIKENVA is a digital marketplace for ebooks, in the SidraChain ecosystem. The public project listing is named Digital Marketplace Ebook.",
   "Le bouton Investir de ce site ouvre cette fiche sur SidraStart. Aucun rendement n'est promis ici, et les données du token qui ne sont pas encore officielles restent indiquées « À compléter ».":
     "The Invest button on this site opens that listing on SidraStart. No yield is promised here, and token data that is not yet official stays marked “To be completed”.",
   "L'espace d'information WIKENVA est en ligne": "The WIKENVA information space is online",
@@ -131,8 +131,8 @@ export const en: Record<string, string> = {
   "Les cinq phases publiques du projet. Les statuts et les dates seront complétés par les annonces officielles.":
     "The five public phases of the project. Statuses and dates will be completed by official announcements.",
   "Fiche SidraStart": "SidraStart listing",
-  "Page du projet Digital Marketplace Ebook Halal sur SidraStart, dans l'écosystème SidraChain.":
-    "The Digital Marketplace Ebook Halal project page on SidraStart, in the SidraChain ecosystem.",
+  "Page du projet Digital Marketplace Ebook sur SidraStart, dans l'écosystème SidraChain.":
+    "The Digital Marketplace Ebook project page on SidraStart, in the SidraChain ecosystem.",
   "Site officiel de l'écosystème SidraChain.": "Official website of the SidraChain ecosystem.",
 
   Éditeur: "Publisher",
@@ -271,8 +271,8 @@ export const en: Record<string, string> = {
     "Read this before using an investment link, when one exists, or before sending an application.",
 
   "Écosystème SidraChain": "SidraChain ecosystem",
-  "Marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. Elle réunit auteurs, lecteurs, créateurs, et d'autres encore.":
-    "A digital marketplace for halal ebooks, in the SidraChain ecosystem. It brings together authors, readers, creators, and others.",
+  "Marketplace digitale d'ebooks, dans l'écosystème SidraChain. Elle réunit auteurs, lecteurs, créateurs, et d'autres encore.":
+    "A digital marketplace for ebooks, in the SidraChain ecosystem. It brings together authors, readers, creators, and others.",
   "Terre reliée par un réseau doré, visuel d'ouverture de WIKENVA.":
     "Earth linked by a gold network, the opening visual of WIKENVA.",
   "Visuel d'ouverture. Il évoque un réseau mondial. Il ne représente pas un partenariat, une cotation ou une donnée de marché.":
@@ -450,10 +450,10 @@ export const en: Record<string, string> = {
 
   "Investisseurs et partenaires": "Investors and partners",
   "Lire le projet avant toute décision.": "Read the project before any decision.",
-  "WIKENVA est une marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. Investir ouvre la fiche du projet sur SidraStart. Ce site ne promet aucun rendement.":
-    "WIKENVA is a digital marketplace for halal ebooks, in the SidraChain ecosystem. Invest opens the project listing on SidraStart. This site promises no yield.",
-  "« Investir maintenant » ouvre la fiche Digital Marketplace Ebook Halal sur SidraStart. Vérifiez cette page avant toute décision.":
-    "“Invest now” opens the Digital Marketplace Ebook Halal listing on SidraStart. Check that page before any decision.",
+  "WIKENVA est une marketplace digitale d'ebooks, dans l'écosystème SidraChain. Investir ouvre la fiche du projet sur SidraStart. Ce site ne promet aucun rendement.":
+    "WIKENVA is a digital marketplace for ebooks, in the SidraChain ecosystem. Invest opens the project listing on SidraStart. This site promises no yield.",
+  "« Investir maintenant » ouvre la fiche Digital Marketplace Ebook sur SidraStart. Vérifiez cette page avant toute décision.":
+    "“Invest now” opens the Digital Marketplace Ebook listing on SidraStart. Check that page before any decision.",
   Objectifs: "Goals",
   "Modèle économique": "Economic model",
   "À compléter. Le modèle économique sera présenté lorsqu'il sera officiellement défini. Aucune hypothèse de revenus n'est affichée.":
@@ -604,12 +604,12 @@ export const en: Record<string, string> = {
   "Nous contacter": "Contact us",
   "En savoir plus": "Learn more",
   "Découvrir WIKENVA": "Discover WIKENVA",
-  "WIKENVA réunit auteurs, lecteurs, créateurs et partenaires autour de la création, de la découverte et de la vente de produits numériques. C'est une marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.":
-    "WIKENVA brings together authors, readers, creators and partners around creating, discovering and selling digital products. It is a halal ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
+  "WIKENVA réunit auteurs, lecteurs, créateurs et partenaires autour de la création, de la découverte et de la vente de produits numériques. C'est une marketplace d'ebooks, dans l'écosystème SidraChain. L'application est encore en préparation.":
+    "WIKENVA brings together authors, readers, creators and partners around creating, discovering and selling digital products. It is a ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
   "Un même espace pour les personnes qui créent, qui lisent et qui veulent participer. Le catalogue de produits n'est pas encore ouvert.":
     "One place for people who create, who read and who want to take part. The product catalogue is not open yet.",
-  "Les produits numériques visés sont d'abord des ebooks halal, puis d'autres créations annoncées officiellement. Aucune boutique n'est active sur ce site aujourd'hui.":
-    "The digital products in view are first halal ebooks, then other works announced officially. No shop is active on this site today.",
+  "Les produits numériques visés sont d'abord des ebooks, puis d'autres créations annoncées officiellement. Aucune boutique n'est active sur ce site aujourd'hui.":
+    "The digital products in view are first ebooks, then other works announced officially. No shop is active on this site today.",
   "Notre mission et notre vision": "Our mission and our vision",
   Mission: "Mission",
   "Comment fonctionne WIKENVA ?": "How does WIKENVA work?",
@@ -619,8 +619,8 @@ export const en: Record<string, string> = {
   "La vision, le livre blanc et les pages du site disent ce qui est confirmé. Ce qui manque est indiqué, pas inventé.":
     "The vision, the white paper and the site pages say what is confirmed. What is missing is marked, not invented.",
   "Les produits numériques": "Digital products",
-  "La marketplace d'ebooks halal est en préparation. Il n'y a pas encore de catalogue à parcourir ni d'achat sur ce site.":
-    "The halal ebook marketplace is being prepared. There is not yet a catalogue to browse or a purchase on this site.",
+  "La marketplace d'ebooks est en préparation. Il n'y a pas encore de catalogue à parcourir ni d'achat sur ce site.":
+    "The ebook marketplace is being prepared. There is not yet a catalogue to browse or a purchase on this site.",
   "La communauté": "The community",
   "Les annonces officielles passent par les canaux Facebook, WhatsApp, Telegram et X publiés sur la page Communauté.":
     "Official announcements go through the Facebook, WhatsApp, Telegram and X channels published on the Community page.",
@@ -629,8 +629,8 @@ export const en: Record<string, string> = {
     "You can ask to become a partner, or open the project page on SidraStart. No yield is promised.",
   "Pendant la promotion SidraStart, qui se termine le 30 novembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification.":
     "During the SidraStart promotion, which ends on 30 November 2026, a partnership request can be submitted. It still has to be verified.",
-  "Les personnes qui investissent au minimum 1 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 30 novembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.":
-    "People who invest at least 1,000 SDA in the Digital Marketplace Ebook Halal project, from their own SidraStart account, can ask for partner status. The investment is made on SidraStart, not on this site. After 30 November 2026 the conditions may change: they are not defined yet. No yield is guaranteed.",
+  "Les personnes qui investissent au minimum 1 000 SDA dans le projet Digital Marketplace Ebook, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 30 novembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.":
+    "People who invest at least 1,000 SDA in the Digital Marketplace Ebook project, from their own SidraStart account, can ask for partner status. The investment is made on SidraStart, not on this site. After 30 November 2026 the conditions may change: they are not defined yet. No yield is guaranteed.",
   "Lire les conditions de partenariat sur cette page.": "Read the partnership conditions on this page.",
   "Ouvrir la fiche officielle du projet sur SidraStart.": "Open the official project page on SidraStart.",
   "Investir au minimum 1 000 SDA depuis son propre compte SidraStart.":
@@ -640,12 +640,12 @@ export const en: Record<string, string> = {
   "Attendre la confirmation du statut. Une demande envoyée n'est pas une approbation.":
     "Wait for confirmation of the status. A submitted request is not an approval.",
   "SidraChain et SidraStart": "SidraChain and SidraStart",
-  "WIKENVA s'inscrit dans l'écosystème SidraChain. La fiche publique du projet s'appelle Digital Marketplace Ebook Halal.":
-    "WIKENVA belongs to the SidraChain ecosystem. The public project page is called Digital Marketplace Ebook Halal.",
+  "WIKENVA s'inscrit dans l'écosystème SidraChain. La fiche publique du projet s'appelle Digital Marketplace Ebook.":
+    "WIKENVA belongs to the SidraChain ecosystem. The public project page is called Digital Marketplace Ebook.",
   "Questions fréquentes": "Frequently asked questions",
   "Qu'est-ce que WIKENVA ?": "What is WIKENVA?",
-  "Une marketplace d'ebooks halal en préparation, dans l'écosystème SidraChain. Elle vise à réunir auteurs, lecteurs, créateurs, entrepreneurs et partenaires.":
-    "A halal ebook marketplace being prepared, in the SidraChain ecosystem. It aims to bring together authors, readers, creators, entrepreneurs and partners.",
+  "Une marketplace d'ebooks en préparation, dans l'écosystème SidraChain. Elle vise à réunir auteurs, lecteurs, créateurs, entrepreneurs et partenaires.":
+    "An ebook marketplace being prepared, in the SidraChain ecosystem. It aims to bring together authors, readers, creators, entrepreneurs and partners.",
   "Peut-on déjà acheter un ebook ?": "Can I already buy an ebook?",
   "Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits.":
     "No. The application is being prepared. This site presents the project. It does not sell products yet.",
@@ -668,8 +668,8 @@ export const en: Record<string, string> = {
   "Cette page décrit la promotion en cours. Elle ne valide aucune candidature.":
     "This page describes the current promotion. It does not approve any application.",
   "Ouvrir la fiche officielle sur SidraStart.": "Open the official page on SidraStart.",
-  "Le projet s'appelle Digital Marketplace Ebook Halal. Les conditions de contribution sont celles publiées là-bas.":
-    "The project is called Digital Marketplace Ebook Halal. The contribution conditions are those published there.",
+  "Le projet s'appelle Digital Marketplace Ebook. Les conditions de contribution sont celles publiées là-bas.":
+    "The project is called Digital Marketplace Ebook. The contribution conditions are those published there.",
   "Investir depuis son propre compte.": "Invest from your own account.",
   "Minimum de 1 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site.":
     "A minimum of 1,000 SDA during the promotion, which ends on 30 November 2026. The investment is not made on this site.",
@@ -687,8 +687,8 @@ export const en: Record<string, string> = {
   "Trois parcours, trois décisions": "Three paths, three decisions",
   "Investir, devenir partenaire et rejoindre le programme actionnaires ne sont pas la même chose. Aucun de ces parcours ne promet un rendement.":
     "Investing, becoming a partner and joining the shareholder programme are not the same thing. None of these paths promises a yield.",
-  "Ouvre la fiche Digital Marketplace Ebook Halal. L'investissement se fait sur votre compte SidraStart. Il ne vous inscrit pas comme partenaire et ne vous donne pas le statut d'actionnaire.":
-    "Opens the Digital Marketplace Ebook Halal page. The investment is made on your SidraStart account. It does not register you as a partner and it does not make you a shareholder.",
+  "Ouvre la fiche Digital Marketplace Ebook. L'investissement se fait sur votre compte SidraStart. Il ne vous inscrit pas comme partenaire et ne vous donne pas le statut d'actionnaire.":
+    "Opens the Digital Marketplace Ebook page. The investment is made on your SidraStart account. It does not register you as a partner and it does not make you a shareholder.",
   "Jusqu'au 30 novembre 2026, après au moins 1 000 SDA investis sur SidraStart, une demande peut être vérifiée. Le statut n'est pas automatique. Les conditions d'après cette date ne sont pas définies.":
     "Until 30 November 2026, after at least 1,000 SDA invested on SidraStart, a request can be checked. The status is not automatic. The conditions after that date are not defined.",
   "WIKENVA prévoit d'allouer 15 % des revenus de la plateforme aux actionnaires, selon des modalités encore à publier. Ce n'est pas la promotion à 1 000 SDA, et ce n'est pas un rendement garanti.":
@@ -713,8 +713,8 @@ export const en: Record<string, string> = {
     "Published identity and identity still missing. Nothing is assumed.",
   "Cette page parle de l'information investisseur et du programme actionnaires. La demande de partenaire est sur une autre page. Aucun rendement n'est promis.":
     "This page is about investor information and the shareholder programme. The partner request is on another page. No yield is promised.",
-  "« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook Halal. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.":
-    "“Invest on SidraStart” opens the Digital Marketplace Ebook Halal page. It creates neither partner status nor shareholder status.",
+  "« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.":
+    "“Invest on SidraStart” opens the Digital Marketplace Ebook page. It creates neither partner status nor shareholder status.",
   "Ce programme n'est pas la promotion partenaire à 1 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.":
     "This programme is not the 1,000 SDA partner promotion, and it is not the same as the investment made on SidraStart.",
   "Ce formulaire n'est pas la demande de partenaire et il ne réalise pas l'investissement SidraStart. Connectez-vous pour l'ouvrir. La connexion ne confirme aucun versement.":
@@ -728,8 +728,8 @@ export const en: Record<string, string> = {
   "Sur SidraStart, pas sur ce site": "On SidraStart, not on this site",
   "Demande sur ce site, après SidraStart": "Request on this site, after SidraStart",
   "Autre formulaire, autres règles": "Another form, other rules",
-  "Vous ouvrez la fiche Digital Marketplace Ebook Halal et vous investissez depuis votre propre compte.":
-    "You open the Digital Marketplace Ebook Halal page and invest from your own account.",
+  "Vous ouvrez la fiche Digital Marketplace Ebook et vous investissez depuis votre propre compte.":
+    "You open the Digital Marketplace Ebook page and invest from your own account.",
   "Cela ne crée pas le statut de partenaire et ne vous inscrit pas au programme actionnaires.":
     "It does not create partner status and it does not enrol you in the shareholder programme.",
   "Jusqu'au 30 novembre 2026, après au moins 1 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
@@ -825,10 +825,10 @@ export const en: Record<string, string> = {
   "Les conditions doivent rester compréhensibles. Celles qui manquent sont indiquées comme non publiées.": "The terms must stay understandable. Missing ones are marked as unpublished.",
   "Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est garanti.": "Crypto-assets can lose all their value. No yield is guaranteed.",
   "Les deux cases sont nécessaires.": "Both boxes are required.",
-  "Les ebooks halal sont en préparation. Aucun achat sur ce site.": "Halal ebooks are being prepared. There is no purchase on this site.",
+  "Les ebooks sont en préparation. Aucun achat sur ce site.": "Halal ebooks are being prepared. There is no purchase on this site.",
   "Les modalités financières doivent être vérifiées par une personne compétente en finance islamique. Ce site ne présente pas de certification de conformité à la charia.": "The financial terms must be checked by someone qualified in Islamic finance. This site does not present a sharia-compliance certificate.",
   "Lire les conditions.": "Read the terms.",
-  "Marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.": "A halal ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
+  "Marketplace d'ebooks, dans l'écosystème SidraChain. L'application est encore en préparation.": "An ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
   "Message de présentation": "Introduction",
   "Minimum 1 000 SDA sur SidraStart pour être partenaire.": "Minimum 1,000 SDA on SidraStart to become a partner.",
   "Minimum indiqué pour la campagne de promotion en cours sur SidraStart. Ce seuil ne confirme pas un partenariat WIKENVA et ne promet aucun rendement.": "Minimum shown for the current SidraStart promotion. This threshold does not confirm a WIKENVA partnership and promises no yield.",
@@ -868,13 +868,13 @@ export const en: Record<string, string> = {
   "Un CEO autorisé peut la consulter, la passer en vérification, l'approuver ou la refuser. Le statut de départ est « en attente ».": "An authorised CEO can review it, mark it under review, approve it or decline it. The starting status is “pending”.",
   "Un avis a été envoyé, sans vos coordonnées.": "A notice was sent, without your contact details.",
   "Une candidature exprime l'intérêt de participer au développement de WIKENVA. Elle ne crée aucun droit.": "An application expresses interest in taking part in WIKENVA's development. It creates no right.",
-  "Une marketplace d'ebooks halal, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires.": "A halal ebook marketplace in SidraChain. It brings together authors, readers, creators and partners.",
+  "Une marketplace d'ebooks, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires.": "An ebook marketplace in SidraChain. It brings together authors, readers, creators and partners.",
   "Uniquement une référence publique. Jamais une phrase secrète ni une clé privée.": "A public reference only. Never a seed phrase or a private key.",
   "Version de relecture du livre blanc. Elle distingue les faits confirmés des points encore ouverts. Elle ne promet aucun rendement.": "Review version of the white paper. It separates confirmed facts from points still open. It promises no yield.",
   "Votre compte est connecté. Inscrivez-vous pour enregistrer votre compte. Cette inscription ne confirme pas un investissement.": "Your account is signed in. Register to save your account. This registration does not confirm an investment.",
   "WIKENVA fait partie de SidraChain.": "WIKENVA is part of SidraChain.",
   "WIKENVA ne promet pas de rendement, de dividende, de rachat ou de performance.": "WIKENVA does not promise a yield, a dividend, a buyback or a performance.",
-  "WIKENVA se présente comme une marketplace d'ebooks halal et d'activités numériques licites.": "WIKENVA presents itself as a marketplace for halal ebooks and lawful digital activities.",
+  "WIKENVA se présente comme une marketplace d'ebooks et d'activités numériques licites.": "WIKENVA presents itself as a marketplace for ebooks and lawful digital activities.",
 
   "WIKENVA veut une plateforme d'achat et de vente de produits numériques licites, dans le respect des principes de l'Islam.": "WIKENVA wants a platform to buy and sell lawful digital products, in line with the principles of Islam.",
   "L'économie visée est responsable : honnêteté, transparence, équité et création de valeur utile.": "The intended economy is responsible: honesty, transparency, fairness and useful value.",
