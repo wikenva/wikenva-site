@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
 import { Portrait } from "@/components/site/portrait";
-import { ExternalLink } from "@/components/site/ui";
+import { ExternalLink, TextLink } from "@/components/site/ui";
 import { useTr } from "@/lib/locale";
 
 export const Route = createFileRoute("/sidrachain")({
@@ -49,6 +49,9 @@ function SidraChainPage() {
             <p className="mt-3 max-w-xl text-base text-muted">
               {tr("Le projet, son fondateur et ses initiatives. À lire avant toute participation. Aucun rendement n'est promis.")}
             </p>
+            <TextLink to="/presentation" variant="ghost" className="mt-5">
+              {tr("Retour à WIKENVA")}
+            </TextLink>
           </div>
         </div>
       </header>
