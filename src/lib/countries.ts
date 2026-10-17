@@ -7,7 +7,10 @@ export type CountryOption = {
   flag: string;
 };
 
-const names = new Intl.DisplayNames(["fr"], { type: "region" });
+const names = {
+  fr: new Intl.DisplayNames(["fr"], { type: "region" }),
+  en: new Intl.DisplayNames(["en"], { type: "region" }),
+};
 
 function flag(iso: string) {
   return iso
@@ -15,17 +18,26 @@ function flag(iso: string) {
     .replace(/./g, (char) => String.fromCodePoint(127397 + char.charCodeAt(0)));
 }
 
-export const countries: CountryOption[] = getCountries()
-  .map((iso) => ({
-    iso,
-    name: names.of(iso) ?? iso,
-    callingCode: getCountryCallingCode(iso),
-    flag: flag(iso),
-  }))
-  .sort((a, b) => a.name.localeCompare(b.name, "fr"));
+function build(lang: "fr" | "en"): CountryOption[] {
+  return getCountries()
+    .map((iso) => ({
+      iso,
+      name: names[lang].of(iso) ?? iso,
+      callingCode: getCountryCallingCode(iso),
+      flag: flag(iso),
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name, lang));
+}
 
-export function findCountry(iso: string) {
-  return countries.find((item) => item.iso === iso) ?? null;
+const lists = {
+  fr: build("fr"),
+  en: build("en"),
+};
+
+export const countries = lists.fr;
+
+export function findCountry(iso: string, lang: "fr" | "en" = "fr") {
+  return lists[lang].find((item) => item.iso === iso) ?? null;
 }
 
 function fold(value: string) {
@@ -35,12 +47,13 @@ function fold(value: string) {
     .toLowerCase();
 }
 
-export function filterCountries(query: string) {
+export function filterCountries(query: string, lang: "fr" | "en" = "fr") {
+  const list = lists[lang];
   const q = fold(query.trim().replace(/^\+/, ""));
-  if (!q) return countries;
-  const exactIso = countries.some((item) => item.iso.toLowerCase() === q);
+  if (!q) return list;
+  const exactIso = list.some((item) => item.iso.toLowerCase() === q);
   const digits = /^\d+$/.test(q);
-  return countries.filter((item) => {
+  return list.filter((item) => {
     const iso = item.iso.toLowerCase();
     if (iso === q) return true;
     if (digits && (item.callingCode === q || (q.length >= 2 && item.callingCode.startsWith(q)))) return true;
