@@ -201,7 +201,7 @@ export function TokenPanel() {
         />
         <figcaption className="border-t border-line px-5 py-4">
           <img
-            src="/media/logo-mark-ui.webp"
+            src="/media/logo-official.jpg"
             alt=""
             width={480}
             height={266}
