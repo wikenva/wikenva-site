@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, Languages, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import { legalNav, mainNav, moreNav, site, socials } from "@/content/site";
+import { mainNav, moreNav, site, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { LocaleProvider, useLang, useTr, type Lang } from "@/lib/locale";
@@ -240,104 +240,78 @@ function Shell({ children }: { children: ReactNode }) {
         ) : null}
       </header>
       <main id="contenu">{children}</main>
-      <footer className="border-t border-line pb-20 print:hidden">
-        <div className="mx-auto grid w-full max-w-6xl gap-6 px-5 py-8 md:grid-cols-4 md:gap-8 md:px-8 md:py-10">
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-3">
-              <img
-                src="/media/logo-mark-ui.webp"
-                alt="WIKENVA"
-                width={480}
-                height={266}
-                loading="lazy"
-                decoding="async"
-                className="h-10 w-auto"
-              />
-            </div>
-            <p className="mt-4 text-sm text-muted">{text.footer.note}</p>
-            <ul className="mt-4 grid gap-2">
-              {socials.map((item) =>
-                item.href ? (
-                  <li key={item.id}>
-                    <a href={item.href} className="text-sm text-muted hover:text-fg" target="_blank" rel="noreferrer">
-                      {item.name}
-                    </a>
-                  </li>
-                ) : null,
-              )}
-            </ul>
-          </div>
+      <footer className="border-t border-neutral-200 bg-white pb-8 text-neutral-800 print:hidden">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
           <div>
-            <h2 className="text-sm font-semibold tracking-widest text-gold uppercase">{text.footer.explore}</h2>
-            <ul className="mt-4 grid gap-2">
-              {[...mainNav, ...moreNav].map((item) => (
-                <li key={item.to}>
-                  <Link to={item.to} className="text-muted hover:text-fg">
-                    {label(item.to, item.label)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <img
+              src="/media/logo.png"
+              alt="WIKENVA"
+              width={512}
+              height={512}
+              loading="lazy"
+              decoding="async"
+              className="h-14 w-auto"
+            />
+            <p className="mt-2 max-w-xs text-sm text-neutral-600">
+              {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
+            </p>
           </div>
-          <div>
-            <h2 className="text-sm font-semibold tracking-widest text-gold uppercase">{text.footer.join}</h2>
-            <ul className="mt-4 grid gap-2">
+          <nav aria-label={tr("Liens du bas de page")}>
+            <ul className="flex flex-col gap-3 text-sm md:flex-row md:gap-6">
               <li>
-                <Link to="/partenaires" className="text-muted hover:text-fg">
-                  {tr("Devenir partenaire")}
+                <Link to="/vision" className="hover:text-neutral-950">
+                  {tr("À propos")}
                 </Link>
               </li>
               <li>
-                <a href={site.investUrl ?? ""} className="text-muted hover:text-fg" target="_blank" rel="noreferrer">
-                  {text.invest}
+                <Link to="/communaute" className="hover:text-neutral-950">
+                  {tr("Contact")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/confidentialite" className="hover:text-neutral-950">
+                  {label("/confidentialite", "Politique de confidentialité")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/conditions" className="hover:text-neutral-950">
+                  {label("/conditions", "Conditions d'utilisation")}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <ul className="flex items-center gap-3">
+            {socials.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.name}
+                  className="grid size-11 place-items-center rounded-full"
+                  style={item.id === "whatsapp" ? { background: "#25D366" } : undefined}
+                >
+                  <img
+                    src={
+                      item.id === "facebook"
+                        ? "/media/social/facebook.svg"
+                        : item.id === "whatsapp"
+                          ? "/media/social/whatsapp.svg"
+                          : item.id === "telegram"
+                            ? "/media/social/telegram.svg"
+                            : "/media/social/x.svg"
+                    }
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="size-6"
+                  />
                 </a>
               </li>
-              <li>
-                <Link to="/communaute" className="text-muted hover:text-fg">
-                  {tr("Nous contacter")}
-                </Link>
-              </li>
-              <li>
-                <Link to="/white-paper" className="text-muted hover:text-fg">
-                  {label("/white-paper", "White paper")}
-                </Link>
-              </li>
-              <li>
-                <a href={site.sidrachainUrl} className="text-muted hover:text-fg" target="_blank" rel="noreferrer">
-                  {text.sidra}
-                </a>
-              </li>
-              <li>
-                <Link to="/administration" className="text-muted hover:text-fg">
-                  {tr("Espace administrateurs")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-sm font-semibold tracking-widest text-gold uppercase">{text.footer.legal}</h2>
-            <ul className="mt-4 grid gap-2">
-              {legalNav.map((item) => (
-                <li key={item.to}>
-                  <Link to={item.to} className="text-muted hover:text-fg">
-                    {label(item.to, item.label)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
-        <div className="mx-auto w-full max-w-6xl border-t border-line px-5 py-6 md:px-8">
-          <h2 className="text-center text-sm font-semibold tracking-widest text-gold uppercase">{text.footer.socials}</h2>
-          <div className="mt-4">
-            <SocialGrid />
-          </div>
-        </div>
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <p className="border-t border-line pt-6 text-sm text-muted">
-            {text.footer.risk}
-          </p>
-        </div>
+        <p className="mx-auto w-full max-w-6xl px-5 text-xs text-neutral-500 md:px-8">{tr("© 2026 WIKENVA")}</p>
       </footer>
     </div>
   );
