@@ -39,6 +39,8 @@ export type NewsItem = {
   category: NewsCategory;
   excerpt: string;
   paragraphs: string[];
+  /** Image optionnelle. Laisser vide tant qu'aucun visuel officiel n'est fourni. */
+  image?: string;
 };
 
 export type SocialLink = {
