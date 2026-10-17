@@ -244,7 +244,7 @@ export const narrative = {
     "Les droits des créateurs et la propriété intellectuelle doivent être protégés. Les activités interdites par les principes de l'Islam sont écartées.",
   ],
   place: [
-    "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook Halal.",
+    "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook.",
     "Toute utilisation de la blockchain, des actifs numériques ou d'un paiement devra être examinée pour sa compatibilité avec les principes de la finance islamique. Ce site ne présente pas de certificat de conformité à la charia.",
   ],
   africa: [
@@ -269,9 +269,9 @@ export const news: NewsItem[] = [
     date: "12 octobre 2026",
     category: "annonce",
     excerpt:
-      "WIKENVA, marketplace digitale d'ebooks halal, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.",
+      "WIKENVA, marketplace digitale d'ebooks, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.",
     paragraphs: [
-      "WIKENVA est une marketplace digitale d'ebooks halal, dans l'écosystème SidraChain. La fiche publique du projet porte le nom Digital Marketplace Ebook Halal.",
+      "WIKENVA est une marketplace digitale d'ebooks, dans l'écosystème SidraChain. La fiche publique du projet porte le nom Digital Marketplace Ebook.",
       "Le bouton Investir de ce site ouvre cette fiche sur SidraStart. Aucun rendement n'est promis ici, et les données du token qui ne sont pas encore officielles restent indiquées « À compléter ».",
     ],
   },
@@ -323,7 +323,7 @@ export const documents: OfficialDocument[] = [
     id: "sidrastart",
     title: "Fiche SidraStart",
     description:
-      "Page du projet Digital Marketplace Ebook Halal sur SidraStart, dans l'écosystème SidraChain.",
+      "Page du projet Digital Marketplace Ebook sur SidraStart, dans l'écosystème SidraChain.",
     href: "https://www.sidrastart.com/project/a05c52a6-22e8-4c81-8049-cb5484422759",
   },
   {
