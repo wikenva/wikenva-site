@@ -77,6 +77,7 @@ function writeApplications(items: Application[]) {
 }
 
 export function ShareholderForm({ account }: { account?: { name: string; email: string } }) {
+  const tr = useTr();
   const [values, setValues] = useState({
     ...empty,
     name: account?.name ?? "",
@@ -108,10 +109,10 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
   const mailOk = emailOk(values.email);
   const amountOk = amount !== null && amount >= 1000;
   const ready = nameOk && mailOk && amountOk && values.continueToSidra;
-  const nameError = values.name.trim().length > 0 && !nameOk ? "Indiquez votre nom complet." : undefined;
-  const emailError = values.email.trim().length > 0 && !mailOk ? "Indiquez un email valide." : undefined;
+  const nameError = values.name.trim().length > 0 && !nameOk ? tr("Indiquez votre nom complet.") : undefined;
+  const emailError = values.email.trim().length > 0 && !mailOk ? tr("Indiquez un email valide.") : undefined;
   const amountError =
-    values.amount.trim().length > 0 && !amountOk ? "Le montant doit être supérieur ou égal à 1 000 SDA." : undefined;
+    values.amount.trim().length > 0 && !amountOk ? tr("Le montant doit être supérieur ou égal à 1 000 SDA.") : undefined;
 
   function remove(id: string) {
     const next = saved.filter((item) => item.id !== id);
@@ -167,9 +168,9 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
   return (
     <div className="grid gap-8">
       <Panel>
-        <h2 className="font-display text-3xl font-semibold">Devenir actionnaire</h2>
+        <h2 className="font-display text-3xl font-semibold">{tr("Devenir actionnaire")}</h2>
         <p className="mt-3 text-muted">
-          Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 1 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.
+          {tr("Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 1 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.")}
         </p>
         <form className="mt-6 grid gap-5" onSubmit={onSubmit} noValidate>
             <Field
@@ -188,14 +189,14 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
               error={emailError}
               autoComplete="email"
               readOnly={Boolean(account)}
-              hint={account ? "Cet e-mail est celui du compte inscrit sur la plateforme." : undefined}
+              hint={account ? tr("Cet e-mail est celui du compte inscrit sur la plateforme.") : undefined}
               onChange={(value) => update("email", value)}
             />
             <Field
               id="sidra"
               label="Nom d'utilisateur SidraChain"
               value={values.sidraUsername}
-              hint="Si vous en avez un. Ce champ n'est pas obligatoire."
+              hint={tr("Si vous en avez un. Ce champ n'est pas obligatoire.")}
               required={false}
               onChange={(value) => update("sidraUsername", value)}
             />
@@ -204,12 +205,12 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
               label="Montant envisagé en SDA"
               value={values.amount}
               error={amountError}
-              hint="Minimum prévu : 1 000 SDA."
+              hint={tr("Minimum prévu : 1 000 SDA.")}
               inputMode="decimal"
               onChange={(value) => update("amount", value)}
             />
             <label className="grid gap-2" htmlFor="message">
-              <span className="text-sm font-semibold">Message facultatif</span>
+              <span className="text-sm font-semibold">{tr("Message facultatif")}</span>
               <textarea
                 id="message"
                 rows={5}
@@ -219,7 +220,7 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                 className="w-full rounded-2xl border border-line bg-ink px-4 py-3 text-fg"
               />
               <span id="message-hint" className="text-sm text-muted">
-                Vous pouvez laisser ce champ vide.
+                {tr("Vous pouvez laisser ce champ vide.")}
               </span>
             </label>
             <label className="flex items-start gap-3 py-1 text-sm">
@@ -229,27 +230,27 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                 onChange={(event) => update("continueToSidra", event.target.checked)}
                 className="mt-1 h-5 w-5 accent-gold"
               />
-              <span>J'ai lu les conditions du programme actionnaires WIKENVA et je souhaite continuer vers SidraStart.</span>
+              <span>{tr("J'ai lu les conditions du programme actionnaires WIKENVA et je souhaite continuer vers SidraStart.")}</span>
             </label>
             <p className="text-sm text-muted">
-              L'envoi d'une candidature ne garantit ni l'acceptation, ni l'obtention de parts, ni un rendement financier.
+              {tr("L'envoi d'une candidature ne garantit ni l'acceptation, ni l'obtention de parts, ni un rendement financier.")}
             </p>
             {ready ? (
               <div className="grid gap-4">
                 <div role="status">
-                  <p className="font-display text-lg font-semibold text-gold">🚀 Poursuivez votre démarche avec WIKENVA</p>
+                  <p className="font-display text-lg font-semibold text-gold">{tr("Poursuivez votre démarche avec WIKENVA")}</p>
                   <p className="mt-3 text-sm text-fg">
-                    Vous pouvez accéder au projet Digital Marketplace Ebook sur SidraStart pour consulter les informations disponibles et découvrir les modalités de contribution au développement de la plateforme WIKENVA.
+                    {tr("Vous pouvez accéder au projet Digital Marketplace Ebook sur SidraStart pour consulter les informations disponibles et découvrir les modalités de contribution au développement de la plateforme WIKENVA.")}
                   </p>
                   <p className="mt-3 text-sm text-fg">
-                    Cliquez sur le bouton ci-dessous pour accéder à la page du projet sur SidraStart et suivre les étapes proposées pour poursuivre votre démarche.
+                    {tr("Cliquez sur le bouton ci-dessous pour accéder à la page du projet sur SidraStart et suivre les étapes proposées pour poursuivre votre démarche.")}
                   </p>
                 </div>
                 <ExternalLink href={SIDRA_PROJECT} variant="gold" className="w-full uppercase tracking-wide">
-                  Investir sur SidraStart
+                  {tr("Investir sur SidraStart")}
                 </ExternalLink>
                 <label className="flex min-h-12 cursor-pointer items-center justify-center rounded-full border border-gold px-5 text-center text-sm font-semibold text-gold">
-                  {capturePending ? "Envoi…" : "Envoie la capture"}
+                  {capturePending ? tr("Envoi…") : tr("Envoyer la capture")}
                   <input
                     type="file"
                     accept="image/png,image/jpeg,image/webp"
@@ -265,10 +266,10 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                 {captureResult ? (
                   <p className="text-sm text-muted" role="status">
                     {captureResult.recorded
-                      ? `Capture enregistrée. Référence ${captureResult.id}. Cela ne confirme pas un investissement sur SidraStart.`
+                      ? `${tr("Capture enregistrée.")} ${tr("Référence")} ${captureResult.id}. ${tr("Cela ne confirme pas un investissement sur SidraStart.")}`
                       : captureResult.error === "file"
-                        ? "La capture doit être une image PNG, JPEG ou WebP de moins de 1,2 Mo. Elle n'a pas été enregistrée."
-                        : "La capture n'a pas été enregistrée. Aucune notification n'a été envoyée."}
+                        ? tr("La capture doit être une image PNG, JPEG ou WebP de moins de 1,2 Mo. Elle n'a pas été enregistrée.")
+                        : tr("La capture n'a pas été enregistrée. Aucune notification n'a été envoyée.")}
                   </p>
                 ) : null}
                 <button
@@ -277,10 +278,10 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                   disabled={recordPending}
                   onClick={recordApplication}
                 >
-                  {recordPending ? "Enregistrement…" : "Enregistrer la candidature au programme actionnaires"}
+                  {recordPending ? tr("Enregistrement…") : tr("Enregistrer la candidature au programme actionnaires")}
                 </button>
                 <p className="text-sm text-muted">
-                  Ce bouton transmet le nom, l'e-mail, l'identifiant SidraChain s'il est rempli et le montant aux administrateurs autorisés. Il ne confirme pas un investissement sur SidraStart.
+                  {tr("Ce bouton transmet le nom, l'e-mail, l'identifiant SidraChain s'il est rempli et le montant aux administrateurs autorisés. Il ne confirme pas un investissement sur SidraStart.")}
                 </p>
                 {recordResult ? <InterestResult result={recordResult} /> : null}
               </div>
@@ -288,11 +289,11 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
           </form>
       </Panel>
       <Panel>
-        <h2 className="font-display text-2xl font-semibold">Demandes conservées sur cet appareil</h2>
+        <h2 className="font-display text-2xl font-semibold">{tr("Demandes conservées sur cet appareil")}</h2>
         {!loaded ? (
-          <p className="mt-3 text-muted">Chargement…</p>
+          <p className="mt-3 text-muted">{tr("Chargement…")}</p>
         ) : saved.length === 0 ? (
-          <p className="mt-3 text-muted">Aucune demande enregistrée dans ce navigateur.</p>
+          <p className="mt-3 text-muted">{tr("Aucune demande enregistrée dans ce navigateur.")}</p>
         ) : (
           <ul className="mt-5 grid gap-4">
             {saved.map((item) => (
@@ -302,14 +303,14 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                 </p>
                 <p className="mt-1 text-sm text-muted">
                   {item.amount}
-                  {item.sidraUsername ? ` · ${item.sidraUsername}` : ""} · {item.transmitted ? "Transmise" : "Locale uniquement"}
+                  {item.sidraUsername ? ` · ${item.sidraUsername}` : ""} · {item.transmitted ? tr("Transmise") : tr("Locale uniquement")}
                 </p>
                 <button
                   type="button"
                   className="mt-3 min-h-11 text-sm font-semibold text-gold"
                   onClick={() => remove(item.id)}
                 >
-                  Effacer de cet appareil
+                  {tr("Effacer de cet appareil")}
                 </button>
               </li>
             ))}
@@ -345,9 +346,10 @@ function Field({
   autoComplete?: string;
   readOnly?: boolean;
 }) {
+  const tr = useTr();
   return (
     <label className="grid gap-2" htmlFor={id}>
-      <span className="text-sm font-semibold">{label}</span>
+      <span className="text-sm font-semibold">{tr(label)}</span>
       <input
         id={id}
         type={type}
@@ -363,12 +365,12 @@ function Field({
       />
       {hint ? (
         <span id={`${id}-hint`} className="text-sm text-muted">
-          {hint}
+          {tr(hint)}
         </span>
       ) : null}
       {error ? (
         <span id={`${id}-error`} className="text-sm text-danger">
-          {error}
+          {tr(error)}
         </span>
       ) : null}
     </label>
