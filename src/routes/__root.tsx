@@ -44,7 +44,7 @@ export const Route = createRootRoute({
           <div>
             <img className="boot-mark" src="/media/logo-mark-ui.webp" alt="WIKENVA" width={480} height={266} decoding="async" />
             <div className="boot-spin" aria-hidden />
-            <p className="boot-label">Chargement</p>
+            <p id="boot-label" className="boot-label">Chargement</p>
           </div>
         </div>
         <PreviewHostBridge />
@@ -53,7 +53,7 @@ export const Route = createRootRoute({
         </AuthProvider>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){var wait=Math.max(0,450-performance.now());setTimeout(function(){document.documentElement.classList.add("is-ready")},wait);setTimeout(function(){document.documentElement.classList.add("is-ready")},8000)})();`,
+            __html: `(function(){try{if(localStorage.getItem("wikenva-lang")==="en"){var n=document.getElementById("boot-label");if(n)n.textContent="Loading"}}catch(e){}var wait=Math.max(0,450-performance.now());setTimeout(function(){document.documentElement.classList.add("is-ready")},wait);setTimeout(function(){document.documentElement.classList.add("is-ready")},8000)})();`,
           }}
         />
         <Scripts />
