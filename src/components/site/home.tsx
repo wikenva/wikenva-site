@@ -182,7 +182,7 @@ export function HomePage() {
           />
           <Faq
             q="Où lire les documents et nous écrire ?"
-            a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant."
+            a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 96 41 21 17."
           />
         </div>
         <div className="mt-6">
