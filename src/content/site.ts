@@ -378,7 +378,7 @@ export const mentionsLegales: ProseBlock[] = [
     heading: "Ce qui est publié",
     paragraphs: [
       "Le site présente le projet WIKENVA. Le contact public passe par les canaux officiels indiqués sur la page Communauté : Facebook, WhatsApp, Telegram et X.",
-      "Gmail : wikenva@gmail.com. Numéro : +229 96 41 21 17.",
+      "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.",
     ],
   },
   {
