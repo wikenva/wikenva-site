@@ -147,13 +147,13 @@ function Shell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 md:h-16 md:px-8">
           <Link to="/" aria-label="WIKENVA" className="flex min-w-0 items-center gap-2.5">
             <img
-              src="/media/logo-official.jpg"
+              src="/media/logo-mark-ui.webp"
               alt=""
-              width={1024}
-              height={1024}
+              width={480}
+              height={266}
               decoding="async"
               fetchPriority="high"
-              className="h-9 w-9 shrink-0 rounded-lg object-cover md:h-10 md:w-10"
+              className="h-8 w-auto shrink-0 md:h-9"
             />
             <span className="truncate text-base font-semibold tracking-wide text-fg sm:text-lg">
               WIKENVA
@@ -242,13 +242,13 @@ function Shell({ children }: { children: ReactNode }) {
         <div className="border-b border-[#16306e] bg-[#010b40]">
           <div className="mx-auto flex w-full max-w-6xl items-center px-5 py-4 md:px-8">
             <img
-              src="/media/logo-official.jpg"
+              src="/media/logo-mark-ui.webp"
               alt="WIKENVA"
-              width={1024}
-              height={1024}
+              width={480}
+              height={266}
               loading="lazy"
               decoding="async"
-              className="h-16 w-16 rounded-2xl object-cover"
+              className="h-12 w-auto"
             />
           </div>
         </div>
