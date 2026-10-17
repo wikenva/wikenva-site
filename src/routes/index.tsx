@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       "Présentation officielle de WIKENVA et du WIKENVA TOKEN : vision, feuille de route, token, investisseurs et communauté.",
     ),
     links: [
-      { rel: "preload", as: "image", href: "/media/logo-mark-ui.webp" },
+      { rel: "preload", as: "image", href: "/media/logo-official.jpg" },
       { rel: "preload", as: "image", href: "/media/globe.jpg" },
     ],
   }),
