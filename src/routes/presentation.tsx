@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, Cpu, PenLine, Store, Sparkles, Users } from "lucide-react";
 import { pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
+import { Portrait } from "@/components/site/portrait";
 import { ExternalLink, TextLink } from "@/components/site/ui";
 import { useTr } from "@/lib/locale";
 
@@ -45,6 +46,13 @@ const spaces = [
     title: "Technologies avancées pour les créateurs",
     text: "Des outils envisagés pour la création et le développement d'une audience. Ils ne sont pas en service.",
   },
+] as const;
+
+const products = [
+  { title: "Ebooks", text: "Livres numériques. Pas encore en vente." },
+  { title: "Formations", text: "Parcours de formation. Pas encore en vente." },
+  { title: "Logiciels", text: "Outils numériques. Pas encore en vente." },
+  { title: "Modèles numériques", text: "Modèles et ressources. Pas encore en vente." },
 ] as const;
 
 function PresentationPage() {
@@ -104,22 +112,41 @@ function PresentationPage() {
           </ol>
         </section>
 
-        <section className="rounded-3xl border border-line p-5">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-            <img
+        <section>
+          <h2 className="font-display text-2xl font-semibold">{tr("Deux fonctions distinctes")}</h2>
+          <p className="mt-3 text-muted">
+            {tr("Ces deux portraits n'ont pas le même rôle. Le format est le même : visage entier, fond blanc, nom et fonction en dessous.")}
+          </p>
+          <div className="mt-5 grid gap-8 sm:grid-cols-2">
+            <Portrait
               src="/media/wikenva-ceo.jpg"
-              alt={tr("Portrait de Félix Adjibodou, CEO de WIKENVA.")}
-              width={1145}
-              height={1374}
-              decoding="async"
-              className="h-auto w-full max-w-[16rem] bg-white object-contain sm:max-w-[18rem]"
+              alt="Portrait de Félix Adjibodou, CEO de WIKENVA."
+              name="Félix Adjibodou"
+              role="CEO de WIKENVA"
             />
-            <div>
-              <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("WIKENVA")}</p>
-              <h2 className="mt-2 font-display text-2xl font-semibold">{tr("Félix Adjibodou")}</h2>
-              <p className="mt-1 text-sm text-gold">{tr("CEO de WIKENVA")}</p>
-            </div>
+            <Portrait
+              src="/media/sidra-founder.jpg"
+              alt="Portrait du Dr. Mohammed Al Jefairi."
+              name="Dr. Mohammed Al Jefairi"
+              role="Présenté comme le fondateur de SidraChain"
+            />
           </div>
+        </section>
+
+        <section>
+          <h2 className="font-display text-2xl font-semibold">{tr("Produits envisagés")}</h2>
+          <p className="mt-3 text-muted">
+            {tr("La boutique n'est pas ouverte. Aucun prix, aucun avis et aucun chiffre de vente ne sont affichés.")}
+          </p>
+          <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+            {products.map((item) => (
+              <li key={item.title} className="rounded-3xl border border-line bg-ink p-5">
+                <p className="text-sm font-semibold text-gold">{tr("Pas encore en vente")}</p>
+                <h3 className="mt-2 font-display text-lg font-semibold">{tr(item.title)}</h3>
+                <p className="mt-2 text-sm text-muted">{tr(item.text)}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section>
@@ -137,18 +164,6 @@ function PresentationPage() {
           <p className="mt-4 text-muted">
             {tr("SidraChain est un écosystème blockchain. WIKENVA souhaite s'y développer. Cette page ne présente pas un partenariat officiel.")}
           </p>
-          <figure className="mt-5 w-full max-w-[18rem]">
-            <img
-              src="/media/sidra-founder.jpg"
-              alt={tr("Portrait du Dr. Mohammed Al Jefairi.")}
-              width={800}
-              height={900}
-              decoding="async"
-              className="h-auto w-full bg-white object-contain"
-            />
-            <figcaption className="mt-3 font-semibold">{tr("Dr. Mohammed Al Jefairi")}</figcaption>
-            <p className="mt-1 text-sm text-muted">{tr("Présenté comme le fondateur de SidraChain. Photo fournie pour cette page, sous réserve des sources officielles.")}</p>
-          </figure>
           <div className="mt-5">
             <ExternalLink href={site.sidrachainUrl} variant="ghost" className="w-full sm:w-auto">
               {tr("Site officiel SidraChain")}
