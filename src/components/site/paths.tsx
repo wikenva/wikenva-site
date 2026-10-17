@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
 import { site } from "@/content/site";
 import { useTr } from "@/lib/locale";
@@ -51,7 +52,8 @@ const paths: PathCard[] = [
   },
 ];
 
-export function HSlide({ label, children }: { label: string; children: ReactNode[] }) {
+export function HSlide({ label, children, className = "" }: { label: string; children: ReactNode[]; className?: string }) {
+  const tr = useTr();
   const count = children.length;
   const [index, setIndex] = useState(0);
   const [offset, setOffset] = useState(0);
@@ -121,7 +123,7 @@ export function HSlide({ label, children }: { label: string; children: ReactNode
   if (count === 0) return null;
 
   return (
-    <div className="w-full min-w-0" role="region" aria-roledescription="carousel" aria-label={label}>
+    <div className={"w-full min-w-0 " + className} role="region" aria-roledescription="carousel" aria-label={label}>
       <div
         className="w-full min-w-0 overflow-hidden"
         style={{ touchAction: "pan-y" }}
@@ -144,19 +146,37 @@ export function HSlide({ label, children }: { label: string; children: ReactNode
           ))}
         </div>
       </div>
-      <div className="mt-3 flex justify-center gap-1.5">
-        {children.map((_, dot) => (
-          <button
-            key={dot}
-            type="button"
-            aria-label={`${label} ${dot + 1}`}
-            aria-current={dot === index}
-            onClick={() => go(dot)}
-            className="grid h-3 w-3 place-items-center"
-          >
-            <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
-          </button>
-        ))}
+      <div className="mt-4 flex items-center justify-center gap-3">
+        <button
+          type="button"
+          aria-label={tr("Précédent")}
+          onClick={() => go(index - 1)}
+          className="grid size-11 place-items-center rounded-full border border-gold/50 bg-ink text-gold active:scale-95"
+        >
+          <ChevronLeft className="size-5" aria-hidden />
+        </button>
+        <div className="flex items-center gap-1.5 px-1">
+          {children.map((_, dot) => (
+            <button
+              key={dot}
+              type="button"
+              aria-label={`${label} ${dot + 1}`}
+              aria-current={dot === index}
+              onClick={() => go(dot)}
+              className="grid h-3 w-3 place-items-center"
+            >
+              <span className={"block rounded-full " + (dot === index ? "h-1.5 w-4 bg-gold" : "h-1.5 w-1.5 bg-white/35")} />
+            </button>
+          ))}
+        </div>
+        <button
+          type="button"
+          aria-label={tr("Suivant")}
+          onClick={() => go(index + 1)}
+          className="grid size-11 place-items-center rounded-full border border-gold/50 bg-ink text-gold active:scale-95"
+        >
+          <ChevronRight className="size-5" aria-hidden />
+        </button>
       </div>
     </div>
   );
