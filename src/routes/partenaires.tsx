@@ -458,9 +458,10 @@ function Field({
   required?: boolean;
   hint?: string;
 }) {
+  const tr = useTr();
   return (
     <label className="grid gap-2 text-sm font-semibold" htmlFor={id}>
-      {label}
+      {tr(label)}
       <input
         id={id}
         type={type}
@@ -469,16 +470,17 @@ function Field({
         onChange={(event) => onChange(event.target.value)}
         className="min-h-12 rounded-full border border-line bg-ink px-4 font-normal"
       />
-      {hint ? <span className="font-normal text-muted">{hint}</span> : null}
+      {hint ? <span className="font-normal text-muted">{tr(hint)}</span> : null}
     </label>
   );
 }
 
 function Check({ checked, onChange, label }: { checked: boolean; onChange: (value: boolean) => void; label: string }) {
+  const tr = useTr();
   return (
     <label className="flex items-start gap-3 text-sm">
       <input type="checkbox" checked={checked} onChange={(event) => onChange(event.target.checked)} className="mt-1 size-5 accent-gold" />
-      <span>{label}</span>
+      <span>{tr(label)}</span>
     </label>
   );
 }
