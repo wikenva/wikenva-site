@@ -15,7 +15,7 @@ const variants: Record<Variant, string> = {
 };
 
 const control =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out active:not-disabled:scale-[0.96] disabled:opacity-50";
+  "inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out active:not-disabled:scale-[0.98] disabled:opacity-50";
 
 export function PlatformButton({ className, appearance = "default" }: { className?: string; appearance?: "default" | "app" }) {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,7 @@ export function PlatformButton({ className, appearance = "default" }: { classNam
           type="button"
           className={cn(
             control,
-            "border border-gold/60 bg-panel text-fg not-italic shadow-none hover:bg-panel-2",
+            "border border-line bg-panel text-fg not-italic shadow-none hover:bg-panel-2",
             className,
           )}
           onClick={() => setOpen(true)}
@@ -53,7 +53,7 @@ export function PartnerButton({ className }: { className?: string }) {
       to="/partenaires"
       className={cn(
         control,
-        "border border-gold/70 bg-transparent text-gold shadow-none hover:bg-gold/10",
+        "bg-gold text-ink shadow-none hover:brightness-105",
         className,
       )}
     >
