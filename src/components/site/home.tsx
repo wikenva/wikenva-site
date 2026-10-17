@@ -83,9 +83,6 @@ export function HomePage() {
             <p className="mt-3 text-muted">{tr(narrative.vision[2])}</p>
           </article>
         </div>
-        <TextLink to="/vision" variant="ghost" className="mt-6 w-fit">
-          {tr("Lire la vision")}
-        </TextLink>
       </Section>
 
       <Section eyebrow="Fonctionnement" title="Comment ça marche" lede="La vente n'est pas encore ouverte.">
@@ -134,12 +131,6 @@ export function HomePage() {
             </li>
           ))}
         </ol>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <TextLink to="/partenaires">{tr("Devenir partenaire")}</TextLink>
-          <ExternalLink href={site.investUrl ?? ""} variant="ghost">
-            {text.invest}
-          </ExternalLink>
-        </div>
       </Section>
 
       <Section
@@ -163,14 +154,6 @@ export function HomePage() {
           <p className="mt-3 max-w-xl text-sm text-muted">
             {tr("Découvrez le projet SidraChain, son fondateur, sa technologie blockchain et les initiatives de son écosystème.")}
           </p>
-        </div>
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-          <ExternalLink href={site.sidrachainUrl} variant="ghost">
-            {text.sidra}
-          </ExternalLink>
-          <ExternalLink href={site.investUrl ?? ""} variant="gold">
-            {text.invest}
-          </ExternalLink>
         </div>
       </Section>
 
@@ -201,12 +184,9 @@ export function HomePage() {
             a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant."
           />
         </div>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-6">
           <TextLink to="/white-paper" variant="ghost">
             {tr("Lire le white paper")}
-          </TextLink>
-          <TextLink to="/communaute" variant="ghost">
-            {tr("Nous contacter")}
           </TextLink>
         </div>
       </Section>
