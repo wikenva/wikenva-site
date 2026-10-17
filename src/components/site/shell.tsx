@@ -145,16 +145,19 @@ function Shell({ children }: { children: ReactNode }) {
       </a>
       <header className="sticky top-0 z-40 border-b border-line bg-ink/95 backdrop-blur print:hidden">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 md:h-16 md:px-8">
-          <Link to="/" className="flex min-w-0 items-center">
+          <Link to="/" aria-label="WIKENVA" className="flex min-w-0 items-center gap-2.5">
             <img
               src="/media/logo-official.jpg"
-              alt="WIKENVA"
-              width={480}
-              height={266}
+              alt=""
+              width={1024}
+              height={1024}
               decoding="async"
               fetchPriority="high"
-              className="h-7 w-auto max-w-[9.5rem] shrink-0 sm:max-w-none md:h-8"
+              className="h-9 w-9 shrink-0 rounded-lg object-cover md:h-10 md:w-10"
             />
+            <span className="truncate font-display text-sm font-semibold tracking-[0.16em] text-fg sm:text-base">
+              WIKENVA
+            </span>
           </Link>
           <nav className="hidden items-center gap-5 lg:flex" aria-label="Navigation principale">
             {mainNav.map((item) => (
