@@ -58,7 +58,7 @@ function VisionPage() {
         </div>
         <figure className="lg:sticky lg:top-24">
           <img
-            src="/media/wikenva-token.svg"
+            src="/media/wikenva-token.jpg"
             alt={tr("Visuel conceptuel du WIKENVA TOKEN : médaille bleue et or portant le logo officiel.")}
             width={905}
             height={880}
