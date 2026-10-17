@@ -18,7 +18,7 @@ export const paperMeta = {
   ),
   founder: "ADJIBADOU FÉLIX",
   role: t("CEO / Fondateur", "CEO / Founder"),
-  website: "https://www.wikanva.com",
+  website: "https://www.wikenva.com",
   disclaimer: t(
     "Ce document présente une vision. Il ne garantit aucun avantage, rendement ou remboursement. Les éléments manquants sont marqués « À confirmer ».",
     "This document presents a vision. It guarantees no benefit, yield or refund. Missing items are marked “TO BE CONFIRMED”.",
@@ -34,8 +34,8 @@ export const paperSections: PaperSection[] = [
       {
         type: "p",
         text: t(
-          "WIKENVA est un projet de marketplace de produits numériques, encore en développement. Le fondateur identifié est ADJIBADOU FÉLIX, CEO. Le projet se présente dans l'écosystème SidraChain. Le site indiqué est https://www.wikanva.com.",
-          "WIKENVA is a digital products marketplace project, still under development. The identified founder is ADJIBADOU FÉLIX, CEO. The project is presented within the SidraChain ecosystem. The stated website is https://www.wikanva.com.",
+          "WIKENVA est un projet de marketplace de produits numériques, encore en développement. Le fondateur identifié est ADJIBADOU FÉLIX, CEO. Le projet se présente dans l'écosystème SidraChain. L'interface prévue, www.wikenva.com, doit être validée par la core team de SidraChain avant l'intégration.",
+          "WIKENVA is a digital products marketplace project, still under development. The identified founder is ADJIBADOU FÉLIX, CEO. The project is presented within the SidraChain ecosystem. The planned interface, www.wikenva.com, must be validated by the SidraChain core team before integration.",
         ),
       },
       {
@@ -436,7 +436,7 @@ export const paperSections: PaperSection[] = [
           t("Hébergement, conservation des données et audit.", "Hosting, data retention and audit."),
           t("Revue de finance islamique, sans certification à ce jour.", "Islamic finance review, with no certification to date."),
           t("Dates et livrables de la feuille de route.", "Roadmap dates and deliverables."),
-          t("Orthographe définitive du nom de domaine public, indiqué ici comme wikanva.com.", "Final spelling of the public domain name, stated here as wikanva.com."),
+          t("L'interface www.wikenva.com doit être validée par la core team de SidraChain avant l'intégration de WIKENVA.", "The www.wikenva.com interface must be validated by the SidraChain core team before WIKENVA is integrated."),
           t("Validation par le fondateur pour remplacer cette relecture par la version officielle figée.", "Founder approval to replace this review draft with the frozen official version."),
         ],
       },
@@ -448,7 +448,7 @@ export const founderDecisions: PaperCopy[] = [
   t("Fixer ou non un taux de commission, et sur quelles transactions.", "Whether to set a commission rate, and on which transactions."),
   t("Confirmer le symbole, la chaîne et le contrat, ou maintenir le token comme non déployé.", "Confirm the symbol, chain and contract, or keep the token as not deployed."),
   t("Choisir la forme juridique et qui signe au nom du projet.", "Choose the legal form and who signs for the project."),
-  t("Dire si wikanva.com est bien le domaine définitif.", "State whether wikanva.com is the definitive domain."),
+  t("Faire valider www.wikenva.com par la core team de SidraChain avant l'intégration.", "Have www.wikenva.com validated by the SidraChain core team before integration."),
   t("Décider s'il existe un bonus partenaires et, sinon, le dire explicitement.", "Decide whether a partner bonus exists and, if not, say so explicitly."),
   t("Faire relire les modalités financières par une personne compétente avant toute mention de conformité.", "Have the financial terms reviewed by a qualified person before any compliance statement."),
   t("Approuver cette version, ou la corriger, avant de la déclarer officielle.", "Approve this version, or correct it, before calling it official."),
