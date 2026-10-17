@@ -220,7 +220,6 @@ function NewsCarousel() {
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
   const drag = useRef(0);
-  const hovering = useRef(false);
   const pressing = useRef(false);
   const start = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
 
@@ -238,14 +237,10 @@ function NewsCarousel() {
   }, []);
 
   useEffect(() => {
-    if (reduced || paused || dragging || count < 2) return;
+    if (paused || dragging || count < 2) return;
     const timer = window.setTimeout(() => setIndex((current) => (current + 1) % count), 5000);
     return () => window.clearTimeout(timer);
-  }, [reduced, paused, dragging, count, index]);
-
-  function hold(next: boolean) {
-    setPaused(next || hovering.current || pressing.current);
-  }
+  }, [paused, dragging, count, index]);
 
   function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
     if (event.pointerType === "mouse") return;
@@ -281,7 +276,7 @@ function NewsCarousel() {
     drag.current = 0;
     setDragging(false);
     setOffset(0);
-    setPaused(hovering.current);
+    setPaused(false);
     if (!wasDragging) return;
     if (dx <= -48) go(index + 1);
     else if (dx >= 48) go(index - 1);
@@ -295,16 +290,6 @@ function NewsCarousel() {
       role="region"
       aria-roledescription="carousel"
       aria-label={tr("Actualités WIKENVA")}
-      onPointerEnter={(event) => {
-        if (event.pointerType !== "mouse") return;
-        hovering.current = true;
-        hold(true);
-      }}
-      onPointerLeave={(event) => {
-        if (event.pointerType !== "mouse") return;
-        hovering.current = false;
-        hold(false);
-      }}
     >
       <div
         className="relative h-44 overflow-hidden rounded-2xl border border-line bg-panel sm:h-40"
@@ -315,16 +300,18 @@ function NewsCarousel() {
         onPointerCancel={onPointerUp}
       >
         <div
-          className="flex h-full w-full"
+          className="flex h-full"
           style={{
-            transform: `translate3d(calc(${-index * 100}% + ${offset}px), 0, 0)`,
+            width: `${count * 100}%`,
+            transform: `translate3d(calc(${(-index * 100) / count}% + ${offset}px), 0, 0)`,
             transition: dragging || reduced ? "none" : "transform 520ms cubic-bezier(.22,.8,.24,1)",
           }}
         >
           {news.map((item, slide) => (
             <article
               key={item.slug}
-              className="flex h-full w-full shrink-0 basis-full flex-col overflow-hidden px-4 py-3.5 md:px-12"
+              className="flex h-full shrink-0 flex-col overflow-hidden px-4 py-3.5 md:px-12"
+              style={{ width: `${100 / count}%` }}
               aria-hidden={slide !== index}
             >
               <p className="text-[11px] font-semibold tracking-wide text-gold uppercase">
