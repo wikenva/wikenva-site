@@ -202,8 +202,8 @@ export const en: Record<string, string> = {
   Responsable: "Controller",
   "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — À compléter.":
     "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — To be completed.",
-  "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 96 41 21 17.":
-    "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — wikenva@gmail.com. Phone — +229 96 41 21 17.",
+  "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 01 96 41 21 17.":
+    "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — wikenva@gmail.com. Phone — +229 01 96 41 21 17.",
   "Formulaire actionnaires": "Shareholder form",
   "Le formulaire demande un nom complet, un email, un nom d'utilisateur SidraChain s'il est indiqué, un montant envisagé en SDA et un message facultatif, ainsi que deux confirmations : lecture des risques, et absence de rendement promis.":
     "The form asks for a full name, an email, a SidraChain username if given, an amount considered in SDA and an optional message, plus two confirmations: that the risk warning was read, and that no yield is promised.",
@@ -678,8 +678,8 @@ export const en: Record<string, string> = {
   "Où lire les documents et nous écrire ?": "Where do I read the documents and write to you?",
   "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant.":
     "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. No general email address is published yet.",
-  "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 96 41 21 17.":
-    "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. Gmail: wikenva@gmail.com. Phone: +229 96 41 21 17.",
+  "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.":
+    "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
   "Aller plus loin": "Go further",
   "La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.":
     "The roadmap, the token, the news and the documents remain available. They are not repeated here.",
@@ -723,7 +723,7 @@ export const en: Record<string, string> = {
     "The site presents the WIKENVA project. Public contact goes through the official channels listed on the Community page: Facebook, WhatsApp, Telegram and X.",
   "Aucune adresse e-mail générale n'est publiée. N'envoyez pas de message à une adresse supposée.":
     "No general email address is published. Do not write to an address you only assume exists.",
-  "Gmail : wikenva@gmail.com. Numéro : +229 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 96 41 21 17.",
+  "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
   "Gmail": "Gmail",
   "Numéro": "Phone",
   "Éditeur — non publié": "Publisher — not published",
