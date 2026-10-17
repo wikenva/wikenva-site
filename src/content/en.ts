@@ -627,14 +627,14 @@ export const en: Record<string, string> = {
   Participer: "Take part",
   "On peut demander à devenir partenaire, ou ouvrir la fiche du projet sur SidraStart. Aucun rendement n'est promis.":
     "You can ask to become a partner, or open the project page on SidraStart. No yield is promised.",
-  "Pendant la promotion SidraStart, qui se termine le 24 décembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification.":
-    "During the SidraStart promotion, which ends on 24 December 2026, a partnership request can be submitted. It still has to be verified.",
-  "Les personnes qui investissent au minimum 3 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 24 décembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.":
-    "People who invest at least 3,000 SDA in the Digital Marketplace Ebook Halal project, from their own SidraStart account, can ask for partner status. The investment is made on SidraStart, not on this site. After 24 December 2026 the conditions may change: they are not defined yet. No yield is guaranteed.",
+  "Pendant la promotion SidraStart, qui se termine le 30 novembre 2026, une demande de partenariat peut être déposée. Elle reste soumise à vérification.":
+    "During the SidraStart promotion, which ends on 30 November 2026, a partnership request can be submitted. It still has to be verified.",
+  "Les personnes qui investissent au minimum 1 000 SDA dans le projet Digital Marketplace Ebook Halal, depuis leur propre compte SidraStart, peuvent demander le statut de partenaire. L'investissement se fait sur SidraStart, pas sur ce site. Après le 30 novembre 2026, les conditions pourront changer : elles ne sont pas encore définies. Aucun rendement n'est garanti.":
+    "People who invest at least 1,000 SDA in the Digital Marketplace Ebook Halal project, from their own SidraStart account, can ask for partner status. The investment is made on SidraStart, not on this site. After 30 November 2026 the conditions may change: they are not defined yet. No yield is guaranteed.",
   "Lire les conditions de partenariat sur cette page.": "Read the partnership conditions on this page.",
   "Ouvrir la fiche officielle du projet sur SidraStart.": "Open the official project page on SidraStart.",
-  "Investir au minimum 3 000 SDA depuis son propre compte SidraStart.":
-    "Invest at least 3,000 SDA from your own SidraStart account.",
+  "Investir au minimum 1 000 SDA depuis son propre compte SidraStart.":
+    "Invest at least 1,000 SDA from your own SidraStart account.",
   "Envoyer les informations demandées pour la vérification. Ne jamais transmettre une clé privée ou un mot de passe.":
     "Send the information requested for verification. Never send a private key or a password.",
   "Attendre la confirmation du statut. Une demande envoyée n'est pas une approbation.":
@@ -649,9 +649,9 @@ export const en: Record<string, string> = {
   "Peut-on déjà acheter un ebook ?": "Can I already buy an ebook?",
   "Non. L'application est en cours de préparation. Ce site présente le projet. Il ne vend pas encore de produits.":
     "No. The application is being prepared. This site presents the project. It does not sell products yet.",
-  "Comment devenir partenaire avant le 24 décembre 2026 ?": "How do I become a partner before 24 December 2026?",
-  "Investir au minimum 3 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement.":
-    "Invest at least 3,000 SDA on the SidraStart page from your account, then submit a request on the Partners page. The request is checked. It is not accepted automatically.",
+  "Comment devenir partenaire avant le 30 novembre 2026 ?": "How do I become a partner before 30 November 2026?",
+  "Investir au minimum 1 000 SDA sur la fiche SidraStart depuis votre compte, puis déposer une demande sur la page Partenaires. La demande est vérifiée. Elle n'est pas acceptée automatiquement.":
+    "Invest at least 1,000 SDA on the SidraStart page from your account, then submit a request on the Partners page. The request is checked. It is not accepted automatically.",
   "Un investissement garantit-il un rendement ?": "Does an investment guarantee a yield?",
   "Non. Les crypto-actifs peuvent perdre toute leur valeur. Ce site ne promet aucun rendement et ne constitue pas un conseil en investissement.":
     "No. Crypto-assets can lose all their value. This site promises no yield and is not investment advice.",
@@ -671,17 +671,17 @@ export const en: Record<string, string> = {
   "Le projet s'appelle Digital Marketplace Ebook Halal. Les conditions de contribution sont celles publiées là-bas.":
     "The project is called Digital Marketplace Ebook Halal. The contribution conditions are those published there.",
   "Investir depuis son propre compte.": "Invest from your own account.",
-  "Minimum de 3 000 SDA pendant la promotion, qui se termine le 24 décembre 2026. L'investissement ne se fait pas sur ce site.":
-    "A minimum of 3,000 SDA during the promotion, which ends on 24 December 2026. The investment is not made on this site.",
+  "Minimum de 1 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site.":
+    "A minimum of 1,000 SDA during the promotion, which ends on 30 November 2026. The investment is not made on this site.",
   "Fournir les informations de vérification.": "Provide the information for verification.",
   "Le formulaire demande un nom, un e-mail et, si vous le souhaitez, une référence publique de transaction. N'envoyez jamais une clé privée ou un mot de passe.":
     "The form asks for a name, an email and, if you wish, a public transaction reference. Never send a private key or a password.",
   "Attendre la confirmation du statut.": "Wait for confirmation of the status.",
-  "La demande part en attente. Seule une décision d'un administrateur autorisé confirme le partenariat. Après le 24 décembre 2026, les conditions pourront changer et ne sont pas encore définies.":
-    "The request starts as pending. Only a decision by an authorised administrator confirms the partnership. After 24 December 2026 the conditions may change and are not defined yet.",
+  "La demande part en attente. Seule une décision d'un administrateur autorisé confirme le partenariat. Après le 30 novembre 2026, les conditions pourront changer et ne sont pas encore définies.":
+    "The request starts as pending. Only a decision by an authorised administrator confirms the partnership. After 30 November 2026 the conditions may change and are not defined yet.",
   "Que se passera-t-il après la clôture de la promotion ?": "What happens after the promotion closes?",
-  "La promotion SidraStart se termine le 24 décembre 2026. Ensuite, les conditions pourront être révisées. Aucune nouvelle condition n'est déjà définie ici.":
-    "The SidraStart promotion ends on 24 December 2026. The conditions may then be revised. No new condition is already defined here.",
+  "La promotion SidraStart se termine le 30 novembre 2026. Ensuite, les conditions pourront être révisées. Aucune nouvelle condition n'est déjà définie ici.":
+    "The SidraStart promotion ends on 30 November 2026. The conditions may then be revised. No new condition is already defined here.",
   "Les trois parcours — investir, devenir partenaire, programme actionnaires — sont distincts. Aucun ne promet un rendement.":
     "The three paths — investing, becoming a partner, the shareholder programme — are separate. None promises a yield.",
   "Trois parcours, trois décisions": "Three paths, three decisions",
@@ -689,10 +689,10 @@ export const en: Record<string, string> = {
     "Investing, becoming a partner and joining the shareholder programme are not the same thing. None of these paths promises a yield.",
   "Ouvre la fiche Digital Marketplace Ebook Halal. L'investissement se fait sur votre compte SidraStart. Il ne vous inscrit pas comme partenaire et ne vous donne pas le statut d'actionnaire.":
     "Opens the Digital Marketplace Ebook Halal page. The investment is made on your SidraStart account. It does not register you as a partner and it does not make you a shareholder.",
-  "Jusqu'au 24 décembre 2026, après au moins 3 000 SDA investis sur SidraStart, une demande peut être vérifiée. Le statut n'est pas automatique. Les conditions d'après cette date ne sont pas définies.":
-    "Until 24 December 2026, after at least 3,000 SDA invested on SidraStart, a request can be checked. The status is not automatic. The conditions after that date are not defined.",
-  "WIKENVA prévoit d'allouer 15 % des revenus de la plateforme aux actionnaires, selon des modalités encore à publier. Ce n'est pas la promotion à 3 000 SDA, et ce n'est pas un rendement garanti.":
-    "WIKENVA plans to allocate 15% of platform revenue to shareholders, under terms still to be published. This is not the 3,000 SDA promotion, and it is not a guaranteed yield.",
+  "Jusqu'au 30 novembre 2026, après au moins 1 000 SDA investis sur SidraStart, une demande peut être vérifiée. Le statut n'est pas automatique. Les conditions d'après cette date ne sont pas définies.":
+    "Until 30 November 2026, after at least 1,000 SDA invested on SidraStart, a request can be checked. The status is not automatic. The conditions after that date are not defined.",
+  "WIKENVA prévoit d'allouer 15 % des revenus de la plateforme aux actionnaires, selon des modalités encore à publier. Ce n'est pas la promotion à 1 000 SDA, et ce n'est pas un rendement garanti.":
+    "WIKENVA plans to allocate 15% of platform revenue to shareholders, under terms still to be published. This is not the 1,000 SDA promotion, and it is not a guaranteed yield.",
   "Vous êtes sur le parcours partenaire": "You are on the partner path",
   "Ce formulaire demande le statut de partenaire. Il ne remplace pas l'investissement sur SidraStart et il ne crée pas le statut d'actionnaire.":
     "This form asks for partner status. It does not replace the investment on SidraStart and it does not create shareholder status.",
@@ -715,13 +715,13 @@ export const en: Record<string, string> = {
     "This page is about investor information and the shareholder programme. The partner request is on another page. No yield is promised.",
   "« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook Halal. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.":
     "“Invest on SidraStart” opens the Digital Marketplace Ebook Halal page. It creates neither partner status nor shareholder status.",
-  "Ce programme n'est pas la promotion partenaire à 3 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.":
-    "This programme is not the 3,000 SDA partner promotion, and it is not the same as the investment made on SidraStart.",
+  "Ce programme n'est pas la promotion partenaire à 1 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.":
+    "This programme is not the 1,000 SDA partner promotion, and it is not the same as the investment made on SidraStart.",
   "Ce formulaire n'est pas la demande de partenaire et il ne réalise pas l'investissement SidraStart. Connectez-vous pour l'ouvrir. La connexion ne confirme aucun versement.":
     "This form is not the partner request and it does not make the SidraStart investment. Sign in to open it. Signing in does not confirm any payment.",
   "Investir, partenaire et actionnaire, est-ce la même chose ?": "Are investing, partner and shareholder the same thing?",
-  "Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 3 000 SDA, avec vérification, jusqu'au 24 décembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti.":
-    "No. Investing is done on SidraStart. Partner status is requested after at least 3,000 SDA, with a check, until 24 December 2026. The shareholder programme refers to a planned 15% share of revenue, not yet defined, and it is not a guaranteed yield.",
+  "Non. Investir se fait sur SidraStart. Le partenaire se demande après au moins 1 000 SDA, avec vérification, jusqu'au 30 novembre 2026. Le programme actionnaires parle d'une part prévue de 15 % des revenus, pas encore définie, et ce n'est pas un rendement garanti.":
+    "No. Investing is done on SidraStart. Partner status is requested after at least 1,000 SDA, with a check, until 30 November 2026. The shareholder programme refers to a planned 15% share of revenue, not yet defined, and it is not a guaranteed yield.",
   "Le bouton « Investir sur SidraStart » ouvre la fiche du projet sur SidraStart, dans l'écosystème SidraChain. Cette redirection n'est pas, en elle-même, une offre émise par ce site.":
     "The “Invest on SidraStart” button opens the project page on SidraStart, in the SidraChain ecosystem. That redirect is not, by itself, an offer issued by this site.",
   "Vous êtes ici": "You are here",
@@ -732,19 +732,148 @@ export const en: Record<string, string> = {
     "You open the Digital Marketplace Ebook Halal page and invest from your own account.",
   "Cela ne crée pas le statut de partenaire et ne vous inscrit pas au programme actionnaires.":
     "It does not create partner status and it does not enrol you in the shareholder programme.",
-  "Jusqu'au 24 décembre 2026, après au moins 3 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
-    "Until 24 December 2026, after at least 3,000 SDA invested on SidraStart, you can ask for a check.",
+  "Jusqu'au 30 novembre 2026, après au moins 1 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
+    "Until 30 November 2026, after at least 1,000 SDA invested on SidraStart, you can ask for a check.",
   "La demande n'est pas l'investissement. Le statut n'est pas automatique. Ce n'est pas le programme actionnaires.":
     "The request is not the investment. The status is not automatic. This is not the shareholder programme.",
   "WIKENVA prévoit 15 % des revenus de la plateforme pour les actionnaires. Les modalités ne sont pas encore publiées.":
     "WIKENVA plans 15% of platform revenue for shareholders. The terms are not published yet.",
-  "Ce n'est pas la promotion à 3 000 SDA. Ce n'est pas un rendement garanti. La part n'est pas encore acquise.":
-    "This is not the 3,000 SDA promotion. This is not a guaranteed yield. The share is not yet acquired.",
+  "Ce n'est pas la promotion à 1 000 SDA. Ce n'est pas un rendement garanti. La part n'est pas encore acquise.":
+    "This is not the 1,000 SDA promotion. This is not a guaranteed yield. The share is not yet acquired.",
   "Ce n'est pas. ": "This is not. ",
   "Voir la demande partenaire": "See the partner request",
   "Voir le programme actionnaires": "See the shareholder programme",
   "Jusqu'au": "Until",
-  "Jusqu'à cette date, une demande de partenaire peut suivre un investissement d'au moins 3 000 SDA sur SidraStart. Aucun rendement n'est garanti.":
-    "Until that date, a partner request can follow an investment of at least 3,000 SDA on SidraStart. No yield is guaranteed.",
+  "Jusqu'à cette date, une demande de partenaire peut suivre un investissement d'au moins 1 000 SDA sur SidraStart. Aucun rendement n'est garanti.":
+    "Until that date, a partner request can follow an investment of at least 1,000 SDA on SidraStart. No yield is guaranteed.",
   ".": ".",
+
+  "1 000 SDA": "1,000 SDA",
+  "1 000 SDA, pour la campagne de promotion en cours sur SidraStart. Ce minimum ne valide pas la candidature WIKENVA.": "1,000 SDA, for the current SidraStart promotion. This minimum does not approve a WIKENVA application.",
+  "100 000 000 de tokens": "100,000,000 tokens",
+  "Adresse e-mail": "Email address",
+  "Approuvée": "Approved",
+  "Approuvée par un CEO autorisé. Cela ne confirme pas un versement ni un rendement.": "Approved by an authorised CEO. This does not confirm a payment or a yield.",
+  "Attendre la confirmation.": "Wait for confirmation.",
+  "Aucun e-mail ne vous a été envoyé. Le suivi se fait avec la référence et l'adresse e-mail.": "No email was sent to you. Follow-up uses the reference and the email address.",
+  "Aucune candidature ne correspond.": "No application matches.",
+  "Aucune candidature partenaire enregistrée.": "No partner application has been recorded.",
+  "Avantages du partenariat": "Partnership benefits",
+  "Bonus de partenariat": "Partnership bonus",
+  "Campagne SidraStart": "SidraStart campaign",
+  "Candidature enregistrée.": "Application recorded.",
+  "Candidatures partenaires": "Partner applications",
+  "Capture reçue": "Screenshot received",
+  "Comment fonctionne le bonus de partenariat ?": "How does the partnership bonus work?",
+  "Comment fonctionne le partenariat ?": "How does the partnership work?",
+  "Comment ma candidature sera-t-elle vérifiée ?": "How will my application be checked?",
+  "Comment mes données personnelles sont-elles protégées ?": "How is my personal data protected?",
+  "Comment participer à la campagne WIKENVA sur SidraStart ?": "How do I join the WIKENVA campaign on SidraStart?",
+  "Comment ça marche": "How it works",
+  "Communications officielles": "Official updates",
+  "Comprendre le programme": "Understand the programme",
+  "Consultation réservée aux CEO autorisés des intentions et candidatures réellement reçues.": "Access is limited to authorised CEOs, and only to requests that were actually received.",
+  "Créateur numérique": "Digital creator",
+  "Créer, lire et participer. Le catalogue n'est pas encore ouvert.": "Create, read and take part. The catalogue is not open yet.",
+  "Créer, partager et découvrir au même endroit.": "Create, share and discover in one place.",
+  "Demande non enregistrée. Aucune notification n'a été envoyée.": "Request not saved. No notification was sent.",
+  "Devenez partenaire de WIKENVA": "Become a WIKENVA partner",
+  "Devenez partenaire de WIKENVA.": "Become a WIKENVA partner.",
+  "Découvrir": "Discover",
+  "Elles sont réservées aux administrateurs autorisés. Le suivi public ne montre que le statut, avec la référence et l'e-mail.": "They are reserved for authorised administrators. Public follow-up shows only the status, with the reference and the email.",
+  "En attente": "Pending",
+  "En attente. La candidature est reçue. Elle n'est pas approuvée.": "Pending. The application has been received. It is not approved.",
+  "En cours de vérification": "Under review",
+  "En cours de vérification. Aucun partenariat n'est encore confirmé.": "Under review. No partnership is confirmed yet.",
+  "Enregistrement…": "Saving…",
+  "Enregistrer la candidature au programme actionnaires": "Save the shareholder programme application",
+  "Envoie la capture": "Send the screenshot",
+  "Envoyer la candidature": "Submit the application",
+  "Envoyer la demande. Ne jamais donner une clé privée.": "Send the request. Never share a private key.",
+  "Espace administrateurs — WIKENVA": "Administrators — WIKENVA",
+  "Espace d'information pour les investisseurs et partenaires de WIKENVA. Aucun rendement n'est promis.": "Information for WIKENVA investors and partners. No yield is promised.",
+  "Existe-t-il des risques liés à la contribution ?": "Are there risks linked to the contribution?",
+  "Français": "French",
+  "Identifiant public de transaction, facultatif": "Public transaction reference, optional",
+  "Il n'est pas publié ici. Le taux, le calcul, les conditions et la période ne sont pas confirmés. Aucun versement n'est simulé.": "It is not published here. The rate, the calculation, the conditions and the period are not confirmed. No payment is simulated.",
+  "Indiquez votre nom complet.": "Enter your full name.",
+  "Intentions et candidatures.": "Intentions and applications.",
+  "Investir au minimum 1 000 SDA depuis son compte.": "Invest at least 1,000 SDA from your own account.",
+  "Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée.": "Invest at least 1,000 SDA on SidraStart, then submit a request. It is checked.",
+  "Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts.": "Investing, becoming a partner and the shareholder programme are three separate paths.",
+  "J'accepte les conditions publiées du partenariat. Les éléments non publiés ne sont pas acceptés comme des droits.": "I accept the published partnership terms. Unpublished items are not accepted as rights.",
+  "J'accepte que mes coordonnées soient consultées par les administrateurs autorisés, conformément à la politique de confidentialité.": "I accept that my contact details may be read by authorised administrators, under the privacy policy.",
+  "Je confirme mon inscription sur la plateforme WIKENVA. Cela ne crée aucun droit.": "I confirm my registration on the WIKENVA platform. This creates no right.",
+  "Jusqu'au 30 novembre 2026. La demande est vérifiée.": "Until 30 November 2026. The request is checked.",
+  "L'inscription est enregistrée. Cela ne confirme pas un investissement et ne crée aucun droit.": "The registration is saved. It does not confirm an investment and it creates no right.",
+  "L'usage précis des contributions sera publié lorsqu'il sera officiel. Il n'est pas détaillé sur cette page.": "The exact use of contributions will be published when it is official. It is not detailed on this page.",
+  "La capture doit être une image PNG, JPEG ou WebP de moins de 1,2 Mo. Elle n'a pas été enregistrée.": "The screenshot must be a PNG, JPEG or WebP image under 1.2 MB. It was not saved.",
+  "La capture n'a pas été enregistrée. Aucune notification n'a été envoyée.": "The screenshot was not saved. No notification was sent.",
+  "La demande est enregistrée seulement lorsque la réception est opérationnelle. Ne communiquez jamais une phrase secrète, une clé privée ou un mot de passe de portefeuille.": "The request is saved only when reception is operational. Never send a seed phrase, a private key or a wallet password.",
+  "La réception n'est pas encore opérationnelle.": "Reception is not operational yet.",
+  "La référence et l'e-mail utilisés à l'envoi affichent le statut réel. Une approbation ne confirme pas un versement.": "The reference and the email used when sending show the real status. Approval does not confirm a payment.",
+  "La vente n'est pas encore ouverte.": "Sales are not open yet.",
+  "La vision de WIKENVA : réunir auteurs, lecteurs, créateurs, concepteurs, entrepreneurs et communautés.": "WIKENVA's vision: to bring together authors, readers, creators, designers, entrepreneurs and communities.",
+  "Le message doit contenir au moins 10 caractères.": "The message must contain at least 10 characters.",
+  "Le montant doit être supérieur ou égal à 1 000 SDA.": "The amount must be at least 1,000 SDA.",
+  "Le site dit ce qui est confirmé. Le reste n'est pas inventé.": "The site states what is confirmed. The rest is not invented.",
+  "Le suivi n'est pas disponible.": "Follow-up is not available.",
+  "Le taux, la base de calcul, les conditions d'attribution, le délai et la période de validité ne sont pas confirmés. Aucun bonus n'est affiché et aucun versement n'est simulé.": "The rate, the calculation basis, the grant conditions, the delay and the validity period are not confirmed. No bonus is shown and no payment is simulated.",
+  "Les annonces confirmées sont publiées sur le site et sur les canaux officiels de la communauté.": "Confirmed announcements are published on the site and on the official community channels.",
+  "Les annonces passent par Facebook, WhatsApp, Telegram et X.": "Announcements go through Facebook, WhatsApp, Telegram and X.",
+  "Les avantages liés à la contribution sont ceux écrits sur la campagne officielle. Ce site ne les recopie pas et n'en ajoute aucun.": "Benefits linked to the contribution are those written on the official campaign. This site does not copy them and adds none.",
+  "Les conditions doivent rester compréhensibles. Celles qui manquent sont indiquées comme non publiées.": "The terms must stay understandable. Missing ones are marked as unpublished.",
+  "Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est garanti.": "Crypto-assets can lose all their value. No yield is guaranteed.",
+  "Les deux cases sont nécessaires.": "Both boxes are required.",
+  "Les ebooks halal sont en préparation. Aucun achat sur ce site.": "Halal ebooks are being prepared. There is no purchase on this site.",
+  "Les modalités financières doivent être vérifiées par une personne compétente en finance islamique. Ce site ne présente pas de certification de conformité à la charia.": "The financial terms must be checked by someone qualified in Islamic finance. This site does not present a sharia-compliance certificate.",
+  "Lire les conditions.": "Read the terms.",
+  "Marketplace d'ebooks halal, dans l'écosystème SidraChain. L'application est encore en préparation.": "A halal ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
+  "Message de présentation": "Introduction",
+  "Minimum 1 000 SDA sur SidraStart pour être partenaire.": "Minimum 1,000 SDA on SidraStart to become a partner.",
+  "Minimum indiqué pour la campagne de promotion en cours sur SidraStart. Ce seuil ne confirme pas un partenariat WIKENVA et ne promet aucun rendement.": "Minimum shown for the current SidraStart promotion. This threshold does not confirm a WIKENVA partnership and promises no yield.",
+  "Minimum prévu : 1 000 SDA.": "Planned minimum: 1,000 SDA.",
+  "Montant envisagé en SDA": "Planned amount in SDA",
+  "N'envoyez pas de phrase secrète, de clé privée ou de mot de passe. Seul un identifiant public de transaction est accepté.": "Do not send a seed phrase, a private key or a password. Only a public transaction reference is accepted.",
+  "Navigation principale": "Main navigation",
+  "Nom complet": "Full name",
+  "Nom d'utilisateur SidraChain": "SidraChain username",
+  "Non. Ce site ne promet aucun rendement.": "No. This site promises no yield.",
+  "Non. Ce site présente le projet. Il ne vend pas encore.": "No. This site presents the project. It does not sell yet.",
+  "Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 1 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti.": "No. Investing is done on SidraStart. Partner status is requested after 1,000 SDA. The shareholder programme is a separate rule, with no guaranteed yield.",
+  "Oui. Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est promis.": "Yes. Crypto-assets can lose all their value. No yield is promised.",
+  "Ouvrez la fiche officielle du projet sur SidraStart depuis le bouton de cette page, puis suivez les étapes affichées là-bas.": "Open the official project page on SidraStart from the button on this page, then follow the steps shown there.",
+  "Ouvrir la fiche SidraStart.": "Open the SidraStart page.",
+  "Partenaire": "Partner",
+  "Partenaire commercial": "Commercial partner",
+  "Partenaire technique": "Technical partner",
+  "Participer au développement": "Take part in the development",
+  "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain.": "Take part in the digital economy within the SidraChain ecosystem.",
+  "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 1 000 SDA sur SidraStart.": "Take part in the digital economy within the SidraChain ecosystem. Promotional minimum: 1,000 SDA on SidraStart.",
+  "Pays de résidence": "Country of residence",
+  "Quel est le minimum requis pour devenir partenaire pendant la promotion ?": "What is the minimum required to become a partner during the promotion?",
+  "Refusée": "Declined",
+  "Refusée. La candidature n'a pas été retenue.": "Declined. The application was not accepted.",
+  "Reçue": "Received",
+  "Se connecter avec": "Sign in with",
+  "Seuil actuel": "Current threshold",
+  "Seules les demandes réellement reçues apparaissent ici, et seulement pour un CEO dont l'e-mail est autorisé. Aucun exemple n'est affiché.": "Only requests that were actually received appear here, and only for a CEO whose email is authorised. No sample is shown.",
+  "Si vous en avez un. Ce champ n'est pas obligatoire.": "If you have one. This field is optional.",
+  "Suivez la communauté officielle de WIKENVA.": "Follow the official WIKENVA community.",
+  "Suivre ma candidature": "Track my application",
+  "Tout change après cette date.": "Everything changes after this date.",
+  "Transparence et éthique": "Transparency and ethics",
+  "Trois décisions distinctes. Aucun rendement n'est promis.": "Three separate decisions. No yield is promised.",
+  "Type de profil": "Profile type",
+  "Un CEO autorisé peut la consulter, la passer en vérification, l'approuver ou la refuser. Le statut de départ est « en attente ».": "An authorised CEO can review it, mark it under review, approve it or decline it. The starting status is “pending”.",
+  "Un avis a été envoyé, sans vos coordonnées.": "A notice was sent, without your contact details.",
+  "Une candidature exprime l'intérêt de participer au développement de WIKENVA. Elle ne crée aucun droit.": "An application expresses interest in taking part in WIKENVA's development. It creates no right.",
+  "Une marketplace d'ebooks halal, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires.": "A halal ebook marketplace in SidraChain. It brings together authors, readers, creators and partners.",
+  "Uniquement une référence publique. Jamais une phrase secrète ni une clé privée.": "A public reference only. Never a seed phrase or a private key.",
+  "Version de relecture du livre blanc. Elle distingue les faits confirmés des points encore ouverts. Elle ne promet aucun rendement.": "Review version of the white paper. It separates confirmed facts from points still open. It promises no yield.",
+  "Votre compte est connecté. Inscrivez-vous pour enregistrer votre compte. Cette inscription ne confirme pas un investissement.": "Your account is signed in. Register to save your account. This registration does not confirm an investment.",
+  "WIKENVA fait partie de SidraChain.": "WIKENVA is part of SidraChain.",
+  "WIKENVA ne promet pas de rendement, de dividende, de rachat ou de performance.": "WIKENVA does not promise a yield, a dividend, a buyback or a performance.",
+  "WIKENVA se présente comme une marketplace d'ebooks halal et d'activités numériques licites.": "WIKENVA presents itself as a marketplace for halal ebooks and lawful digital activities.",
 };
+
