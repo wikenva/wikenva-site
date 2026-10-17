@@ -27,7 +27,7 @@ export function PromotionClock(_props?: { compact?: boolean }) {
       ) : null}
       <p className="mt-3 text-center text-sm leading-relaxed">
         <span className="font-semibold">{tr("Minimum 2 000 SDA sur SidraStart pour être partenaire.")}</span>
-        <span className="mt-1 block text-gold">{tr("Tout change après cette date.")}</span>
+        <span className="mt-1 block text-gold">{tr("Valable jusqu'au 30 novembre 2026.")}</span>
       </p>
     </div>
   );
