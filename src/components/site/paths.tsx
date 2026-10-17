@@ -70,10 +70,7 @@ export function PathBoard({ here }: { here?: PathId }) {
             {current ? <p className="mt-1 text-sm text-muted">{tr(item.where)}</p> : null}
             <h3 className="mt-2 font-display text-2xl font-semibold">{tr(item.title)}</h3>
             <p className="mt-3 text-sm text-fg">{tr(item.text)}</p>
-            <p className="mt-3 flex-1 rounded-2xl border border-line bg-ink px-3 py-3 text-sm text-muted">
-              <span className="font-semibold text-fg">{tr("Ce n'est pas. ")}</span>
-              {tr(item.not)}
-            </p>
+            <p className="mt-3 flex-1 text-sm text-muted">{tr(item.not)}</p>
             {item.href ? (
               <ExternalLink href={item.href} variant={current ? "gold" : "ghost"} className="mt-5 w-full">
                 {tr(item.action)}
@@ -81,7 +78,7 @@ export function PathBoard({ here }: { here?: PathId }) {
             ) : current ? (
               <a
                 href={`#${item.hash ?? ""}`}
-                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-ink"
+                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink"
               >
                 {tr(item.action)}
               </a>
@@ -89,7 +86,7 @@ export function PathBoard({ here }: { here?: PathId }) {
               <Link
                 to={item.to ?? "/partenaires"}
                 hash={item.hash}
-                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-full border border-line px-5 text-sm font-semibold"
+                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold"
               >
                 {tr(item.action)}
               </Link>
