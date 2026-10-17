@@ -359,6 +359,17 @@ export function NewsCards({ items = news }: { items?: NewsItem[] }) {
     <div className="grid gap-4 md:grid-cols-2">
       {items.map((item) => (
         <article key={item.slug} className="rounded-2xl border border-line bg-panel p-6">
+          {item.image ? (
+            <img
+              src={item.image}
+              alt=""
+              width={640}
+              height={360}
+              loading="lazy"
+              decoding="async"
+              className="mb-4 aspect-[16/9] w-full rounded-xl object-cover"
+            />
+          ) : null}
           <p className="text-sm font-semibold text-gold">
             {tr(categoryLabels[item.category])} · {tr(item.date)}
           </p>
