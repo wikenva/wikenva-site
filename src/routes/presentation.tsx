@@ -62,7 +62,7 @@ function PresentationPage() {
       <header className="border-b border-line">
         <div className="mx-auto w-full max-w-3xl px-5 py-8 md:px-8 md:py-12">
           <img
-            src="/media/logo-mark-ui.webp"
+            src="/media/logo-official.jpg"
             alt="WIKENVA"
             width={480}
             height={266}
