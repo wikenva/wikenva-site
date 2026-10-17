@@ -80,3 +80,54 @@ export const decidePartner = createServerFn({ method: "POST" })
     const { decidePartnerApplication } = await import("./partner.server");
     return decidePartnerApplication(data, context.userId);
   });
+
+export type ShopInput = {
+  partnerId: string;
+  email: string;
+  shopName: string;
+  description: string;
+};
+
+export type ShopSubmitResult = {
+  recorded: boolean;
+  id: string | null;
+  error: "closed" | "name" | "description" | "match" | null;
+};
+
+export type ShopRow = {
+  id: string;
+  createdAt: string;
+  partnerId: string;
+  email: string;
+  shopName: string;
+  description: string;
+  status: PartnerStatus;
+  decidedAt: string | null;
+};
+
+export type ShopList = {
+  operational: boolean;
+  authorized: boolean;
+  shops: ShopRow[];
+};
+
+export const submitShop = createServerFn({ method: "POST" })
+  .validator((input: ShopInput) => input)
+  .handler(async ({ data }): Promise<ShopSubmitResult> => {
+    const { submitPartnerShop } = await import("./partner.server");
+    return submitPartnerShop(data);
+  });
+
+export const listShops = createServerFn({ method: "GET" }).handler(async (): Promise<ShopList> => {
+  const { listPartnerShops } = await import("./partner.server");
+  return listPartnerShops();
+});
+
+export const decideShop = createServerFn({ method: "POST" })
+  .middleware([authMiddleware])
+  .validator((input: { id: string; status: PartnerStatus }) => input)
+  .handler(async ({ data, context }): Promise<{ ok: boolean }> => {
+    const { decidePartnerShop } = await import("./partner.server");
+    return decidePartnerShop(data, context.userId);
+  });
+
