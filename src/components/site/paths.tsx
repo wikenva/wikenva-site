@@ -87,6 +87,7 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
     setPaused(true);
     start.current = { x: event.clientX, y: event.clientY, locked: null };
     drag.current = 0;
+    event.currentTarget.setPointerCapture(event.pointerId);
   }
 
   function onPointerMove(event: ReactPointerEvent<HTMLDivElement>) {
@@ -94,14 +95,17 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
     const dx = event.clientX - start.current.x;
     const dy = event.clientY - start.current.y;
     if (start.current.locked == null) {
-      if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
-      start.current.locked = Math.abs(dx) > Math.abs(dy);
-      if (!start.current.locked) {
+      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+      if (Math.abs(dy) > Math.abs(dx)) {
         start.current = null;
+        drag.current = 0;
+        setOffset(0);
+        setPaused(false);
+        if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
         return;
       }
+      start.current.locked = true;
       setDragging(true);
-      event.currentTarget.setPointerCapture(event.pointerId);
     }
     drag.current = dx;
     setOffset(dx);
@@ -116,8 +120,8 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
     setOffset(0);
     setPaused(false);
     if (!wasDragging) return;
-    if (dx <= -48) go(index + 1);
-    else if (dx >= 48) go(index - 1);
+    if (dx <= -36) go(index + 1);
+    else if (dx >= 36) go(index - 1);
   }
 
   if (count === 0) return null;
