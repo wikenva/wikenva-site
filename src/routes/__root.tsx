@@ -12,7 +12,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "WIKENVA, marketplace digitale d'ebooks halal dans l'écosystème SidraChain. Site officiel et WIKENVA TOKEN.",
+          "WIKENVA, marketplace digitale d'ebooks dans l'écosystème SidraChain. Site officiel et WIKENVA TOKEN.",
       },
       { name: "theme-color", content: "#07101c" },
     ],
