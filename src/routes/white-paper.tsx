@@ -55,7 +55,7 @@ function WhitepaperPage() {
                 <dt className="text-faint">SidraStart</dt>
                 <dd className="mt-1">
                   <a className="text-gold" href={site.investUrl ?? ""}>
-                    Digital Marketplace Ebook Halal
+                    Digital Marketplace Ebook
                   </a>
                 </dd>
               </div>
