@@ -58,16 +58,17 @@ function VisionPage() {
         </div>
         <figure className="lg:sticky lg:top-24">
           <img
-            src="/media/planes.jpg"
-            alt={tr("Plans de verre bleu traversés d'une ligne dorée.")}
-            width={1600}
-            height={1200}
+            src="/media/wikenva-ceo.jpg"
+            alt={tr("Portrait de Félix Adjibodou, CEO de WIKENVA.")}
+            width={800}
+            height={1000}
             loading="lazy"
             decoding="async"
-            className="aspect-[4/3] w-full rounded-2xl border border-line object-cover"
+            className="aspect-[4/5] w-full max-w-[20rem] bg-white object-contain lg:max-w-none"
           />
-          <figcaption className="mt-3 text-sm text-muted">
-            {tr("Visuel d'accompagnement. Il n'illustre pas un lieu, un produit ou un partenariat réel.")}
+          <figcaption className="mt-3">
+            <p className="font-display text-xl font-semibold">{tr("Félix Adjibodou")}</p>
+            <p className="mt-1 text-sm text-gold">{tr("CEO de WIKENVA")}</p>
           </figcaption>
         </figure>
       </div>
