@@ -136,7 +136,7 @@ function Shell({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen bg-ink text-fg">
+    <div className="min-h-screen overflow-x-hidden bg-ink text-fg">
       <a
         href="#contenu"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-gold focus:px-4 focus:py-2 focus:text-ink"
