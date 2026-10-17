@@ -52,18 +52,7 @@ export function HomePage() {
             </TextLink>
           </div>
           <div>
-            <figure className="overflow-hidden rounded-3xl border border-line">
-              <img
-                src="/media/globe.jpg"
-                alt={tr("Terre reliée par un réseau doré, visuel d'ouverture de WIKENVA.")}
-                width={1920}
-                height={768}
-                fetchPriority="high"
-                decoding="async"
-                className="aspect-[16/10] w-full object-cover"
-              />
-            </figure>
-            <div className="mt-4 max-w-sm rounded-2xl border border-gold/50 bg-panel p-3">
+            <div className="max-w-sm rounded-2xl border border-gold/50 bg-panel p-3">
               <PromotionClock compact />
             </div>
             <div className="mt-4 flex max-w-md flex-col gap-3">
