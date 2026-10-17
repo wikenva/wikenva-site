@@ -202,6 +202,8 @@ export const en: Record<string, string> = {
   Responsable: "Controller",
   "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — À compléter.":
     "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — To be completed.",
+  "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 96 41 21 17.":
+    "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — wikenva@gmail.com. Phone — +229 96 41 21 17.",
   "Formulaire actionnaires": "Shareholder form",
   "Le formulaire demande un nom complet, un email, un nom d'utilisateur SidraChain s'il est indiqué, un montant envisagé en SDA et un message facultatif, ainsi que deux confirmations : lecture des risques, et absence de rendement promis.":
     "The form asks for a full name, an email, a SidraChain username if given, an amount considered in SDA and an optional message, plus two confirmations: that the risk warning was read, and that no yield is promised.",
@@ -676,6 +678,8 @@ export const en: Record<string, string> = {
   "Où lire les documents et nous écrire ?": "Where do I read the documents and write to you?",
   "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant.":
     "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. No general email address is published yet.",
+  "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 96 41 21 17.":
+    "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. Gmail: wikenva@gmail.com. Phone: +229 96 41 21 17.",
   "Aller plus loin": "Go further",
   "La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.":
     "The roadmap, the token, the news and the documents remain available. They are not repeated here.",
@@ -719,6 +723,9 @@ export const en: Record<string, string> = {
     "The site presents the WIKENVA project. Public contact goes through the official channels listed on the Community page: Facebook, WhatsApp, Telegram and X.",
   "Aucune adresse e-mail générale n'est publiée. N'envoyez pas de message à une adresse supposée.":
     "No general email address is published. Do not write to an address you only assume exists.",
+  "Gmail : wikenva@gmail.com. Numéro : +229 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 96 41 21 17.",
+  "Gmail": "Gmail",
+  "Numéro": "Phone",
   "Éditeur — non publié": "Publisher — not published",
   "La forme juridique, le siège, le numéro d'immatriculation et le directeur de la publication ne figurent dans aucun document officiel déjà intégré. Ils ne sont pas inventés ici.":
     "The legal form, the registered office, the registration number and the publication director are not in any official document already included. They are not invented here.",
@@ -1036,6 +1043,7 @@ export const en: Record<string, string> = {
   "Compte": "Account",
   "Les informations communiquées au site restent réservées aux administrateurs autorisés. Elles ne confirment pas un investissement.": "Information sent to the site stays reserved for authorised administrators. It does not confirm an investment.",
   "Lorsque le contact officiel sera publié, une demande d'accès, de rectification ou d'effacement pourra lui être adressée.": "When the official contact is published, a request for access, correction or deletion can be sent to it.",
+  "Une demande d'accès, de rectification ou d'effacement peut être adressée à wikenva@gmail.com.": "A request for access, correction or deletion can be sent to wikenva@gmail.com.",
   "Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 1 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.": "The button appears when the name, the email and an amount of at least 1,000 SDA are valid, and the box is ticked. It opens SidraStart without adding this information to the address and does not confirm an investment. Saving the application is separate: it happens only if you ask for it, and only when administrator reception is configured.",
   "Message facultatif": "Optional message",
   "Vous pouvez laisser ce champ vide.": "You can leave this field empty.",
