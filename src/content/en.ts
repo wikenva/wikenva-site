@@ -735,6 +735,31 @@ export const en: Record<string, string> = {
   "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
   "Précédent": "Previous",
   "Suivant": "Next",
+  "Espace partenaire": "Partner space",
+  "Fonctions premium : annonces réservées, demande de boutique et suivi du statut. La vente n'est pas ouverte.":
+    "Premium features: reserved announcements, a shop request and status tracking. Sales are not open.",
+  "Demander l'ouverture d'une boutique": "Request a shop opening",
+  "Présentez les articles que vous souhaitez proposer. La boutique n'est pas ouverte tant qu'un administrateur ne l'a pas approuvée. Aucun article n'est mis en vente ici.":
+    "Describe the items you want to offer. The shop stays closed until an administrator approves it. No item is offered for sale here.",
+  "Nom de la boutique": "Shop name",
+  "Description des articles": "Item description",
+  "Envoyer la demande de boutique": "Send the shop request",
+  "La demande de boutique est enregistrée. Elle n'ouvre pas la boutique.": "The shop request is saved. It does not open the shop.",
+  "Une boutique est déjà en cours pour ce partenaire.": "A shop request is already in progress for this partner.",
+  "Seule une candidature approuvée peut demander une boutique.": "Only an approved application can request a shop.",
+  "Indiquez un nom et une description d'au moins 10 caractères.": "Enter a name and a description of at least 10 characters.",
+  "Les fonctions premium et la demande de boutique sont réservées à un partenaire approuvé. Le statut n'est pas accordé automatiquement, et ce site ne vérifie pas le paiement SDA.":
+    "Premium features and the shop request are reserved for an approved partner. Status is not granted automatically, and this site does not verify the SDA payment.",
+  "Demandes de boutique": "Shop requests",
+  "Aucune demande de boutique.": "No shop request.",
+  "Candidatures actionnaires": "Shareholder applications",
+  "Aucune candidature actionnaire.": "No shareholder application.",
+  "Aucun revenu n'est affiché. Une approbation ne confirme pas un versement.": "No revenue is shown. An approval does not confirm a payment.",
+  "Part prévue des revenus": "Planned share of revenue",
+  "Le partage des revenus est prévu dans les mois à venir. Aucun montant reçu n'est affiché. Aucun versement n'est simulé.":
+    "Revenue sharing is planned in the coming months. No amount received is shown. No payment is simulated.",
+  "L'espace actionnaire montre le statut et les informations officielles. La répartition chiffrée s'affichera seulement lorsque le système sera opérationnel.":
+    "The shareholder space shows status and official information. Figures will appear only when the system is operational.",
   "Gmail": "Gmail",
   "Numéro": "Phone",
   "Entrepreneur": "Entrepreneur",
