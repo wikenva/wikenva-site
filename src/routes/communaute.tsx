@@ -27,6 +27,16 @@ function CommunityPage() {
           <div className="mt-6">
             <SocialGrid />
           </div>
+          <div className="mx-auto mt-8 grid max-w-md gap-3 text-left">
+            <a href="mailto:wikenva@gmail.com" className="rounded-2xl border border-line bg-panel px-4 py-3">
+              <p className="text-xs font-semibold tracking-wide text-gold uppercase">{tr("Gmail")}</p>
+              <p className="mt-1 text-base font-semibold">wikenva@gmail.com</p>
+            </a>
+            <a href="tel:+22996412117" className="rounded-2xl border border-line bg-panel px-4 py-3">
+              <p className="text-xs font-semibold tracking-wide text-gold uppercase">{tr("Numéro")}</p>
+              <p className="mt-1 text-base font-semibold">+229 96 41 21 17</p>
+            </a>
+          </div>
         </div>
       </section>
     </SiteShell>
