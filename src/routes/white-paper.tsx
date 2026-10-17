@@ -21,7 +21,7 @@ function WhitepaperPage() {
       <article className="paper bg-ink text-fg">
         <header className="border-b border-line">
           <div className="mx-auto grid w-full max-w-3xl gap-6 px-5 py-10 md:px-8 md:py-14">
-            <img src="/media/logo-mark-ui.webp" alt="" width={480} height={266} decoding="async" className="h-12 w-auto" />
+            <img src="/media/logo-official.jpg" alt="" width={1024} height={1024} decoding="async" className="h-12 w-auto" />
             <p className="text-sm font-semibold tracking-[0.18em] text-gold uppercase">{paperMeta.status[L]}</p>
             <div>
               <p className="font-display text-sm tracking-[0.22em] text-muted uppercase">{site.name}</p>
