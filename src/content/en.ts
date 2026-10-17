@@ -975,4 +975,8 @@ export const en: Record<string, string> = {
   "Outils numériques. Pas encore en vente.": "Digital tools. Not for sale yet.",
   "Modèles numériques": "Digital models",
   "Modèles et ressources. Pas encore en vente.": "Models and resources. Not for sale yet.",
+  "À propos": "About",
+  "Contact": "Contact",
+  "Liens du bas de page": "Footer links",
+  "© 2026 WIKENVA": "© 2026 WIKENVA",
 };
