@@ -901,6 +901,8 @@ export const en: Record<string, string> = {
   "Un avis a été envoyé, sans vos coordonnées.": "A notice was sent, without your contact details.",
   "Une candidature exprime l'intérêt de participer au développement de WIKENVA. Elle ne crée aucun droit.": "An application expresses interest in taking part in WIKENVA's development. It creates no right.",
   "Une marketplace d'ebooks, dans SidraChain. Elle réunit auteurs, lecteurs, créateurs et partenaires.": "An ebook marketplace in SidraChain. It brings together authors, readers, creators and partners.",
+  "L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA.":
+    "The interface that brings together readers, content creators and the community is www.wikenva.com. It must be validated by the SidraChain core team before WIKENVA is integrated.",
   "Uniquement une référence publique. Jamais une phrase secrète ni une clé privée.": "A public reference only. Never a seed phrase or a private key.",
   "Version de relecture du livre blanc. Elle distingue les faits confirmés des points encore ouverts. Elle ne promet aucun rendement.": "Review version of the white paper. It separates confirmed facts from points still open. It promises no yield.",
   "Votre compte est connecté. Inscrivez-vous pour enregistrer votre compte. Cette inscription ne confirme pas un investissement.": "Your account is signed in. Register to save your account. This registration does not confirm an investment.",
