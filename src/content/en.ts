@@ -736,7 +736,6 @@ export const en: Record<string, string> = {
   "Précédent": "Previous",
   "Suivant": "Next",
   "Gmail": "Gmail",
-  "Suivant": "Next",
   "Numéro": "Phone",
   "Entrepreneur": "Entrepreneur",
   "Autre": "Other",
