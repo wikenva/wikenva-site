@@ -86,6 +86,8 @@ export const site = {
   partnerPromotionEnds: "2026-11-30T23:59:59+01:00",
   /** Site officiel de l'écosystème. */
   sidrachainUrl: "https://www.sidrachain.com",
+  /** Interface WIKENVA. Intégration après validation de la core team SidraChain. */
+  platformUrl: "https://www.wikenva.com",
   whitepaper: {
     readUrl: "/white-paper",
     downloadUrl: "/wikenva-livre-blanc.pdf",
