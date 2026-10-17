@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { categoryLabels, narrative, news, site } from "@/content/site";
+import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
@@ -18,8 +18,8 @@ export function HomePage() {
       <section className="border-b border-line">
         <div className="mx-auto grid w-full max-w-6xl items-start gap-8 px-5 py-8 md:px-8 md:py-12 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="min-w-0">
-            <h1 className="font-display text-3xl font-semibold tracking-wide md:text-4xl">{tr("Actualités WIKENVA")}</h1>
-            <p className="mt-2 max-w-xl text-sm text-muted md:text-base">
+            <h1 className="text-xl font-bold tracking-tight md:text-2xl">{tr("Actualités WIKENVA")}</h1>
+            <p className="mt-1 max-w-xl text-sm text-muted">
               {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
             </p>
             <NewsCarousel />
@@ -238,7 +238,7 @@ function NewsCarousel() {
 
   useEffect(() => {
     if (paused || dragging || count < 2) return;
-    const timer = window.setTimeout(() => setIndex((current) => (current + 1) % count), 5000);
+    const timer = window.setTimeout(() => setIndex((current) => (current + 1) % count), 4500);
     return () => window.clearTimeout(timer);
   }, [paused, dragging, count, index]);
 
@@ -292,7 +292,7 @@ function NewsCarousel() {
       aria-label={tr("Actualités WIKENVA")}
     >
       <div
-        className="relative h-44 overflow-hidden rounded-2xl border border-line bg-panel sm:h-40"
+        className="relative h-[4.6rem] overflow-hidden rounded-2xl border border-line bg-panel"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -304,29 +304,33 @@ function NewsCarousel() {
           style={{
             width: `${count * 100}%`,
             transform: `translate3d(calc(${(-index * 100) / count}% + ${offset}px), 0, 0)`,
-            transition: dragging || reduced ? "none" : "transform 520ms cubic-bezier(.22,.8,.24,1)",
+            transition: dragging || reduced ? "none" : "transform 480ms cubic-bezier(.22,.8,.24,1)",
           }}
         >
           {news.map((item, slide) => (
-            <article
-              key={item.slug}
-              className="flex h-full shrink-0 flex-col overflow-hidden px-4 py-3.5 md:px-12"
-              style={{ width: `${100 / count}%` }}
-              aria-hidden={slide !== index}
-            >
-              <p className="text-[11px] font-semibold tracking-wide text-gold uppercase">
-                {tr(categoryLabels[item.category])} · {tr(item.date)}
-              </p>
-              <h2 className="mt-1.5 line-clamp-2 font-display text-lg leading-snug font-semibold">
-                <Link to="/actualites/$slug" params={{ slug: item.slug }} className="hover:text-gold">
-                  {tr(item.title)}
-                </Link>
-              </h2>
-              <p className="mt-1.5 line-clamp-2 text-sm text-muted">{tr(item.excerpt)}</p>
+            <article key={item.slug} className="h-full shrink-0" style={{ width: `${100 / count}%` }} aria-hidden={slide !== index}>
+              <Link
+                to="/actualites/$slug"
+                params={{ slug: item.slug }}
+                className="flex h-full items-center gap-3 px-3.5"
+              >
+                <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold">
+                  <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 10v4M9 8.5v7L18 19V5L9 8.5z" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-semibold">{tr(item.title)}</span>
+                  <span className="mt-0.5 block truncate text-xs text-muted">{tr(item.excerpt)}</span>
+                </span>
+                <span aria-hidden className="shrink-0 text-lg leading-none text-gold">
+                  ›
+                </span>
+              </Link>
             </article>
           ))}
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-2.5 flex justify-center gap-1.5">
+        <div className="pointer-events-none absolute inset-x-0 bottom-1 flex justify-center gap-1">
           {news.map((item, dot) => (
             <button
               key={item.slug}
@@ -334,33 +338,13 @@ function NewsCarousel() {
               aria-label={tr("Actualité") + " " + (dot + 1)}
               aria-current={dot === index}
               onClick={() => go(dot)}
-              className="pointer-events-auto grid h-5 w-5 place-items-center"
+              className="pointer-events-auto grid h-3 w-3 place-items-center"
             >
-              <span
-                className={
-                  "block rounded-full " + (dot === index ? "h-1.5 w-4 bg-gold" : "h-1.5 w-1.5 bg-white/35")
-                }
-              />
+              <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
             </button>
           ))}
         </div>
       </div>
-      <button
-        type="button"
-        aria-label={tr("Actualité précédente")}
-        onClick={() => go(index - 1)}
-        className="absolute top-1/2 left-1.5 z-10 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-gold md:grid"
-      >
-        <span aria-hidden>‹</span>
-      </button>
-      <button
-        type="button"
-        aria-label={tr("Actualité suivante")}
-        onClick={() => go(index + 1)}
-        className="absolute top-1/2 right-1.5 z-10 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-gold md:grid"
-      >
-        <span aria-hidden>›</span>
-      </button>
     </div>
   );
 }
