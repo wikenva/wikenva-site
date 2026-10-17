@@ -253,9 +253,19 @@ function Shell({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
-          <p className="max-w-xs text-sm text-neutral-600">
-            {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
-          </p>
+          <div>
+            <p className="max-w-xs text-sm text-neutral-600">
+              {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
+            </p>
+            <p className="mt-3 flex flex-col gap-1 text-sm">
+              <a href="mailto:wikenva@gmail.com" className="font-semibold text-neutral-900 hover:underline">
+                wikenva@gmail.com
+              </a>
+              <a href="tel:+22996412117" className="font-semibold text-neutral-900 hover:underline">
+                +229 96 41 21 17
+              </a>
+            </p>
+          </div>
           <nav aria-label={tr("Liens du bas de page")}>
             <ul className="flex flex-col gap-3 text-sm md:flex-row md:gap-6">
               <li>
