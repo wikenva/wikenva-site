@@ -94,14 +94,14 @@ export const site = {
    * Seuil évoqué. Il n'est affiché comme condition du programme
    * que si `thresholdConfirmed` passe à true.
    */
-  pendingThreshold: "3 000 SDA",
+  pendingThreshold: "1 000 SDA",
   thresholdConfirmed: false,
   /**
    * Conditions du programme actionnaires. À mettre à jour lorsque
    * les modalités définitives sont publiées.
    */
   shareholderProgram: {
-    minimum: "3 000 SDA",
+    minimum: "1 000 SDA",
     revenueShare: "15 %",
     revenueLabel: "Part prévue des revenus de la plateforme",
     status: "Conditions du programme à officialiser",
@@ -231,23 +231,36 @@ export const roles = [
 
 export const narrative = {
   vision: [
-    "La vision de WIKENVA est de réunir, dans un même écosystème, les auteurs, les lecteurs, les créateurs de contenu, les concepteurs de produits digitaux, les entrepreneurs et bien d'autres acteurs du numérique.",
-    "WIKENVA veut rapprocher les talents, les idées et les opportunités au sein d'un écosystème numérique ouvert sur le monde.",
-    "Un espace pour les créateurs, une communauté pour les lecteurs, des opportunités pour tous.",
+    "WIKENVA veut une plateforme d'achat et de vente de produits numériques licites, dans le respect des principes de l'Islam.",
+    "L'économie visée est responsable : honnêteté, transparence, équité et création de valeur utile.",
+    "Innover avec éthique, entreprendre avec intégrité et créer de la valeur dans le respect des principes de l'Islam.",
   ],
   mission: [
-    "Donner à chacun la possibilité de créer, de partager, de découvrir et de développer ses projets.",
-    "WIKENVA est aussi une marketplace digitale d'ebooks halal. Ensemble, l'ambition est de construire un avenir numérique où chaque talent peut trouver sa place.",
+    "Mettre en relation les créateurs, les entrepreneurs et les consommateurs pour des échanges commerciaux licites.",
+    "Les produits visés sont des livres électroniques, des formations, des logiciels et d'autres ressources utiles, lorsque leur contenu respecte les principes de la charia. La boutique n'est pas encore ouverte.",
   ],
   problem: [
-    "Auteurs, lecteurs, créateurs, concepteurs et entrepreneurs évoluent souvent chacun de leur côté. Les talents, les idées et les opportunités restent dispersés.",
-    "WIKENVA cherche à les rapprocher dans un même espace, sans promettre de résultat chiffré tant qu'il n'est pas officiel.",
+    "Le commerce numérique doit rester licite : produits clairs, prix clairs, et refus de la tromperie, de la contrefaçon et des fausses promesses.",
+    "Les droits des créateurs et la propriété intellectuelle doivent être protégés. Les activités interdites par les principes de l'Islam sont écartées.",
   ],
   place: [
     "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook Halal.",
-    "Le symbole du token, l'adresse du contrat, l'offre et le modèle économique ne sont pas encore renseignés ici. Aucune licence, aucun agrément et aucune statistique ne sont affichés tant qu'ils n'ont pas été fournis.",
+    "Toute utilisation de la blockchain, des actifs numériques ou d'un paiement devra être examinée pour sa compatibilité avec les principes de la finance islamique. Ce site ne présente pas de certificat de conformité à la charia.",
+  ],
+  africa: [
+    "WIKENVA veut contribuer à l'économie numérique africaine : entrepreneuriat, créativité et nouvelles opportunités.",
+    "L'ambition est de permettre aux talents africains de valoriser leurs compétences et de rendre leurs créations accessibles à un public plus large.",
   ],
 };
+
+export const principles = [
+  ["Commerce halal", "Favoriser la vente de produits et de services licites."],
+  ["Honnêteté et transparence", "Présenter clairement les produits, les prix et les conditions."],
+  ["Équité commerciale", "Encourager des échanges justes entre vendeurs et acheteurs."],
+  ["Refus de la fraude", "Écarter la tromperie, la contrefaçon et les fausses promesses."],
+  ["Respect des droits", "Protéger les droits des créateurs et la propriété intellectuelle."],
+  ["Responsabilité", "Écarter les activités et les contenus interdits par les principes de l'Islam."],
+] as const;
 
 export const news: NewsItem[] = [
   {
