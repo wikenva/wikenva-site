@@ -4,7 +4,7 @@ import { Compass, Megaphone, ShieldCheck, Wallet } from "lucide-react";
 import { narrative, pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
 import { ExternalLink, PageHero, Panel } from "@/components/site/ui";
-import { PathBoard } from "@/components/site/paths";
+import { PathBoard, HSlide } from "@/components/site/paths";
 import { PromotionClock } from "@/components/site/promotion";
 import { CountrySelect } from "@/components/site/country-select";
 import { findCountry, toInternational } from "@/lib/countries";
@@ -52,15 +52,15 @@ function PartnersPage() {
       />
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-8 md:px-8">
         <div className="flex flex-col gap-3 sm:flex-row">
-          <a href="#candidature" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-ink">
+          <a href="#candidature" className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink">
             {tr("Devenir partenaire")}
           </a>
-          <a href="#programme" className="inline-flex min-h-12 items-center justify-center rounded-full border border-line px-5 text-sm font-semibold">
+          <a href="#programme" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold">
             {tr("Comprendre le programme")}
           </a>
         </div>
 
-        <section className="grid gap-4 md:grid-cols-3">
+        <HSlide label={tr("Vision")}>
           <Panel>
             <h2 className="font-display text-xl font-semibold">{tr("Vision")}</h2>
             <p className="mt-3 text-sm text-muted">{tr(narrative.vision[0])}</p>
@@ -73,7 +73,7 @@ function PartnersPage() {
             <h2 className="font-display text-xl font-semibold">{tr("Objectif")}</h2>
             <p className="mt-3 text-sm text-muted">{tr(narrative.vision[2])}</p>
           </Panel>
-        </section>
+        </HSlide>
 
         <Panel className="border-gold/50">
           <p className="text-sm font-semibold text-gold">{tr("Vous êtes sur le parcours partenaire")}</p>
@@ -97,18 +97,18 @@ function PartnersPage() {
 
         <section id="programme" className="scroll-mt-24">
           <h2 className="font-display text-3xl font-semibold">{tr("Comment fonctionne le partenariat ?")}</h2>
-          <ol className="mt-5 grid gap-4 md:grid-cols-2">
+          <HSlide className="mt-5" label={tr("Comment fonctionne le partenariat ?")}>
             <Step icon={Compass} index="1" title="Lire les conditions de partenariat." text="Cette page décrit la promotion en cours. Elle ne valide aucune candidature." />
             <Step icon={Megaphone} index="2" title="Ouvrir la fiche officielle sur SidraStart." text="Le projet s'appelle Digital Marketplace Ebook. Les conditions de contribution sont celles publiées là-bas." />
             <Step icon={Wallet} index="3" title="Investir depuis son propre compte." text="Minimum de 2 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site." />
             <Step icon={ShieldCheck} index="4" title="Fournir les informations de vérification." text="Le formulaire demande un nom, un e-mail et, si vous le souhaitez, une référence publique de transaction. N'envoyez jamais une clé privée ou un mot de passe." />
             <Step icon={ShieldCheck} index="5" title="Attendre la confirmation du statut." text="La demande part en attente. Seule une décision d'un administrateur autorisé confirme le partenariat. Après le 30 novembre 2026, les conditions pourront changer et ne sont pas encore définies." />
-          </ol>
+          </HSlide>
         </section>
 
         <section>
           <h2 className="font-display text-3xl font-semibold">{tr("Avantages du partenariat")}</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
+          <HSlide className="mt-5" label={tr("Avantages du partenariat")}>
             <Panel>
               <h3 className="font-semibold">{tr("Participer au développement")}</h3>
               <p className="mt-2 text-sm text-muted">{tr("Une candidature exprime l'intérêt de participer au développement de WIKENVA. Elle ne crée aucun droit.")}</p>
@@ -127,7 +127,7 @@ function PartnersPage() {
                 {tr("15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.")}
               </p>
             </Panel>
-          </div>
+          </HSlide>
         </section>
 
         <Panel>
@@ -167,7 +167,7 @@ function Step({
 }) {
   const tr = useTr();
   return (
-    <li className="rounded-3xl border border-line bg-panel p-5">
+    <article className="rounded-3xl border border-line bg-panel p-5">
       <div className="flex items-center gap-3">
         <span className="grid size-10 place-items-center rounded-full bg-ink text-gold">
           <Icon aria-hidden className="size-5" />
@@ -176,7 +176,7 @@ function Step({
       </div>
       <h3 className="mt-4 font-display text-xl font-semibold">{tr(title)}</h3>
       <p className="mt-2 text-sm text-muted">{tr(text)}</p>
-    </li>
+    </article>
   );
 }
 
