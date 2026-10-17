@@ -39,6 +39,16 @@ function InvestorsPage() {
           <p className="mt-3 max-w-3xl text-sm text-muted">
             {tr("Ce programme n'est pas la promotion partenaire à 2 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.")}
           </p>
+          <Panel className="mt-6">
+            <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Part prévue des revenus")}</p>
+            <p className="mt-2 font-display text-4xl font-semibold">{site.shareholderProgram.revenueShare}</p>
+            <p className="mt-3 text-muted">
+              {tr("Le partage des revenus est prévu dans les mois à venir. Aucun montant reçu n'est affiché. Aucun versement n'est simulé.")}
+            </p>
+            <p className="mt-3 text-sm text-muted">
+              {tr("L'espace actionnaire montre le statut et les informations officielles. La répartition chiffrée s'affichera seulement lorsque le système sera opérationnel.")}
+            </p>
+          </Panel>
           <div className="mt-6">
             <ShareholderAccess />
           </div>
