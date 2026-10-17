@@ -23,7 +23,7 @@ export function HomePage() {
               {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
             </p>
             <NewsCarousel />
-            <TextLink to="/actualites" variant="ghost" className="mt-4">
+            <TextLink to="/actualites" variant="ghost" className="mt-4 w-full">
               {tr("Voir toutes les actualités")}
             </TextLink>
           </div>
@@ -32,10 +32,10 @@ export function HomePage() {
               <PromotionClock compact />
             </div>
             <div className="mt-4 flex max-w-md flex-col gap-3">
-              <a href="#decouvrir" className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink active:scale-[0.98]">
+              <PartnerButton className="w-full" />
+              <a href="#decouvrir" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-line bg-transparent px-5 text-sm font-semibold text-fg active:scale-[0.98]">
                 {text.discover}
               </a>
-              <PartnerButton className="w-full" />
               <ExternalLink href={site.investUrl ?? ""} variant="ghost" className="w-full">
                 {text.invest}
               </ExternalLink>
@@ -292,7 +292,7 @@ function NewsCarousel() {
       aria-label={tr("Actualités WIKENVA")}
     >
       <div
-        className="relative h-[4.6rem] overflow-hidden rounded-2xl border border-line bg-panel"
+        className="relative h-[5.25rem] overflow-hidden rounded-2xl border border-line bg-panel"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -319,9 +319,8 @@ function NewsCarousel() {
                     <path d="M5 10v4M9 8.5v7L18 19V5L9 8.5z" strokeLinejoin="round" />
                   </svg>
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-semibold">{tr(item.title)}</span>
-                  <span className="mt-0.5 block truncate text-xs text-muted">{tr(item.excerpt)}</span>
+                <span className="min-w-0 flex-1 pb-2">
+                  <span className="line-clamp-2 text-sm leading-snug font-semibold">{tr(item.title)}</span>
                 </span>
                 <span aria-hidden className="shrink-0 text-lg leading-none text-gold">
                   ›
