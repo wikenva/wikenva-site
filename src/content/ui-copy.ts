@@ -35,6 +35,7 @@ const copy = {
       "/conditions": "Conditions d'utilisation",
       "/risques": "Avertissement sur les risques",
       "/documents": "Documents officiels",
+      "/sidrachain": "SidraChain",
     } as Record<string, string>,
     footer: {
       explore: "Explorer",
@@ -80,6 +81,7 @@ const copy = {
       "/conditions": "Terms of use",
       "/risques": "Risk warning",
       "/documents": "Official documents",
+      "/sidrachain": "SidraChain",
     } as Record<string, string>,
     footer: {
       explore: "Explore",
