@@ -58,17 +58,16 @@ function VisionPage() {
         </div>
         <figure className="lg:sticky lg:top-24">
           <img
-            src="/media/wikenva-ceo.jpg"
-            alt={tr("Portrait de Félix Adjibodou, CEO de WIKENVA.")}
-            width={800}
-            height={1000}
+            src="/media/wikenva-token.svg"
+            alt={tr("Visuel conceptuel du WIKENVA TOKEN : médaille bleue et or portant le logo officiel.")}
+            width={905}
+            height={880}
             loading="lazy"
             decoding="async"
-            className="aspect-[4/5] w-full max-w-[20rem] bg-white object-contain lg:max-w-none"
+            className="aspect-square w-full rounded-2xl border border-line bg-ink object-contain"
           />
-          <figcaption className="mt-3">
-            <p className="font-display text-xl font-semibold">{tr("Félix Adjibodou")}</p>
-            <p className="mt-1 text-sm text-gold">{tr("CEO de WIKENVA")}</p>
+          <figcaption className="mt-3 text-sm text-muted">
+            {tr("Visuel conceptuel du token. Il ne représente pas une pièce ayant cours légal ni une valeur de marché.")}
           </figcaption>
         </figure>
       </div>
