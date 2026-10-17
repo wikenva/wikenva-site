@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { site } from "@/content/site";
-import { useLang, useTr } from "@/lib/locale";
+import { useTr } from "@/lib/locale";
 
-export function PromotionClock({ compact = false }: { compact?: boolean }) {
+export function PromotionClock(_props?: { compact?: boolean }) {
   const tr = useTr();
-  const { lang } = useLang();
   const ends = site.partnerPromotionEnds;
   const [now, setNow] = useState(() => Date.now());
 
@@ -15,27 +14,11 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
   }, [ends]);
 
   if (!ends) return null;
-  const end = new Date(ends).getTime();
-  const left = end - now;
-  const locale = lang === "en" ? "en-GB" : "fr-FR";
-  const zone = "Africa/Lagos";
-  const when = new Date(ends);
-  const day = when.toLocaleDateString(locale, { day: "numeric", timeZone: zone });
-  const month = when.toLocaleDateString(locale, { month: "long", timeZone: zone });
-  const year = when.toLocaleDateString(locale, { year: "numeric", timeZone: zone });
+  const left = new Date(ends).getTime() - now;
 
   return (
     <div className="text-center">
       <p className="text-[11px] font-semibold tracking-[0.18em] text-gold uppercase">{tr("Partenaire")}</p>
-      <div className="mt-2 flex items-end justify-center gap-2">
-        <p className={compact ? "font-display text-4xl leading-none font-semibold tabular-nums" : "font-display text-5xl leading-none font-semibold tabular-nums"}>
-          {day}
-        </p>
-        <div className="pb-0.5">
-          <p className="font-display text-lg leading-none font-semibold capitalize">{month}</p>
-          <p className="mt-1 text-xs tracking-[0.16em] text-muted">{year}</p>
-        </div>
-      </div>
       {left > 0 ? <Countdown left={left} /> : null}
       {left <= 0 ? (
         <p className="mt-4 text-sm text-muted">
