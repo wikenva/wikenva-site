@@ -872,6 +872,7 @@ export const en: Record<string, string> = {
   "Suivez la communauté officielle de WIKENVA.": "Follow the official WIKENVA community.",
   "Suivre ma candidature": "Track my application",
   "Tout change après cette date.": "Everything changes after this date.",
+  "Valable jusqu'au 30 novembre 2026.": "Valid until 30 November 2026.",
   "Transparence et éthique": "Transparency and ethics",
   "Trois décisions distinctes. Aucun rendement n'est promis.": "Three separate decisions. No yield is promised.",
   "Type de profil": "Profile type",
