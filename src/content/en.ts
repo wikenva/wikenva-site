@@ -113,6 +113,15 @@ export const en: Record<string, string> = {
 
   "12 octobre 2026": "12 October 2026",
   "17 octobre 2026": "17 October 2026",
+  "L'interface WIKENVA est www.wikenva.com": "The WIKENVA interface is www.wikenva.com",
+  "Elle réunira lecteurs, auteurs, créateurs et communauté. L'intégration attend l'examen de la Core Team de SidraChain.":
+    "It will bring together readers, authors, creators and the community. Integration awaits review by the SidraChain Core Team.",
+  "Le site officiel de l'interface WIKENVA est www.wikenva.com. Cette plateforme a pour vocation de réunir les lecteurs, les auteurs, les créateurs de contenu, les créateurs de produits numériques et la communauté autour d'un écosystème de partage de connaissances, de collaboration et d'opportunités.":
+    "The official website of the WIKENVA interface is www.wikenva.com. This platform is meant to bring together readers, authors, content creators, digital-product creators and the community around an ecosystem of knowledge sharing, collaboration and opportunities.",
+  "Avant toute intégration officielle à l'écosystème SidraChain, WIKENVA devra être présentée à la Core Team de SidraChain pour examen et validation, conformément aux procédures applicables.":
+    "Before any official integration into the SidraChain ecosystem, WIKENVA must be presented to the SidraChain Core Team for review and validation, in line with the applicable procedures.",
+  "L'ambition est de développer une plateforme structurée, professionnelle et utile à la communauté, tout en respectant les exigences de l'écosystème SidraChain.":
+    "The ambition is to develop a structured, professional platform that is useful to the community, while respecting the requirements of the SidraChain ecosystem.",
   "La promotion partenaire est ouverte": "The partner promotion is open",
   "Jusqu'au 30 novembre 2026, le minimum est de 2 000 SDA sur SidraStart. La demande est vérifiée.":
     "Until 30 November 2026, the minimum is 2,000 SDA on SidraStart. The request is checked.",
