@@ -18,7 +18,8 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#07101c" },
     ],
     links: [
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
@@ -43,7 +44,7 @@ export const Route = createRootRoute({
       <body>
         <div id="boot" role="status" aria-live="polite">
           <div>
-            <img className="boot-mark" src="/media/logo-mark-ui.webp" alt="WIKENVA" width={480} height={266} decoding="async" />
+            <img className="boot-mark" src="/media/logo-official.jpg" alt="WIKENVA" width={1024} height={1024} decoding="async" />
             <div className="boot-spin" aria-hidden />
             <p id="boot-label" className="boot-label">Chargement</p>
           </div>
