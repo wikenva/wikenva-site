@@ -5,6 +5,7 @@ import { NewsCards } from "@/components/site/blocks";
 import { SiteShell } from "@/components/site/shell";
 import { PageHero } from "@/components/site/ui";
 import { cn } from "@/lib/cn";
+import { useTr } from "@/lib/locale";
 
 const filters: Array<{ id: "toutes" | NewsCategory; label: string }> = [
   { id: "toutes", label: "Toutes" },
@@ -27,6 +28,7 @@ export const Route = createFileRoute("/actualites/")({
 });
 
 function NewsPage() {
+  const tr = useTr();
   const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("toutes");
   const items = filter === "toutes" ? news : news.filter((item) => item.category === filter);
 
@@ -38,7 +40,7 @@ function NewsPage() {
         lede="Nouvelles du projet, développement, annonces officielles, partenariats, événements, étapes de la feuille de route et publications importantes."
       />
       <div className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
-        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Catégories">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label={tr("Catégories")}>
           {filters.map((item) => (
             <button
               key={item.id}
@@ -51,7 +53,7 @@ function NewsPage() {
                 filter === item.id ? "border-gold bg-gold text-ink" : "border-line text-muted",
               )}
             >
-              {item.label}
+              {tr(item.label)}
             </button>
           ))}
         </div>
