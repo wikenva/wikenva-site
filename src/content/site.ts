@@ -266,6 +266,19 @@ export const principles = [
 
 export const news: NewsItem[] = [
   {
+    slug: "promotion-partenaire",
+    title: "La promotion partenaire est ouverte",
+    date: "17 octobre 2026",
+    category: "partenariat",
+    excerpt: "Jusqu'au 30 novembre 2026, le minimum est de 2 000 SDA sur SidraStart. La demande est vérifiée.",
+    paragraphs: [
+      "WIKENVA ouvre une promotion pour devenir partenaire. Elle est valable jusqu'au 30 novembre 2026. Le minimum indiqué est de 2 000 SDA, investis depuis son propre compte sur SidraStart. L'investissement ne se fait pas sur ce site.",
+      "Atteindre ce minimum ne confirme pas le statut. Il faut déposer une demande. Seule une décision d'un administrateur autorisé confirme le partenariat.",
+      "WIKENVA prévoit 15 % des revenus de la plateforme pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ces parts ne sont pas un rendement garanti.",
+      "Après le 30 novembre 2026, les conditions pourront être révisées. Elles ne sont pas encore définies.",
+    ],
+  },
+  {
     slug: "fiche-sidrastart",
     title: "La fiche du projet est ouverte sur SidraStart",
     date: "12 octobre 2026",
