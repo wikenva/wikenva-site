@@ -1,4 +1,4 @@
-import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { categoryLabels, narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
@@ -217,7 +217,11 @@ function NewsCarousel() {
   const [index, setIndex] = useState(0);
   const [offset, setOffset] = useState(0);
   const [dragging, setDragging] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [reduced, setReduced] = useState(false);
   const drag = useRef(0);
+  const hovering = useRef(false);
+  const pressing = useRef(false);
   const start = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
 
   function go(next: number) {
@@ -225,8 +229,28 @@ function NewsCarousel() {
     setIndex(((next % count) + count) % count);
   }
 
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const apply = () => setReduced(query.matches);
+    apply();
+    query.addEventListener("change", apply);
+    return () => query.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
+    if (reduced || paused || dragging || count < 2) return;
+    const timer = window.setTimeout(() => setIndex((current) => (current + 1) % count), 5000);
+    return () => window.clearTimeout(timer);
+  }, [reduced, paused, dragging, count, index]);
+
+  function hold(next: boolean) {
+    setPaused(next || hovering.current || pressing.current);
+  }
+
   function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
     if (event.pointerType === "mouse") return;
+    pressing.current = true;
+    setPaused(true);
     start.current = { x: event.clientX, y: event.clientY, locked: null };
     drag.current = 0;
   }
@@ -250,12 +274,15 @@ function NewsCarousel() {
   }
 
   function onPointerUp() {
-    if (!start.current && drag.current === 0 && !dragging) return;
+    pressing.current = false;
     const dx = drag.current;
+    const wasDragging = dragging || start.current?.locked === true;
     start.current = null;
     drag.current = 0;
     setDragging(false);
     setOffset(0);
+    setPaused(hovering.current);
+    if (!wasDragging) return;
     if (dx <= -48) go(index + 1);
     else if (dx >= 48) go(index - 1);
   }
@@ -263,9 +290,24 @@ function NewsCarousel() {
   if (count === 0) return null;
 
   return (
-    <div className="relative mt-5" role="region" aria-roledescription="carousel" aria-label={tr("Actualités WIKENVA")}>
+    <div
+      className="relative mt-5"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={tr("Actualités WIKENVA")}
+      onPointerEnter={(event) => {
+        if (event.pointerType !== "mouse") return;
+        hovering.current = true;
+        hold(true);
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType !== "mouse") return;
+        hovering.current = false;
+        hold(false);
+      }}
+    >
       <div
-        className="relative h-64 overflow-hidden rounded-3xl border border-line bg-panel sm:h-60"
+        className="relative h-44 overflow-hidden rounded-2xl border border-line bg-panel sm:h-40"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -276,28 +318,28 @@ function NewsCarousel() {
           className="flex h-full w-full"
           style={{
             transform: `translate3d(calc(${-index * 100}% + ${offset}px), 0, 0)`,
-            transition: dragging ? "none" : "transform 420ms cubic-bezier(.22,.8,.24,1)",
+            transition: dragging || reduced ? "none" : "transform 520ms cubic-bezier(.22,.8,.24,1)",
           }}
         >
           {news.map((item, slide) => (
             <article
               key={item.slug}
-              className="flex h-full w-full shrink-0 basis-full flex-col overflow-hidden px-5 py-5 md:px-14"
+              className="flex h-full w-full shrink-0 basis-full flex-col overflow-hidden px-4 py-3.5 md:px-12"
               aria-hidden={slide !== index}
             >
-              <p className="text-xs font-semibold tracking-wide text-gold uppercase">
+              <p className="text-[11px] font-semibold tracking-wide text-gold uppercase">
                 {tr(categoryLabels[item.category])} · {tr(item.date)}
               </p>
-              <h2 className="mt-3 line-clamp-3 font-display text-xl font-semibold md:text-2xl">
+              <h2 className="mt-1.5 line-clamp-2 font-display text-lg leading-snug font-semibold">
                 <Link to="/actualites/$slug" params={{ slug: item.slug }} className="hover:text-gold">
                   {tr(item.title)}
                 </Link>
               </h2>
-              <p className="mt-3 line-clamp-4 text-sm text-muted">{tr(item.excerpt)}</p>
+              <p className="mt-1.5 line-clamp-2 text-sm text-muted">{tr(item.excerpt)}</p>
             </article>
           ))}
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-4 flex justify-center gap-2">
+        <div className="pointer-events-none absolute inset-x-0 bottom-2.5 flex justify-center gap-1.5">
           {news.map((item, dot) => (
             <button
               key={item.slug}
@@ -305,11 +347,14 @@ function NewsCarousel() {
               aria-label={tr("Actualité") + " " + (dot + 1)}
               aria-current={dot === index}
               onClick={() => go(dot)}
-              className={
-                "pointer-events-auto h-2 rounded-full transition-all " +
-                (dot === index ? "w-6 bg-gold" : "w-2 bg-white/35")
-              }
-            />
+              className="pointer-events-auto grid h-5 w-5 place-items-center"
+            >
+              <span
+                className={
+                  "block rounded-full " + (dot === index ? "h-1.5 w-4 bg-gold" : "h-1.5 w-1.5 bg-white/35")
+                }
+              />
+            </button>
           ))}
         </div>
       </div>
@@ -317,7 +362,7 @@ function NewsCarousel() {
         type="button"
         aria-label={tr("Actualité précédente")}
         onClick={() => go(index - 1)}
-        className="absolute top-1/2 left-2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-gold md:grid"
+        className="absolute top-1/2 left-1.5 z-10 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-gold md:grid"
       >
         <span aria-hidden>‹</span>
       </button>
@@ -325,7 +370,7 @@ function NewsCarousel() {
         type="button"
         aria-label={tr("Actualité suivante")}
         onClick={() => go(index + 1)}
-        className="absolute top-1/2 right-2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-lg text-gold md:grid"
+        className="absolute top-1/2 right-1.5 z-10 hidden h-8 w-8 -translate-y-1/2 place-items-center rounded-full border border-line bg-ink/80 text-gold md:grid"
       >
         <span aria-hidden>›</span>
       </button>
