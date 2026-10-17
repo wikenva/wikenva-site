@@ -47,7 +47,7 @@ function WhitepaperPage() {
                 <dt className="text-faint">{L === "fr" ? "Site indiqué" : "Stated website"}</dt>
                 <dd className="mt-1">
                   <a className="text-gold" href={paperMeta.website}>
-                    wikanva.com
+                    www.wikenva.com
                   </a>
                 </dd>
               </div>
