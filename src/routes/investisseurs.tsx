@@ -37,7 +37,7 @@ function InvestorsPage() {
           <h2 className="font-display text-3xl font-semibold">{tr("Programme actionnaires")}</h2>
           <p className="mt-3 max-w-3xl text-muted">{tr(site.shareholderProgram.revenueNote)}</p>
           <p className="mt-3 max-w-3xl text-sm text-muted">
-            {tr("Ce programme n'est pas la promotion partenaire à 1 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.")}
+            {tr("Ce programme n'est pas la promotion partenaire à 2 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.")}
           </p>
           <div className="mt-6">
             <ShareholderAccess />
