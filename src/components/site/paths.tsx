@@ -23,7 +23,7 @@ const paths: PathCard[] = [
     id: "sidra" as const,
     title: "Investir sur SidraStart",
     where: "Sur SidraStart, pas sur ce site",
-    text: "Vous ouvrez la fiche Digital Marketplace Ebook Halal et vous investissez depuis votre propre compte.",
+    text: "Vous ouvrez la fiche Digital Marketplace Ebook et vous investissez depuis votre propre compte.",
     not: "Cela ne crée pas le statut de partenaire et ne vous inscrit pas au programme actionnaires.",
     action: "Investir sur SidraStart",
     href: site.investUrl ?? "",
