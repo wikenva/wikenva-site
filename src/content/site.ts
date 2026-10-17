@@ -346,6 +346,7 @@ export const moreNav = [
   { to: "/actualites", label: "Actualités" },
   { to: "/white-paper", label: "White paper" },
   { to: "/investisseurs", label: "Investisseurs" },
+  { to: "/sidrachain", label: "SidraChain" },
 ] as const;
 
 export const legalNav = [
