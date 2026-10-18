@@ -144,7 +144,6 @@ export function HomePage() {
 
       <section id="parcours" className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Parcours")}</p>
-        <h2 className="mt-2 text-xl font-semibold">{tr("Trois parcours, trois décisions")}</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted">
           {tr("Trois décisions distinctes. Aucun rendement n'est promis.")}
         </p>
