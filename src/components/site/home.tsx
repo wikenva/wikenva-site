@@ -16,20 +16,20 @@ export function HomePage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto grid w-full max-w-6xl items-start gap-10 px-5 py-8 md:px-8 md:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-14 px-5 py-10 md:px-8 md:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="order-1 mx-auto w-full max-w-md text-center">
             <p className="text-xs font-semibold tracking-[0.28em] text-gold uppercase">WIKENVA</p>
-            <h1 className="mx-auto mt-3 max-w-sm font-display text-[1.7rem] font-semibold leading-tight md:text-4xl">
+            <h1 className="mx-auto mt-4 max-w-sm font-display text-[1.7rem] font-semibold leading-tight md:text-4xl">
               {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
             </h1>
-            <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
-            <div className="mt-5">
+            <div className="mx-auto mt-6 h-px w-12 bg-gold" aria-hidden />
+            <div className="mt-8">
               <PromotionClock compact />
             </div>
-            <div className="mt-5">
+            <div className="mt-8">
               <PartnerButton className="w-full" />
             </div>
-            <div className="mt-4 flex items-center justify-center gap-3 text-sm font-semibold">
+            <div className="mt-6 flex items-center justify-center gap-4 text-sm font-semibold">
               <a href="#decouvrir" className="text-fg">
                 {text.discover}
               </a>
@@ -41,9 +41,9 @@ export function HomePage() {
               </a>
             </div>
           </div>
-          <div className="order-2 min-w-0 border-t border-line pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-10">
+          <div className="order-2 min-w-0 border-t border-line pt-12 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
             <h2 className="text-lg font-semibold tracking-tight md:text-2xl">{tr("Actualités WIKENVA")}</h2>
-            <p className="mt-1 max-w-xl text-sm text-muted">
+            <p className="mt-2 max-w-xl text-sm text-muted">
               {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
             </p>
             <NewsCarousel />
