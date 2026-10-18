@@ -142,7 +142,7 @@ export function Section({
 }) {
   const tr = useTr();
   return (
-    <section id={id} className={cn(compact ? "py-5 md:py-8" : "py-8 md:py-12", className)}>
+    <section id={id} className={cn(compact ? "py-8 md:py-12" : "py-12 md:py-16", className)}>
       <div className={cn("mx-auto w-full max-w-6xl px-5 md:px-8", compact && "text-center")}>
         {eyebrow ? (
           <div className={compact ? "flex justify-center" : undefined}>
