@@ -16,19 +16,15 @@ export function HomePage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto grid w-full max-w-6xl items-start gap-8 px-5 py-8 md:px-8 md:py-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="min-w-0">
-            <h1 className="text-xl font-bold tracking-tight md:text-2xl">{tr("Actualités WIKENVA")}</h1>
-            <p className="mt-1 max-w-xl text-sm text-muted">
-              {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
+        <div className="mx-auto grid w-full max-w-6xl items-start gap-8 px-5 py-8 md:px-8 md:py-12 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="order-1">
+            <h1 className="text-xl font-bold tracking-tight md:text-2xl">{tr("WIKENVA")}</h1>
+            <p className="mt-1 max-w-md text-sm text-muted">
+              {tr("Lecteurs, auteurs et créateurs, dans l'écosystème SidraChain.")}
             </p>
-            <NewsCarousel />
-            <TextLink to="/actualites" variant="ghost" className="mt-4 w-full">
-              {tr("Voir toutes les actualités")}
-            </TextLink>
-          </div>
-          <div>
-            <PromotionClock compact />
+            <div className="mt-5">
+              <PromotionClock compact />
+            </div>
             <div className="mt-4 flex max-w-md flex-col gap-3">
               <PartnerButton className="w-full" />
               <a href="#decouvrir" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-line bg-transparent px-5 text-sm font-semibold text-fg active:scale-[0.98]">
@@ -38,6 +34,16 @@ export function HomePage() {
                 {text.invest}
               </ExternalLink>
             </div>
+          </div>
+          <div className="order-2 min-w-0">
+            <h2 className="text-xl font-bold tracking-tight md:text-2xl">{tr("Actualités WIKENVA")}</h2>
+            <p className="mt-1 max-w-xl text-sm text-muted">
+              {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
+            </p>
+            <NewsCarousel />
+            <TextLink to="/actualites" variant="ghost" className="mt-4 w-full">
+              {tr("Voir toutes les actualités")}
+            </TextLink>
           </div>
         </div>
       </section>
