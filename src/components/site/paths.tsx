@@ -52,7 +52,17 @@ const paths: PathCard[] = [
   },
 ];
 
-export function HSlide({ label, children, className = "" }: { label: string; children: ReactNode[]; className?: string }) {
+export function HSlide({
+  label,
+  children,
+  className = "",
+  auto = true,
+}: {
+  label: string;
+  children: ReactNode[];
+  className?: string;
+  auto?: boolean;
+}) {
   const tr = useTr();
   const count = children.length;
   const [index, setIndex] = useState(0);
@@ -77,10 +87,10 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
   }, []);
 
   useEffect(() => {
-    if (paused || dragging || reduced || count < 2) return;
+    if (!auto || paused || dragging || reduced || count < 2) return;
     const timer = window.setTimeout(() => setIndex((current) => (current + 1) % count), 5000);
     return () => window.clearTimeout(timer);
-  }, [paused, dragging, reduced, count, index]);
+  }, [auto, paused, dragging, reduced, count, index]);
 
   function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
     if (event.pointerType === "mouse") return;
@@ -186,10 +196,10 @@ export function HSlide({ label, children, className = "" }: { label: string; chi
   );
 }
 
-export function PathBoard({ here }: { here?: PathId }) {
+export function PathBoard({ here, auto = true }: { here?: PathId; auto?: boolean }) {
   const tr = useTr();
   return (
-    <HSlide label={tr("Parcours")}>
+    <HSlide auto={auto} label={tr("Parcours")}>
       {paths.map((item) => {
         const current = here === item.id;
         return (
