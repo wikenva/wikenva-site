@@ -29,13 +29,10 @@ export function HomePage() {
             <div className="mt-8">
               <PartnerButton className="w-full" />
             </div>
-            <div className="mt-6 flex items-center justify-center gap-4 text-sm font-semibold">
+            <div className="mt-5 flex flex-col items-center gap-3 text-sm font-semibold">
               <a href="#decouvrir" className="text-fg">
                 {text.discover}
               </a>
-              <span className="text-gold" aria-hidden>
-                ·
-              </span>
               <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="text-muted">
                 {text.invest}
               </a>
