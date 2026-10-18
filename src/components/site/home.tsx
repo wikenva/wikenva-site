@@ -118,7 +118,7 @@ export function HomePage() {
         lede="Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée."
         className="border-y border-line bg-panel"
       >
-        <HSlide label={tr("Devenir partenaire")}>
+        <HSlide auto={false} label={tr("Devenir partenaire")}>
           {[
             "Lire les conditions.",
             "Ouvrir la fiche SidraStart.",
