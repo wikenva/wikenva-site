@@ -132,9 +132,7 @@ function PartnersPage() {
           </HSlide>
         </section>
 
-        <Panel>
-          <PromotionClock />
-        </Panel>
+        <PromotionClock />
 
         <section>
           <h2 className="font-display text-3xl font-semibold">{tr("Transparence et éthique")}</h2>
