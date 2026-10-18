@@ -20,7 +20,7 @@ export function HomePage() {
           <div className="order-1">
             <h1 className="text-xl font-bold tracking-tight md:text-2xl">{tr("WIKENVA")}</h1>
             <p className="mt-1 max-w-md text-sm text-muted">
-              {tr("Lecteurs, auteurs et créateurs, dans l'écosystème SidraChain.")}
+              {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
             </p>
             <div className="mt-5">
               <PromotionClock compact />
