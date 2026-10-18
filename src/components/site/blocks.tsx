@@ -505,8 +505,8 @@ export function RoleBoard() {
   }
 
   return (
-    <div className="grid gap-3">
-      <div className="flex items-center gap-2">
+    <div className="grid min-w-0 gap-3">
+      <div className="flex min-w-0 items-center gap-2">
         <button
           type="button"
           aria-label={tr("Précédent")}
@@ -553,7 +553,7 @@ export function RoleBoard() {
       </div>
       <div
         role="tabpanel"
-        className="rounded-2xl border border-gold/40 bg-panel p-4 md:p-6"
+        className="min-w-0 overflow-hidden rounded-2xl border border-gold/40 bg-panel p-4 md:p-6"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -563,7 +563,7 @@ export function RoleBoard() {
         <div key={role.name} className="role-in">
           <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
           <h3 className="mt-2 font-display text-2xl font-semibold md:text-4xl">{tr(role.name)}</h3>
-          <p className="mt-2 max-w-2xl text-base leading-relaxed text-fg">{tr(role.detail)}</p>
+          <p className="mt-2 max-w-full text-base leading-relaxed break-words text-fg">{tr(role.detail)}</p>
         </div>
         <div className="mt-4 flex gap-1.5" aria-hidden>
           {roles.map((item, index) => (
