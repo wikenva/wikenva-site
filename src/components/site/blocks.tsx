@@ -89,6 +89,72 @@ const tokenFields = [
   { label: "Statut", value: site.token.status },
 ] as const;
 
+function formatShare(share: number) {
+  return Number.isInteger(share) ? `${share} %` : `${share.toFixed(1).replace(".", ",")} %`;
+}
+
+function AllocationChart() {
+  const tr = useTr();
+  const slices = [
+    { label: "Sidra Holding", share: 16.5, color: "#8ea3bf" },
+    { label: "Contributeurs SDA", share: 16.5, color: "#2f7bff" },
+    { label: "Contributeurs en espèces", share: 33, color: "#e8b23a" },
+    { label: "Contributeurs de l'équipe", share: 34, color: "#f4f7fb" },
+  ];
+  const radius = 42;
+  const turn = 2 * Math.PI * radius;
+  let offset = 0;
+
+  return (
+    <div className="mt-6">
+      <div className="flex flex-col items-center gap-6 sm:flex-row">
+        <svg viewBox="0 0 120 120" className="h-44 w-44 shrink-0" role="img" aria-label={tr("Répartition du WIKENVA TOKEN")}>
+          <circle cx="60" cy="60" r={radius} fill="none" stroke="#172844" strokeWidth="14" />
+          {slices.map((slice) => {
+            const length = (slice.share / 100) * turn;
+            const node = (
+              <circle
+                key={slice.label}
+                cx="60"
+                cy="60"
+                r={radius}
+                fill="none"
+                stroke={slice.color}
+                strokeWidth="14"
+                strokeDasharray={`${Math.max(length - 1.2, 0)} ${turn}`}
+                strokeDashoffset={-offset}
+                transform="rotate(-90 60 60)"
+              />
+            );
+            offset += length;
+            return node;
+          })}
+          <text x="60" y="57" textAnchor="middle" fill="#f4f7fb" fontSize="16" fontWeight="700">
+            100 %
+          </text>
+          <text x="60" y="72" textAnchor="middle" fill="#e8b23a" fontSize="7" fontWeight="600">
+            WIKENVA
+          </text>
+        </svg>
+        <ul className="grid w-full gap-3">
+          {slices.map((slice) => (
+            <li key={slice.label} className="flex items-center justify-between gap-3 border-b border-line pb-2">
+              <span className="flex min-w-0 items-center gap-2">
+                <span className="size-2.5 shrink-0 rounded-full" style={{ background: slice.color }} aria-hidden />
+                <span className="text-sm font-semibold">{tr(slice.label)}</span>
+              </span>
+              <span className="text-sm font-semibold tabular-nums text-gold">{formatShare(slice.share)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="mt-4 text-sm text-muted">
+        {tr("La blockchain prévue est SidraChain. L'adresse du contrat n'est pas encore confirmée.")}
+      </p>
+    </div>
+  );
+}
+
 export function TokenPanel() {
   const tr = useTr();
   return (
@@ -153,6 +219,7 @@ export function TokenPanel() {
               <p className="mt-5 text-muted">
                 {tr("Offre confirmée : 100 000 000 actions WIKENVA. Les calendriers de vesting ne sont pas encore publiés.")}
               </p>
+              <AllocationChart />
               <ul className="mt-6 grid gap-3 md:hidden">
                 {site.tokenomics.map((row) => (
                   <li key={row.label} className="border-t border-line pt-3">
