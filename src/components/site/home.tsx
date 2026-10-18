@@ -95,30 +95,25 @@ export function HomePage() {
         </div>
       </section>
 
-      <Section eyebrow="Fonctionnement" title="Comment ça marche" lede="La vente n'est pas encore ouverte.">
-        <ol className="grid gap-4 md:grid-cols-2">
-          <Step
-            index="1"
-            title="Comprendre le projet"
-            text="Le site dit ce qui est confirmé. Le reste n'est pas inventé."
-          />
-          <Step
-            index="2"
-            title="Les produits numériques"
-            text="Les ebooks sont en préparation. Aucun achat sur ce site."
-          />
-          <Step
-            index="3"
-            title="La communauté"
-            text="Les annonces passent par Facebook, WhatsApp, Telegram et X."
-          />
-          <Step
-            index="4"
-            title="Participer"
-            text="Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts."
-          />
+      <section className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
+        <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Fonctionnement")}</p>
+        <ol className="mt-4 grid gap-3">
+          {[
+            ["1", "Comprendre le projet", "Le site dit ce qui est confirmé. Le reste n'est pas inventé."],
+            ["2", "Les produits numériques", "Les ebooks sont en préparation. Aucun achat sur ce site."],
+            ["3", "La communauté", "Les annonces passent par Facebook, WhatsApp, Telegram et X."],
+            ["4", "Participer", "Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts."],
+          ].map(([index, title, text]) => (
+            <li key={index} className="flex gap-3 rounded-2xl border border-line bg-panel p-4">
+              <span className="font-semibold text-gold">{index}</span>
+              <div>
+                <p className="font-semibold">{tr(title)}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{tr(text)}</p>
+              </div>
+            </li>
+          ))}
         </ol>
-      </Section>
+      </section>
 
       <Section
         id="partenariat"
@@ -364,17 +359,6 @@ function NewsCarousel() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Step({ index, title, text }: { index: string; title: string; text: string }) {
-  const tr = useTr();
-  return (
-    <li className="rounded-3xl border border-line bg-panel p-5">
-      <p className="font-display text-sm font-semibold text-gold">{index}</p>
-      <h3 className="mt-2 font-display text-xl font-semibold">{tr(title)}</h3>
-      <p className="mt-2 text-sm text-muted">{tr(text)}</p>
-    </li>
   );
 }
 
