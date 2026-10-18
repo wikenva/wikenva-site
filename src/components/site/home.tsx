@@ -144,7 +144,7 @@ export function HomePage() {
         title="Trois parcours, trois décisions"
         lede="Trois décisions distinctes. Aucun rendement n'est promis."
       >
-        <PathBoard />
+        <PathBoard auto={false} />
       </Section>
 
       <Section
