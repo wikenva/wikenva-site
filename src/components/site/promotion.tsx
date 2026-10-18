@@ -46,7 +46,7 @@ function Countdown({ left }: { left: number }) {
     <div className="mt-3 grid grid-cols-4" aria-live="polite">
       {parts.map(([value, label]) => (
         <div key={label} className="px-1 py-1 text-center">
-          <p suppressHydrationWarning className="font-sans text-2xl font-semibold tabular-nums">
+          <p suppressHydrationWarning className="font-display text-3xl font-semibold tabular-nums tracking-tight">
             {String(value).padStart(2, "0")}
           </p>
           <p className="mt-0.5 text-[10px] font-semibold tracking-[0.12em] text-gold uppercase">{label}</p>
