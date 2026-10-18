@@ -62,7 +62,7 @@ function PartnersPage() {
           </a>
         </div>
 
-        <HSlide label={tr("Vision")}>
+        <HSlide auto={false} label={tr("Vision")}>
           <Panel>
             <h2 className="font-display text-xl font-semibold">{tr("Vision")}</h2>
             <p className="mt-3 text-sm text-muted">{tr(narrative.vision[0])}</p>
@@ -84,7 +84,7 @@ function PartnersPage() {
           </p>
         </Panel>
 
-        <PathBoard here="partner" />
+        <PathBoard here="partner" auto={false} />
 
         <Panel className="border-gold/50">
           <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Seuil actuel")}</p>
@@ -99,7 +99,7 @@ function PartnersPage() {
 
         <section id="programme" className="scroll-mt-24">
           <h2 className="font-display text-3xl font-semibold">{tr("Comment fonctionne le partenariat ?")}</h2>
-          <HSlide className="mt-5" label={tr("Comment fonctionne le partenariat ?")}>
+          <HSlide auto={false} className="mt-5" label={tr("Comment fonctionne le partenariat ?")}>
             <Step icon={Compass} index="1" title="Lire les conditions de partenariat." text="Cette page décrit la promotion en cours. Elle ne valide aucune candidature." />
             <Step icon={Megaphone} index="2" title="Ouvrir la fiche officielle sur SidraStart." text="Le projet s'appelle Digital Marketplace Ebook. Les conditions de contribution sont celles publiées là-bas." />
             <Step icon={Wallet} index="3" title="Investir depuis son propre compte." text="Minimum de 2 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site." />
@@ -110,7 +110,7 @@ function PartnersPage() {
 
         <section>
           <h2 className="font-display text-3xl font-semibold">{tr("Avantages du partenariat")}</h2>
-          <HSlide className="mt-5" label={tr("Avantages du partenariat")}>
+          <HSlide auto={false} className="mt-5" label={tr("Avantages du partenariat")}>
             <Panel>
               <h3 className="font-semibold">{tr("Participer au développement")}</h3>
               <p className="mt-2 text-sm text-muted">{tr("Une candidature exprime l'intérêt de participer au développement de WIKENVA. Elle ne crée aucun droit.")}</p>
