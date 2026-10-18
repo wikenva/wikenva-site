@@ -18,17 +18,17 @@ export function PromotionClock(_props?: { compact?: boolean }) {
 
   return (
     <div className="text-center">
-      <p className="text-[11px] font-semibold tracking-[0.18em] text-gold uppercase">{tr("Partenaire")}</p>
+      <p className="text-[11px] font-semibold tracking-[0.28em] text-gold uppercase">{tr("Partenaire")}</p>
       {left > 0 ? <Countdown left={left} /> : null}
       {left <= 0 ? (
         <p className="mt-4 text-sm text-muted">
           {tr("Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.")}
         </p>
       ) : null}
-      <p className="mt-3 text-center text-sm leading-relaxed">
-        <span className="font-semibold">{tr("Minimum 2 000 SDA sur SidraStart pour être partenaire.")}</span>
-        <span className="mt-1 block text-gold">{tr("Valable jusqu'au 30 novembre 2026.")}</span>
+      <p className="mx-auto mt-4 max-w-[16rem] text-balance text-sm font-semibold leading-snug">
+        {tr("Minimum 2 000 SDA sur SidraStart pour être partenaire.")}
       </p>
+      <p className="mt-2 text-sm text-gold">{tr("Valable jusqu'au 30 novembre 2026.")}</p>
     </div>
   );
 }
@@ -43,13 +43,13 @@ function Countdown({ left }: { left: number }) {
     [total % 60, tr("secondes")],
   ] as const;
   return (
-    <div className="mt-3 grid grid-cols-4" aria-live="polite">
-      {parts.map(([value, label]) => (
-        <div key={label} className="px-1 py-1 text-center">
-          <p suppressHydrationWarning className="font-display text-3xl font-semibold tabular-nums tracking-tight">
+    <div className="mt-4 grid grid-cols-4" aria-live="polite">
+      {parts.map(([value, label], index) => (
+        <div key={label} className={index ? "border-l border-white/10 px-1 text-center" : "px-1 text-center"}>
+          <p suppressHydrationWarning className="font-display text-4xl font-semibold tabular-nums tracking-tight">
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-0.5 text-[10px] font-semibold tracking-[0.12em] text-gold uppercase">{label}</p>
+          <p className="mt-1 text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{label}</p>
         </div>
       ))}
     </div>
