@@ -733,7 +733,7 @@ export const en: Record<string, string> = {
   "Aucune adresse e-mail générale n'est publiée. N'envoyez pas de message à une adresse supposée.":
     "No general email address is published. Do not write to an address you only assume exists.",
   "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
-  "Précédent": "Previous",
+  "Lecteurs, auteurs et créateurs, dans l'écosystème SidraChain.": "Readers, authors and creators, within the SidraChain ecosystem.",
   "Suivant": "Next",
   "Espace partenaire": "Partner space",
   "Fonctions premium : annonces réservées, demande de boutique et suivi du statut. La vente n'est pas ouverte.":
