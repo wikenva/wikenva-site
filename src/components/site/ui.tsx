@@ -17,7 +17,15 @@ const variants: Record<Variant, string> = {
 const control =
   "inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out active:not-disabled:scale-[0.98] disabled:opacity-50";
 
-export function PlatformButton({ className, appearance = "default" }: { className?: string; appearance?: "default" | "app" }) {
+export function PlatformButton({
+  className,
+  appearance = "default",
+  variant = "primary",
+}: {
+  className?: string;
+  appearance?: "default" | "app";
+  variant?: "primary" | "ghost";
+}) {
   const [open, setOpen] = useState(false);
   const { lang } = useLang();
   const text = ui(lang);
@@ -37,7 +45,7 @@ export function PlatformButton({ className, appearance = "default" }: { classNam
           WIKENVA APP
         </button>
       ) : (
-        <Button variant="primary" className={className} onClick={() => setOpen(true)}>
+        <Button variant={variant} className={className} onClick={() => setOpen(true)}>
           {text.platform}
         </Button>
       )}
