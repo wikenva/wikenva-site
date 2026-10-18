@@ -238,9 +238,9 @@ function Shell({ children }: { children: ReactNode }) {
         ) : null}
       </header>
       <main id="contenu" className="min-w-0 overflow-x-hidden">{children}</main>
-      <footer className="border-t border-neutral-200 bg-white pb-8 text-neutral-800 print:hidden">
-        <div className="border-b border-[#16306e] bg-[#010b40]">
-          <div className="mx-auto flex w-full max-w-6xl items-center px-5 py-4 md:px-8">
+      <footer className="border-t border-line bg-ink pb-8 text-fg print:hidden">
+        <div className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8">
+          <div className="flex items-center gap-3">
             <img
               src="/media/logo-mark-ui.webp"
               alt="WIKENVA"
@@ -248,49 +248,47 @@ function Shell({ children }: { children: ReactNode }) {
               height={266}
               loading="lazy"
               decoding="async"
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
+            <span className="text-sm font-semibold tracking-wide">WIKENVA</span>
           </div>
-        </div>
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
-          <div>
-            <p className="max-w-xs text-sm text-neutral-600">
-              {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
-            </p>
-            <p className="mt-3 flex flex-col gap-1 text-sm">
-              <a href="mailto:wikenva@gmail.com" className="font-semibold text-neutral-900 hover:underline">
-                wikenva@gmail.com
-              </a>
-              <a href="tel:+2290196412117" className="font-semibold text-neutral-900 hover:underline">
-                +229 01 96 41 21 17
-              </a>
-            </p>
-          </div>
-          <nav aria-label={tr("Liens du bas de page")}>
-            <ul className="flex flex-col gap-3 text-sm md:flex-row md:gap-6">
+          <div className="mt-4 h-px w-12 bg-gold" aria-hidden />
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+            {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
+          </p>
+          <p className="mt-5 flex flex-col gap-1.5 text-sm">
+            <a href="mailto:wikenva@gmail.com" className="font-semibold text-gold">
+              wikenva@gmail.com
+            </a>
+            <a href="tel:+2290196412117" className="font-semibold">
+              +229 01 96 41 21 17
+            </a>
+          </p>
+          <nav className="mt-8" aria-label={tr("Liens du bas de page")}>
+            <ul className="grid max-w-md grid-cols-1 gap-3 text-sm sm:grid-cols-2">
               <li>
-                <Link to="/vision" className="hover:text-neutral-950">
+                <Link to="/vision" className="text-muted hover:text-fg">
                   {tr("À propos")}
                 </Link>
               </li>
               <li>
-                <Link to="/communaute" className="hover:text-neutral-950">
+                <Link to="/communaute" className="text-muted hover:text-fg">
                   {tr("Contact")}
                 </Link>
               </li>
               <li>
-                <Link to="/confidentialite" className="hover:text-neutral-950">
+                <Link to="/confidentialite" className="text-muted hover:text-fg">
                   {label("/confidentialite", "Politique de confidentialité")}
                 </Link>
               </li>
               <li>
-                <Link to="/conditions" className="hover:text-neutral-950">
+                <Link to="/conditions" className="text-muted hover:text-fg">
                   {label("/conditions", "Conditions d'utilisation")}
                 </Link>
               </li>
             </ul>
           </nav>
-          <ul className="flex items-center gap-3">
+          <ul className="mt-8 flex items-center gap-4">
             {socials.map((item) => (
               <li key={item.id}>
                 <a
@@ -298,8 +296,7 @@ function Shell({ children }: { children: ReactNode }) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.name}
-                  className="grid size-11 place-items-center rounded-full"
-                  style={item.id === "whatsapp" ? { background: "#25D366" } : undefined}
+                  className="grid size-11 place-items-center"
                 >
                   <img
                     src={
@@ -312,16 +309,16 @@ function Shell({ children }: { children: ReactNode }) {
                             : "/media/social/x.svg"
                     }
                     alt=""
-                    width={24}
-                    height={24}
-                    className="size-6"
+                    width={28}
+                    height={28}
+                    className="size-7"
                   />
                 </a>
               </li>
             ))}
           </ul>
+          <p className="mt-8 border-t border-line pt-4 text-xs text-faint">{tr("© 2026 WIKENVA")}</p>
         </div>
-        <p className="mx-auto w-full max-w-6xl px-5 text-xs text-neutral-500 md:px-8">{tr("© 2026 WIKENVA")}</p>
       </footer>
     </div>
   );
