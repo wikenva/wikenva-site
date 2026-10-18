@@ -43,10 +43,10 @@ function Countdown({ left }: { left: number }) {
     [total % 60, tr("secondes")],
   ] as const;
   return (
-    <div className="mt-3 grid grid-cols-4 overflow-hidden rounded-xl border border-line bg-ink" aria-live="polite">
-      {parts.map(([value, label], index) => (
-        <div key={label} className={index ? "border-l border-line px-1 py-2 text-center" : "px-1 py-2 text-center"}>
-          <p suppressHydrationWarning className="font-sans text-lg font-semibold tabular-nums sm:text-xl">
+    <div className="mt-3 grid grid-cols-4" aria-live="polite">
+      {parts.map(([value, label]) => (
+        <div key={label} className="px-1 py-1 text-center">
+          <p suppressHydrationWarning className="font-sans text-2xl font-semibold tabular-nums">
             {String(value).padStart(2, "0")}
           </p>
           <p className="mt-0.5 text-[10px] font-semibold tracking-[0.12em] text-gold uppercase">{label}</p>
