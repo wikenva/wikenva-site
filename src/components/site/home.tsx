@@ -4,7 +4,7 @@ import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
-import { PathBoard, HSlide } from "./paths";
+import { PathBoard } from "./paths";
 import { PromotionClock } from "./promotion";
 import { Eyebrow, PartnerButton, PlatformButton, Section, TextLink } from "./ui";
 
@@ -115,37 +115,43 @@ export function HomePage() {
         </ol>
       </section>
 
-      <Section
-        id="partenariat"
-        eyebrow="Partenaires"
-        title="Devenir partenaire"
-        lede="Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée."
-        className="border-y border-line bg-panel"
-      >
-        <HSlide auto={false} label={tr("Devenir partenaire")}>
-          {[
-            "Lire les conditions.",
-            "Ouvrir la fiche SidraStart.",
-            "Investir au minimum 2 000 SDA depuis son compte.",
-            "Envoyer la demande. Ne jamais donner une clé privée.",
-            "Attendre la confirmation.",
-          ].map((item, index) => (
-            <div key={item} className="flex h-full items-center gap-4 rounded-2xl border border-line bg-ink px-4 py-4">
-              <span className="font-display text-lg font-semibold text-gold">{index + 1}</span>
-              <p>{tr(item)}</p>
-            </div>
-          ))}
-        </HSlide>
-      </Section>
+      <section id="partenariat" className="border-y border-line bg-panel/40 py-8">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
+          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Partenaires")}</p>
+          <h2 className="mt-2 text-xl font-semibold">{tr("Devenir partenaire")}</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            {tr("Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée.")}
+          </p>
+          <ol className="mt-4 grid gap-2">
+            {[
+              "Lire les conditions.",
+              "Ouvrir la fiche SidraStart.",
+              "Investir au minimum 2 000 SDA depuis son compte.",
+              "Envoyer la demande. Ne jamais donner une clé privée.",
+              "Attendre la confirmation.",
+            ].map((item, index) => (
+              <li key={item} className="flex items-start gap-3 rounded-2xl border border-line bg-ink px-4 py-3">
+                <span className="font-semibold text-gold">{index + 1}</span>
+                <p className="text-sm leading-relaxed">{tr(item)}</p>
+              </li>
+            ))}
+          </ol>
+          <TextLink to="/partenaires" className="mt-4 w-full">
+            {tr("Devenir partenaire")}
+          </TextLink>
+        </div>
+      </section>
 
-      <Section
-        id="parcours"
-        eyebrow="Parcours"
-        title="Trois parcours, trois décisions"
-        lede="Trois décisions distinctes. Aucun rendement n'est promis."
-      >
-        <PathBoard auto={false} />
-      </Section>
+      <section id="parcours" className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
+        <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Parcours")}</p>
+        <h2 className="mt-2 text-xl font-semibold">{tr("Trois parcours, trois décisions")}</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          {tr("Trois décisions distinctes. Aucun rendement n'est promis.")}
+        </p>
+        <div className="mt-4">
+          <PathBoard auto={false} />
+        </div>
+      </section>
 
       <Section
         eyebrow="SidraChain"
