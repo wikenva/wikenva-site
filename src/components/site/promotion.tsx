@@ -25,10 +25,10 @@ export function PromotionClock(_props?: { compact?: boolean }) {
           {tr("Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.")}
         </p>
       ) : null}
-      <p className="mx-auto mt-4 max-w-[16rem] text-balance text-sm font-semibold leading-snug">
+      <p className="mx-auto mt-6 max-w-[18rem] text-balance text-sm font-semibold leading-relaxed">
         {tr("Minimum 2 000 SDA sur SidraStart pour être partenaire.")}
       </p>
-      <p className="mt-2 text-sm text-gold">{tr("Valable jusqu'au 30 novembre 2026.")}</p>
+      <p className="mt-3 text-sm text-gold">{tr("Valable jusqu'au 30 novembre 2026.")}</p>
     </div>
   );
 }
@@ -43,13 +43,13 @@ function Countdown({ left }: { left: number }) {
     [total % 60, tr("secondes")],
   ] as const;
   return (
-    <div className="mt-4 grid grid-cols-4" aria-live="polite">
+    <div className="mt-5 grid grid-cols-4" aria-live="polite">
       {parts.map(([value, label], index) => (
-        <div key={label} className={index ? "border-l border-white/10 px-1 text-center" : "px-1 text-center"}>
+        <div key={label} className={index ? "border-l border-white/10 px-2 text-center" : "px-2 text-center"}>
           <p suppressHydrationWarning className="font-display text-4xl font-semibold tabular-nums tracking-tight">
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-1 text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{label}</p>
+          <p className="mt-2 text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{label}</p>
         </div>
       ))}
     </div>
