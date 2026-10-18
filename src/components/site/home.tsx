@@ -152,54 +152,51 @@ export function HomePage() {
         </div>
       </section>
 
-      <Section
-        eyebrow="SidraChain"
-        title="SidraChain et SidraStart"
-        lede="WIKENVA fait partie de SidraChain."
-      >
-        <div className="mt-6">
-          <TextLink to="/sidrachain" variant="gold" className="w-full sm:w-auto">
-            {tr("Découvrir SidraChain")}
-          </TextLink>
-          <p className="mt-3 max-w-xl text-sm text-muted">
-            {tr("Découvrez le projet SidraChain, son fondateur, sa technologie blockchain et les initiatives de son écosystème.")}
-          </p>
-        </div>
-      </Section>
+      <section className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
+        <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("SidraChain")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">{tr("WIKENVA fait partie de SidraChain.")}</p>
+        <p className="mt-2 text-sm leading-relaxed">
+          {tr("Découvrez le projet SidraChain, son fondateur, sa technologie blockchain et les initiatives de son écosystème.")}
+        </p>
+        <TextLink to="/sidrachain" variant="gold" className="mt-4 w-full">
+          {tr("Découvrir SidraChain")}
+        </TextLink>
+      </section>
 
-      <Section eyebrow="FAQ" title="Questions fréquentes" className="border-t border-line">
-        <div className="grid gap-3">
-          <Faq
-            q="Qu'est-ce que WIKENVA ?"
-            a="L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA."
-          />
-          <Faq
-            q="Peut-on déjà acheter un ebook ?"
-            a="Non. Ce site présente le projet. Il ne vend pas encore."
-          />
-          <Faq
-            q="Comment devenir partenaire avant le 30 novembre 2026 ?"
-            a="Investir au moins 2 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
-          />
-          <Faq
-            q="Investir, partenaire et actionnaire, est-ce la même chose ?"
-            a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 2 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti."
-          />
-          <Faq
-            q="Un investissement garantit-il un rendement ?"
-            a="Non. Ce site ne promet aucun rendement."
-          />
-          <Faq
-            q="Où lire les documents et nous écrire ?"
-            a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17."
-          />
-        </div>
-        <div className="mt-6">
-          <TextLink to="/white-paper" variant="ghost">
+      <section className="border-t border-line py-8">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
+          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("FAQ")}</p>
+          <div className="mt-4 grid gap-2">
+            <Faq
+              q="Qu'est-ce que WIKENVA ?"
+              a="L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA."
+            />
+            <Faq
+              q="Peut-on déjà acheter un ebook ?"
+              a="Non. Ce site présente le projet. Il ne vend pas encore."
+            />
+            <Faq
+              q="Comment devenir partenaire avant le 30 novembre 2026 ?"
+              a="Investir au moins 2 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
+            />
+            <Faq
+              q="Investir, partenaire et actionnaire, est-ce la même chose ?"
+              a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 2 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti."
+            />
+            <Faq
+              q="Un investissement garantit-il un rendement ?"
+              a="Non. Ce site ne promet aucun rendement."
+            />
+            <Faq
+              q="Où lire les documents et nous écrire ?"
+              a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17."
+            />
+          </div>
+          <TextLink to="/white-paper" variant="ghost" className="mt-4 w-full">
             {tr("Lire le white paper")}
           </TextLink>
         </div>
-      </Section>
+      </section>
 
       <section className="border-t border-line py-8 md:py-12">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
@@ -370,8 +367,8 @@ function NewsCarousel() {
 function Faq({ q, a }: { q: string; a: string }) {
   const tr = useTr();
   return (
-    <details className="rounded-3xl border border-line bg-panel px-5 py-4">
-      <summary className="font-semibold">{tr(q)}</summary>
+    <details className="rounded-2xl border border-line bg-panel px-4 py-3">
+      <summary className="cursor-pointer text-sm font-semibold leading-snug text-balance">{tr(q)}</summary>
       <p className="mt-3 text-sm text-muted">{tr(a)}</p>
     </details>
   );
