@@ -70,35 +70,30 @@ export function HomePage() {
           </TextLink>
           <PlatformButton variant="ghost" className="w-full" />
         </div>
-        <div className="mt-8 border-t border-line pt-8">
-          <Eyebrow>Statut</Eyebrow>
-          <h2 className="max-w-xl font-display text-3xl font-semibold">{tr("WIKENVA est en cours de développement")}</h2>
-          <p className="mt-3 max-w-xl text-base text-muted">
+        <div className="mt-6 rounded-2xl border border-line bg-panel p-5">
+          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Statut")}</p>
+          <p className="mt-2 text-lg font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
             {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
           </p>
-          <TextLink to="/presentation" className="mt-5 w-full">
+          <TextLink to="/presentation" className="mt-4 w-full">
             {tr("Voir la présentation")}
           </TextLink>
         </div>
       </Section>
 
-      <Section
-        eyebrow="Mission"
-        title="Notre mission et notre vision"
-        lede="Créer, partager et découvrir au même endroit."
-        className="border-y border-line bg-panel/40"
-      >
-        <div className="grid gap-4 md:grid-cols-2">
-          <article className="rounded-3xl border border-line bg-ink p-6">
-            <h3 className="font-display text-2xl font-semibold">{tr("Mission")}</h3>
-            <p className="mt-3 text-muted">{tr(narrative.mission[1])}</p>
+      <section className="border-y border-line bg-panel/40 py-8">
+        <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-3 px-5 md:grid-cols-2 md:px-8">
+          <article className="rounded-2xl border border-line bg-ink p-5">
+            <h2 className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Mission")}</h2>
+            <p className="mt-3 text-base leading-relaxed">{tr(narrative.mission[1])}</p>
           </article>
-          <article className="rounded-3xl border border-line bg-ink p-6">
-            <h3 className="font-display text-2xl font-semibold">{tr("Vision")}</h3>
-            <p className="mt-3 text-muted">{tr(narrative.vision[2])}</p>
+          <article className="rounded-2xl border border-line bg-ink p-5">
+            <h2 className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Vision")}</h2>
+            <p className="mt-3 text-base leading-relaxed">{tr(narrative.vision[2])}</p>
           </article>
         </div>
-      </Section>
+      </section>
 
       <Section eyebrow="Fonctionnement" title="Comment ça marche" lede="La vente n'est pas encore ouverte.">
         <ol className="grid gap-4 md:grid-cols-2">
