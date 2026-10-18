@@ -178,6 +178,15 @@ html.is-ready #boot {
   }
 }
 
+@keyframes news-run {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise {
     animation: none;
