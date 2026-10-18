@@ -61,21 +61,25 @@ export function HomePage() {
         lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert."
       >
         <RoleBoard />
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <TextLink to="/vision">{tr("En savoir plus")}</TextLink>
-          <TextLink to="/communaute" variant="ghost">
+        <div className="mt-5 flex flex-col gap-3">
+          <TextLink to="/vision" className="w-full">
+            {tr("En savoir plus")}
+          </TextLink>
+          <TextLink to="/communaute" variant="ghost" className="w-full">
             {text.community}
           </TextLink>
-          <PlatformButton />
+          <PlatformButton variant="ghost" className="w-full" />
         </div>
-      </Section>
-
-      <Section
-        eyebrow="Statut"
-        title="WIKENVA est en cours de développement"
-        lede="Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert."
-      >
-        <TextLink to="/presentation">{tr("Voir la présentation")}</TextLink>
+        <div className="mt-8 border-t border-line pt-8">
+          <Eyebrow>Statut</Eyebrow>
+          <h2 className="max-w-xl font-display text-3xl font-semibold">{tr("WIKENVA est en cours de développement")}</h2>
+          <p className="mt-3 max-w-xl text-base text-muted">
+            {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
+          </p>
+          <TextLink to="/presentation" className="mt-5 w-full">
+            {tr("Voir la présentation")}
+          </TextLink>
+        </div>
       </Section>
 
       <Section
