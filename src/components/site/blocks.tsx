@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Copy } from "lucide-react";
-import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import {
   categoryLabels,
   documents,
@@ -462,25 +462,15 @@ export function NewsCards({ items = news }: { items?: NewsItem[] }) {
 export function RoleBoard() {
   const tr = useTr();
   const [active, setActive] = useState(0);
-  const row = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
   const role = roles[active];
-
-  useEffect(() => {
-    const root = row.current;
-    const button = root?.querySelector<HTMLButtonElement>('[aria-selected="true"]');
-    if (!root || !button) return;
-    root.scrollTo({
-      left: button.offsetLeft - root.clientWidth / 2 + button.clientWidth / 2,
-      behavior: "smooth",
-    });
-  }, [active]);
 
   function go(next: number) {
     setActive(Math.min(roles.length - 1, Math.max(0, next)));
   }
 
   function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    if ((event.target as HTMLElement).closest("button")) return;
     drag.current = { x: event.clientX, y: event.clientY, locked: null };
   }
 
@@ -505,71 +495,44 @@ export function RoleBoard() {
   }
 
   return (
-    <div className="grid min-w-0 gap-3">
-      <div className="flex min-w-0 items-center gap-2">
+    <div
+      role="tabpanel"
+      className="min-w-0 overflow-hidden rounded-2xl border border-gold/40 bg-panel p-5"
+      style={{ touchAction: "pan-y" }}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
+    >
+      <div key={role.name} className="role-in">
+        <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
+        <h3 className="mt-2 pr-2 font-display text-2xl font-semibold leading-tight">{tr(role.name)}</h3>
+        <p className="mt-3 text-base leading-relaxed break-words text-fg">{tr(role.detail)}</p>
+      </div>
+      <div className="mt-5 flex items-center gap-3">
         <button
           type="button"
           aria-label={tr("Précédent")}
           disabled={active === 0}
           onClick={() => go(active - 1)}
-          className="grid size-10 shrink-0 place-items-center rounded-full border border-gold/50 text-lg text-gold disabled:opacity-30"
+          className="grid size-11 shrink-0 place-items-center rounded-full border border-line text-xl text-gold disabled:opacity-30"
         >
           ‹
         </button>
-        <div
-          ref={row}
-          className="flex min-w-0 flex-1 gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-          role="tablist"
-          aria-label={tr("Choisissez un rôle")}
-        >
-          {roles.map((item, index) => {
-            const selected = index === active;
-            return (
-              <button
-                key={item.name}
-                type="button"
-                role="tab"
-                aria-selected={selected}
-                className={cn(
-                  "min-h-10 shrink-0 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors",
-                  selected ? "border-gold bg-gold text-ink" : "border-line bg-panel text-fg",
-                )}
-                onClick={() => go(index)}
-              >
-                {tr(item.name)}
-              </button>
-            );
-          })}
+        <div className="flex min-w-0 flex-1 gap-1.5" aria-hidden>
+          {roles.map((item, index) => (
+            <span key={item.name} className={"h-0.5 flex-1 rounded-full " + (index <= active ? "bg-gold" : "bg-white/15")} />
+          ))}
         </div>
         <button
           type="button"
           aria-label={tr("Suivant")}
           disabled={active === roles.length - 1}
           onClick={() => go(active + 1)}
-          className="grid size-10 shrink-0 place-items-center rounded-full border border-gold bg-gold text-lg font-semibold text-ink disabled:opacity-30"
+          className="grid size-11 shrink-0 place-items-center rounded-full bg-gold text-xl font-semibold text-ink disabled:opacity-30"
         >
           ›
         </button>
-      </div>
-      <div
-        role="tabpanel"
-        className="min-w-0 overflow-hidden rounded-2xl border border-gold/40 bg-panel p-4 md:p-6"
-        style={{ touchAction: "pan-y" }}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerCancel={onPointerUp}
-      >
-        <div key={role.name} className="role-in">
-          <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
-          <h3 className="mt-2 font-display text-2xl font-semibold md:text-4xl">{tr(role.name)}</h3>
-          <p className="mt-2 max-w-full text-base leading-relaxed break-words text-fg">{tr(role.detail)}</p>
-        </div>
-        <div className="mt-4 flex gap-1.5" aria-hidden>
-          {roles.map((item, index) => (
-            <span key={item.name} className={"h-0.5 flex-1 rounded-full " + (index <= active ? "bg-gold" : "bg-white/15")} />
-          ))}
-        </div>
       </div>
     </div>
   );
