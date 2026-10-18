@@ -302,7 +302,7 @@ function NewsCarousel() {
       aria-label={tr("Actualités WIKENVA")}
     >
       <div
-        className="relative h-[5.25rem] overflow-hidden rounded-2xl border border-line bg-panel"
+        className="relative h-[6.75rem] overflow-hidden rounded-2xl border border-line bg-panel"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -322,15 +322,14 @@ function NewsCarousel() {
               <Link
                 to="/actualites/$slug"
                 params={{ slug: item.slug }}
-                className="flex h-full items-center gap-3 px-3.5"
+                className="flex h-full items-center gap-3 px-3.5 pb-3"
               >
-                <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl bg-gold/15 text-gold">
-                  <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 10v4M9 8.5v7L18 19V5L9 8.5z" strokeLinejoin="round" />
-                  </svg>
+                <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl border border-gold/30 bg-gold/10 font-display text-xs font-semibold text-gold">
+                  {String(slide + 1).padStart(2, "0")}
                 </span>
-                <span className="min-w-0 flex-1 pb-2">
-                  <span className="line-clamp-2 text-sm leading-snug font-semibold">{tr(item.title)}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{tr(item.date)}</span>
+                  <span className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold">{tr(item.title)}</span>
                 </span>
                 <span aria-hidden className="shrink-0 text-lg leading-none text-gold">
                   ›
@@ -339,7 +338,7 @@ function NewsCarousel() {
             </article>
           ))}
         </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-1 flex justify-center gap-1">
+        <div className="pointer-events-none absolute inset-x-3 bottom-2.5 flex justify-center gap-1">
           {news.map((item, dot) => (
             <button
               key={item.slug}
@@ -352,6 +351,17 @@ function NewsCarousel() {
               <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
             </button>
           ))}
+        </div>
+        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-white/10" aria-hidden>
+          <div
+            key={paused || dragging || reduced ? "hold" : index}
+            className="h-full bg-gold"
+            style={
+              paused || dragging || reduced
+                ? { width: "0%" }
+                : { animation: "news-run 4.5s linear forwards" }
+            }
+          />
         </div>
       </div>
     </div>
