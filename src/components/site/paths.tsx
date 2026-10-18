@@ -206,25 +206,24 @@ export function PathBoard({ here, auto = true }: { here?: PathId; auto?: boolean
           <article
             key={item.id}
             className={cn(
-              "flex h-full flex-col rounded-3xl border p-5",
+              "flex flex-col rounded-2xl border p-4",
               current ? "border-gold bg-panel" : "border-line bg-ink",
             )}
           >
-            <p className="text-sm font-semibold tracking-wide text-gold uppercase">
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-gold uppercase">
               {current ? tr("Vous êtes ici") : tr(item.where)}
             </p>
-            {current ? <p className="mt-1 text-sm text-muted">{tr(item.where)}</p> : null}
-            <h3 className="mt-2 font-display text-2xl font-semibold">{tr(item.title)}</h3>
-            <p className="mt-3 text-sm text-fg">{tr(item.text)}</p>
-            <p className="mt-3 flex-1 text-sm text-muted">{tr(item.not)}</p>
+            <h3 className="mt-2 text-xl font-semibold leading-tight">{tr(item.title)}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-fg">{tr(item.text)}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">{tr(item.not)}</p>
             {item.href ? (
-              <ExternalLink href={item.href} variant={current ? "gold" : "ghost"} className="mt-5 w-full">
+              <ExternalLink href={item.href} variant={current ? "gold" : "ghost"} className="mt-3 w-full">
                 {tr(item.action)}
               </ExternalLink>
             ) : current ? (
               <a
                 href={`#${item.hash ?? ""}`}
-                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink"
+                className="mt-3 inline-flex min-h-11 items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink"
               >
                 {tr(item.action)}
               </a>
@@ -232,7 +231,7 @@ export function PathBoard({ here, auto = true }: { here?: PathId; auto?: boolean
               <Link
                 to={item.to ?? "/partenaires"}
                 hash={item.hash}
-                className="mt-5 inline-flex min-h-12 items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold"
+                className="mt-3 inline-flex min-h-11 items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold"
               >
                 {tr(item.action)}
               </Link>
