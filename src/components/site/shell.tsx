@@ -296,7 +296,10 @@ function Shell({ children }: { children: ReactNode }) {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.name}
-                  className="grid size-11 place-items-center"
+                  className={
+                    "grid size-11 place-items-center rounded-full " +
+                    (item.id === "twitter" ? "bg-white" : "")
+                  }
                 >
                   <img
                     src={
@@ -311,7 +314,7 @@ function Shell({ children }: { children: ReactNode }) {
                     alt=""
                     width={28}
                     height={28}
-                    className="size-7"
+                    className={item.id === "twitter" ? "size-5" : "size-7"}
                   />
                 </a>
               </li>
