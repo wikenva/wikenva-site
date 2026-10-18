@@ -505,35 +505,55 @@ export function RoleBoard() {
   }
 
   return (
-    <div className="grid gap-4">
-      <div
-        ref={row}
-        className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        role="tablist"
-        aria-label={tr("Choisissez un rôle")}
-      >
-        {roles.map((item, index) => {
-          const selected = index === active;
-          return (
-            <button
-              key={item.name}
-              type="button"
-              role="tab"
-              aria-selected={selected}
-              className={cn(
-                "min-h-11 shrink-0 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors",
-                selected ? "border-gold bg-gold text-ink" : "border-line bg-panel text-fg",
-              )}
-              onClick={() => go(index)}
-            >
-              {tr(item.name)}
-            </button>
-          );
-        })}
+    <div className="grid gap-3">
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          aria-label={tr("Précédent")}
+          disabled={active === 0}
+          onClick={() => go(active - 1)}
+          className="grid size-10 shrink-0 place-items-center rounded-full border border-gold/50 text-lg text-gold disabled:opacity-30"
+        >
+          ‹
+        </button>
+        <div
+          ref={row}
+          className="flex min-w-0 flex-1 gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          role="tablist"
+          aria-label={tr("Choisissez un rôle")}
+        >
+          {roles.map((item, index) => {
+            const selected = index === active;
+            return (
+              <button
+                key={item.name}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                className={cn(
+                  "min-h-10 shrink-0 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors",
+                  selected ? "border-gold bg-gold text-ink" : "border-line bg-panel text-fg",
+                )}
+                onClick={() => go(index)}
+              >
+                {tr(item.name)}
+              </button>
+            );
+          })}
+        </div>
+        <button
+          type="button"
+          aria-label={tr("Suivant")}
+          disabled={active === roles.length - 1}
+          onClick={() => go(active + 1)}
+          className="grid size-10 shrink-0 place-items-center rounded-full border border-gold bg-gold text-lg font-semibold text-ink disabled:opacity-30"
+        >
+          ›
+        </button>
       </div>
       <div
         role="tabpanel"
-        className="rounded-2xl border border-gold/40 bg-panel p-6 md:p-10"
+        className="rounded-2xl border border-gold/40 bg-panel p-4 md:p-6"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -541,11 +561,11 @@ export function RoleBoard() {
         onPointerCancel={onPointerUp}
       >
         <div key={role.name} className="role-in">
-          <p className="text-sm font-semibold tracking-widest text-gold">0{active + 1}</p>
-          <h3 className="mt-3 font-display text-4xl font-semibold md:text-6xl">{tr(role.name)}</h3>
-          <p className="mt-4 max-w-2xl text-xl leading-relaxed text-fg md:text-2xl">{tr(role.detail)}</p>
+          <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
+          <h3 className="mt-2 font-display text-2xl font-semibold md:text-4xl">{tr(role.name)}</h3>
+          <p className="mt-2 max-w-2xl text-base leading-relaxed text-fg">{tr(role.detail)}</p>
         </div>
-        <div className="mt-6 flex gap-1.5" aria-hidden>
+        <div className="mt-4 flex gap-1.5" aria-hidden>
           {roles.map((item, index) => (
             <span key={item.name} className={"h-0.5 flex-1 rounded-full " + (index <= active ? "bg-gold" : "bg-white/15")} />
           ))}
