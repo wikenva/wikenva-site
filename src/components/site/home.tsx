@@ -6,7 +6,7 @@ import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
 import { PathBoard } from "./paths";
 import { PromotionClock } from "./promotion";
-import { Eyebrow, PartnerButton, PlatformButton, Section, TextLink } from "./ui";
+import { PartnerButton, PlatformButton, Section, TextLink } from "./ui";
 
 export function HomePage() {
   const { lang } = useLang();
@@ -195,20 +195,13 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="border-t border-line py-8 md:py-12">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <Eyebrow>Suite</Eyebrow>
-          <h2 className="font-display text-3xl font-semibold">{tr("Aller plus loin")}</h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            {tr("La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.")}
-          </p>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            <More to="/feuille-de-route" title="Feuille de route" text="Les cinq phases publiques du projet." />
-            <More to="/token" title="WIKENVA TOKEN" text="La fiche du token, sans chiffre inventé." />
-            <More to="/actualites" title="Actualités" text="Les annonces confirmées, au fur et à mesure." />
-            <More to="/documents" title="Documents officiels" text="Livre blanc, fiche du token et liens Sidra." />
-          </ul>
-        </div>
+      <section className="border-t border-line py-8">
+        <ul className="mx-auto grid w-full max-w-6xl gap-2 px-5 md:px-8">
+          <More to="/feuille-de-route" title="Feuille de route" text="Les cinq phases publiques du projet." />
+          <More to="/token" title="WIKENVA TOKEN" text="La fiche du token, sans chiffre inventé." />
+          <More to="/actualites" title="Actualités" text="Les annonces confirmées, au fur et à mesure." />
+          <More to="/documents" title="Documents officiels" text="Livre blanc, fiche du token et liens Sidra." />
+        </ul>
       </section>
     </>
   );
@@ -375,8 +368,8 @@ function More({ to, title, text }: { to: string; title: string; text: string }) 
   const tr = useTr();
   return (
     <li>
-      <TextLink to={to} variant="ghost" className="h-auto w-full flex-col items-start gap-1 rounded-3xl px-5 py-4 text-left">
-        <span className="font-display text-lg">{tr(title)}</span>
+      <TextLink to={to} variant="ghost" className="h-auto w-full flex-col items-start gap-1 rounded-2xl px-4 py-3 text-left">
+        <span className="text-base font-semibold">{tr(title)}</span>
         <span className="text-sm font-normal text-muted">{tr(text)}</span>
       </TextLink>
     </li>
