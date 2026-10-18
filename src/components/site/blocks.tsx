@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check, Copy } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import {
   categoryLabels,
   documents,
@@ -462,11 +462,56 @@ export function NewsCards({ items = news }: { items?: NewsItem[] }) {
 export function RoleBoard() {
   const tr = useTr();
   const [active, setActive] = useState(0);
+  const row = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
   const role = roles[active];
 
+  useEffect(() => {
+    const root = row.current;
+    const button = root?.querySelector<HTMLButtonElement>('[aria-selected="true"]');
+    if (!root || !button) return;
+    root.scrollTo({
+      left: button.offsetLeft - root.clientWidth / 2 + button.clientWidth / 2,
+      behavior: "smooth",
+    });
+  }, [active]);
+
+  function go(next: number) {
+    setActive(Math.min(roles.length - 1, Math.max(0, next)));
+  }
+
+  function onPointerDown(event: ReactPointerEvent<HTMLDivElement>) {
+    drag.current = { x: event.clientX, y: event.clientY, locked: null };
+  }
+
+  function onPointerMove(event: ReactPointerEvent<HTMLDivElement>) {
+    if (!drag.current || drag.current.locked != null) return;
+    const dx = event.clientX - drag.current.x;
+    const dy = event.clientY - drag.current.y;
+    if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+    drag.current.locked = Math.abs(dx) > Math.abs(dy);
+    if (drag.current.locked) event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function onPointerUp(event: ReactPointerEvent<HTMLDivElement>) {
+    if (!drag.current?.locked) {
+      drag.current = null;
+      return;
+    }
+    const dx = event.clientX - drag.current.x;
+    drag.current = null;
+    if (dx <= -48) go(active + 1);
+    else if (dx >= 48) go(active - 1);
+  }
+
   return (
-    <div className="grid gap-3 lg:grid-cols-[15rem_1fr] lg:items-stretch">
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-1" role="tablist" aria-label={tr("Choisissez un rôle")}>
+    <div className="grid gap-4">
+      <div
+        ref={row}
+        className="flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        role="tablist"
+        aria-label={tr("Choisissez un rôle")}
+      >
         {roles.map((item, index) => {
           const selected = index === active;
           return (
@@ -476,20 +521,35 @@ export function RoleBoard() {
               role="tab"
               aria-selected={selected}
               className={cn(
-                "min-h-12 rounded-full border px-3 text-sm font-semibold transition-colors",
-                selected ? "border-gold bg-gold text-ink" : "border-line bg-panel text-fg hover:border-gold",
+                "min-h-11 shrink-0 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors",
+                selected ? "border-gold bg-gold text-ink" : "border-line bg-panel text-fg",
               )}
-              onClick={() => setActive(index)}
+              onClick={() => go(index)}
             >
               {tr(item.name)}
             </button>
           );
         })}
       </div>
-      <div role="tabpanel" className="flex flex-col justify-center rounded-2xl border border-gold/40 bg-panel p-6 md:p-10">
-        <p className="text-sm font-semibold tracking-widest text-gold">0{active + 1}</p>
-        <h3 className="mt-3 font-display text-4xl font-semibold md:text-6xl">{tr(role.name)}</h3>
-        <p className="mt-4 max-w-2xl text-xl leading-relaxed text-fg md:text-2xl">{tr(role.detail)}</p>
+      <div
+        role="tabpanel"
+        className="rounded-2xl border border-gold/40 bg-panel p-6 md:p-10"
+        style={{ touchAction: "pan-y" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
+        <div key={role.name} className="role-in">
+          <p className="text-sm font-semibold tracking-widest text-gold">0{active + 1}</p>
+          <h3 className="mt-3 font-display text-4xl font-semibold md:text-6xl">{tr(role.name)}</h3>
+          <p className="mt-4 max-w-2xl text-xl leading-relaxed text-fg md:text-2xl">{tr(role.detail)}</p>
+        </div>
+        <div className="mt-6 flex gap-1.5" aria-hidden>
+          {roles.map((item, index) => (
+            <span key={item.name} className={"h-0.5 flex-1 rounded-full " + (index <= active ? "bg-gold" : "bg-white/15")} />
+          ))}
+        </div>
       </div>
     </div>
   );
