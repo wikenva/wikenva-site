@@ -28,9 +28,7 @@ export function HomePage() {
             </TextLink>
           </div>
           <div>
-            <div className="max-w-sm rounded-2xl border border-line bg-panel p-4">
-              <PromotionClock compact />
-            </div>
+            <PromotionClock compact />
             <div className="mt-4 flex max-w-md flex-col gap-3">
               <PartnerButton className="w-full" />
               <a href="#decouvrir" className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-line bg-transparent px-5 text-sm font-semibold text-fg active:scale-[0.98]">
