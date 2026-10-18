@@ -40,26 +40,19 @@ export const Route = createRootRoute({
             __html: `#boot{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:#07101c}html.is-ready #boot{opacity:0;visibility:hidden;pointer-events:none}#boot{transition:opacity .35s ease,visibility .35s ease}.boot-mark{width:min(9rem,46vw);height:auto;animation:boot-in .8s cubic-bezier(.22,.8,.24,1) both,boot-float 2.4s ease-in-out .8s infinite}.boot-spin{width:2.25rem;height:2.25rem;margin:1.25rem auto 0;border:2px solid #2a3d5c;border-top-color:#e8b23a;border-radius:999px;animation:boot-spin .7s linear infinite}.boot-label{margin:.75rem 0 0;color:#b7c6da;font:600 .875rem/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.08em;text-align:center;text-transform:uppercase}@keyframes boot-spin{to{transform:rotate(360deg)}}@keyframes boot-in{from{opacity:0;transform:translateY(16px) scale(.86)}to{opacity:1;transform:none}}@keyframes boot-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@media (prefers-reduced-motion:reduce){.boot-mark,.boot-spin{animation:none}.boot-spin{border-color:#e8b23a}}`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(document.getElementById("boot"))return;var label="Chargement";try{if(localStorage.getItem("wikenva-lang")==="en")label="Loading"}catch(e){}var d=document.createElement("div");d.id="boot";d.setAttribute("role","status");d.innerHTML='<div><img class="boot-mark" src="/media/logo-mark-ui.webp" alt="WIKENVA" width="480" height="266"><div class="boot-spin" aria-hidden="true"></div><p class="boot-label">'+label+"</p></div>";document.documentElement.appendChild(d);function hide(){if(d.parentNode)d.remove()}setTimeout(hide,900);setTimeout(hide,2500)})();`,
+          }}
+        />
       </head>
       <body>
-        <div id="boot" role="status" aria-live="polite">
-          <div>
-            <img className="boot-mark" src="/media/logo-mark-ui.webp" alt="WIKENVA" width={480} height={266} decoding="async" />
-            <div className="boot-spin" aria-hidden />
-            <p id="boot-label" className="boot-label">Chargement</p>
-          </div>
-        </div>
         <PreviewHostBridge />
         <AuthProvider>
           <LocaleProvider>
             <Outlet />
           </LocaleProvider>
         </AuthProvider>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(localStorage.getItem("wikenva-lang")==="en"){var n=document.getElementById("boot-label");if(n)n.textContent="Loading"}}catch(e){}var wait=Math.max(0,1100-performance.now());setTimeout(function(){document.documentElement.classList.add("is-ready")},wait);setTimeout(function(){document.documentElement.classList.add("is-ready")},8000)})();`,
-          }}
-        />
         <Scripts />
       </body>
     </html>
