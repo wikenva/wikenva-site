@@ -907,6 +907,12 @@ export const en: Record<string, string> = {
   h: "h",
   min: "min",
   s: "s",
+  FAQ: "FAQ",
+  Parcours: "Paths",
+  Partenaires: "Partners",
+  Administrateurs: "Administrators",
+  "Lecteurs, auteurs et créateurs, dans le même écosystème.":
+    "Readers, authors and creators, in the same ecosystem.",
   "Minimum indiqué pour la campagne de promotion en cours sur SidraStart. Ce seuil ne confirme pas un partenariat WIKENVA et ne promet aucun rendement.": "Minimum shown for the current SidraStart promotion. This threshold does not confirm a WIKENVA partnership and promises no yield.",
   "Minimum prévu : 1 000 SDA.": "Planned minimum: 1,000 SDA.",
   "Montant envisagé en SDA": "Planned amount in SDA",
