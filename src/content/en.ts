@@ -901,6 +901,12 @@ export const en: Record<string, string> = {
   "Marketplace d'ebooks, dans l'écosystème SidraChain. L'application est encore en préparation.": "An ebook marketplace in the SidraChain ecosystem. The application is still being prepared.",
   "Message de présentation": "Introduction",
   "Minimum 2 000 SDA sur SidraStart pour être partenaire.": "Minimum 2,000 SDA on SidraStart to become a partner.",
+  "Minimum 2 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.":
+    "Minimum 2,000 SDA on SidraStart, until 30 November 2026.",
+  j: "d",
+  h: "h",
+  min: "min",
+  s: "s",
   "Minimum indiqué pour la campagne de promotion en cours sur SidraStart. Ce seuil ne confirme pas un partenariat WIKENVA et ne promet aucun rendement.": "Minimum shown for the current SidraStart promotion. This threshold does not confirm a WIKENVA partnership and promises no yield.",
   "Minimum prévu : 1 000 SDA.": "Planned minimum: 1,000 SDA.",
   "Montant envisagé en SDA": "Planned amount in SDA",
