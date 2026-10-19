@@ -79,6 +79,7 @@ export function HomePage() {
           <p className="mt-2 text-sm leading-relaxed text-muted">
             {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
           </p>
+          <p className="mt-2 text-sm font-semibold text-gold">{tr("Lancement visé le 25 novembre 2026.")}</p>
           <TextLink to="/presentation" className="mt-4 w-full">
             {tr("Voir la présentation")}
           </TextLink>
@@ -362,6 +363,14 @@ function NewsCarousel() {
 
 function NewsMark({ slug }: { slug: string }) {
   const common = { viewBox: "0 0 24 24", className: "size-4", fill: "none", stroke: "currentColor", strokeWidth: 1.8 };
+  if (slug === "lancement-25-novembre") {
+    return (
+      <svg {...common}>
+        <rect x="5" y="6" width="14" height="13" rx="1.5" />
+        <path d="M5 10h14M9 4.5v3M15 4.5v3" strokeLinecap="round" />
+      </svg>
+    );
+  }
   if (slug === "promotion-partenaire") {
     return (
       <svg {...common}>
