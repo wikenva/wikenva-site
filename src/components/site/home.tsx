@@ -22,8 +22,8 @@ export function HomePage() {
             <h1 className="mx-auto mt-4 max-w-sm font-display text-[1.7rem] font-semibold leading-tight md:text-4xl">
               {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
             </h1>
-            <div className="mx-auto mt-6 h-px w-12 bg-gold" aria-hidden />
-            <div className="mt-8">
+            <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
+            <div className="mt-5">
               <PromotionClock compact />
             </div>
             <div className="mt-8">
