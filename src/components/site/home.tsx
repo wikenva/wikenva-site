@@ -26,14 +26,20 @@ export function HomePage() {
             <div className="mt-5">
               <PromotionClock compact />
             </div>
-            <div className="mt-8">
+            <div className="mt-6 grid gap-2">
               <PartnerButton className="w-full" />
-            </div>
-            <div className="mt-5 flex flex-col items-center gap-3 text-sm font-semibold">
-              <a href="#decouvrir" className="text-fg">
+              <a
+                href="#decouvrir"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-line px-5 text-sm font-semibold"
+              >
                 {text.discover}
               </a>
-              <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="text-muted">
+              <a
+                href={site.investUrl ?? ""}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-line px-5 text-sm font-semibold text-muted"
+              >
                 {text.invest}
               </a>
             </div>
