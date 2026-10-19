@@ -1041,7 +1041,18 @@ export const en: Record<string, string> = {
   "Présenté comme le fondateur de SidraChain. Photo fournie pour cette page, sous réserve des sources officielles.": "Presented as the founder of SidraChain. Photo supplied for this page, subject to official sources.",
   "Suivre le développement": "Follow the development",
   "Les annonces officielles sont sur la page Communauté.": "Official announcements are on the Community page.",
-  "Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.": "The six spaces are planned. They may change. None is open.",
+  "Lancement visé le 25 novembre 2026.": "Launch planned for 25 November 2026.",
+  "Lancement visé le 25 novembre 2026": "Launch planned for 25 November 2026",
+  "Lancement de la plateforme visé le 25 novembre 2026": "Platform launch planned for 25 November 2026",
+  "WIKENVA vise l'ouverture de la plateforme le 25 novembre 2026. Elle n'est pas encore ouverte.":
+    "WIKENVA is aiming to open the platform on 25 November 2026. It is not open yet.",
+  "WIKENVA prévoit de lancer la plateforme le 25 novembre 2026.":
+    "WIKENVA plans to launch the platform on 25 November 2026.",
+  "À cette date visée, la plateforme n'est pas encore ouverte. Les espaces peuvent encore évoluer.":
+    "On this planned date, the platform is not open yet. The spaces may still change.",
+  "L'intégration à SidraChain reste soumise à l'examen de la Core Team.":
+    "Integration into SidraChain remains subject to review by the Core Team.",
+  "19 octobre 2026": "19 October 2026",
   "Voir la présentation": "See the presentation",
   "Deux fonctions distinctes": "Two separate roles",
   "Ces deux portraits n'ont pas le même rôle. Le format est le même : visage entier, fond blanc, nom et fonction en dessous.": "These two portraits do not have the same role. The format is the same: full face, white background, name and role underneath.",
