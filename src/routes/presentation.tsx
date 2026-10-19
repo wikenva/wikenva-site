@@ -92,6 +92,7 @@ function PresentationPage() {
           <p className="mt-3 text-sm text-muted">
             {tr("Les espaces présentés ici sont envisagés. Ils peuvent évoluer pendant le développement. Aucun n'est ouvert.")}
           </p>
+          <p className="mt-3 text-sm font-semibold text-gold">{tr("Lancement visé le 25 novembre 2026.")}</p>
           <p className="mt-3 text-sm text-muted">
             {tr("L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA.")}
           </p>
