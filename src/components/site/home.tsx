@@ -73,16 +73,27 @@ export function HomePage() {
           </TextLink>
           <PlatformButton variant="ghost" className="w-full" />
         </div>
-        <div className="mt-6 rounded-2xl border border-line bg-panel p-5">
-          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Statut")}</p>
-          <p className="mt-2 text-lg font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
-          </p>
-          <p className="mt-2 text-sm font-semibold text-gold">{tr("Lancement visé le 25 novembre 2026.")}</p>
-          <TextLink to="/presentation" className="mt-4 w-full">
-            {tr("Voir la présentation")}
-          </TextLink>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-gold/40 bg-panel">
+          <div className="flex items-stretch">
+            <div className="grid w-[4.5rem] shrink-0 place-items-center bg-gold text-ink">
+              <div className="text-center">
+                <p className="font-display text-3xl font-semibold leading-none">25</p>
+                <p className="mt-1 text-[10px] font-semibold tracking-[0.14em] uppercase">Oct.</p>
+              </div>
+            </div>
+            <div className="min-w-0 px-4 py-3.5">
+              <p className="text-[10px] font-semibold tracking-[0.16em] text-gold uppercase">{tr("Lancement")}</p>
+              <p className="mt-1 text-base font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
+              <p className="mt-1 text-xs leading-relaxed text-muted">
+                {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-line px-4 py-3">
+            <TextLink to="/presentation" className="w-full">
+              {tr("Voir la présentation")}
+            </TextLink>
+          </div>
         </div>
       </Section>
 
@@ -363,7 +374,7 @@ function NewsCarousel() {
 
 function NewsMark({ slug }: { slug: string }) {
   const common = { viewBox: "0 0 24 24", className: "size-4", fill: "none", stroke: "currentColor", strokeWidth: 1.8 };
-  if (slug === "lancement-25-novembre") {
+  if (slug === "lancement-25-octobre") {
     return (
       <svg {...common}>
         <rect x="5" y="6" width="14" height="13" rx="1.5" />
