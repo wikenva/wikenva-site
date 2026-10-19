@@ -15,7 +15,7 @@ const variants: Record<Variant, string> = {
 };
 
 const control =
-  "inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out active:not-disabled:scale-[0.98] disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out active:not-disabled:scale-[0.98] disabled:opacity-50";
 
 export function PlatformButton({
   className,
