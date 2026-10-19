@@ -316,8 +316,8 @@ function NewsCarousel() {
                 params={{ slug: item.slug }}
                 className="flex h-full items-center gap-3 px-3.5 pb-3"
               >
-                <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl border border-gold/30 bg-gold/10 font-display text-xs font-semibold text-gold">
-                  {String(slide + 1).padStart(2, "0")}
+                <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl border border-gold/30 bg-gold/10 text-gold">
+                  <NewsMark slug={item.slug} />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{tr(item.date)}</span>
@@ -357,6 +357,39 @@ function NewsCarousel() {
         </div>
       </div>
     </div>
+  );
+}
+
+function NewsMark({ slug }: { slug: string }) {
+  const common = { viewBox: "0 0 24 24", className: "size-4", fill: "none", stroke: "currentColor", strokeWidth: 1.8 };
+  if (slug === "promotion-partenaire") {
+    return (
+      <svg {...common}>
+        <path d="M8 13l2.5 2.5L16 9" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="12" r="8" />
+      </svg>
+    );
+  }
+  if (slug === "fiche-sidrastart") {
+    return (
+      <svg {...common}>
+        <path d="M7 4.5h7l3 3V19.5H7z" strokeLinejoin="round" />
+        <path d="M14 4.5V8h3.5M9 12h6M9 15.5h4" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  if (slug === "espace-information-en-ligne") {
+    return (
+      <svg {...common}>
+        <path d="M5 7.5h14M5 12h14M5 16.5h9" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  return (
+    <svg {...common}>
+      <circle cx="12" cy="12" r="8" />
+      <path d="M4 12h16M12 4c2.2 2.4 3.3 5.1 3.3 8S14.2 17.6 12 20c-2.2-2.4-3.3-5.1-3.3-8S9.8 6.4 12 4z" />
+    </svg>
   );
 }
 
