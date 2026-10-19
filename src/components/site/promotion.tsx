@@ -18,17 +18,16 @@ export function PromotionClock(_props?: { compact?: boolean }) {
 
   return (
     <div className="text-center">
-      <p className="text-[11px] font-semibold tracking-[0.28em] text-gold uppercase">{tr("Partenaire")}</p>
       {left > 0 ? <Countdown left={left} /> : null}
       {left <= 0 ? (
         <p className="mt-4 text-sm text-muted">
           {tr("Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.")}
         </p>
-      ) : null}
-      <p className="mx-auto mt-6 max-w-[18rem] text-balance text-sm font-semibold leading-relaxed">
-        {tr("Minimum 2 000 SDA sur SidraStart pour être partenaire.")}
-      </p>
-      <p className="mt-3 text-sm text-gold">{tr("Valable jusqu'au 30 novembre 2026.")}</p>
+      ) : (
+        <p className="mx-auto mt-5 max-w-[16rem] text-balance text-sm leading-relaxed text-muted">
+          {tr("Minimum 2 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.")}
+        </p>
+      )}
     </div>
   );
 }
@@ -37,10 +36,10 @@ function Countdown({ left }: { left: number }) {
   const tr = useTr();
   const total = Math.floor(left / 1000);
   const parts = [
-    [Math.floor(total / 86400), tr("jours")],
-    [Math.floor((total % 86400) / 3600), tr("heures")],
-    [Math.floor((total % 3600) / 60), tr("minutes")],
-    [total % 60, tr("secondes")],
+    [Math.floor(total / 86400), tr("j")],
+    [Math.floor((total % 86400) / 3600), tr("h")],
+    [Math.floor((total % 3600) / 60), tr("min")],
+    [total % 60, tr("s")],
   ] as const;
   return (
     <div className="mt-5 grid grid-cols-4" aria-live="polite">
