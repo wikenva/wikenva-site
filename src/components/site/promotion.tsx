@@ -36,10 +36,10 @@ function Countdown({ left }: { left: number }) {
   const tr = useTr();
   const total = Math.floor(left / 1000);
   const parts = [
-    [Math.floor(total / 86400), tr("j")],
-    [Math.floor((total % 86400) / 3600), tr("h")],
-    [Math.floor((total % 3600) / 60), tr("min")],
-    [total % 60, tr("s")],
+    [Math.floor(total / 86400), tr("jours")],
+    [Math.floor((total % 86400) / 3600), tr("heures")],
+    [Math.floor((total % 3600) / 60), tr("minutes")],
+    [total % 60, tr("secondes")],
   ] as const;
   return (
     <div className="mt-5 grid grid-cols-4 gap-2" aria-live="polite">
@@ -48,7 +48,7 @@ function Countdown({ left }: { left: number }) {
           <p suppressHydrationWarning className="font-display text-3xl font-semibold tabular-nums tracking-tight">
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-1 text-[10px] font-semibold tracking-[0.16em] text-gold uppercase">{label}</p>
+          <p className="mt-1 text-[9px] font-semibold text-gold capitalize">{label}</p>
         </div>
       ))}
     </div>
