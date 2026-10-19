@@ -44,11 +44,12 @@ function Countdown({ left }: { left: number }) {
   return (
     <div className="mt-5 grid grid-cols-4 gap-2" aria-live="polite">
       {parts.map(([value, label]) => (
-        <div key={label} className="rounded-2xl border border-line bg-panel px-1 py-3 text-center">
-          <p suppressHydrationWarning className="font-display text-3xl font-semibold tabular-nums tracking-tight">
+        <div key={label} className="rounded-2xl border border-gold/35 bg-panel px-1 py-3.5 text-center">
+          <p suppressHydrationWarning className="font-display text-[1.7rem] font-semibold tabular-nums leading-none">
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-1 text-[9px] font-semibold text-gold capitalize">{label}</p>
+          <div className="mx-auto mt-2.5 h-px w-5 bg-gold" aria-hidden />
+          <p className="mt-2 text-[10px] leading-none font-medium text-gold capitalize">{label}</p>
         </div>
       ))}
     </div>
