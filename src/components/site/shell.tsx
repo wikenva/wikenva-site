@@ -126,17 +126,26 @@ function SiteSearch() {
   const [query, setQuery] = useState("");
   const pages = useMemo(
     () => [
-      { href: "/", label: "Accueil" },
-      ...mainNav.map((item) => ({ href: item.to, label: item.label })),
-      ...moreNav.map((item) => ({ href: item.to, label: item.label })),
-      ...legalNav.map((item) => ({ href: item.to, label: item.label })),
-      ...news.map((item) => ({ href: `/actualites/${item.slug}`, label: item.title })),
+      { href: "/", label: "Accueil", hint: "La page d'accueil" },
+      { href: "/actualites", label: "Actualités", hint: "Ce qui est confirmé" },
+      { href: "/partenaires", label: "Partenaires", hint: "2 000 SDA jusqu'au 30 novembre 2026" },
+      { href: "/investisseurs", label: "Investisseurs", hint: "Avant d'investir sur SidraStart" },
+      { href: "/vision", label: "Vision", hint: "Mission et vision" },
+      { href: "/presentation", label: "Présentation", hint: "La plateforme en cours" },
+      { href: "/feuille-de-route", label: "Feuille de route", hint: "Les phases du projet" },
+      { href: "/token", label: "Token", hint: "Le token de la plateforme" },
+      { href: "/documents", label: "Documents", hint: "Documents officiels" },
+      { href: "/communaute", label: "Communauté", hint: "Contact et réseaux" },
+      { href: "/sidrachain", label: "SidraChain", hint: "L'écosystème SidraChain" },
+      { href: "/white-paper", label: "White paper", hint: "Le livre blanc" },
+      ...legalNav.map((item) => ({ href: item.to, label: item.label, hint: "Information légale" })),
+      ...news.map((item) => ({ href: `/actualites/${item.slug}`, label: item.title, hint: "Actualité" })),
     ],
     [],
   );
   const q = query.trim().toLowerCase();
   const matches = q
-    ? pages.filter((item) => tr(item.label).toLowerCase().includes(q) || item.label.toLowerCase().includes(q)).slice(0, 6)
+    ? pages.filter((item) => `${item.label} ${item.hint}`.toLowerCase().includes(q) || tr(item.label).toLowerCase().includes(q) || tr(item.hint).toLowerCase().includes(q)).slice(0, 6)
     : [];
 
   useEffect(() => {
@@ -161,8 +170,9 @@ function SiteSearch() {
             ) : (
               matches.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="flex min-h-11 items-center px-4 text-sm font-semibold hover:bg-ink">
-                    {tr(item.label)}
+                  <a href={item.href} className="block px-4 py-3 hover:bg-ink">
+                    <span className="block text-sm font-semibold">{tr(item.label)}</span>
+                    <span className="mt-0.5 block text-xs text-muted">{tr(item.hint)}</span>
                   </a>
                 </li>
               ))
