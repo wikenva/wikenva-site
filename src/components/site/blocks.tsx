@@ -352,23 +352,23 @@ export function InvestActions() {
 
   return (
     <>
-      <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <div className="grid w-full min-w-0 grid-cols-1 gap-3">
         {investReady ? (
-          <ExternalLink href={site.investUrl ?? ""} variant="gold">
-            {tr("Investir sur SidraStart")}
+          <ExternalLink href={site.investUrl ?? ""} variant="gold" className="w-full whitespace-normal">
+            {tr("Investir")}
           </ExternalLink>
         ) : (
-          <Button variant="gold" onClick={() => gate.ask(tr("Investissement"), tr(INVEST_BODY))}>
-            {tr("Investir sur SidraStart")}
+          <Button variant="gold" className="w-full whitespace-normal" onClick={() => gate.ask(tr("Investissement"), tr(INVEST_BODY))}>
+            {tr("Investir")}
           </Button>
         )}
         {downloadReady ? (
-          <ExternalLink href={site.whitepaper.downloadUrl ?? ""} variant="primary">
-            {tr("Télécharger le white paper")}
+          <ExternalLink href={site.whitepaper.downloadUrl ?? ""} variant="primary" className="w-full whitespace-normal">
+            {tr("White paper")}
           </ExternalLink>
         ) : (
-          <Button variant="primary" onClick={() => gate.ask("White paper", tr(PAPER_BODY))}>
-            {tr("Télécharger le white paper")}
+          <Button variant="primary" className="w-full whitespace-normal" onClick={() => gate.ask("White paper", tr(PAPER_BODY))}>
+            {tr("White paper")}
           </Button>
         )}
       </div>
