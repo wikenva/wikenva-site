@@ -796,6 +796,11 @@ export const en: Record<string, string> = {
   "Autre formulaire, autres règles": "Another form, other rules",
   "Vous ouvrez la fiche Digital Marketplace Ebook et vous investissez depuis votre propre compte.":
     "You open the Digital Marketplace Ebook page and invest from your own account.",
+  "Cela ne crée pas le statut de partenaire.": "This does not create partner status.",
+  "La demande n'est pas l'investissement. Le statut n'est pas automatique.": "The request is not the investment. The status is not automatic.",
+  "Deux décisions distinctes. Aucun rendement n'est promis.": "Two separate decisions. No yield is promised.",
+  "Investir et devenir partenaire, est-ce la même chose ?": "Are investing and becoming a partner the same thing?",
+  "Non. Investir se fait sur SidraStart. Le partenaire se demande ensuite, après vérification.": "No. Investing is done on SidraStart. Partner status is requested afterwards, after a check.",
   "Cela ne crée pas le statut de partenaire et ne vous inscrit pas au programme actionnaires.":
     "It does not create partner status and it does not enrol you in the shareholder programme.",
   "Jusqu'au 30 novembre 2026, après au moins 2 000 SDA investis sur SidraStart, vous pouvez demander une vérification.":
