@@ -116,7 +116,7 @@ export function HomePage() {
             ["1", "Comprendre le projet", "Le site dit ce qui est confirmé. Le reste n'est pas inventé."],
             ["2", "Les produits numériques", "Les ebooks sont en préparation. Aucun achat sur ce site."],
             ["3", "La communauté", "Les annonces passent par Facebook, WhatsApp, Telegram et X."],
-            ["4", "Participer", "Investir, devenir partenaire et le programme actionnaires sont trois parcours distincts."],
+            ["4", "Participer", "Investir et devenir partenaire sont deux parcours distincts."],
           ].map(([index, title, text]) => (
             <li key={index} className="flex gap-3 rounded-2xl border border-line bg-panel p-4">
               <span className="font-semibold text-gold">{index}</span>
@@ -173,7 +173,7 @@ export function HomePage() {
       <section id="parcours" className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Parcours")}</p>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          {tr("Trois décisions distinctes. Aucun rendement n'est promis.")}
+          {tr("Deux décisions distinctes. Aucun rendement n'est promis.")}
         </p>
         <div className="mt-4">
           <PathBoard auto={false} />
@@ -208,8 +208,8 @@ export function HomePage() {
               a="Investir au moins 2 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
             />
             <Faq
-              q="Investir, partenaire et actionnaire, est-ce la même chose ?"
-              a="Non. Investir est sur SidraStart. Le partenaire se demande. L'actionnaire est une autre règle."
+              q="Investir et devenir partenaire, est-ce la même chose ?"
+              a="Non. Investir se fait sur SidraStart. Le partenaire se demande ensuite, après vérification."
             />
             <Faq
               q="Un investissement garantit-il un rendement ?"
