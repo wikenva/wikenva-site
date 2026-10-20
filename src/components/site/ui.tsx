@@ -15,7 +15,7 @@ const variants: Record<Variant, string> = {
 };
 
 const control =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out active:not-disabled:scale-[0.98] disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 text-center text-sm font-semibold transition-[transform,background-color,opacity] duration-150 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold active:not-disabled:scale-[0.98] disabled:opacity-50";
 
 export function PlatformButton({
   className,
@@ -160,7 +160,7 @@ export function Section({
         <h2
           className={cn(
             "max-w-3xl font-display font-semibold text-fg",
-            compact ? "mx-auto text-[2rem] leading-snug md:text-4xl" : "text-3xl md:text-4xl",
+            compact ? "mx-auto text-[1.7rem] leading-tight md:text-4xl" : "text-2xl leading-tight md:text-3xl",
           )}
         >
           {tr(title)}
@@ -201,16 +201,17 @@ export function PageHero({
         </div>
         <h1
           className={cn(
-            "max-w-3xl font-display font-semibold",
-            compact ? "mx-auto text-[2rem] leading-snug md:text-4xl" : "text-3xl md:text-5xl",
+            "max-w-3xl text-balance font-display font-semibold leading-tight",
+            compact ? "mx-auto text-[1.7rem] md:text-4xl" : "text-[1.7rem] md:text-4xl",
           )}
         >
           {tr(title)}
         </h1>
+        <div className={cn("mt-4 h-px w-12 bg-gold", compact && "mx-auto")} aria-hidden />
         <p
           className={cn(
-            "max-w-2xl",
-            compact ? "mx-auto mt-2 text-base leading-relaxed text-faint md:text-lg" : "mt-3 text-base text-muted md:text-lg",
+            "max-w-xl text-sm leading-relaxed text-muted md:text-base",
+            compact ? "mx-auto mt-4" : "mt-4",
           )}
         >
           {tr(lede)}
@@ -241,7 +242,7 @@ export function Panel({
   children: ReactNode;
 }) {
   return (
-    <div className={cn("rounded-2xl border border-line bg-panel p-6 md:p-8", className)}>
+    <div className={cn("rounded-2xl border border-line bg-panel p-5", className)}>
       {children}
     </div>
   );
