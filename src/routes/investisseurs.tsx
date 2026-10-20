@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { goals, isPending, narrative, pageMeta, site } from "@/content/site";
+import { goals, isPending, narrative, pageMeta } from "@/content/site";
 import { useTr } from "@/lib/locale";
 import { DocumentList, InvestActions, Roadmap } from "@/components/site/blocks";
 import { PathBoard } from "@/components/site/paths";
-import { ShareholderAccess } from "@/components/site/shareholder-form";
 import { SiteShell } from "@/components/site/shell";
 import { PageHero, Panel } from "@/components/site/ui";
 
@@ -30,27 +29,7 @@ function InvestorsPage() {
           <InvestActions />
           <p className="text-sm text-muted">{tr("Ouvrir SidraStart ne crée pas le statut de partenaire.")}</p>
         </div>
-        <PathBoard here="shareholder" />
-        <section id="actionnaires" className="scroll-mt-24">
-          <h2 className="font-display text-3xl font-semibold">{tr("Programme actionnaires")}</h2>
-          <p className="mt-3 max-w-3xl text-muted">{tr(site.shareholderProgram.revenueNote)}</p>
-          <p className="mt-3 max-w-3xl text-sm text-muted">
-            {tr("Distinct de la promotion partenaire à 2 000 SDA.")}
-          </p>
-          <Panel className="mt-6">
-            <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Part prévue des revenus")}</p>
-            <p className="mt-2 font-display text-4xl font-semibold">{site.shareholderProgram.revenueShare}</p>
-            <p className="mt-3 text-muted">
-              {tr("Le partage est prévu, mais aucun versement n'est affiché ici.")}
-            </p>
-            <p className="mt-3 text-sm text-muted">
-              {tr("Les chiffres viendront quand le système sera prêt.")}
-            </p>
-          </Panel>
-          <div className="mt-6">
-            <ShareholderAccess />
-          </div>
-        </section>
+        <PathBoard />
         <div className="grid gap-4 md:grid-cols-2">
           <Panel>
             <h2 className="font-display text-2xl font-semibold">{tr("Vision")}</h2>
