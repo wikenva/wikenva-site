@@ -170,7 +170,7 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
       <Panel>
         <h2 className="font-display text-3xl font-semibold">{tr("Devenir actionnaire")}</h2>
         <p className="mt-3 text-muted">
-          {tr("Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 1 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.")}
+          {tr("Le bouton ouvre SidraStart. Il ne confirme pas un investissement.")}
         </p>
         <form className="mt-6 grid gap-5" onSubmit={onSubmit} noValidate>
             <Field
@@ -240,10 +240,10 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
                 <div role="status">
                   <p className="font-display text-lg font-semibold text-gold">{tr("Poursuivez votre démarche avec WIKENVA")}</p>
                   <p className="mt-3 text-sm text-fg">
-                    {tr("Vous pouvez accéder au projet Digital Marketplace Ebook sur SidraStart pour consulter les informations disponibles et découvrir les modalités de contribution au développement de la plateforme WIKENVA.")}
+                    {tr("Ouvrez la fiche SidraStart, puis suivez les étapes.")}
                   </p>
                   <p className="mt-3 text-sm text-fg">
-                    {tr("Cliquez sur le bouton ci-dessous pour accéder à la page du projet sur SidraStart et suivre les étapes proposées pour poursuivre votre démarche.")}
+                    {tr("Le bouton ouvre SidraStart.")}
                   </p>
                 </div>
                 <ExternalLink href={SIDRA_PROJECT} variant="gold" className="w-full uppercase tracking-wide">
@@ -429,7 +429,7 @@ export function ShareholderAccess({ intent = "form" }: { intent?: "form" | "acco
         <Panel>
           <h2 className="font-display text-3xl font-semibold">{tr("Programme actionnaires")}</h2>
           <p className="mt-3 text-muted">
-            {tr("Ce formulaire n'est pas la demande de partenaire et il ne réalise pas l'investissement SidraStart. Connectez-vous pour l'ouvrir. La connexion ne confirme aucun versement.")}
+            {tr("Ce n'est pas la demande partenaire. Connectez-vous pour l'ouvrir.")}
           </p>
           {authEnabled ? (
             <div className="mt-6 grid gap-3">
