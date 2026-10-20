@@ -151,7 +151,7 @@ function PresentationPage() {
               width={1024}
               height={1024}
               decoding="async"
-              className="h-28 w-28 shrink-0 bg-black object-contain sm:h-32 sm:w-32"
+              className="h-14 w-14 shrink-0 object-contain"
             />
             <h2 className="font-display text-2xl font-semibold md:text-3xl">{tr("WIKENVA et l'écosystème SidraChain")}</h2>
           </div>
