@@ -17,15 +17,15 @@ export const Route = createFileRoute("/sidrachain")({
 const sections = [
   {
     title: "La blockchain SidraChain",
-    text: "SidraChain est présenté comme un projet de blockchain. Son objectif affiché est de rapprocher cette technologie des principes de la finance islamique, et de développer un écosystème numérique inspiré des valeurs de la charia. Cette page ne présente pas cette approche comme une certification officielle.",
+    text: "Blockchain proche de la finance islamique. Pas une certification.",
   },
   {
     title: "Le système de récompenses",
-    text: "SidraChain décrit, sur ses supports officiels, un mécanisme de récompenses pour les participants. Les montants, la fréquence et les conditions d'utilisation sont ceux publiés par SidraChain. Cette page n'en ajoute aucun et n'en garantit aucun.",
+    text: "Récompenses décrites par SidraChain. Rien n'est ajouté ici.",
   },
   {
     title: "SidraStart et les autres initiatives",
-    text: "SidraStart est l'espace où la fiche WIKENVA est publiée, sous le nom Digital Marketplace Ebook. Les autres initiatives sont celles que SidraChain publie sur son site officiel. Seules ces sources font foi.",
+    text: "Fiche WIKENVA : Digital Marketplace Ebook. Le reste est sur sidrachain.com.",
   },
 ] as const;
 
@@ -47,7 +47,7 @@ function SidraChainPage() {
             <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Écosystème")}</p>
             <h1 className="mt-2 font-display text-3xl font-semibold md:text-5xl">{tr("Découvrir SidraChain")}</h1>
             <p className="mt-3 max-w-xl text-base text-muted">
-              {tr("Le projet, son fondateur et ses initiatives. À lire avant toute participation. Aucun rendement n'est promis.")}
+              {tr("Fondateur, technologie, initiatives. Aucun rendement promis.")}
             </p>
             <TextLink to="/presentation" variant="ghost" className="mt-5">
               {tr("Retour à WIKENVA")}
@@ -65,7 +65,7 @@ function SidraChainPage() {
             role="Présenté comme le fondateur de SidraChain"
           />
           <p className="mt-3 text-muted">
-            {tr("Le Dr. Mohammed Al Jefairi, souvent désigné par les initiales MJ, est présenté comme un entrepreneur, inventeur et auteur qatari associé au projet SidraChain.")}
+            {tr("Dr. Mohammed Al Jefairi, dit MJ. Entrepreneur associé à SidraChain.")}
           </p>
           <p className="mt-3 text-sm text-muted">
             {tr("Informations sous réserve des sources officielles.")}
