@@ -18,8 +18,8 @@ function RoadmapPage() {
     <SiteShell>
       <PageHero
         eyebrow="Feuille de route"
-        title="Cinq phases, prêtes à recevoir les vraies étapes."
-        lede="Sélectionnez une phase pour en lire l'intention. Les statuts restent « À préciser » tant que WIKENVA n'a pas annoncé où en est le projet."
+        title="Cinq phases."
+        lede="Les statuts restent « À préciser » tant qu'ils ne sont pas annoncés."
       />
       <div className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <Roadmap />
