@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Languages, Menu, X } from "lucide-react";
-import { useEffect, useState, type ReactNode } from "react";
-import { mainNav, moreNav, site, socials } from "@/content/site";
+import { ChevronDown, Languages, Menu, Search, X } from "lucide-react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { legalNav, mainNav, moreNav, news, site, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { useLang, useTr, type Lang } from "@/lib/locale";
@@ -120,6 +120,60 @@ function MoreMenu() {
   );
 }
 
+function SiteSearch() {
+  const tr = useTr();
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const [query, setQuery] = useState("");
+  const pages = useMemo(
+    () => [
+      { href: "/", label: "Accueil" },
+      ...mainNav.map((item) => ({ href: item.to, label: item.label })),
+      ...moreNav.map((item) => ({ href: item.to, label: item.label })),
+      ...legalNav.map((item) => ({ href: item.to, label: item.label })),
+      ...news.map((item) => ({ href: `/actualites/${item.slug}`, label: item.title })),
+    ],
+    [],
+  );
+  const q = query.trim().toLowerCase();
+  const matches = q
+    ? pages.filter((item) => tr(item.label).toLowerCase().includes(q) || item.label.toLowerCase().includes(q)).slice(0, 6)
+    : [];
+
+  useEffect(() => {
+    setQuery("");
+  }, [pathname]);
+
+  return (
+    <div className="border-t border-line/80">
+      <form className="relative mx-auto w-full max-w-6xl px-4 py-2 md:px-8" role="search" onSubmit={(event) => event.preventDefault()}>
+        <Search className="pointer-events-none absolute top-1/2 left-7 size-4 -translate-y-1/2 text-gold md:left-11" aria-hidden />
+        <input
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder={tr("Rechercher")}
+          aria-label={tr("Rechercher")}
+          className="h-10 w-full rounded-full border border-line bg-panel pr-4 pl-10 text-sm outline-none placeholder:text-faint focus:border-gold"
+        />
+        {q ? (
+          <ul className="absolute right-4 left-4 z-50 mt-2 overflow-hidden rounded-2xl border border-line bg-panel md:right-8 md:left-8">
+            {matches.length === 0 ? (
+              <li className="px-4 py-3 text-sm text-muted">{tr("Aucun résultat")}</li>
+            ) : (
+              matches.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} className="flex min-h-11 items-center px-4 text-sm font-semibold hover:bg-ink">
+                    {tr(item.label)}
+                  </a>
+                </li>
+              ))
+            )}
+          </ul>
+        ) : null}
+      </form>
+    </div>
+  );
+}
+
 function Shell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const [open, setOpen] = useState(false);
@@ -195,6 +249,7 @@ function Shell({ children }: { children: ReactNode }) {
             </button>
           </div>
         </div>
+        <SiteSearch />
         {open ? (
           <nav id="menu-mobile" className="border-t border-line bg-ink lg:hidden" aria-label="Menu">
             <div className="mx-auto flex w-full max-w-6xl flex-col px-5 py-3">
