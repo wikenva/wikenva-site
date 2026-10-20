@@ -36,8 +36,8 @@ function NewsPage() {
     <SiteShell>
       <PageHero
         eyebrow="Actualités"
-        title="Ce qui est annoncé, et seulement cela."
-        lede="Nouvelles du projet, développement, annonces officielles, partenariats, événements, étapes de la feuille de route et publications importantes."
+        title="Annonces confirmées."
+        lede="Rien n'est publié tant que ce n'est pas confirmé."
       />
       <div className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <div className="flex flex-wrap gap-2" role="tablist" aria-label={tr("Catégories")}>
