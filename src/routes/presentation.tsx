@@ -122,7 +122,7 @@ function PresentationPage() {
               role="CEO de WIKENVA"
             />
             <p className="max-w-md text-muted">
-              {tr("Félix Adjibodou est le CEO de WIKENVA. Cette page présente uniquement son rôle dans le projet.")}
+              {tr("Félix Adjibodou, CEO de WIKENVA.")}
             </p>
           </div>
         </section>
@@ -130,7 +130,7 @@ function PresentationPage() {
         <section>
           <h2 className="font-display text-2xl font-semibold">{tr("Produits envisagés")}</h2>
           <p className="mt-3 text-muted">
-            {tr("La boutique n'est pas ouverte. Aucun prix, aucun avis et aucun chiffre de vente ne sont affichés.")}
+            {tr("Boutique fermée. Aucun prix affiché.")}
           </p>
           <ul className="mt-5 grid gap-4 sm:grid-cols-2">
             {products.map((item) => (
@@ -156,7 +156,7 @@ function PresentationPage() {
             <h2 className="font-display text-2xl font-semibold md:text-3xl">{tr("WIKENVA et l'écosystème SidraChain")}</h2>
           </div>
           <p className="mt-4 text-muted">
-            {tr("SidraChain est un écosystème blockchain. WIKENVA souhaite s'y développer. Cette page ne présente pas un partenariat officiel.")}
+            {tr("Écosystème SidraChain. Pas un partenariat officiel.")}
           </p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <TextLink to="/sidrachain" variant="ghost" className="w-full sm:w-auto">
