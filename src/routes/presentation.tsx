@@ -73,25 +73,15 @@ function PresentationPage() {
           <h1 className="mt-2 font-display text-3xl font-semibold md:text-5xl">
             {tr("La plateforme des créateurs, des auteurs et des lecteurs")}
           </h1>
-          <p className="mt-3 text-base text-muted">
-            {tr("WIKENVA est un projet de plateforme numérique en cours de développement. La vision est de réunir les créateurs, les auteurs, les lecteurs, les visiteurs et les vendeurs de produits numériques.")}
-          </p>
-          <p className="mt-3 text-base text-muted">
-            {tr("Le projet envisage des outils d'intelligence artificielle et des fonctions modernes pour la création, la publication, la découverte et la commercialisation. Ces outils ne sont pas encore en service.")}
-          </p>
+          <p className="mt-3 text-base text-muted">{tr("En cours de développement. Rien n'est encore ouvert.")}</p>
         </div>
       </header>
 
       <div className="mx-auto grid w-full max-w-3xl gap-10 px-5 py-8 md:px-8 md:py-12">
         <section className="rounded-3xl border border-gold/50 bg-panel p-5">
           <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Statut")}</p>
-          <h2 className="mt-2 font-display text-2xl font-semibold md:text-3xl">{tr("WIKENVA est en cours de développement")}</h2>
-          <p className="mt-3 text-muted">
-            {tr("Nous construisons progressivement une plateforme numérique pensée pour les créateurs, les auteurs, les lecteurs et la communauté. L'ambition est une expérience claire, accessible et enrichie par les nouvelles technologies. Restez connectés pour suivre les prochaines étapes.")}
-          </p>
-          <p className="mt-3 text-sm text-muted">
-            {tr("Les espaces présentés ici sont envisagés. Ils peuvent évoluer pendant le développement. Aucun n'est ouvert.")}
-          </p>
+          <h2 className="mt-2 font-display text-2xl font-semibold">{tr("WIKENVA est en cours de développement")}</h2>
+          <p className="mt-3 text-sm text-muted">{tr("Les espaces peuvent encore changer. Aucun n'est ouvert.")}</p>
           <div className="mt-4 flex overflow-hidden rounded-2xl border border-gold/40">
             <div className="grid w-16 shrink-0 place-items-center bg-gold text-ink">
               <div className="text-center">
@@ -101,9 +91,7 @@ function PresentationPage() {
             </div>
             <p className="flex items-center px-4 text-sm font-semibold">{tr("Lancement visé le 25 octobre 2026.")}</p>
           </div>
-          <p className="mt-3 text-sm text-muted">
-            {tr("L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA.")}
-          </p>
+          <p className="mt-3 text-sm text-muted">{tr("www.wikenva.com, après validation de la Core Team SidraChain.")}</p>
         </section>
 
         <section>
