@@ -28,14 +28,18 @@ export function HomePage() {
           <div className="mx-auto mt-6 max-w-xs opacity-80">
             <PromotionClock compact />
           </div>
-          <div className="mt-5 grid gap-2 text-left">
-            <a href="#decouvrir" className="inline-flex min-h-11 w-full items-center justify-between rounded-lg border border-line px-4 text-sm font-semibold">
+          <div className="mt-5 overflow-hidden rounded-2xl border border-line text-left">
+            <a href="#decouvrir" className="flex min-h-12 items-center justify-between gap-3 border-b border-line px-4 text-sm font-semibold">
               <span>{text.discover}</span>
-              <ChevronRight className="size-4 text-gold" aria-hidden />
+              <span className="grid size-7 shrink-0 place-items-center rounded-full border border-gold/50 text-gold" aria-hidden>
+                <ChevronRight className="size-4" />
+              </span>
             </a>
-            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-between rounded-lg border border-line px-4 text-sm font-semibold">
+            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="flex min-h-12 items-center justify-between gap-3 px-4 text-sm font-semibold">
               <span>{text.invest}</span>
-              <ChevronRight className="size-4 text-gold" aria-hidden />
+              <span className="grid size-7 shrink-0 place-items-center rounded-full border border-gold/50 text-gold" aria-hidden>
+                <ChevronRight className="size-4" />
+              </span>
             </a>
           </div>
         </div>
