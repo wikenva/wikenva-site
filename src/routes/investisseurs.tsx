@@ -28,7 +28,7 @@ function InvestorsPage() {
       <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-[minmax(0,1fr)] gap-6 px-5 py-8 md:px-8">
         <div className="grid min-w-0 gap-3">
           <InvestActions />
-          <p className="text-sm text-muted">{tr("SidraStart. Pas le statut partenaire.")}</p>
+          <p className="text-sm text-muted">{tr("Ouvrir SidraStart ne crée pas le statut de partenaire.")}</p>
         </div>
         <PathBoard here="shareholder" />
         <section id="actionnaires" className="scroll-mt-24">
@@ -41,7 +41,7 @@ function InvestorsPage() {
             <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Part prévue des revenus")}</p>
             <p className="mt-2 font-display text-4xl font-semibold">{site.shareholderProgram.revenueShare}</p>
             <p className="mt-3 text-muted">
-              {tr("Prévu. Aucun versement affiché ici.")}
+              {tr("Le partage est prévu, mais aucun versement n'est affiché ici.")}
             </p>
             <p className="mt-3 text-sm text-muted">
               {tr("Les chiffres viendront quand le système sera prêt.")}
