@@ -148,13 +148,8 @@ export const phases: Phase[] = [
     name: "Fondation",
     title: "Phase 1 — Fondation",
     status: "À préciser",
-    summary:
-      "Établir la base publique du projet : identité, informations confirmées et premiers documents.",
-    points: [
-      "Présentation officielle de WIKENVA",
-      "Ouverture de ce site comme source d'information",
-      "Préparation des documents qui seront publiés après validation",
-    ],
+    summary: "Identité, informations confirmées, premiers documents.",
+    points: ["Présentation officielle", "Ce site comme source", "Documents après validation"],
   },
   {
     id: "developpement",
@@ -162,14 +157,8 @@ export const phases: Phase[] = [
     name: "Développement",
     title: "Phase 2 — Développement",
     status: "Lancement visé le 25 octobre 2026",
-    summary:
-      "Faire avancer les briques du projet. Les livrables techniques seront nommés ici lorsqu'ils seront annoncés.",
-    points: [
-      "Décrire les développements officiellement engagés",
-      "Lancement de la plateforme visé le 25 octobre 2026",
-      "Publier les mises à jour au fil de l'eau",
-      "Relier chaque avancée à une information vérifiable",
-    ],
+    summary: "Les livrables seront nommés quand ils seront annoncés.",
+    points: ["Développements confirmés", "Lancement visé le 25 octobre 2026", "Mises à jour publiées"],
   },
   {
     id: "communaute",
@@ -177,13 +166,8 @@ export const phases: Phase[] = [
     name: "Communauté",
     title: "Phase 3 — Communauté",
     status: "À préciser",
-    summary:
-      "Rassembler les personnes qui suivent WIKENVA et ouvrir les canaux officiels de discussion.",
-    points: [
-      "Publier les comptes officiels dès qu'ils sont confirmés",
-      "Partager les annonces au même endroit",
-      "Rendre les échanges identifiables",
-    ],
+    summary: "Rassembler celles et ceux qui suivent WIKENVA.",
+    points: ["Comptes officiels confirmés", "Annonces au même endroit"],
   },
   {
     id: "expansion",
@@ -191,13 +175,8 @@ export const phases: Phase[] = [
     name: "Expansion",
     title: "Phase 4 — Expansion",
     status: "À préciser",
-    summary:
-      "Élargir la portée du projet. Aucun marché, partenariat ou calendrier n'est indiqué tant qu'il n'est pas officiel.",
-    points: [
-      "Annoncer les étapes d'élargissement lorsqu'elles existent",
-      "Documenter les collaborations confirmées",
-      "Mettre à jour la feuille de route en conséquence",
-    ],
+    summary: "Rien n'est annoncé tant que ce n'est pas officiel.",
+    points: ["Étapes confirmées seulement", "Collaborations documentées"],
   },
   {
     id: "ecosysteme",
@@ -205,23 +184,18 @@ export const phases: Phase[] = [
     name: "Écosystème",
     title: "Phase 5 — Écosystème",
     status: "À préciser",
-    summary:
-      "Relier le token, la communauté, les partenaires et les outils de WIKENVA en un ensemble cohérent.",
-    points: [
-      "Décrire chaque brique lorsqu'elle est définie",
-      "Expliquer le rôle du WIKENVA TOKEN sans extrapoler",
-      "Offrir une lecture unique au public et aux partenaires",
-    ],
+    summary: "Token, communauté, partenaires et outils, quand ils sont définis.",
+    points: ["Chaque brique nommée", "Rôle du token sans extrapolation"],
   },
 ];
 
 export const goals = [
-  "Les auteurs peuvent partager leurs livres et leurs idées.",
-  "Les lecteurs peuvent découvrir des œuvres et enrichir leurs connaissances.",
-  "Les créateurs de contenu peuvent valoriser leur créativité.",
-  "Les concepteurs de produits digitaux peuvent présenter et développer leurs créations.",
-  "Les entrepreneurs peuvent saisir de nouvelles opportunités et collaborer.",
-  "Les communautés peuvent échanger, apprendre et grandir ensemble.",
+  "Partager livres et idées.",
+  "Découvrir et apprendre.",
+  "Valoriser la créativité.",
+  "Présenter des produits numériques.",
+  "Collaborer et entreprendre.",
+  "Échanger et apprendre.",
 ];
 
 export const roles = [
@@ -235,25 +209,25 @@ export const roles = [
 
 export const narrative = {
   vision: [
-    "WIKENVA veut une plateforme d'achat et de vente de produits numériques licites, dans le respect des principes de l'Islam.",
-    "L'économie visée est responsable : honnêteté, transparence, équité et création de valeur utile.",
-    "Innover avec éthique, entreprendre avec intégrité et créer de la valeur dans le respect des principes de l'Islam.",
+    "Produits numériques licites, selon les principes de l'Islam.",
+    "Honnêteté, transparence, équité.",
+    "Innover sans tromper.",
   ],
   mission: [
-    "Mettre en relation les créateurs, les entrepreneurs et les consommateurs pour des échanges commerciaux licites.",
-    "Les produits visés sont des livres électroniques, des formations, des logiciels et d'autres ressources utiles, lorsque leur contenu respecte les principes de la charia. La boutique n'est pas encore ouverte.",
+    "Relier créateurs, entrepreneurs et lecteurs.",
+    "Ebooks, formations, logiciels. Boutique pas encore ouverte.",
   ],
   problem: [
-    "Le commerce numérique doit rester licite : produits clairs, prix clairs, et refus de la tromperie, de la contrefaçon et des fausses promesses.",
-    "Les droits des créateurs et la propriété intellectuelle doivent être protégés. Les activités interdites par les principes de l'Islam sont écartées.",
+    "Produits clairs. Pas de fraude.",
+    "Droits des créateurs protégés.",
   ],
   place: [
-    "WIKENVA s'inscrit dans l'écosystème SidraChain. Le site officiel de cet écosystème est sidrachain.com. L'accès pour investir passe par SidraStart, sur la fiche Digital Marketplace Ebook.",
-    "Toute utilisation de la blockchain, des actifs numériques ou d'un paiement devra être examinée pour sa compatibilité avec les principes de la finance islamique. Ce site ne présente pas de certificat de conformité à la charia.",
+    "Dans SidraChain. Investir via SidraStart.",
+    "Pas de certificat charia publié ici.",
   ],
   africa: [
-    "WIKENVA veut contribuer à l'économie numérique africaine : entrepreneuriat, créativité et nouvelles opportunités.",
-    "L'ambition est de permettre aux talents africains de valoriser leurs compétences et de rendre leurs créations accessibles à un public plus large.",
+    "Économie numérique africaine.",
+    "Rendre les créations accessibles.",
   ],
 };
 
@@ -272,11 +246,11 @@ export const news: NewsItem[] = [
     title: "Lancement visé le 25 octobre 2026",
     date: "19 octobre 2026",
     category: "annonce",
-    excerpt: "WIKENVA vise l'ouverture de la plateforme le 25 octobre 2026. Elle n'est pas encore ouverte.",
+    excerpt: "Ouverture visée le 25 octobre 2026. Pas encore ouverte.",
     paragraphs: [
-      "WIKENVA prévoit de lancer la plateforme le 25 octobre 2026.",
-      "À cette date visée, la plateforme n'est pas encore ouverte. Les espaces peuvent encore évoluer.",
-      "L'intégration à SidraChain reste soumise à l'examen de la Core Team.",
+      "Lancement visé le 25 octobre 2026.",
+      "La plateforme n'est pas encore ouverte.",
+      "Intégration SidraChain après examen de la Core Team.",
     ],
   },
   {
@@ -284,12 +258,10 @@ export const news: NewsItem[] = [
     title: "L'interface WIKENVA est www.wikenva.com",
     date: "17 octobre 2026",
     category: "annonce",
-    excerpt:
-      "Elle réunira lecteurs, auteurs, créateurs et communauté. L'intégration attend l'examen de la Core Team de SidraChain.",
+    excerpt: "Lecteurs, auteurs, créateurs. Validation Core Team en attente.",
     paragraphs: [
-      "Le site officiel de l'interface WIKENVA est www.wikenva.com. Cette plateforme a pour vocation de réunir les lecteurs, les auteurs, les créateurs de contenu, les créateurs de produits numériques et la communauté autour d'un écosystème de partage de connaissances, de collaboration et d'opportunités.",
-      "Avant toute intégration officielle à l'écosystème SidraChain, WIKENVA devra être présentée à la Core Team de SidraChain pour examen et validation, conformément aux procédures applicables.",
-      "L'ambition est de développer une plateforme structurée, professionnelle et utile à la communauté, tout en respectant les exigences de l'écosystème SidraChain.",
+      "L'interface officielle est www.wikenva.com.",
+      "Intégration SidraChain après examen de la Core Team.",
     ],
   },
   {
@@ -297,12 +269,11 @@ export const news: NewsItem[] = [
     title: "La promotion partenaire est ouverte",
     date: "17 octobre 2026",
     category: "partenariat",
-    excerpt: "Jusqu'au 30 novembre 2026, le minimum est de 2 000 SDA sur SidraStart. La demande est vérifiée.",
+    excerpt: "2 000 SDA jusqu'au 30 novembre 2026. Demande vérifiée.",
     paragraphs: [
-      "WIKENVA ouvre une promotion pour devenir partenaire. Elle est valable jusqu'au 30 novembre 2026. Le minimum indiqué est de 2 000 SDA, investis depuis son propre compte sur SidraStart. L'investissement ne se fait pas sur ce site.",
-      "Atteindre ce minimum ne confirme pas le statut. Il faut déposer une demande. Seule une décision d'un administrateur autorisé confirme le partenariat.",
-      "WIKENVA prévoit 15 % des revenus de la plateforme pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ces parts ne sont pas un rendement garanti.",
-      "Après le 30 novembre 2026, les conditions pourront être révisées. Elles ne sont pas encore définies.",
+      "Minimum 2 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.",
+      "Le minimum ne confirme pas le statut. Un CEO décide.",
+      "15 % partenariat. 3 % zakat. Aucun rendement promis.",
     ],
   },
   {
@@ -310,11 +281,10 @@ export const news: NewsItem[] = [
     title: "La fiche du projet est ouverte sur SidraStart",
     date: "12 octobre 2026",
     category: "annonce",
-    excerpt:
-      "WIKENVA, marketplace digitale d'ebooks, est présentée dans l'écosystème SidraChain. L'accès pour investir passe par SidraStart.",
+    excerpt: "Fiche Digital Marketplace Ebook sur SidraStart.",
     paragraphs: [
-      "WIKENVA est une marketplace digitale d'ebooks, dans l'écosystème SidraChain. La fiche publique du projet porte le nom Digital Marketplace Ebook.",
-      "Le bouton Investir de ce site ouvre cette fiche sur SidraStart. Aucun rendement n'est promis ici, et les données du token qui ne sont pas encore officielles restent indiquées « À compléter ».",
+      "Marketplace d'ebooks dans SidraChain.",
+      "Investir ouvre SidraStart. Aucun rendement promis.",
     ],
   },
   {
@@ -322,12 +292,10 @@ export const news: NewsItem[] = [
     title: "L'espace d'information WIKENVA est en ligne",
     date: "12 octobre 2026",
     category: "annonce",
-    excerpt:
-      "Le site officiel rassemble la présentation du projet. Les prochaines nouvelles y seront publiées lorsqu'elles seront confirmées.",
+    excerpt: "Le site public est en ligne. Rien n'est inventé.",
     paragraphs: [
-      "WIKENVA ouvre son espace d'information public. On y trouve la vision du projet, la feuille de route, la fiche du WIKENVA TOKEN, les documents officiels et les voies prévues pour la communauté, les investisseurs et les partenaires.",
-      "Les développements, partenariats, événements et nouvelles étapes de la feuille de route seront ajoutés ici au moment où ils seront annoncés. Tant qu'une information n'est pas confirmée, le site l'indique par la mention « À compléter » plutôt que de la supposer.",
-      "Aucune performance, aucune donnée de marché et aucun lien d'investissement ne sont publiés dans cette annonce.",
+      "Vision, feuille de route, token, documents et parcours.",
+      "Ce qui n'est pas confirmé reste « À compléter ».",
     ],
   },
 ];
@@ -404,27 +372,25 @@ export const mentionsLegales: ProseBlock[] = [
   {
     heading: "Ce qui est publié",
     paragraphs: [
-      "Le site présente le projet WIKENVA. Le contact public passe par les canaux officiels indiqués sur la page Communauté : Facebook, WhatsApp, Telegram et X.",
-      "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.",
+      "Contact : page Communauté. Gmail wikenva@gmail.com. +229 01 96 41 21 17.",
     ],
   },
   {
     heading: "Éditeur — non publié",
     paragraphs: [
-      "La forme juridique, le siège, le numéro d'immatriculation et le directeur de la publication ne figurent dans aucun document officiel déjà intégré. Ils ne sont pas inventés ici.",
-      "Dès que WIKENVA les confirme, ils remplaceront cette mention.",
+      "Forme juridique, siège et immatriculation non publiés.",
     ],
   },
   {
     heading: "Hébergeur — non publié",
     paragraphs: [
-      "Le nom et l'adresse de l'hébergeur ne sont pas encore confirmés. Ils seront ajoutés ici, et seulement à ce moment-là.",
+      "Hébergeur non confirmé.",
     ],
   },
   {
     heading: "Propriété intellectuelle",
     paragraphs: [
-      "Le nom WIKENVA, le logo et les contenus publiés sur ce site sont réservés. Toute reproduction non autorisée est interdite.",
+      "Nom, logo et contenus réservés.",
     ],
   },
 ];
@@ -433,26 +399,25 @@ export const conditions: ProseBlock[] = [
   {
     heading: "Nature du site",
     paragraphs: [
-      "Ce site présente WIKENVA et le WIKENVA TOKEN à titre d'information. Il ne constitue pas, en lui-même, une offre au public de titres, de parts ou de crypto-actifs, ni un conseil en investissement, juridique ou fiscal.",
+      "Site d'information. Pas une offre, pas un conseil.",
     ],
   },
   {
     heading: "Investissement",
     paragraphs: [
-      "Le bouton « Investir sur SidraStart » ouvre la fiche du projet sur SidraStart, dans l'écosystème SidraChain. Cette redirection n'est pas, en elle-même, une offre émise par ce site.",
-      "Aucun rendement, aucune plus-value et aucune liquidité ne sont promis.",
+      "Investir ouvre SidraStart. Aucun rendement promis.",
     ],
   },
   {
     heading: "Évolution des contenus",
     paragraphs: [
-      "Les textes, la feuille de route, les actualités et les documents peuvent être mis à jour. Seule la version publiée sur ce site fait foi pour la communication publique de WIKENVA, une fois les éléments confirmés.",
+      "Seule la version publiée ici fait foi.",
     ],
   },
   {
     heading: "Limitation",
     paragraphs: [
-      "Les contenus sont fournis en l'état. Il appartient à chacune et chacun de vérifier les documents officiels avant toute décision.",
+      "Vérifiez les documents officiels avant toute décision.",
     ],
   },
 ];
@@ -461,31 +426,31 @@ export const risques: ProseBlock[] = [
   {
     heading: "Perte possible",
     paragraphs: [
-      "Les crypto-actifs sont volatils. Leur valeur peut baisser fortement, jusqu'à une perte totale. N'engagez pas de sommes dont la perte serait insupportable.",
+      "La valeur peut tomber à zéro.",
     ],
   },
   {
     heading: "Aucun rendement promis",
     paragraphs: [
-      "WIKENVA ne promet pas de rendement, de dividende, de rachat ou de performance.",
+      "Pas de rendement, dividende ou rachat promis.",
     ],
   },
   {
     heading: "Risques techniques et de liquidité",
     paragraphs: [
-      "Un contrat, un réseau ou un marché peut être défaillant, indisponible ou illiquide. L'adresse du contrat du WIKENVA TOKEN sera publiée ici lorsqu'elle sera officielle. Jusque-là, elle n'est pas communiquée.",
+      "Contrat et marché peuvent être indisponibles. Adresse du token non publiée.",
     ],
   },
   {
     heading: "Cadre réglementaire",
     paragraphs: [
-      "Le cadre applicable aux crypto-actifs peut changer. Aucune licence, aucun agrément et aucun statut réglementaire ne sont revendiqués sur ce site tant qu'ils n'ont pas été officiellement communiqués.",
+      "Aucune licence n'est revendiquée ici.",
     ],
   },
   {
     heading: "Ce site ne conseille pas",
     paragraphs: [
-      "Les informations publiées ne remplacent pas un conseil personnalisé. En cas de doute, rapprochez-vous d'un professionnel habilité.",
+      "Ceci n'est pas un conseil personnalisé.",
     ],
   },
 ];
