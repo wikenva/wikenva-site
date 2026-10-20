@@ -69,10 +69,8 @@ export function InterestSignal() {
 
   return (
     <Panel>
-      <h3 className="font-display text-2xl font-semibold">{tr("Intérêt pour contribuer au projet sur SidraStart")}</h3>
-      <p className="mt-3 text-sm text-muted">
-        {tr("Investir ouvre SidraStart. Vos données restent ici si vous les laissez.")}
-      </p>
+      <h3 className="text-xl font-semibold leading-snug">{tr("Contribuer")}</h3>
+      <p className="mt-2 text-sm text-muted">{tr("Sur SidraStart. Vos données restent ici.")}</p>
       {open ? (
         <form className="mt-5 grid gap-4" onSubmit={onSubmit} noValidate>
           <label className="grid gap-2 text-sm font-semibold">
