@@ -97,7 +97,7 @@ function InvestorsPage() {
           <ul className="mt-4 grid gap-3 text-muted">
             <li>{tr("Les crypto-actifs peuvent perdre toute leur valeur.")}</li>
             <li>{tr("Aucun rendement, rachat ou dividende n'est promis.")}</li>
-            <li>{tr("Les champs « À compléter » ne sont pas des données manquantes à deviner : elles ne sont pas encore officielles.")}</li>
+            <li>{tr("« À compléter » veut dire : pas encore officiel.")}</li>
             <li>{tr("Vérifiez les documents publiés et, si besoin, un conseil indépendant.")}</li>
             <li>
               {tr("L'avertissement complet est sur la page")}{" "}
