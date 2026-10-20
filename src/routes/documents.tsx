@@ -15,8 +15,8 @@ function DocumentsPage() {
     <SiteShell>
       <PageHero
         eyebrow="Documents"
-        title="Les pièces officielles, au fur et à mesure."
-        lede="White paper, fiche du token et feuille de route. Un document externe n'est lié que lorsqu'il est publié."
+        title="Documents officiels."
+        lede="Un lien n'apparaît que si le document est publié."
       />
       <div className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <DocumentList />
