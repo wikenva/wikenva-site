@@ -16,42 +16,39 @@ export function HomePage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto grid w-full max-w-6xl items-start gap-14 px-5 py-10 md:px-8 md:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="order-1 mx-auto w-full max-w-md text-center">
-            <p className="text-xs font-semibold tracking-[0.28em] text-gold uppercase">WIKENVA</p>
-            <h1 className="mx-auto mt-4 max-w-sm font-display text-[1.7rem] font-semibold leading-tight md:text-4xl">
-              {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
-            </h1>
-            <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
-            <div className="mt-5">
-              <PromotionClock compact />
-            </div>
-            <div className="mt-6 grid gap-2">
-              <PartnerButton className="w-full" />
-              <a
-                href="#decouvrir"
-                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-line px-5 text-sm font-semibold"
-              >
-                {text.discover}
-              </a>
-              <a
-                href={site.investUrl ?? ""}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg border border-line px-5 text-sm font-semibold text-muted"
-              >
-                {text.invest}
-              </a>
-            </div>
+        <div className="mx-auto w-full max-w-md px-5 py-12 text-center md:py-16">
+          <p className="text-xs font-semibold tracking-[0.28em] text-gold uppercase">WIKENVA</p>
+          <h1 className="mx-auto mt-4 font-display text-[1.7rem] font-semibold leading-tight md:text-4xl">
+            {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
+          </h1>
+          <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
+          <PartnerButton className="mt-6 min-h-12 w-full text-base" />
+          <p className="mt-3 text-sm text-muted">{tr("2 000 SDA · jusqu'au 30 novembre 2026")}</p>
+          <div className="mx-auto mt-6 max-w-xs opacity-80">
+            <PromotionClock compact />
           </div>
-          <div className="order-2 min-w-0 border-t border-line pt-12 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
-            <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Actualités")}</p>
-            <h2 className="mt-1 text-lg font-semibold tracking-tight md:text-2xl">{tr("Ce qui est confirmé")}</h2>
-            <NewsCarousel />
-            <TextLink to="/actualites" variant="ghost" className="mt-3 w-full">
-              {tr("Toutes les actualités")}
-            </TextLink>
+          <div className="mt-5 flex items-center justify-center gap-4 text-sm">
+            <a href="#decouvrir" className="font-semibold text-muted">
+              {text.discover}
+            </a>
+            <span className="text-line" aria-hidden>
+              ·
+            </span>
+            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="font-semibold text-muted">
+              {text.invest}
+            </a>
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto w-full max-w-xl px-5 py-8 md:px-8">
+          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Actualités")}</p>
+          <h2 className="mt-1 text-base font-semibold">{tr("Ce qui est confirmé")}</h2>
+          <NewsCarousel />
+          <TextLink to="/actualites" variant="ghost" className="mt-3 w-full">
+            {tr("Toutes les actualités")}
+          </TextLink>
         </div>
       </section>
 
