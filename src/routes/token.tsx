@@ -18,8 +18,8 @@ function TokenPage() {
     <SiteShell>
       <PageHero
         eyebrow="WIKENVA TOKEN"
-        title="Les informations du token, rien que les informations confirmées."
-        lede="L'offre totale est de 100 000 000 de tokens. Le symbole, la blockchain et l'adresse du contrat attendent une confirmation officielle. Le token n'est pas présenté comme déployé."
+        title="Token : seulement ce qui est confirmé."
+        lede="100 000 000 de tokens. Symbole, chaîne et contrat : à confirmer."
       />
       <div className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <TokenPanel />
