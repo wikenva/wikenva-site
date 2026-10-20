@@ -57,7 +57,7 @@ function SidraChainPage() {
       </header>
 
       <div className="mx-auto grid w-full max-w-3xl gap-10 px-5 py-8 md:px-8 md:py-12">
-        <section>
+        <section id="fondateur" className="scroll-mt-28">
           <Portrait
             src="/media/sidra-founder.jpg"
             alt="Portrait du Dr. Mohammed Al Jefairi."
@@ -73,11 +73,21 @@ function SidraChainPage() {
         </section>
 
         {sections.map((section) => (
-          <section key={section.title}>
+          <section key={section.title} id={section.title === "SidraStart et les autres initiatives" ? "sidrastart" : undefined} className="scroll-mt-28">
             <h2 className="font-display text-2xl font-semibold">{tr(section.title)}</h2>
             <p className="mt-3 text-muted">{tr(section.text)}</p>
           </section>
         ))}
+
+        <section id="vision-sidrastart" className="scroll-mt-28">
+          <h2 className="font-display text-2xl font-semibold">{tr("Vision de SidraStart")}</h2>
+          <p className="mt-3 text-muted">
+            {tr("SidraStart sert à découvrir un projet de l'écosystème, puis à investir depuis son propre compte.")}
+          </p>
+          <p className="mt-3 text-muted">
+            {tr("Pour WIKENVA, la fiche s'appelle Digital Marketplace Ebook. Cette page ne remplace pas le texte officiel de SidraStart.")}
+          </p>
+        </section>
 
         <section className="rounded-3xl border border-line bg-panel p-5">
           <h2 className="font-display text-2xl font-semibold">{tr("L'ambition de WIKENVA")}</h2>
