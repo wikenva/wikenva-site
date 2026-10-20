@@ -178,9 +178,9 @@ export function HomePage() {
 
       <section className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("SidraChain")}</p>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{tr("WIKENVA fait partie de SidraChain.")}</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">{tr("WIKENVA souhaite faire partie de SidraChain.")}</p>
         <p className="mt-2 text-sm leading-relaxed">
-          {tr("Projet, fondateur et initiatives. Aucun rendement promis.")}
+          {tr("Découvrez le projet, le fondateur et les initiatives. Aucun rendement n'est promis.")}
         </p>
         <TextLink to="/sidrachain" variant="gold" className="mt-4 w-full">
           {tr("Découvrir SidraChain")}
