@@ -137,6 +137,20 @@ export function HomePage() {
           <p className="mt-2 text-sm leading-relaxed text-muted">
             {tr("Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée.")}
           </p>
+          <ul className="mt-4 grid gap-2">
+            {[
+              "Publication gratuite de leurs articles",
+              "Boutique en ligne gratuite",
+              "Accès aux fonctionnalités Premium de WIKENVA",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-ink px-4 py-3 text-sm font-semibold">
+                <span className="text-gold" aria-hidden>
+                  ✓
+                </span>
+                {tr(item)}
+              </li>
+            ))}
+          </ul>
           <ol className="mt-4 grid gap-2">
             {[
               "Lire les conditions.",
