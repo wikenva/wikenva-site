@@ -45,13 +45,11 @@ export function HomePage() {
             </div>
           </div>
           <div className="order-2 min-w-0 border-t border-line pt-12 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
-            <h2 className="text-lg font-semibold tracking-tight md:text-2xl">{tr("Actualités WIKENVA")}</h2>
-            <p className="mt-2 max-w-xl text-sm text-muted">
-              {tr("Annonces, mises à jour et événements confirmés de la plateforme.")}
-            </p>
+            <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Actualités")}</p>
+            <h2 className="mt-1 text-lg font-semibold tracking-tight md:text-2xl">{tr("Ce qui est confirmé")}</h2>
             <NewsCarousel />
-            <TextLink to="/actualites" variant="ghost" className="mt-4 w-full">
-              {tr("Voir toutes les actualités")}
+            <TextLink to="/actualites" variant="ghost" className="mt-3 w-full">
+              {tr("Toutes les actualités")}
             </TextLink>
           </div>
         </div>
@@ -320,7 +318,7 @@ function NewsCarousel() {
       aria-label={tr("Actualités WIKENVA")}
     >
       <div
-        className="relative h-[6.75rem] overflow-hidden rounded-2xl border border-line bg-panel"
+        className="relative h-[7.25rem] overflow-hidden rounded-2xl border border-line bg-panel"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -340,34 +338,20 @@ function NewsCarousel() {
               <Link
                 to="/actualites/$slug"
                 params={{ slug: item.slug }}
-                className="flex h-full items-center gap-3 px-3.5 pb-3"
+                className="flex h-full items-center gap-3 px-4 pb-5"
               >
                 <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl border border-gold/30 bg-gold/10 text-gold">
                   <NewsMark slug={item.slug} />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{tr(item.date)}</span>
-                  <span className="mt-0.5 line-clamp-2 text-sm leading-snug font-semibold">{tr(item.title)}</span>
+                  <span className="mt-1 line-clamp-2 text-[15px] leading-snug font-semibold text-balance">{tr(item.title)}</span>
                 </span>
                 <span aria-hidden className="shrink-0 text-lg leading-none text-gold">
                   ›
                 </span>
               </Link>
             </article>
-          ))}
-        </div>
-        <div className="pointer-events-none absolute inset-x-3 bottom-2.5 flex justify-center gap-1">
-          {news.map((item, dot) => (
-            <button
-              key={item.slug}
-              type="button"
-              aria-label={tr("Actualité") + " " + (dot + 1)}
-              aria-current={dot === index}
-              onClick={() => go(dot)}
-              className="pointer-events-auto grid h-3 w-3 place-items-center"
-            >
-              <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
-            </button>
           ))}
         </div>
         <div className="absolute inset-x-0 bottom-0 h-0.5 bg-white/10" aria-hidden>
@@ -381,6 +365,20 @@ function NewsCarousel() {
             }
           />
         </div>
+      </div>
+      <div className="mt-3 flex justify-center gap-1.5">
+        {news.map((item, dot) => (
+          <button
+            key={item.slug}
+            type="button"
+            aria-label={tr("Actualité") + " " + (dot + 1)}
+            aria-current={dot === index}
+            onClick={() => go(dot)}
+            className="grid h-3 w-3 place-items-center"
+          >
+            <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
+          </button>
+        ))}
       </div>
     </div>
   );
