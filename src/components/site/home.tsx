@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
+import { ChevronRight } from "lucide-react";
 import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
@@ -27,15 +28,14 @@ export function HomePage() {
           <div className="mx-auto mt-6 max-w-xs opacity-80">
             <PromotionClock compact />
           </div>
-          <div className="mt-5 flex items-center justify-center gap-4 text-sm">
-            <a href="#decouvrir" className="font-semibold text-muted">
-              {text.discover}
+          <div className="mt-5 grid gap-2 text-left">
+            <a href="#decouvrir" className="inline-flex min-h-11 w-full items-center justify-between rounded-lg border border-line px-4 text-sm font-semibold">
+              <span>{text.discover}</span>
+              <ChevronRight className="size-4 text-gold" aria-hidden />
             </a>
-            <span className="text-line" aria-hidden>
-              ·
-            </span>
-            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="font-semibold text-muted">
-              {text.invest}
+            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="inline-flex min-h-11 w-full items-center justify-between rounded-lg border border-line px-4 text-sm font-semibold">
+              <span>{text.invest}</span>
+              <ChevronRight className="size-4 text-gold" aria-hidden />
             </a>
           </div>
         </div>
