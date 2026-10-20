@@ -27,8 +27,8 @@ function VisionPage() {
     <SiteShell>
       <PageHero
         eyebrow="Vision"
-        title="Le commerce numérique au service des valeurs islamiques."
-        lede="Acheter et vendre des produits numériques licites. La boutique n'est pas encore ouverte. Aucun rendement n'est promis."
+        title="Commerce numérique licite."
+        lede="Boutique pas encore ouverte. Aucun rendement promis."
       />
       <div className="mx-auto grid w-full max-w-6xl gap-6 px-5 py-8 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="grid gap-10">
@@ -67,7 +67,7 @@ function VisionPage() {
             className="aspect-square w-full rounded-2xl border border-line bg-ink object-contain"
           />
           <figcaption className="mt-3 text-sm text-muted">
-            {tr("Visuel conceptuel du token. Il ne représente pas une pièce ayant cours légal ni une valeur de marché.")}
+            {tr("Visuel. Pas une valeur de marché.")}
           </figcaption>
         </figure>
       </div>
