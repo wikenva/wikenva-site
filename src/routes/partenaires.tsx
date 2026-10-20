@@ -109,27 +109,37 @@ function PartnersPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-3xl font-semibold">{tr("Avantages du partenariat")}</h2>
-          <HSlide auto={false} className="mt-5" label={tr("Avantages du partenariat")}>
-            <Panel>
-              <h3 className="font-semibold">{tr("Participer au développement")}</h3>
-              <p className="mt-2 text-sm text-muted">{tr("Une candidature exprime l'intérêt de participer au développement de WIKENVA. Elle ne crée aucun droit.")}</p>
-            </Panel>
-            <Panel>
-              <h3 className="font-semibold">{tr("Campagne SidraStart")}</h3>
-              <p className="mt-2 text-sm text-muted">{tr("Les avantages liés à la contribution sont ceux écrits sur la campagne officielle. Ce site ne les recopie pas et n'en ajoute aucun.")}</p>
-            </Panel>
-            <Panel>
-              <h3 className="font-semibold">{tr("Communications officielles")}</h3>
-              <p className="mt-2 text-sm text-muted">{tr("Les annonces confirmées sont publiées sur le site et sur les canaux officiels de la communauté.")}</p>
-            </Panel>
-            <Panel>
-              <h3 className="font-semibold">{tr("Bonus de partenariat")}</h3>
-              <p className="mt-2 text-sm text-muted">
-                {tr("15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.")}
-              </p>
-            </Panel>
-          </HSlide>
+          <h2 className="font-display text-3xl font-semibold">{tr("Avantages prévus des partenaires")}</h2>
+          <p className="mt-3 max-w-2xl text-muted">
+            {tr("Pendant la période promotionnelle, pour un investissement de 2 000 SDA sur SidraStart. Le statut est vérifié. Ces avantages ne sont pas un rendement.")}
+          </p>
+          <ul className="mt-4 grid gap-2">
+            {[
+              "Publication gratuite de leurs articles",
+              "Boutique en ligne gratuite",
+              "Accès aux fonctionnalités Premium de WIKENVA",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-ink px-4 py-3">
+                <span className="grid size-6 shrink-0 place-items-center rounded-full bg-gold text-sm font-semibold text-ink" aria-hidden>
+                  ✓
+                </span>
+                <span className="font-semibold">{tr(item)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
+            {tr("Ces avantages visent à accompagner les entrepreneurs, les créateurs de produits numériques et les auteurs.")}
+          </p>
+          <p className="mt-3 max-w-2xl text-sm text-muted">
+            {tr("15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.")}
+          </p>
+          <img
+            src="/media/wikenva-avantages-partenaires.png"
+            alt={tr("Affiche des avantages prévus pour les partenaires WIKENVA à 2 000 SDA")}
+            width={1080}
+            height={1080}
+            className="mt-6 w-full max-w-md rounded-2xl border border-line"
+          />
         </section>
 
         <PromotionClock />
