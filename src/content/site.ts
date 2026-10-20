@@ -209,25 +209,25 @@ export const roles = [
 
 export const narrative = {
   vision: [
-    "Produits numériques licites, selon les principes de l'Islam.",
-    "Honnêteté, transparence, équité.",
-    "Innover sans tromper.",
+    "WIKENVA propose des produits numériques licites, selon les principes de l'Islam.",
+    "Les échanges reposent sur l'honnêteté, la transparence et l'équité.",
+    "L'innovation se fait sans tromperie.",
   ],
   mission: [
-    "Relier créateurs, entrepreneurs et lecteurs.",
-    "Ebooks, formations, logiciels. Boutique pas encore ouverte.",
+    "La mission est de relier les créateurs, les entrepreneurs et les lecteurs.",
+    "Les ebooks, les formations et les logiciels sont prévus. La boutique n'est pas encore ouverte.",
   ],
   problem: [
-    "Produits clairs. Pas de fraude.",
-    "Droits des créateurs protégés.",
+    "Les produits doivent être clairs, sans fraude.",
+    "Les droits des créateurs sont protégés.",
   ],
   place: [
-    "Dans SidraChain. Investir via SidraStart.",
-    "Pas de certificat charia publié ici.",
+    "WIKENVA s'inscrit dans SidraChain. L'investissement passe par SidraStart.",
+    "Aucun certificat charia n'est publié ici.",
   ],
   africa: [
-    "Économie numérique africaine.",
-    "Rendre les créations accessibles.",
+    "WIKENVA veut servir l'économie numérique africaine.",
+    "Les créations doivent devenir accessibles à un plus large public.",
   ],
 };
 
