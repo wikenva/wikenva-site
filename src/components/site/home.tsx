@@ -25,22 +25,23 @@ export function HomePage() {
           <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
           <PartnerButton className="mt-6 min-h-12 w-full text-base" />
           <p className="mt-3 text-sm text-muted">{tr("2 000 SDA · jusqu'au 30 novembre 2026")}</p>
-          <div className="mt-5 flex flex-col items-center gap-3 text-sm font-semibold">
-            <a href="#decouvrir" className="inline-flex items-center gap-1 text-fg">
-              {text.discover}
-              <ChevronRight className="size-4 text-gold" aria-hidden />
+          <div className="mx-auto mt-6 max-w-xs opacity-90">
+            <PromotionClock compact />
+          </div>
+          <div className="mt-5 overflow-hidden rounded-2xl border border-line text-left">
+            <a href="#decouvrir" className="flex min-h-12 items-center justify-between gap-3 border-b border-line px-4 text-sm font-semibold">
+              <span>{text.discover}</span>
+              <span className="grid size-7 shrink-0 place-items-center rounded-full border border-gold/50 text-gold" aria-hidden>
+                <ChevronRight className="size-4" />
+              </span>
             </a>
-            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted">
-              {text.invest}
-              <ChevronRight className="size-4 text-gold" aria-hidden />
+            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="flex min-h-12 items-center justify-between gap-3 px-4 text-sm font-semibold">
+              <span>{text.invest}</span>
+              <span className="grid size-7 shrink-0 place-items-center rounded-full border border-gold/50 text-gold" aria-hidden>
+                <ChevronRight className="size-4" />
+              </span>
             </a>
           </div>
-        </div>
-      </section>
-
-      <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-[16rem] px-5 py-6 opacity-80">
-          <PromotionClock compact />
         </div>
       </section>
 
