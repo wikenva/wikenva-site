@@ -14,7 +14,7 @@ export function InterestResult({ result }: { result: SubmitResult }) {
   if (result.error === "consent") return <p className="text-sm text-danger">{tr("Confirmez que vous acceptez de communiquer vos coordonnées.")}</p>;
   if (result.error === "email") return <p className="text-sm text-danger">{tr("Indiquez un email valide.")}</p>;
   if (result.error === "name") return <p className="text-sm text-danger">{tr("Indiquez votre nom complet.")}</p>;
-  if (result.error === "amount") return <p className="text-sm text-danger">{tr("Le montant doit être supérieur ou égal à 3 000 SDA.")}</p>;
+  if (result.error === "amount") return <p className="text-sm text-danger">{tr("Le montant doit être supérieur ou égal à 1 000 SDA.")}</p>;
   if (!result.recorded) {
     return (
       <div className="rounded-2xl border border-line bg-ink p-4 text-sm" role="status">
@@ -71,7 +71,7 @@ export function InterestSignal() {
     <Panel>
       <h3 className="font-display text-2xl font-semibold">{tr("Intérêt pour contribuer au projet sur SidraStart")}</h3>
       <p className="mt-3 text-sm text-muted">
-        {tr("Un clic sur Investir ouvre SidraStart. Il ne communique ni votre identité ni la confirmation d'un investissement. Vous pouvez, si vous l'acceptez, laisser vos coordonnées aux administrateurs de WIKENVA.")}
+        {tr("Investir ouvre SidraStart. Vos données restent ici si vous les laissez.")}
       </p>
       {open ? (
         <form className="mt-5 grid gap-4" onSubmit={onSubmit} noValidate>
