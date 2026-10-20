@@ -168,14 +168,6 @@ function PresentationPage() {
           </div>
         </section>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <TextLink to="/vision" className="w-full sm:w-auto">
-            {tr("Découvrir WIKENVA")}
-          </TextLink>
-          <TextLink to="/feuille-de-route" variant="ghost" className="w-full sm:w-auto">
-            {tr("Suivre le développement")}
-          </TextLink>
-        </div>
         <p className="text-sm text-muted">
           <Link to="/communaute" className="font-semibold text-gold">
             {tr("Les annonces officielles sont sur la page Communauté.")}
