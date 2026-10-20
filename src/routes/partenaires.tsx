@@ -50,7 +50,7 @@ function PartnersPage() {
       <PageHero
         eyebrow="Partenaires"
         title="Devenez partenaire de WIKENVA."
-        lede="Participez au développement de l'économie numérique au sein de l'écosystème SidraChain."
+        lede="2 000 SDA sur SidraStart. Demande vérifiée."
       />
       <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-1 gap-8 px-5 py-8 md:px-8">
         <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row">
@@ -253,7 +253,7 @@ function PartnerForm() {
       <Panel>
         <h2 className="font-display text-3xl font-semibold">{tr("Candidature")}</h2>
         <p className="mt-3 text-sm text-muted">
-          {tr("La demande est enregistrée seulement lorsque la réception est opérationnelle. Ne communiquez jamais une phrase secrète, une clé privée ou un mot de passe de portefeuille.")}
+          {tr("Jamais de clé privée. La demande part quand la réception est prête.")}
         </p>
         <form className="mt-6 grid gap-4" onSubmit={onSubmit} noValidate>
           <Field id="partner-name" label={tr("Nom complet")} value={values.name} onChange={(value) => set("name", value)} />
@@ -398,7 +398,7 @@ function PartnerLookupPanel() {
       ) : null}
       {result?.found && result.status !== "approuvee" ? (
         <p className="mt-3 text-sm text-muted">
-          {tr("Les fonctions premium et la demande de boutique sont réservées à un partenaire approuvé. Le statut n'est pas accordé automatiquement, et ce site ne vérifie pas le paiement SDA.")}
+          {tr("Premium et boutique : partenaire approuvé seulement.")}
         </p>
       ) : null}
     </Panel>
@@ -433,7 +433,7 @@ function PartnerSpace({ partnerId, email }: { partnerId: string; email: string }
       <form className="grid gap-4" onSubmit={onSubmit}>
         <h3 className="font-semibold">{tr("Demander l'ouverture d'une boutique")}</h3>
         <p className="text-sm text-muted">
-          {tr("Présentez les articles que vous souhaitez proposer. La boutique n'est pas ouverte tant qu'un administrateur ne l'a pas approuvée. Aucun article n'est mis en vente ici.")}
+          {tr("Boutique fermée tant qu'un CEO ne l'a pas approuvée.")}
         </p>
         <Field id="shop-name" label={tr("Nom de la boutique")} value={shopName} onChange={setShopName} />
         <label className="grid gap-2 text-sm font-semibold" htmlFor="shop-description">
@@ -484,13 +484,13 @@ function ApprovedMark() {
 function Faq() {
   const tr = useTr();
   const items = [
-    ["Quel est le minimum requis pour devenir partenaire pendant la promotion ?", "2 000 SDA, pour la campagne de promotion en cours sur SidraStart. Ce minimum ne valide pas la candidature WIKENVA."],
-    ["Comment participer à la campagne WIKENVA sur SidraStart ?", "Ouvrez la fiche officielle du projet sur SidraStart depuis le bouton de cette page, puis suivez les étapes affichées là-bas."],
-    ["Comment fonctionne le bonus de partenariat ?", "Il n'est pas publié ici. Le taux, le calcul, les conditions et la période ne sont pas confirmés. Aucun versement n'est simulé."],
-    ["Comment ma candidature sera-t-elle vérifiée ?", "Un CEO autorisé peut la consulter, la passer en vérification, l'approuver ou la refuser. Le statut de départ est « en attente »."],
-    ["Que se passera-t-il après la clôture de la promotion ?", "La promotion SidraStart se termine le 30 novembre 2026. Ensuite, les conditions pourront être révisées. Aucune nouvelle condition n'est déjà définie ici."],
-    ["Comment mes données personnelles sont-elles protégées ?", "Elles sont réservées aux administrateurs autorisés. Le suivi public ne montre que le statut, avec la référence et l'e-mail."],
-    ["Existe-t-il des risques liés à la contribution ?", "Oui. Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est promis."],
+    ["Minimum pour être partenaire ?", "2 000 SDA sur SidraStart. Cela ne valide pas la demande."],
+    ["Comment investir ?", "Ouvrez la fiche SidraStart, puis suivez les étapes là-bas."],
+    ["Le bonus ?", "15 % prévus. Pas un rendement. Rien n'est versé ici."],
+    ["Qui vérifie ?", "Un CEO. Le départ est « en attente »."],
+    ["Après le 30 novembre 2026 ?", "Les conditions pourront changer. Rien n'est encore défini."],
+    ["Mes données ?", "Réservées aux administrateurs. Le public ne voit que le statut."],
+    ["Y a-t-il un risque ?", "Oui. La valeur peut tomber à zéro."],
   ] as const;
   return (
     <section>
