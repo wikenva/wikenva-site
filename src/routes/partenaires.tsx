@@ -171,7 +171,7 @@ function PartnerForm() {
     name: "",
     email: "",
     country: "",
-    message: "",
+    txRef: "",
     consent: false,
   });
   const [error, setError] = useState("");
@@ -194,7 +194,8 @@ function PartnerForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) return setError(tr("Indiquez un email valide."));
     const residence = findCountry(values.country);
     if (!residence) return setError(tr("Sélectionnez votre pays de résidence."));
-    if (values.message.trim().length < 10) return setError(tr("Écrivez au moins une phrase."));
+    const hash = values.txRef.trim();
+    if (hash.length < 8 || /\s/.test(hash)) return setError(tr("Indiquez le hash de transaction."));
     if (!values.consent) return setError(tr("Cochez la case pour envoyer."));
     setPending(true);
     try {
@@ -205,13 +206,14 @@ function PartnerForm() {
           country: `${residence.name} (${residence.iso})`,
           whatsapp: "",
           profile: "entrepreneur",
-          txRef: "",
-          message: values.message,
+          txRef: values.txRef,
+          message: "",
           consentTerms: true,
           consentPrivacy: true,
         },
       });
       setResult(next);
+      if (next.error === "proof") setError(tr("Indiquez le hash de transaction."));
     } finally {
       setPending(false);
     }
@@ -221,20 +223,17 @@ function PartnerForm() {
     <section id="candidature" className="scroll-mt-24">
       <Panel>
         <h2 className="font-display text-2xl font-semibold">{tr("Envoyer la demande")}</h2>
-        <p className="mt-2 text-sm text-muted">{tr("Nom, e-mail, pays et un court message. Jamais de clé privée.")}</p>
+        <p className="mt-2 text-sm text-muted">{tr("Nom, e-mail, pays et le hash de transaction. Jamais de clé privée.")}</p>
         <form className="mt-5 grid gap-4" onSubmit={onSubmit} noValidate>
           <Field id="partner-name" label={tr("Nom complet")} value={values.name} onChange={(value) => set("name", value)} />
           <Field id="partner-email" label={tr("Adresse e-mail")} type="email" value={values.email} onChange={(value) => set("email", value)} />
           <CountrySelect id="partner-country" label={tr("Pays")} value={values.country} onChange={chooseResidence} />
-          <label className="grid gap-2 text-sm font-semibold" htmlFor="partner-message">
-            {tr("Votre message")}
-            <textarea
-              id="partner-message"
-              value={values.message}
-              onChange={(event) => set("message", event.target.value)}
-              className="min-h-24 rounded-2xl border border-line bg-ink px-4 py-3 font-normal"
-            />
-          </label>
+          <Field
+            id="partner-tx"
+            label={tr("Hash de transaction")}
+            value={values.txRef}
+            onChange={(value) => set("txRef", value)}
+          />
           <Check
             checked={values.consent}
             onChange={(value) => set("consent", value)}
