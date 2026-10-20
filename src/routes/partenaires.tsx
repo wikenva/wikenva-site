@@ -78,81 +78,65 @@ function PartnersPage() {
         </HSlide>
 
         <Panel className="border-gold/50">
-          <p className="text-sm font-semibold text-gold">{tr("Vous êtes sur le parcours partenaire")}</p>
-          <p className="mt-2 text-muted">
-            {tr("Ce formulaire demande le statut de partenaire. Il ne remplace pas l'investissement sur SidraStart et il ne crée pas le statut d'actionnaire.")}
-          </p>
+          <p className="text-sm font-semibold text-gold">{tr("Partenaires")}</p>
+          <p className="mt-1 text-sm text-muted">{tr("Demande ici. Investissement sur SidraStart.")}</p>
         </Panel>
 
         <PathBoard here="partner" auto={false} />
 
         <Panel className="border-gold/50">
-          <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Seuil actuel")}</p>
+          <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Partenaires")}</p>
           <p className="mt-2 font-display text-4xl font-semibold">2 000 SDA</p>
-          <p className="mt-3 text-muted">
-            {tr("Minimum de 2 000 SDA sur SidraStart pour devenir partenaire. 15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ce seuil ne confirme pas un partenariat et ne promet aucun rendement.")}
-          </p>
+          <ul className="mt-4 grid gap-2">
+            {[
+              "Publication gratuite des articles",
+              "Boutique en ligne gratuite",
+              "Fonctions Premium",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3 text-sm font-semibold">
+                <span className="text-gold" aria-hidden>✓</span>
+                {tr(item)}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-sm text-muted">{tr("Sur SidraStart. Demande vérifiée. Aucun rendement promis.")}</p>
+          <p className="mt-1 text-sm text-muted">{tr("15 % partenariat. 3 % zakat.")}</p>
           <ExternalLink href={site.investUrl ?? ""} variant="gold" className="mt-5 w-full sm:w-auto">
             {tr("Investir sur SidraStart")}
           </ExternalLink>
         </Panel>
 
         <section id="programme" className="scroll-mt-24">
-          <h2 className="font-display text-3xl font-semibold">{tr("Comment fonctionne le partenariat ?")}</h2>
-          <HSlide auto={false} className="mt-5" label={tr("Comment fonctionne le partenariat ?")}>
-            <Step icon={Compass} index="1" title="Lire les conditions de partenariat." text="Cette page décrit la promotion en cours. Elle ne valide aucune candidature." />
-            <Step icon={Megaphone} index="2" title="Ouvrir la fiche officielle sur SidraStart." text="Le projet s'appelle Digital Marketplace Ebook. Les conditions de contribution sont celles publiées là-bas." />
-            <Step icon={Wallet} index="3" title="Investir depuis son propre compte." text="Minimum de 2 000 SDA pendant la promotion, qui se termine le 30 novembre 2026. L'investissement ne se fait pas sur ce site." />
-            <Step icon={ShieldCheck} index="4" title="Fournir les informations de vérification." text="Le formulaire demande un nom, un e-mail et, si vous le souhaitez, une référence publique de transaction. N'envoyez jamais une clé privée ou un mot de passe." />
-            <Step icon={ShieldCheck} index="5" title="Attendre la confirmation du statut." text="La demande part en attente. Seule une décision d'un administrateur autorisé confirme le partenariat. Après le 30 novembre 2026, les conditions pourront changer et ne sont pas encore définies." />
+          <h2 className="font-display text-2xl font-semibold">{tr("Le parcours")}</h2>
+          <HSlide auto={false} className="mt-4" label={tr("Le parcours")}>
+            <Step icon={Compass} index="1" title="Lire." text="Cette page décrit la promotion. Elle ne valide rien." />
+            <Step icon={Megaphone} index="2" title="SidraStart." text="Fiche Digital Marketplace Ebook." />
+            <Step icon={Wallet} index="3" title="2 000 SDA." text="Depuis votre compte, jusqu'au 30 novembre 2026." />
+            <Step icon={ShieldCheck} index="4" title="Demande." text="Nom et e-mail. Jamais de clé privée." />
+            <Step icon={ShieldCheck} index="5" title="Confirmation." text="Un CEO décide. Rien n'est automatique." />
           </HSlide>
         </section>
 
         <section>
-          <h2 className="font-display text-3xl font-semibold">{tr("Avantages prévus des partenaires")}</h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            {tr("Pendant la période promotionnelle, pour un investissement de 2 000 SDA sur SidraStart. Le statut est vérifié. Ces avantages ne sont pas un rendement.")}
-          </p>
-          <ul className="mt-4 grid gap-2">
-            {[
-              "Publication gratuite de leurs articles",
-              "Boutique en ligne gratuite",
-              "Accès aux fonctionnalités Premium de WIKENVA",
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-ink px-4 py-3">
-                <span className="grid size-6 shrink-0 place-items-center rounded-full bg-gold text-sm font-semibold text-ink" aria-hidden>
-                  ✓
-                </span>
-                <span className="font-semibold">{tr(item)}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-            {tr("Ces avantages visent à accompagner les entrepreneurs, les créateurs de produits numériques et les auteurs.")}
-          </p>
-          <p className="mt-3 max-w-2xl text-sm text-muted">
-            {tr("15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.")}
-          </p>
+          <h2 className="font-display text-2xl font-semibold">{tr("Affiche")}</h2>
           <img
             src="/media/wikenva-avantages-partenaires.png"
             alt={tr("Affiche des avantages prévus pour les partenaires WIKENVA à 2 000 SDA")}
             width={1080}
             height={1080}
-            className="mt-6 w-full max-w-md rounded-2xl border border-line"
+            className="mt-4 w-full max-w-sm rounded-2xl border border-line"
           />
         </section>
 
         <PromotionClock />
 
         <section>
-          <h2 className="font-display text-3xl font-semibold">{tr("Transparence et éthique")}</h2>
-          <ul className="mt-4 grid gap-3 text-muted">
-            <li>{tr("L'usage précis des contributions sera publié lorsqu'il sera officiel. Il n'est pas détaillé sur cette page.")}</li>
-            <li>{tr("Les conditions doivent rester compréhensibles. Celles qui manquent sont indiquées comme non publiées.")}</li>
-            <li>{tr("WIKENVA se présente comme une marketplace d'ebooks et d'activités numériques licites.")}</li>
-            <li>{tr("3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente.")}</li>
-            <li>{tr("Les crypto-actifs peuvent perdre toute leur valeur. Aucun rendement n'est garanti.")}</li>
-            <li>{tr("Les modalités financières doivent être vérifiées par une personne compétente en finance islamique. Ce site ne présente pas de certification de conformité à la charia.")}</li>
+          <h2 className="font-display text-2xl font-semibold">{tr("À savoir")}</h2>
+          <ul className="mt-3 grid gap-2 text-sm text-muted">
+            <li>{tr("Marketplace d'ebooks licites.")}</li>
+            <li>{tr("3 % des revenus pour la zakat.")}</li>
+            <li>{tr("Aucun rendement n'est garanti.")}</li>
+            <li>{tr("Pas de certification charia publiée ici.")}</li>
           </ul>
         </section>
 
