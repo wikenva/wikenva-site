@@ -22,15 +22,13 @@ function InvestorsPage() {
     <SiteShell>
       <PageHero
         eyebrow="Investisseurs"
-        title="Lire le projet avant toute décision."
-        lede="Information investisseur. Le partenaire est une autre page. Aucun rendement promis."
+        title="Avant d'investir."
+        lede="Pas un rendement. Le partenaire est ailleurs."
       />
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-8 md:px-8">
-        <div className="flex flex-col gap-4">
+      <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-[minmax(0,1fr)] gap-6 px-5 py-8 md:px-8">
+        <div className="grid min-w-0 gap-3">
           <InvestActions />
-          <p className="text-sm text-muted">
-            {tr("Investir ouvre SidraStart. Cela ne crée pas le statut de partenaire.")}
-          </p>
+          <p className="text-sm text-muted">{tr("SidraStart. Pas le statut partenaire.")}</p>
         </div>
         <PathBoard here="shareholder" />
         <section id="actionnaires" className="scroll-mt-24">
