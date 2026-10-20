@@ -50,7 +50,7 @@ export function Roadmap({ compact = false }: { compact?: boolean }) {
       </ol>
       {phase ? <PhaseDetail phase={phase} /> : null}
       <p className="mt-6 text-sm text-muted">
-        {tr("Aucune phase n'est présentée comme achevée. Les dates et les livrables précis seront ajoutés avec les annonces officielles.")}
+        {tr("Aucune phase n'est marquée terminée.")}
       </p>
       {compact ? (
         <TextLink to="/feuille-de-route" variant="ghost" className="mt-6">
@@ -212,12 +212,12 @@ export function TokenPanel() {
           <h3 className="mt-3 font-display text-3xl font-semibold">{tr("Tokenomics")}</h3>
           {site.tokenomics.length === 0 ? (
             <p className="mt-5 text-lg leading-relaxed text-fg">
-              {tr("À compléter. La répartition officielle — parts, vestings, éventuelles réserves — sera publiée ici sans estimation.")}
+              {tr("Répartition officielle : à compléter.")}
             </p>
           ) : (
             <>
               <p className="mt-5 text-muted">
-                {tr("Offre confirmée : 100 000 000 actions WIKENVA. Les calendriers de vesting ne sont pas encore publiés.")}
+                {tr("100 000 000 actions. Vesting non publié.")}
               </p>
               <AllocationChart />
               <ul className="mt-6 grid gap-3 md:hidden">
@@ -277,7 +277,7 @@ export function TokenPanel() {
             className="mb-3 h-7 w-auto"
           />
           <p className="text-sm text-muted">
-            {tr("Visuel conceptuel du token. Il ne représente pas une pièce ayant cours légal ni une valeur de marché.")}
+            {tr("Visuel. Pas une valeur de marché.")}
           </p>
         </figcaption>
       </figure>
