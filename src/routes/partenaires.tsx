@@ -7,11 +7,10 @@ import { ExternalLink, PageHero, Panel } from "@/components/site/ui";
 import { PathBoard, HSlide } from "@/components/site/paths";
 import { PromotionClock } from "@/components/site/promotion";
 import { CountrySelect } from "@/components/site/country-select";
-import { findCountry, toInternational } from "@/lib/countries";
+import { findCountry } from "@/lib/countries";
 import { useTr } from "@/lib/locale";
 import {
   lookupPartner,
-  partnerProfiles,
   submitPartner,
   submitShop,
   type PartnerLookup,
@@ -27,14 +26,6 @@ export const Route = createFileRoute("/partenaires")({
     ),
   component: PartnersPage,
 });
-
-const profiles = {
-  entrepreneur: "Entrepreneur",
-  createur: "Créateur numérique",
-  commercial: "Partenaire commercial",
-  technique: "Partenaire technique",
-  autre: "Autre",
-} as const;
 
 const statusCopy = {
   en_attente: "En attente. La candidature est reçue. Elle n'est pas approuvée.",
@@ -180,14 +171,8 @@ function PartnerForm() {
     name: "",
     email: "",
     country: "",
-    phoneCountry: "",
-    phoneCountryChosen: false,
-    nationalNumber: "",
-    profile: "entrepreneur",
-    txRef: "",
     message: "",
-    consentTerms: false,
-    consentPrivacy: false,
+    consent: false,
   });
   const [error, setError] = useState("");
   const [pending, setPending] = useState(false);
@@ -198,11 +183,7 @@ function PartnerForm() {
   }
 
   function chooseResidence(iso: string) {
-    setValues((current) => ({
-      ...current,
-      country: iso,
-      phoneCountry: !current.phoneCountryChosen && current.nationalNumber.trim() === "" ? iso : current.phoneCountry,
-    }));
+    set("country", iso);
   }
 
   async function onSubmit(event: FormEvent) {
@@ -213,16 +194,8 @@ function PartnerForm() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) return setError(tr("Indiquez un email valide."));
     const residence = findCountry(values.country);
     if (!residence) return setError(tr("Sélectionnez votre pays de résidence."));
-    let whatsapp = "";
-    if (values.nationalNumber.trim()) {
-      const phoneCountry = findCountry(values.phoneCountry);
-      if (!phoneCountry) return setError(tr("Sélectionnez l'indicatif du numéro."));
-      const formatted = toInternational(values.nationalNumber, phoneCountry.iso);
-      if (!formatted) return setError(tr("Ce numéro n'est pas valide pour l'indicatif choisi. Il n'est pas vérifié comme un compte WhatsApp."));
-      whatsapp = formatted;
-    }
-    if (values.message.trim().length < 10) return setError(tr("Le message doit contenir au moins 10 caractères."));
-    if (!values.consentTerms || !values.consentPrivacy) return setError(tr("Les deux cases sont nécessaires."));
+    if (values.message.trim().length < 10) return setError(tr("Écrivez au moins une phrase."));
+    if (!values.consent) return setError(tr("Cochez la case pour envoyer."));
     setPending(true);
     try {
       const next = await submitPartner({
@@ -230,102 +203,45 @@ function PartnerForm() {
           name: values.name,
           email: values.email,
           country: `${residence.name} (${residence.iso})`,
-          whatsapp,
-          profile: values.profile,
-          txRef: values.txRef,
+          whatsapp: "",
+          profile: "entrepreneur",
+          txRef: "",
           message: values.message,
-          consentTerms: values.consentTerms,
-          consentPrivacy: values.consentPrivacy,
+          consentTerms: true,
+          consentPrivacy: true,
         },
       });
       setResult(next);
-      if (next.error === "proof") setError(tr("N'envoyez pas de phrase secrète, de clé privée ou de mot de passe. Seul un identifiant public de transaction est accepté."));
-      if (next.error === "phone") setError(tr("Ce numéro n'est pas valide pour l'indicatif choisi. Il n'est pas vérifié comme un compte WhatsApp."));
     } finally {
       setPending(false);
     }
   }
 
-  const phoneCountry = findCountry(values.phoneCountry);
-
   return (
     <section id="candidature" className="scroll-mt-24">
       <Panel>
-        <h2 className="font-display text-3xl font-semibold">{tr("Candidature")}</h2>
-        <p className="mt-3 text-sm text-muted">
-          {tr("Jamais de clé privée. La demande part quand la réception est prête.")}
-        </p>
-        <form className="mt-6 grid gap-4" onSubmit={onSubmit} noValidate>
+        <h2 className="font-display text-2xl font-semibold">{tr("Envoyer la demande")}</h2>
+        <p className="mt-2 text-sm text-muted">{tr("Nom, e-mail, pays et un court message. Jamais de clé privée.")}</p>
+        <form className="mt-5 grid gap-4" onSubmit={onSubmit} noValidate>
           <Field id="partner-name" label={tr("Nom complet")} value={values.name} onChange={(value) => set("name", value)} />
           <Field id="partner-email" label={tr("Adresse e-mail")} type="email" value={values.email} onChange={(value) => set("email", value)} />
-          <CountrySelect id="partner-country" label={tr("Pays de résidence")} value={values.country} onChange={chooseResidence} />
-          <div className="grid gap-2">
-            <CountrySelect
-              id="partner-phone-country"
-              label={tr("Indicatif du numéro")}
-              value={values.phoneCountry}
-              hint={tr("Facultatif. Ce choix ne confirme pas qu'un compte WhatsApp est actif.")}
-              onChange={(iso) => setValues((current) => ({ ...current, phoneCountry: iso, phoneCountryChosen: true }))}
-            />
-            <label className="grid gap-2 text-sm font-semibold" htmlFor="partner-whatsapp">
-              {tr("Numéro, sans répéter l'indicatif")}
-              <span className="flex min-h-12 items-center rounded-full border border-line bg-ink">
-                <span className="px-4 text-muted">{phoneCountry ? `+${phoneCountry.callingCode}` : "+"}</span>
-                <input
-                  id="partner-whatsapp"
-                  inputMode="tel"
-                  autoComplete="tel-national"
-                  value={values.nationalNumber}
-                  onChange={(event) => set("nationalNumber", event.target.value)}
-                  className="min-h-12 w-full bg-transparent pr-4 font-normal outline-none"
-                />
-              </span>
-            </label>
-          </div>
-          <label className="grid gap-2 text-sm font-semibold" htmlFor="partner-profile">
-            {tr("Type de profil")}
-            <select
-              id="partner-profile"
-              value={values.profile}
-              onChange={(event) => set("profile", event.target.value)}
-              className="min-h-12 rounded-full border border-line bg-ink px-4 font-normal"
-            >
-              {partnerProfiles.map((item) => (
-                <option key={item} value={item}>
-                  {tr(profiles[item])}
-                </option>
-              ))}
-            </select>
-          </label>
-          <Field
-            id="partner-tx"
-            label={tr("Identifiant public de transaction, facultatif")}
-            value={values.txRef}
-            onChange={(value) => set("txRef", value)}
-            required={false}
-            hint={tr("Uniquement une référence publique. Jamais une phrase secrète ni une clé privée.")}
-          />
+          <CountrySelect id="partner-country" label={tr("Pays")} value={values.country} onChange={chooseResidence} />
           <label className="grid gap-2 text-sm font-semibold" htmlFor="partner-message">
-            {tr("Message de présentation")}
+            {tr("Votre message")}
             <textarea
               id="partner-message"
               value={values.message}
               onChange={(event) => set("message", event.target.value)}
-              className="min-h-32 rounded-3xl border border-line bg-ink px-4 py-3 font-normal"
+              className="min-h-24 rounded-2xl border border-line bg-ink px-4 py-3 font-normal"
             />
           </label>
           <Check
-            checked={values.consentTerms}
-            onChange={(value) => set("consentTerms", value)}
-            label={tr("J'accepte les conditions publiées du partenariat. Les éléments non publiés ne sont pas acceptés comme des droits.")}
-          />
-          <Check
-            checked={values.consentPrivacy}
-            onChange={(value) => set("consentPrivacy", value)}
-            label={tr("J'accepte que mes coordonnées soient consultées par les administrateurs autorisés, conformément à la politique de confidentialité.")}
+            checked={values.consent}
+            onChange={(value) => set("consent", value)}
+            label={tr("J'accepte que les administrateurs lisent ces informations.")}
           />
           <button type="submit" disabled={pending} className="min-h-12 rounded-full bg-gold px-5 text-sm font-semibold text-ink">
-            {pending ? tr("Chargement…") : tr("Envoyer la candidature")}
+            {pending ? tr("Chargement…") : tr("Envoyer")}
           </button>
           {error ? <p className="text-sm text-danger">{error}</p> : null}
           {result ? <PartnerResult result={result} /> : null}
