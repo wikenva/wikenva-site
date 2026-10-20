@@ -24,7 +24,7 @@ function clean(value: string, max: number) {
 function unsafeProof(value: string) {
   const text = value.trim();
   if (!text) return false;
-  if (text.length > 80) return true;
+  if (text.length > 140) return true;
   if (text.trim().split(/\s+/).length >= 8) return true;
   return /seed|mnemonic|passphrase|phrase secr|clé privée|cle privee|private key/i.test(text);
 }
@@ -72,9 +72,9 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
   if (country.length < 2) return { ...empty, error: "country" };
   if (!partnerProfiles.includes(input.profile as (typeof partnerProfiles)[number])) return { ...empty, error: "profile" };
   const message = clean(input.message, 2000);
-  if (message.length < 10) return { ...empty, error: "message" };
-  const txRef = clean(input.txRef, 80);
-  if (unsafeProof(txRef)) return { ...empty, error: "proof" };
+  const storedMessage = message.length >= 10 ? message : "Demande avec hash de transaction.";
+  const txRef = clean(input.txRef, 128);
+  if (txRef.length < 8 || unsafeProof(txRef)) return { ...empty, error: "proof" };
   const rawPhone = clean(input.whatsapp, 40);
   let whatsapp: string | null = null;
   if (rawPhone) {
@@ -98,7 +98,7 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
       ${whatsapp},
       ${input.profile},
       ${txRef || null},
-      ${message},
+      ${storedMessage},
       ${true},
       ${true},
       ${"en_attente"}
