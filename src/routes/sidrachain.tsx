@@ -68,7 +68,7 @@ function SidraChainPage() {
             {tr("Le Dr. Mohammed Al Jefairi, souvent désigné par les initiales MJ, est présenté comme un entrepreneur, inventeur et auteur qatari associé au projet SidraChain.")}
           </p>
           <p className="mt-3 text-sm text-muted">
-            {tr("Ces informations sont données sous réserve de vérification des sources officielles. Cette page ne les présente pas comme un document certifié.")}
+            {tr("Informations sous réserve des sources officielles.")}
           </p>
         </section>
 
@@ -82,7 +82,7 @@ function SidraChainPage() {
         <section className="rounded-3xl border border-line bg-panel p-5">
           <h2 className="font-display text-2xl font-semibold">{tr("L'ambition de WIKENVA")}</h2>
           <p className="mt-3 text-muted">
-            {tr("WIKENVA souhaite contribuer à la découverte de cet écosystème et encourager chacun à se renseigner avant de participer. L'engagement est de partager des informations claires. Aucun rendement n'est promis.")}
+            {tr("Découvrir l'écosystème. Aucun rendement promis.")}
           </p>
           <p className="mt-4 text-sm font-semibold text-gold">{tr("WIKENVA et SidraChain — découvrir, comprendre et innover.")}</p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
