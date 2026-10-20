@@ -185,7 +185,7 @@ export function HomePage() {
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("SidraChain")}</p>
         <p className="mt-2 text-sm leading-relaxed text-muted">{tr("WIKENVA fait partie de SidraChain.")}</p>
         <p className="mt-2 text-sm leading-relaxed">
-          {tr("Découvrez le projet SidraChain, son fondateur, sa technologie blockchain et les initiatives de son écosystème.")}
+          {tr("Projet, fondateur et initiatives. Aucun rendement promis.")}
         </p>
         <TextLink to="/sidrachain" variant="gold" className="mt-4 w-full">
           {tr("Découvrir SidraChain")}
@@ -198,7 +198,7 @@ export function HomePage() {
           <div className="mt-4 grid gap-2">
             <Faq
               q="Qu'est-ce que WIKENVA ?"
-              a="L'interface qui réunit les lecteurs, les créateurs de contenu et la communauté est www.wikenva.com. Elle doit être validée par la core team de SidraChain avant l'intégration de WIKENVA."
+              a="www.wikenva.com. Intégration SidraChain après la Core Team."
             />
             <Faq
               q="Peut-on déjà acheter un ebook ?"
@@ -210,7 +210,7 @@ export function HomePage() {
             />
             <Faq
               q="Investir, partenaire et actionnaire, est-ce la même chose ?"
-              a="Non. L'investissement se fait sur SidraStart. Le partenaire se demande après 2 000 SDA. Le programme actionnaires est une autre règle, sans rendement garanti."
+              a="Non. Investir est sur SidraStart. Le partenaire se demande. L'actionnaire est une autre règle."
             />
             <Faq
               q="Un investissement garantit-il un rendement ?"
@@ -218,7 +218,7 @@ export function HomePage() {
             />
             <Faq
               q="Où lire les documents et nous écrire ?"
-              a="Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17."
+              a="White paper, page Communauté, wikenva@gmail.com, +229 01 96 41 21 17."
             />
           </div>
           <TextLink to="/white-paper" variant="ghost" className="mt-4 w-full">
