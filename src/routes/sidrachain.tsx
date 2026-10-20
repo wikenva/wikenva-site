@@ -41,7 +41,7 @@ function SidraChainPage() {
             width={1024}
             height={1024}
             decoding="async"
-            className="h-40 w-40 shrink-0 bg-black object-contain sm:h-44 sm:w-44"
+            className="h-16 w-16 shrink-0 object-contain"
           />
           <div>
             <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Écosystème")}</p>
