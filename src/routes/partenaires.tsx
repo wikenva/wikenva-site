@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { Compass, Megaphone, ShieldCheck, Wallet } from "lucide-react";
+import { ChevronRight, Compass, Megaphone, ShieldCheck, Wallet } from "lucide-react";
 import { narrative, pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
 import { ExternalLink, PageHero, Panel } from "@/components/site/ui";
@@ -409,12 +409,15 @@ function Faq() {
   ] as const;
   return (
     <section>
-      <h2 className="font-display text-3xl font-semibold">{tr("Questions fréquentes")}</h2>
-      <div className="mt-4 grid gap-3">
+      <h2 className="text-lg font-semibold">{tr("Questions fréquentes")}</h2>
+      <div className="mt-2 border-t border-line">
         {items.map(([question, answer]) => (
-          <details key={question} className="rounded-3xl border border-line bg-panel px-5 py-4">
-            <summary className="cursor-pointer font-semibold">{tr(question)}</summary>
-            <p className="mt-3 text-sm text-muted">{tr(answer)}</p>
+          <details key={question} className="group border-b border-line">
+            <summary className="flex cursor-pointer list-none items-center gap-2 py-2.5 text-sm font-semibold [&::-webkit-details-marker]:hidden">
+              <ChevronRight className="size-3.5 shrink-0 text-gold transition-transform group-open:rotate-90" aria-hidden />
+              {tr(question)}
+            </summary>
+            <p className="pb-2.5 pl-6 text-sm leading-relaxed text-muted">{tr(answer)}</p>
           </details>
         ))}
       </div>
