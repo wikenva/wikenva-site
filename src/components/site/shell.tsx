@@ -136,7 +136,9 @@ function SiteSearch() {
       { href: "/token", label: "Token", hint: "Le token de la plateforme" },
       { href: "/documents", label: "Documents", hint: "Documents officiels" },
       { href: "/communaute", label: "Communauté", hint: "Contact et réseaux" },
-      { href: "/sidrachain", label: "SidraChain", hint: "L'écosystème SidraChain" },
+      { href: "/sidrachain", label: "SidraChain", hint: "L'écosystème SidraChain", keywords: "sidra blockchain" },
+      { href: "/sidrachain#fondateur", label: "Dr. Mohammed Al Jefairi", hint: "Fondateur présenté de SidraChain", keywords: "pdg ceo mj fondateur jefairi" },
+      { href: "/sidrachain#vision-sidrastart", label: "Vision de SidraStart", hint: "Découvrir un projet, investir depuis son compte", keywords: "sidrastart vision" },
       { href: "/white-paper", label: "White paper", hint: "Le livre blanc" },
       ...legalNav.map((item) => ({ href: item.to, label: item.label, hint: "Information légale" })),
       ...news.map((item) => ({ href: `/actualites/${item.slug}`, label: item.title, hint: "Actualité" })),
@@ -145,7 +147,10 @@ function SiteSearch() {
   );
   const q = query.trim().toLowerCase();
   const matches = q
-    ? pages.filter((item) => `${item.label} ${item.hint}`.toLowerCase().includes(q) || tr(item.label).toLowerCase().includes(q) || tr(item.hint).toLowerCase().includes(q)).slice(0, 6)
+    ? pages.filter((item) => {
+        const blob = `${item.label} ${item.hint} ${"keywords" in item ? item.keywords : ""}`.toLowerCase();
+        return blob.includes(q) || tr(item.label).toLowerCase().includes(q) || tr(item.hint).toLowerCase().includes(q);
+      }).slice(0, 6)
     : [];
 
   useEffect(() => {
