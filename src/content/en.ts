@@ -871,7 +871,18 @@ export const en: Record<string, string> = {
   "J'accepte que mes coordonnées soient consultées par les administrateurs autorisés, conformément à la politique de confidentialité.": "I accept that my contact details may be read by authorised administrators, under the privacy policy.",
   "Je confirme mon inscription sur la plateforme WIKENVA. Cela ne crée aucun droit.": "I confirm my registration on the WIKENVA platform. This creates no right.",
   "Jusqu'au 30 novembre 2026. La demande est vérifiée.": "Until 30 November 2026. The request is checked.",
-  "Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée.": "Until 30 November 2026. Minimum 2,000 SDA. The request is checked.",
+  "Avantages prévus des partenaires": "Planned partner benefits",
+  "Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée.":
+    "Until 30 November 2026. Minimum 2,000 SDA. The request is checked.",
+  "Pendant la période promotionnelle, pour un investissement de 2 000 SDA sur SidraStart. Le statut est vérifié. Ces avantages ne sont pas un rendement.":
+    "During the promotional period, for an investment of 2,000 SDA on SidraStart. The status is checked. These benefits are not a yield.",
+  "Publication gratuite de leurs articles": "Free publication of their articles",
+  "Boutique en ligne gratuite": "Free online shop",
+  "Accès aux fonctionnalités Premium de WIKENVA": "Access to WIKENVA Premium features",
+  "Ces avantages visent à accompagner les entrepreneurs, les créateurs de produits numériques et les auteurs.":
+    "These benefits are meant to support entrepreneurs, digital product creators and authors.",
+  "Affiche des avantages prévus pour les partenaires WIKENVA à 2 000 SDA":
+    "Poster of the planned benefits for WIKENVA partners at 2,000 SDA",
   "Minimum de 2 000 SDA sur SidraStart pour devenir partenaire. 15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. 3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente. Ce seuil ne confirme pas un partenariat et ne promet aucun rendement.": "A minimum of 2,000 SDA on SidraStart to become a partner. 15% of platform revenue is planned for the partnership programme, under the compensation terms set by the platform. 3% of revenue is set aside for zakat, in line with the principles of sharia and with transparent management. This threshold does not confirm a partnership and promises no yield.",
   "15 % des revenus de la plateforme sont prévus pour le programme de partenariat, selon les conditions de rémunération définies par la plateforme. Cette part n'est pas un rendement garanti et aucun versement n'est simulé ici.": "15% of platform revenue is planned for the partnership programme, under the compensation terms set by the platform. This share is not a guaranteed yield and no payment is simulated here.",
   "3 % des revenus sont destinés à la zakat, dans le respect des principes de la charia et avec une gestion transparente.": "3% of revenue is set aside for zakat, in line with the principles of sharia and with transparent management.",
