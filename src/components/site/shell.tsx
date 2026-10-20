@@ -1,11 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, Languages, Menu, Search, X } from "lucide-react";
+import { Briefcase, CalendarDays, ChevronDown, FileText, Home, Languages, Landmark, Menu, MessagesSquare, Newspaper, Search, Wallet, X } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { legalNav, mainNav, moreNav, news, site, socials } from "@/content/site";
+import { legalNav, mainNav, moreNav, news, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { useLang, useTr, type Lang } from "@/lib/locale";
-import { ExternalLink, PartnerButton } from "./ui";
+import { PartnerButton } from "./ui";
 
 function isActive(pathname: string, to: string) {
   return pathname === to || pathname.startsWith(`${to}/`);
@@ -177,16 +177,13 @@ function SiteSearch() {
 function Shell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const [open, setOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
   const { lang } = useLang();
   const text = ui(lang);
   const tr = useTr();
   const label = (to: string, fallback: string) => text.nav[to] ?? fallback;
-  const moreActive = moreNav.some((item) => isActive(pathname, item.to));
 
   useEffect(() => {
     setOpen(false);
-    setMoreOpen(false);
   }, [pathname]);
 
   return (
@@ -236,13 +233,7 @@ function Shell({ children }: { children: ReactNode }) {
               className="grid h-12 w-12 place-items-center rounded-full border border-line lg:hidden"
               aria-expanded={open}
               aria-controls="menu-mobile"
-              onClick={() => {
-                setOpen((value) => {
-                  const next = !value;
-                  if (next && moreActive) setMoreOpen(true);
-                  return next;
-                });
-              }}
+              onClick={() => setOpen((value) => !value)}
             >
               {open ? <X aria-hidden /> : <Menu aria-hidden />}
               <span className="sr-only">{open ? text.closeMenu : text.openMenu}</span>
@@ -252,43 +243,32 @@ function Shell({ children }: { children: ReactNode }) {
         <SiteSearch />
         {open ? (
           <nav id="menu-mobile" className="border-t border-line bg-ink lg:hidden" aria-label="Menu">
-            <div className="mx-auto flex w-full max-w-6xl flex-col px-5 py-3">
-              <PartnerButton className="mb-2 w-full" />
-              {mainNav.map((item) => (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className="flex min-h-12 items-center border-b border-line text-base font-semibold"
-                >
-                  {label(item.to, item.label)}
-                </Link>
-              ))}
-              <button
-                type="button"
-                className="flex min-h-12 items-center justify-between text-base font-semibold"
-                aria-expanded={moreOpen}
-                onClick={() => setMoreOpen((value) => !value)}
-              >
-                {text.more}
-                <ChevronDown className={cn("size-4 transition-transform", moreOpen && "rotate-180")} aria-hidden />
-              </button>
-              {moreOpen ? (
-                <div className="border-t border-line">
-                  {moreNav.map((item) => (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      className="flex min-h-12 items-center border-b border-line pl-3 text-base text-muted"
-                    >
-                      {label(item.to, item.label)}
+            <ul className="mx-auto w-full max-w-6xl px-6 py-3">
+              {(
+                [
+                  ["/", "Accueil", Home],
+                  ["/actualites", "Actualités", Newspaper],
+                  ["/feuille-de-route", "Événements", CalendarDays],
+                  ["/investisseurs", "Investissements", Wallet],
+                  ["/token", "Token", Landmark],
+                  ["/partenaires", "Partenaires", Briefcase],
+                  ["/documents", "Documents", FileText],
+                  ["/communaute", "Communauté", MessagesSquare],
+                ] as const
+              ).map(([to, name, Icon]) => {
+                const active = to === "/" ? pathname === "/" : isActive(pathname, to);
+                return (
+                  <li key={to}>
+                    <Link to={to} className="flex min-h-14 items-center gap-5">
+                      <Icon className={cn("size-6 shrink-0 stroke-[1.6]", active ? "text-gold" : "text-faint")} aria-hidden />
+                      <span className={cn("text-lg", active ? "text-gold underline decoration-gold underline-offset-4" : "text-muted")}>
+                        {tr(name)}
+                      </span>
                     </Link>
-                  ))}
-                  <ExternalLink href={site.investUrl ?? ""} variant="ghost" className="mt-3 w-full">
-                    {text.invest}
-                  </ExternalLink>
-                </div>
-              ) : null}
-            </div>
+                  </li>
+                );
+              })}
+            </ul>
           </nav>
         ) : null}
       </header>
