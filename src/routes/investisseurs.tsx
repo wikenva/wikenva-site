@@ -23,13 +23,13 @@ function InvestorsPage() {
       <PageHero
         eyebrow="Investisseurs"
         title="Lire le projet avant toute décision."
-        lede="Cette page parle de l'information investisseur et du programme actionnaires. La demande de partenaire est sur une autre page. Aucun rendement n'est promis."
+        lede="Information investisseur. Le partenaire est une autre page. Aucun rendement promis."
       />
       <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-8 md:px-8">
         <div className="flex flex-col gap-4">
           <InvestActions />
           <p className="text-sm text-muted">
-            {tr("« Investir sur SidraStart » ouvre la fiche Digital Marketplace Ebook. Cela ne crée ni le statut de partenaire, ni celui d'actionnaire.")}
+            {tr("Investir ouvre SidraStart. Cela ne crée pas le statut de partenaire.")}
           </p>
         </div>
         <PathBoard here="shareholder" />
@@ -37,16 +37,16 @@ function InvestorsPage() {
           <h2 className="font-display text-3xl font-semibold">{tr("Programme actionnaires")}</h2>
           <p className="mt-3 max-w-3xl text-muted">{tr(site.shareholderProgram.revenueNote)}</p>
           <p className="mt-3 max-w-3xl text-sm text-muted">
-            {tr("Ce programme n'est pas la promotion partenaire à 2 000 SDA, et il ne se confond pas avec l'investissement effectué sur SidraStart.")}
+            {tr("Distinct de la promotion partenaire à 2 000 SDA.")}
           </p>
           <Panel className="mt-6">
             <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Part prévue des revenus")}</p>
             <p className="mt-2 font-display text-4xl font-semibold">{site.shareholderProgram.revenueShare}</p>
             <p className="mt-3 text-muted">
-              {tr("Le partage des revenus est prévu dans les mois à venir. Aucun montant reçu n'est affiché. Aucun versement n'est simulé.")}
+              {tr("Prévu. Aucun versement affiché ici.")}
             </p>
             <p className="mt-3 text-sm text-muted">
-              {tr("L'espace actionnaire montre le statut et les informations officielles. La répartition chiffrée s'affichera seulement lorsque le système sera opérationnel.")}
+              {tr("Les chiffres viendront quand le système sera prêt.")}
             </p>
           </Panel>
           <div className="mt-6">
