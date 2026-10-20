@@ -50,7 +50,7 @@ function AdminPage() {
       <PageHero
         eyebrow="Administrateurs"
         title="Intentions et candidatures."
-        lede="Seules les demandes réellement reçues apparaissent ici, et seulement pour un CEO dont l'e-mail est autorisé. Aucun exemple n'est affiché."
+        lede="Réservé aux CEO autorisés. Aucun exemple."
       />
       <div className="mx-auto grid w-full max-w-6xl gap-6 px-5 py-8 md:px-8">
         {!data ? (
