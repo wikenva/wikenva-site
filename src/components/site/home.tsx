@@ -139,9 +139,9 @@ export function HomePage() {
           </p>
           <ul className="mt-4 grid gap-2">
             {[
-              "Publication gratuite de leurs articles",
+              "Publication gratuite des articles",
               "Boutique en ligne gratuite",
-              "Accès aux fonctionnalités Premium de WIKENVA",
+              "Fonctions Premium",
             ].map((item) => (
               <li key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-ink px-4 py-3 text-sm font-semibold">
                 <span className="text-gold" aria-hidden>
