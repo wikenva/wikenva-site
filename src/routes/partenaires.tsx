@@ -50,7 +50,7 @@ function PartnersPage() {
       <PageHero
         eyebrow="Partenaires"
         title="Devenez partenaire de WIKENVA."
-        lede="2 000 SDA sur SidraStart. Demande vérifiée."
+        lede="Le minimum est de 2 000 SDA sur SidraStart. La demande est vérifiée."
       />
       <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-1 gap-8 px-5 py-8 md:px-8">
         <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row">
@@ -79,7 +79,7 @@ function PartnersPage() {
 
         <Panel className="border-gold/50">
           <p className="text-sm font-semibold text-gold">{tr("Partenaires")}</p>
-          <p className="mt-1 text-sm text-muted">{tr("Demande ici. Investissement sur SidraStart.")}</p>
+          <p className="mt-1 text-sm text-muted">{tr("La demande se fait ici. L'investissement se fait sur SidraStart.")}</p>
         </Panel>
 
         <PathBoard here="partner" auto={false} />
@@ -99,8 +99,8 @@ function PartnersPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-sm text-muted">{tr("Sur SidraStart. Demande vérifiée. Aucun rendement promis.")}</p>
-          <p className="mt-1 text-sm text-muted">{tr("15 % partenariat. 3 % zakat.")}</p>
+          <p className="mt-4 text-sm text-muted">{tr("L'investissement se fait sur SidraStart. La demande est vérifiée, et aucun rendement n'est promis.")}</p>
+          <p className="mt-1 text-sm text-muted">{tr("15 % des revenus sont prévus pour le partenariat, et 3 % pour la zakat.")}</p>
           <ExternalLink href={site.investUrl ?? ""} variant="gold" className="mt-5 w-full sm:w-auto">
             {tr("Investir sur SidraStart")}
           </ExternalLink>
@@ -109,16 +109,16 @@ function PartnersPage() {
         <section id="programme" className="scroll-mt-24">
           <h2 className="font-display text-2xl font-semibold">{tr("Le parcours")}</h2>
           <HSlide auto={false} className="mt-4" label={tr("Le parcours")}>
-            <Step icon={Compass} index="1" title="Lire." text="Cette page décrit la promotion. Elle ne valide rien." />
-            <Step icon={Megaphone} index="2" title="SidraStart." text="Fiche Digital Marketplace Ebook." />
-            <Step icon={Wallet} index="3" title="2 000 SDA." text="Depuis votre compte, jusqu'au 30 novembre 2026." />
-            <Step icon={ShieldCheck} index="4" title="Demande." text="Nom et e-mail. Jamais de clé privée." />
-            <Step icon={ShieldCheck} index="5" title="Confirmation." text="Un CEO décide. Rien n'est automatique." />
+            <Step icon={Compass} index="1" title="Lire les conditions." text="Cette page explique la promotion. Elle ne valide aucune demande." />
+            <Step icon={Megaphone} index="2" title="Ouvrir SidraStart." text="La fiche s'appelle Digital Marketplace Ebook." />
+            <Step icon={Wallet} index="3" title="Investir 2 000 SDA." text="Depuis votre compte, jusqu'au 30 novembre 2026." />
+            <Step icon={ShieldCheck} index="4" title="Envoyer la demande." text="Indiquez votre nom et votre e-mail. Ne donnez jamais une clé privée." />
+            <Step icon={ShieldCheck} index="5" title="Attendre la confirmation." text="Un CEO décide. Rien n'est accordé automatiquement." />
           </HSlide>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("Affiche")}</h2>
+          <h2 className="font-display text-2xl font-semibold">{tr("L'affiche des avantages")}</h2>
           <img
             src="/media/wikenva-avantages-partenaires.png"
             alt={tr("Affiche des avantages prévus pour les partenaires WIKENVA à 2 000 SDA")}
@@ -133,10 +133,10 @@ function PartnersPage() {
         <section>
           <h2 className="font-display text-2xl font-semibold">{tr("À savoir")}</h2>
           <ul className="mt-3 grid gap-2 text-sm text-muted">
-            <li>{tr("Marketplace d'ebooks licites.")}</li>
-            <li>{tr("3 % des revenus pour la zakat.")}</li>
+            <li>{tr("WIKENVA est une marketplace d'ebooks licites.")}</li>
+            <li>{tr("3 % des revenus sont destinés à la zakat.")}</li>
             <li>{tr("Aucun rendement n'est garanti.")}</li>
-            <li>{tr("Pas de certification charia publiée ici.")}</li>
+            <li>{tr("Aucune certification charia n'est publiée ici.")}</li>
           </ul>
         </section>
 
