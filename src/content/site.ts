@@ -109,8 +109,7 @@ export const site = {
     revenueShare: "15 %",
     revenueLabel: "Part prévue des revenus de la plateforme",
     status: "Conditions du programme à officialiser",
-    revenueNote:
-      "WIKENVA prévoit d'allouer 15 % des revenus de la plateforme aux actionnaires de la plateforme WIKENVA, selon les modalités officielles qui seront définies et publiées. Cette part n'est pas un rendement garanti.",
+    revenueNote: "15 % des revenus prévus pour les actionnaires. Ce n'est pas un rendement.",
     sidraStartShare: "34 %",
     sidraStartNote:
       "Les 34 % des actions sont confirmés par la plateforme SidraStart. Cette allocation est distincte des 15 % des revenus de la plateforme prévus pour les actionnaires WIKENVA. Elle n'est pas un rendement garanti.",
