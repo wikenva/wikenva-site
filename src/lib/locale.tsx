@@ -1,6 +1,8 @@
 import { createContext, useContext, useLayoutEffect, useState, type ReactNode } from "react";
-import { ar, es, pt } from "@/content/extra-langs";
+import { ar } from "@/content/ar";
 import { en } from "@/content/en";
+import { es } from "@/content/es";
+import { pt } from "@/content/pt";
 
 export type Lang = "fr" | "en" | "ar" | "es" | "pt";
 
