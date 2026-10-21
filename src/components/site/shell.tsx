@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Briefcase, CalendarDays, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Search, Wallet, X } from "lucide-react";
+import { Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Search, Wallet, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { legalNav, mainNav, moreNav, news, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
@@ -47,7 +47,7 @@ function LanguageMenu() {
     <div className="relative" ref={root}>
       <button
         type="button"
-        className="inline-flex h-9 items-center gap-1.5 rounded-full border border-line px-2 text-[11px] font-semibold tracking-wide"
+        className="inline-flex h-9 max-w-[9.75rem] items-center gap-1.5 rounded-full border border-line bg-panel/60 px-2 text-xs font-semibold sm:max-w-none sm:px-3"
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={text.language}
@@ -56,34 +56,39 @@ function LanguageMenu() {
         <span className="text-base leading-none" aria-hidden>
           {current.flag}
         </span>
-        {current.short}
+        <span className="truncate">{current.label}</span>
+        <span className="text-[10px] font-semibold tracking-wide text-muted">{current.short}</span>
       </button>
       {open ? (
         <ul
           role="listbox"
           aria-label={text.language}
-          className="absolute end-0 z-50 mt-2 w-52 overflow-hidden rounded-2xl border border-line bg-panel"
+          className="absolute end-0 z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-line bg-panel py-1 shadow-[0_12px_40px_rgba(0,0,0,0.28)]"
         >
-          {languages.map((item) => (
-            <li key={item.id}>
-              <button
-                type="button"
-                role="option"
-                aria-selected={lang === item.id}
-                className={cn(
-                  "flex min-h-11 w-full items-center gap-2.5 px-3 text-start text-sm",
-                  lang === item.id ? "bg-ink font-semibold text-gold" : "text-fg hover:bg-ink",
-                )}
-                onClick={() => choose(item.id)}
-              >
-                <span className="text-lg leading-none" aria-hidden>
-                  {item.flag}
-                </span>
-                <span className="min-w-0 flex-1 truncate">{item.label}</span>
-                <span className="text-[11px] font-semibold tracking-wide text-muted">{item.short}</span>
-              </button>
-            </li>
-          ))}
+          {languages.map((item) => {
+            const selected = lang === item.id;
+            return (
+              <li key={item.id}>
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected={selected}
+                  className={cn(
+                    "flex min-h-11 w-full items-center gap-2.5 px-3 text-start text-sm",
+                    selected ? "bg-ink font-semibold text-gold" : "text-fg hover:bg-ink",
+                  )}
+                  onClick={() => choose(item.id)}
+                >
+                  <span className="text-lg leading-none" aria-hidden>
+                    {item.flag}
+                  </span>
+                  <span className="min-w-0 flex-1 truncate">{item.label}</span>
+                  <span className="text-[11px] font-semibold tracking-wide text-muted">{item.short}</span>
+                  {selected ? <Check className="size-3.5 text-gold" aria-hidden /> : <span className="size-3.5" aria-hidden />}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       ) : null}
     </div>
