@@ -1,10 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Briefcase, CalendarDays, ChevronDown, FileText, Home, Languages, Landmark, Menu, MessagesSquare, Newspaper, Search, Wallet, X } from "lucide-react";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { Briefcase, CalendarDays, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Search, Wallet, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { legalNav, mainNav, moreNav, news, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
-import { useLang, useTr, type Lang } from "@/lib/locale";
+import { languages, useLang, useTr, type Lang } from "@/lib/locale";
 import { PartnerButton } from "./ui";
 
 function isActive(pathname: string, to: string) {
@@ -18,50 +18,69 @@ export function SiteShell({ children }: { children: ReactNode }) {
 function LanguageMenu() {
   const { lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
+  const root = useRef<HTMLDivElement>(null);
   const text = ui(lang);
+  const current = languages.find((item) => item.id === lang) ?? languages[0];
 
   function choose(next: Lang) {
     setLang(next);
     setOpen(false);
   }
 
+  useEffect(() => {
+    if (!open) return;
+    function onPointer(event: MouseEvent) {
+      if (!root.current?.contains(event.target as Node)) setOpen(false);
+    }
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={root}>
       <button
         type="button"
-        className="inline-flex h-9 items-center gap-1 rounded-full border border-line px-2.5 text-[11px] font-semibold tracking-wide"
+        className="inline-flex h-9 items-center gap-1.5 rounded-full border border-line px-2 text-[11px] font-semibold tracking-wide"
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={text.language}
         onClick={() => setOpen((value) => !value)}
       >
-        <Languages className="size-3.5" aria-hidden />
-        {lang === "fr" ? "FR" : "EN"}
+        <span className="text-base leading-none" aria-hidden>
+          {current.flag}
+        </span>
+        {current.short}
       </button>
       {open ? (
         <ul
           role="listbox"
           aria-label={text.language}
-          className="absolute right-0 z-50 mt-2 w-44 overflow-hidden rounded-2xl border border-line bg-panel shadow-none"
+          className="absolute end-0 z-50 mt-2 w-52 overflow-hidden rounded-2xl border border-line bg-panel"
         >
-          {(
-            [
-              ["fr", "Français"],
-              ["en", "English"],
-            ] as const
-          ).map(([code, label]) => (
-            <li key={code}>
+          {languages.map((item) => (
+            <li key={item.id}>
               <button
                 type="button"
                 role="option"
-                aria-selected={lang === code}
+                aria-selected={lang === item.id}
                 className={cn(
-                  "flex min-h-12 w-full items-center px-4 text-left text-sm font-semibold",
-                  lang === code ? "text-gold" : "text-fg hover:bg-ink",
+                  "flex min-h-11 w-full items-center gap-2.5 px-3 text-start text-sm",
+                  lang === item.id ? "bg-ink font-semibold text-gold" : "text-fg hover:bg-ink",
                 )}
-                onClick={() => choose(code)}
+                onClick={() => choose(item.id)}
               >
-                {label}
+                <span className="text-lg leading-none" aria-hidden>
+                  {item.flag}
+                </span>
+                <span className="min-w-0 flex-1 truncate">{item.label}</span>
+                <span className="text-[11px] font-semibold tracking-wide text-muted">{item.short}</span>
               </button>
             </li>
           ))}
