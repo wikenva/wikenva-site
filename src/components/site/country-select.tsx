@@ -22,8 +22,9 @@ export function CountrySelect({
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const root = useRef<HTMLDivElement>(null);
-  const selected = findCountry(value, lang);
-  const results = useMemo(() => filterCountries(query, lang), [query, lang]);
+  const nameLang = lang === "fr" ? "fr" : "en";
+  const selected = findCountry(value, nameLang);
+  const results = useMemo(() => filterCountries(query, nameLang), [query, nameLang]);
 
   useEffect(() => {
     if (!open) return;
