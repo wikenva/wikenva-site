@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useLayoutEffect, useState, type ReactNode } from "react";
 import { ar, es, pt } from "@/content/extra-langs";
 import { en } from "@/content/en";
 
@@ -24,22 +24,44 @@ function isLang(value: string | null): value is Lang {
   return value === "fr" || value === "en" || value === "ar" || value === "es" || value === "pt";
 }
 
+function browserLang(): Lang {
+  const list = typeof navigator === "undefined" ? [] : navigator.languages?.length ? navigator.languages : [navigator.language];
+  for (const item of list) {
+    const code = item.toLowerCase();
+    if (code.startsWith("ar")) return "ar";
+    if (code.startsWith("es")) return "es";
+    if (code.startsWith("pt")) return "pt";
+    if (code.startsWith("en")) return "en";
+    if (code.startsWith("fr")) return "fr";
+  }
+  return "fr";
+}
+
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("fr");
 
-  useEffect(() => {
-    const saved = localStorage.getItem(KEY);
-    if (isLang(saved)) setLangState(saved);
+  useLayoutEffect(() => {
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(KEY);
+    } catch {
+      saved = null;
+    }
+    setLangState(isLang(saved) ? saved : browserLang());
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   }, [lang]);
 
   function setLang(next: Lang) {
     setLangState(next);
-    localStorage.setItem(KEY, next);
+    try {
+      localStorage.setItem(KEY, next);
+    } catch {
+      /* préférence non enregistrée si le stockage est bloqué */
+    }
   }
 
   return <LocaleContext.Provider value={{ lang, setLang }}>{children}</LocaleContext.Provider>;
