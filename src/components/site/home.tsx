@@ -74,21 +74,12 @@ export function HomePage() {
           </TextLink>
           <PlatformButton variant="ghost" className="w-full" />
         </div>
-        <div className="mt-6 overflow-hidden rounded-2xl border border-gold/40 bg-panel">
-          <div className="flex items-stretch">
-            <div className="grid w-[4.5rem] shrink-0 place-items-center bg-gold text-ink">
-              <div className="text-center">
-                <p className="font-display text-3xl font-semibold leading-none">25</p>
-                <p className="mt-1 text-[10px] font-semibold tracking-[0.14em] uppercase">Oct.</p>
-              </div>
-            </div>
-            <div className="min-w-0 px-4 py-3.5">
-              <p className="text-[10px] font-semibold tracking-[0.16em] text-gold uppercase">{tr("Lancement")}</p>
-              <p className="mt-1 text-base font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
-              <p className="mt-1 text-xs leading-relaxed text-muted">
-                {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
-              </p>
-            </div>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-line bg-panel">
+          <div className="px-4 py-3.5">
+            <p className="text-base font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
+            <p className="mt-1 text-xs leading-relaxed text-muted">
+              {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
+            </p>
           </div>
           <div className="border-t border-line px-4 py-3">
             <TextLink to="/presentation" className="w-full">
@@ -389,14 +380,6 @@ function NewsCarousel() {
 
 function NewsMark({ slug }: { slug: string }) {
   const common = { viewBox: "0 0 24 24", className: "size-4", fill: "none", stroke: "currentColor", strokeWidth: 1.8 };
-  if (slug === "lancement-25-octobre") {
-    return (
-      <svg {...common}>
-        <rect x="5" y="6" width="14" height="13" rx="1.5" />
-        <path d="M5 10h14M9 4.5v3M15 4.5v3" strokeLinecap="round" />
-      </svg>
-    );
-  }
   if (slug === "promotion-partenaire") {
     return (
       <svg {...common}>
