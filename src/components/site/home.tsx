@@ -24,9 +24,11 @@ export function HomePage() {
           </h1>
           <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
           <PartnerButton className="mt-6 min-h-12 w-full text-base" />
-          <p className="mt-3 text-sm text-muted">{tr("2 000 SDA · jusqu'au 30 novembre 2026")}</p>
-          <div className="mx-auto mt-6 max-w-xs opacity-90">
-            <PromotionClock compact />
+          <div className="mt-5 rounded-2xl border border-gold/40 bg-panel px-3 py-4">
+            <p className="text-sm font-semibold tracking-wide text-gold">{tr("2 000 SDA · jusqu'au 30 novembre 2026")}</p>
+            <div className="mx-auto mt-3 max-w-xs">
+              <PromotionClock compact />
+            </div>
           </div>
           <div className="mt-10 grid gap-3 text-left">
             <a href="#decouvrir" className="mr-6 flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-line px-4 text-sm font-semibold">
