@@ -44,11 +44,11 @@ function Countdown({ left, compact }: { left: number; compact?: boolean }) {
   return (
     <div className={compact ? "grid grid-cols-4 gap-1" : "grid grid-cols-4 gap-1.5"} aria-live="polite">
       {parts.map(([value, label]) => (
-        <div key={label} className={"rounded-lg border border-white/10 text-center " + (compact ? "px-0.5 py-1.5" : "rounded-xl px-0.5 py-2")}>
-          <p suppressHydrationWarning className={"font-display font-semibold tabular-nums leading-none " + (compact ? "text-lg text-muted" : "text-2xl")}>
+        <div key={label} className={"rounded-xl border border-line bg-ink text-center " + (compact ? "px-0.5 py-2" : "px-0.5 py-2.5")}>
+          <p suppressHydrationWarning className={"font-display font-semibold tabular-nums leading-none text-fg " + (compact ? "text-xl" : "text-2xl")}>
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-1 text-[9px] leading-none font-medium text-gold/80 capitalize">{label}</p>
+          <p className="mt-1 text-[9px] leading-none font-semibold tracking-wide text-gold uppercase">{label}</p>
         </div>
       ))}
     </div>
