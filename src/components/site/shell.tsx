@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Search, Wallet, X } from "lucide-react";
+import { Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Phone, Search, Wallet, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { legalNav, mainNav, moreNav, news, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
@@ -328,17 +328,18 @@ function Shell({ children }: { children: ReactNode }) {
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
             {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
           </p>
-          <p className="mt-5 flex flex-col gap-1.5 text-sm">
-            <a href="mailto:contact.wikenva@gmail.com" className="inline-flex items-center gap-2 font-semibold text-gold">
+          <div className="mt-5 grid max-w-sm gap-2.5 text-sm">
+            <a href="mailto:contact.wikenva@gmail.com" className="inline-flex items-center gap-2.5 font-semibold text-gold">
               <GmailMark />
-              contact.wikenva@gmail.com
+              <span className="min-w-0 break-all">contact.wikenva@gmail.com</span>
             </a>
-            <a href="tel:+2290196412117" className="font-semibold">
+            <a href="tel:+2290196412117" className="inline-flex items-center gap-2.5 font-semibold">
+              <Phone className="size-5 shrink-0 text-gold" aria-hidden />
               +229 01 96 41 21 17
             </a>
-          </p>
-          <nav className="mt-8" aria-label={tr("Liens du bas de page")}>
-            <ul className="grid max-w-md grid-cols-1 gap-3 text-sm sm:grid-cols-2">
+          </div>
+          <nav className="mt-6" aria-label={tr("Liens du bas de page")}>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
               <li>
                 <Link to="/vision" className="text-muted hover:text-fg">
                   {tr("À propos")}
