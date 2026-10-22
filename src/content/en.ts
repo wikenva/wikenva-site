@@ -1,6 +1,7 @@
 /** Traductions anglaises. La clé est le texte français affiché. */
 export const en: Record<string, string> = {
   "À compléter": "To be completed",
+  "En cours": "In progress",
   "À préciser": "To be specified",
   "Une vision claire, un écosystème pour tous.": "A clear vision, an ecosystem for everyone.",
   "Actualités WIKENVA": "WIKENVA News",
