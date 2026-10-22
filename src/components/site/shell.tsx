@@ -47,7 +47,7 @@ function LanguageMenu() {
     <div className="relative" ref={root}>
       <button
         type="button"
-        className="inline-flex h-9 max-w-[9.75rem] items-center gap-1.5 rounded-full border border-line bg-panel/60 px-2 text-xs font-semibold sm:max-w-none sm:px-3"
+        className="inline-flex h-9 items-center gap-1.5 rounded-full border border-line bg-panel/60 px-2.5 text-xs font-semibold"
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label={text.language}
@@ -56,8 +56,7 @@ function LanguageMenu() {
         <span className="text-base leading-none" aria-hidden>
           {current.flag}
         </span>
-        <span className="truncate">{current.label}</span>
-        <span className="text-[10px] font-semibold tracking-wide text-muted">{current.short}</span>
+        <span className="tracking-wide">{current.short}</span>
       </button>
       {open ? (
         <ul
