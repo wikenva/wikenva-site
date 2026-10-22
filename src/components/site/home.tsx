@@ -210,7 +210,7 @@ export function HomePage() {
             />
             <Faq
               q="Où lire les documents et nous écrire ?"
-              a="White paper, page Communauté, wikenva@gmail.com, +229 01 96 41 21 17."
+              a="White paper, page Communauté, contact.wikenva@gmail.com, +229 01 96 41 21 17."
             />
           </div>
           <TextLink to="/white-paper" variant="ghost" className="mt-4 w-full">
