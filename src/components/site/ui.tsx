@@ -355,11 +355,12 @@ export function PendingDialog({
 
 export function GmailMark() {
   return (
-    <svg viewBox="0 0 24 24" className="size-5 shrink-0" aria-hidden>
-      <path fill="#4285F4" d="M22 7.1v10.4c0 1.1-.9 2-2 2H16V10.1z" />
-      <path fill="#34A853" d="M2 17.5V7.1l6 3.1V19.5H4c-1.1 0-2-.9-2-2z" />
-      <path fill="#FBBC04" d="M22 7.1 16 10.2 12 7.3 8 10.2 2 7.1 4.6 4.5h14.8z" />
-      <path fill="#EA4335" d="M8 10.2v9.3h8v-9.3L12 13.4z" />
+    <svg viewBox="0 0 48 48" className="size-5 shrink-0" aria-hidden>
+      <path fill="#4caf50" d="M45 16.2 40 18.95 35 23.7 35 40h7c1.657 0 3-1.343 3-3V16.2z" />
+      <path fill="#1e88e5" d="M3 16.2 6.614 17.91 13 23.7V40H6c-1.657 0-3-1.343-3-3V16.2z" />
+      <path fill="#e53935" d="M35 11.2 24 19.45 13 11.2 12 17l1 6.7L24 31.95 35 23.7 36 17z" />
+      <path fill="#c62828" d="M3 12.298V16.2l10 7.5V11.2L9.876 8.859A4.3 4.3 0 0 0 7.298 8C4.924 8 3 9.924 3 12.298z" />
+      <path fill="#fbc02d" d="M45 12.298V16.2l-10 7.5V11.2l3.124-2.341A4.3 4.3 0 0 1 40.702 8C43.076 8 45 9.924 45 12.298z" />
     </svg>
   );
 }
