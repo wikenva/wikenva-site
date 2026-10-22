@@ -5,7 +5,7 @@ import { legalNav, mainNav, moreNav, news, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { languages, useLang, useTr, type Lang } from "@/lib/locale";
-import { PartnerButton } from "./ui";
+import { PartnerButton, GmailMark } from "./ui";
 
 function isActive(pathname: string, to: string) {
   return pathname === to || pathname.startsWith(`${to}/`);
@@ -329,8 +329,9 @@ function Shell({ children }: { children: ReactNode }) {
             {tr("La plateforme des créateurs, des auteurs et des lecteurs.")}
           </p>
           <p className="mt-5 flex flex-col gap-1.5 text-sm">
-            <a href="mailto:wikenva@gmail.com" className="font-semibold text-gold">
-              wikenva@gmail.com
+            <a href="mailto:contact.wikenva@gmail.com" className="inline-flex items-center gap-2 font-semibold text-gold">
+              <GmailMark />
+              contact.wikenva@gmail.com
             </a>
             <a href="tel:+2290196412117" className="font-semibold">
               +229 01 96 41 21 17
