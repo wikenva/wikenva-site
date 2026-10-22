@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { pageMeta } from "@/content/site";
 import { SocialGrid } from "@/components/site/blocks";
 import { SiteShell } from "@/components/site/shell";
-import { Eyebrow } from "@/components/site/ui";
+import { Eyebrow, GmailMark } from "@/components/site/ui";
 import { useTr } from "@/lib/locale";
 
 export const Route = createFileRoute("/communaute")({
@@ -28,9 +28,12 @@ function CommunityPage() {
             <SocialGrid />
           </div>
           <div className="mx-auto mt-8 grid max-w-md gap-3 text-left">
-            <a href="mailto:wikenva@gmail.com" className="rounded-2xl border border-line bg-panel px-4 py-3">
-              <p className="text-xs font-semibold tracking-wide text-gold uppercase">{tr("Gmail")}</p>
-              <p className="mt-1 text-base font-semibold">wikenva@gmail.com</p>
+            <a href="mailto:contact.wikenva@gmail.com" className="flex items-center gap-3 rounded-2xl border border-line bg-panel px-4 py-3">
+              <GmailMark />
+              <span>
+                <span className="block text-xs font-semibold tracking-wide text-gold uppercase">{tr("Gmail")}</span>
+                <span className="mt-1 block text-base font-semibold">contact.wikenva@gmail.com</span>
+              </span>
             </a>
             <a href="tel:+2290196412117" className="rounded-2xl border border-line bg-panel px-4 py-3">
               <p className="text-xs font-semibold tracking-wide text-gold uppercase">{tr("Numéro")}</p>
