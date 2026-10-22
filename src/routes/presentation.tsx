@@ -82,15 +82,6 @@ function PresentationPage() {
           <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Statut")}</p>
           <h2 className="mt-2 font-display text-2xl font-semibold">{tr("WIKENVA est en cours de développement")}</h2>
           <p className="mt-3 text-sm text-muted">{tr("Les espaces peuvent encore changer, et aucun n'est ouvert.")}</p>
-          <div className="mt-4 flex overflow-hidden rounded-2xl border border-gold/40">
-            <div className="grid w-16 shrink-0 place-items-center bg-gold text-ink">
-              <div className="text-center">
-                <p className="font-display text-2xl font-semibold leading-none">25</p>
-                <p className="mt-1 text-[10px] font-semibold tracking-[0.12em] uppercase">Oct.</p>
-              </div>
-            </div>
-            <p className="flex items-center px-4 text-sm font-semibold">{tr("Lancement visé le 25 octobre 2026.")}</p>
-          </div>
           <p className="mt-3 text-sm text-muted">{tr("Le site www.wikenva.com sera intégré après validation de la Core Team SidraChain.")}</p>
         </section>
 
