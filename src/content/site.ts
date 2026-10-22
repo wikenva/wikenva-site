@@ -156,9 +156,9 @@ export const phases: Phase[] = [
     index: "02",
     name: "Développement",
     title: "Phase 2 — Développement",
-    status: "Lancement visé le 25 octobre 2026",
+    status: "En cours",
     summary: "Les livrables seront nommés quand ils seront annoncés.",
-    points: ["Développements confirmés", "Lancement visé le 25 octobre 2026", "Mises à jour publiées"],
+    points: ["Développements confirmés", "Mises à jour publiées"],
   },
   {
     id: "communaute",
@@ -241,18 +241,6 @@ export const principles = [
 ] as const;
 
 export const news: NewsItem[] = [
-  {
-    slug: "lancement-25-octobre",
-    title: "Lancement visé le 25 octobre 2026",
-    date: "19 octobre 2026",
-    category: "annonce",
-    excerpt: "Ouverture visée le 25 octobre 2026. Pas encore ouverte.",
-    paragraphs: [
-      "Lancement visé le 25 octobre 2026.",
-      "La plateforme n'est pas encore ouverte.",
-      "Intégration SidraChain après examen de la Core Team.",
-    ],
-  },
   {
     slug: "interface-wikenva",
     title: "L'interface WIKENVA est www.wikenva.com",
