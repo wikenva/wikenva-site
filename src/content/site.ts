@@ -360,7 +360,7 @@ export const mentionsLegales: ProseBlock[] = [
   {
     heading: "Ce qui est publié",
     paragraphs: [
-      "Contact : page Communauté. Gmail wikenva@gmail.com. +229 01 96 41 21 17.",
+      "Contact : page Communauté. Gmail contact.wikenva@gmail.com. +229 01 96 41 21 17.",
     ],
   },
   {
