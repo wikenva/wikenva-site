@@ -352,3 +352,14 @@ export function PendingDialog({
     </div>
   );
 }
+
+export function GmailMark() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-5 shrink-0" aria-hidden>
+      <path fill="#4285F4" d="M22 7.1v10.4c0 1.1-.9 2-2 2H16V10.1z" />
+      <path fill="#34A853" d="M2 17.5V7.1l6 3.1V19.5H4c-1.1 0-2-.9-2-2z" />
+      <path fill="#FBBC04" d="M22 7.1 16 10.2 12 7.3 8 10.2 2 7.1 4.6 4.5h14.8z" />
+      <path fill="#EA4335" d="M8 10.2v9.3h8v-9.3L12 13.4z" />
+    </svg>
+  );
+}
