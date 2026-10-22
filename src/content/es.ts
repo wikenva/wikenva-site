@@ -1,6 +1,7 @@
 /** Traductions es. La clé est le texte français. */
 export const es: Record<string, string> = {
   "À compléter": "Por completar",
+  "En cours": "En curso",
   "À préciser": "Por precisar",
   "Une vision claire, un écosystème pour tous.": "Una visión clara, un ecosistema para todos.",
   "Actualités WIKENVA": "Noticias WIKENVA",
