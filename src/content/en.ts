@@ -212,8 +212,8 @@ export const en: Record<string, string> = {
   Responsable: "Controller",
   "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — À compléter.":
     "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — To be completed.",
-  "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — wikenva@gmail.com. Téléphone — +229 01 96 41 21 17.":
-    "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — wikenva@gmail.com. Phone — +229 01 96 41 21 17.",
+  "L'identité du responsable de traitement est à compléter. Responsable — À compléter. Contact confidentialité — contact.wikenva@gmail.com. Téléphone — +229 01 96 41 21 17.":
+    "The identity of the data controller is to be completed. Controller — To be completed. Privacy contact — contact.wikenva@gmail.com. Phone — +229 01 96 41 21 17.",
   "Formulaire actionnaires": "Shareholder form",
   "Le formulaire demande un nom complet, un email, un nom d'utilisateur SidraChain s'il est indiqué, un montant envisagé en SDA et un message facultatif, ainsi que deux confirmations : lecture des risques, et absence de rendement promis.":
     "The form asks for a full name, an email, a SidraChain username if given, an amount considered in SDA and an optional message, plus two confirmations: that the risk warning was read, and that no yield is promised.",
@@ -688,8 +688,8 @@ export const en: Record<string, string> = {
   "Où lire les documents et nous écrire ?": "Where do I read the documents and write to you?",
   "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Aucune adresse e-mail générale n'est publiée pour l'instant.":
     "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. No general email address is published yet.",
-  "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.":
-    "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
+  "Le livre blanc est sur la page White paper. Les canaux officiels — Facebook, WhatsApp, Telegram et X — sont sur la page Communauté. Gmail : contact.wikenva@gmail.com. Numéro : +229 01 96 41 21 17.":
+    "The white paper is on the White paper page. The official channels — Facebook, WhatsApp, Telegram and X — are on the Community page. Gmail: contact.wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
   "Aller plus loin": "Go further",
   "La feuille de route, le token, les actualités et les documents restent disponibles. Ils ne sont pas répétés ici.":
     "The roadmap, the token, the news and the documents remain available. They are not repeated here.",
@@ -733,7 +733,7 @@ export const en: Record<string, string> = {
     "The site presents the WIKENVA project. Public contact goes through the official channels listed on the Community page: Facebook, WhatsApp, Telegram and X.",
   "Aucune adresse e-mail générale n'est publiée. N'envoyez pas de message à une adresse supposée.":
     "No general email address is published. Do not write to an address you only assume exists.",
-  "Gmail : wikenva@gmail.com. Numéro : +229 01 96 41 21 17.": "Gmail: wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
+  "Gmail : contact.wikenva@gmail.com. Numéro : +229 01 96 41 21 17.": "Gmail: contact.wikenva@gmail.com. Phone: +229 01 96 41 21 17.",
   "Répartition du WIKENVA TOKEN": "WIKENVA TOKEN allocation",
   "La blockchain prévue est SidraChain. L'adresse du contrat n'est pas encore confirmée.":
     "The planned blockchain is SidraChain. The contract address is not confirmed yet.",
@@ -1158,7 +1158,7 @@ export const en: Record<string, string> = {
   "Le site public est en ligne. Rien n'est inventé.": "The public site is online. Nothing is invented.",
   "Vision, feuille de route, token, documents et parcours.": "Vision, roadmap, token, documents and paths.",
   "Ce qui n'est pas confirmé reste « À compléter ».": "What is not confirmed stays “To be completed”.",
-  "Contact : page Communauté. Gmail wikenva@gmail.com. +229 01 96 41 21 17.": "Contact: Community page. Gmail wikenva@gmail.com. +229 01 96 41 21 17.",
+  "Contact : page Communauté. Gmail contact.wikenva@gmail.com. +229 01 96 41 21 17.": "Contact: Community page. Gmail contact.wikenva@gmail.com. +229 01 96 41 21 17.",
   "Forme juridique, siège et immatriculation non publiés.": "Legal form, registered office and registration number are not published.",
   "Hébergeur non confirmé.": "Host not confirmed.",
   "Nom, logo et contenus réservés.": "Name, logo and content are reserved.",
@@ -1184,7 +1184,7 @@ export const en: Record<string, string> = {
   "Réservé aux CEO autorisés. Aucun exemple.": "Reserved for authorised CEOs. No sample data.",
   "www.wikenva.com. Intégration SidraChain après la Core Team.": "www.wikenva.com. SidraChain integration after the Core Team.",
   "Non. Investir est sur SidraStart. Le partenaire se demande. L'actionnaire est une autre règle.": "No. Investing is on SidraStart. Partner status is requested. Shareholders follow another rule.",
-  "White paper, page Communauté, wikenva@gmail.com, +229 01 96 41 21 17.": "White paper, Community page, wikenva@gmail.com, +229 01 96 41 21 17.",
+  "White paper, page Communauté, contact.wikenva@gmail.com, +229 01 96 41 21 17.": "White paper, Community page, contact.wikenva@gmail.com, +229 01 96 41 21 17.",
   "Projet, fondateur et initiatives. Aucun rendement promis.": "Project, founder and initiatives. No yield promised.",
   "Minimum pour être partenaire ?": "Minimum to become a partner?",
   "2 000 SDA sur SidraStart. Cela ne valide pas la demande.": "2,000 SDA on SidraStart. That does not approve the request.",
@@ -1348,7 +1348,7 @@ export const en: Record<string, string> = {
   "Compte": "Account",
   "Les informations communiquées au site restent réservées aux administrateurs autorisés. Elles ne confirment pas un investissement.": "Information sent to the site stays reserved for authorised administrators. It does not confirm an investment.",
   "Lorsque le contact officiel sera publié, une demande d'accès, de rectification ou d'effacement pourra lui être adressée.": "When the official contact is published, a request for access, correction or deletion can be sent to it.",
-  "Une demande d'accès, de rectification ou d'effacement peut être adressée à wikenva@gmail.com.": "A request for access, correction or deletion can be sent to wikenva@gmail.com.",
+  "Une demande d'accès, de rectification ou d'effacement peut être adressée à contact.wikenva@gmail.com.": "A request for access, correction or deletion can be sent to contact.wikenva@gmail.com.",
   "Le bouton s'affiche lorsque le nom, l'e-mail et un montant d'au moins 1 000 SDA sont valides, et que la case est cochée. Il ouvre SidraStart sans ajouter ces informations à l'adresse et ne confirme pas un investissement. L'enregistrement de la candidature est séparé : il n'a lieu que si vous le demandez, et seulement lorsque la réception administrateur est configurée.": "The button appears when the name, the email and an amount of at least 1,000 SDA are valid, and the box is ticked. It opens SidraStart without adding this information to the address and does not confirm an investment. Saving the application is separate: it happens only if you ask for it, and only when administrator reception is configured.",
   "Message facultatif": "Optional message",
   "Vous pouvez laisser ce champ vide.": "You can leave this field empty.",
