@@ -1,6 +1,7 @@
 /** Traductions ar. La clé est le texte français. */
 export const ar: Record<string, string> = {
   "À compléter": "يُستكمل",
+  "En cours": "قيد التنفيذ",
   "À préciser": "يُحدَّد",
   "Une vision claire, un écosystème pour tous.": "رؤية واضحة، ومنظومة للجميع.",
   "Actualités WIKENVA": "أخبار WIKENVA",
