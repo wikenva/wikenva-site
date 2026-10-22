@@ -62,7 +62,7 @@ function LanguageMenu() {
         <ul
           role="listbox"
           aria-label={text.language}
-          className="absolute end-0 z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-line bg-panel py-1 shadow-[0_12px_40px_rgba(0,0,0,0.28)]"
+          className="absolute end-0 z-50 mt-2 w-48 overflow-hidden rounded-2xl border border-line bg-panel py-1 shadow-[0_12px_40px_rgba(0,0,0,0.28)]"
         >
           {languages.map((item) => {
             const selected = lang === item.id;
@@ -82,8 +82,7 @@ function LanguageMenu() {
                     {item.flag}
                   </span>
                   <span className="min-w-0 flex-1 truncate">{item.label}</span>
-                  <span className="text-[11px] font-semibold tracking-wide text-muted">{item.short}</span>
-                  {selected ? <Check className="size-3.5 text-gold" aria-hidden /> : <span className="size-3.5" aria-hidden />}
+                  {selected ? <Check className="size-3.5 shrink-0 text-gold" aria-hidden /> : null}
                 </button>
               </li>
             );
