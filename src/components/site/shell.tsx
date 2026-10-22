@@ -62,7 +62,7 @@ function LanguageMenu() {
         <ul
           role="listbox"
           aria-label={text.language}
-          className="absolute end-0 z-50 mt-2 w-48 overflow-hidden rounded-2xl border border-line bg-panel py-1 shadow-[0_12px_40px_rgba(0,0,0,0.28)]"
+          className="absolute end-0 z-50 mt-2 w-44 overflow-hidden rounded-2xl border border-line bg-panel py-1 shadow-[0_12px_40px_rgba(0,0,0,0.28)]"
         >
           {languages.map((item) => {
             const selected = lang === item.id;
