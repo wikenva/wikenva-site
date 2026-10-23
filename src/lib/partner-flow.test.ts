@@ -41,6 +41,7 @@ test("le candidat n'est prévenu qu'après une décision", () => {
   assert.match(mail.subject, /validé/);
   assert.match(mail.text, /VALIDÉ/);
   assert.match(mail.text, /partenaire de WIKENVA/);
+  assert.match(mail.html ?? "", /Découvrir WIKENVA/);
 });
 
 test("aucun e-mail ne part sans clé serveur", async () => {
