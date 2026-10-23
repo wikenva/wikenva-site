@@ -276,9 +276,15 @@ function PartnerResult({ result }: { result: PartnerSubmitResult }) {
         <span className="font-display text-lg font-semibold tracking-[0.16em] text-gold">{result.id}</span>
         <span className="shrink-0 text-xs font-semibold tracking-wide text-gold uppercase">{copied ? tr("Copié.") : tr("Copier")}</span>
       </button>
-      <p className="mt-2 text-gold">{tr("Copiez cette référence pour suivre votre demande.")}</p>
+      <p className="mt-2 text-gold">
+        {result.duplicate ? tr("Déjà soumis.") : tr("Copiez cette référence pour suivre votre demande.")}
+      </p>
       <p className="mt-1 text-muted">
-        {result.notified ? tr("En attente. E-mail après la décision.") : tr("Enregistrée. E-mail non envoyé.")}
+        {result.duplicate
+          ? tr(result.status === "approuvee" ? "Approuvée." : result.status === "refusee" ? "Refusée." : result.status === "verification" ? "En vérification." : "En attente.")
+          : result.notified
+            ? tr("En attente. E-mail après la décision.")
+            : tr("Enregistrée. E-mail non envoyé.")}
       </p>
     </div>
   );
