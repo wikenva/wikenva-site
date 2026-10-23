@@ -65,7 +65,7 @@ function AdminPage() {
               {data.missing.map((item) => (
                 <li key={item}>{tr(gapText[item])}</li>
               ))}
-              <li>{tr("Notification : WIKENVA_NOTIFY_WEBHOOK, une adresse https. Sans elle, aucun avis n'est envoyé.")}</li>
+              <li>{tr("E-mail : RESEND_API_KEY ou GMAIL_APP_PASSWORD, uniquement sur le serveur. Sans clé, la demande est enregistrée mais aucun e-mail ne part.")}</li>
             </ul>
           </Panel>
         ) : !data.authorized ? (
@@ -155,7 +155,7 @@ function AdminPage() {
 
 const partnerStatusLabel: Record<PartnerStatus, string> = {
   en_attente: "En attente",
-  verification: "En cours de vérification",
+  verification: "En vérification",
   approuvee: "Approuvée",
   refusee: "Refusée",
 };
@@ -213,7 +213,7 @@ function PartnerQueue() {
                   {item.email} · {item.country} · {item.profile}
                 </p>
                 {item.whatsapp ? <p className="mt-1 text-sm text-muted">{item.whatsapp}</p> : null}
-                {item.txRef ? <p className="mt-1 text-sm text-muted tabular-nums">{item.txRef}</p> : null}
+                {item.txRef ? <p className="mt-1 text-sm text-muted tabular-nums">{tr("Hash de transaction")} : {item.txRef}</p> : null}
                 {item.message ? <p className="mt-3 text-sm">{item.message}</p> : null}
                 <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
                 <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
