@@ -21,6 +21,7 @@ export const en: Record<string, string> = {
   "En vérification.": "Under review.",
   "Approuvée.": "Approved.",
   "Partenaire validé": "Validated partner",
+  "Valider": "Validate",
   "Partenaires validés": "Validated partners",
   "Aucun partenaire validé.": "No validated partner.",
   "Gmail": "Gmail",
