@@ -265,7 +265,7 @@ function PartnerResult({ result }: { result: PartnerSubmitResult }) {
     <div className="text-sm" role="status">
       <button
         type="button"
-        className="font-semibold tabular-nums text-gold"
+        className="flex w-full items-center justify-between gap-3 rounded-2xl border border-gold/55 bg-gold/10 px-4 py-3"
         onClick={() => {
           void navigator.clipboard.writeText(result.id ?? "").then(() => {
             setCopied(true);
@@ -273,9 +273,10 @@ function PartnerResult({ result }: { result: PartnerSubmitResult }) {
           });
         }}
       >
-        {result.id}
+        <span className="font-display text-lg font-semibold tracking-[0.16em] text-gold">{result.id}</span>
+        <span className="shrink-0 text-xs font-semibold tracking-wide text-gold uppercase">{copied ? tr("Copié.") : tr("Copier")}</span>
       </button>
-      <p className="mt-1 text-gold">{copied ? tr("Copié.") : tr("Copiez cette référence pour suivre votre demande.")}</p>
+      <p className="mt-2 text-gold">{tr("Copiez cette référence pour suivre votre demande.")}</p>
       <p className="mt-1 text-muted">
         {result.notified ? tr("En attente. E-mail après la décision.") : tr("Enregistrée. E-mail non envoyé.")}
       </p>
