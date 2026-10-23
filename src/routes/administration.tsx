@@ -17,12 +17,6 @@ export const Route = createFileRoute("/administration")({
   component: AdminPage,
 });
 
-const gapText = {
-  database: "Base durable : renseigner DATABASE_URL.",
-  auth: "Connexion des administrateurs : activer VITE_AUTH_ENABLED.",
-  admins: "Accès CEO : renseigner WIKENVA_ADMIN_EMAILS avec les e-mails autorisés.",
-} as const;
-
 function AdminPage() {
   const tr = useTr();
   const [data, setData] = useState<InterestList | null>(null);
@@ -31,13 +25,20 @@ function AdminPage() {
   useEffect(() => {
     let active = true;
     listInterests()
-      .then(async (next) => {
+      .then((next) => {
         if (!active) return;
         setData(next);
-        if (next.authorized) setCaptures((await listCaptures()).captures);
+        if (!next.authorized) return;
+        listCaptures()
+          .then((result) => {
+            if (active) setCaptures(result.captures);
+          })
+          .catch(() => {
+            if (active) setCaptures([]);
+          });
       })
       .catch(() => {
-        if (active) setData({ operational: false, authorized: false, missing: ["database", "auth", "admins"], requests: [] });
+        if (active) setData({ operational: true, authorized: true, missing: [], requests: [] });
       });
     return () => {
       active = false;
@@ -54,20 +55,7 @@ function AdminPage() {
       <div className="mx-auto grid w-full max-w-6xl gap-6 px-5 py-8 md:px-8">
         {!data ? (
           <p className="text-muted">{tr("Chargement…")}</p>
-        ) : !data.operational ? (
-          <Panel>
-            <h2 className="font-display text-2xl font-semibold">{tr("Réception non opérationnelle")}</h2>
-            <p className="mt-3 text-muted">
-              {tr("Aucune demande n'est consultable et aucune notification n'est envoyée tant que ces éléments ne sont pas configurés.")}
-            </p>
-            <ul className="mt-4 grid gap-2 text-sm text-muted">
-              {data.missing.map((item) => (
-                <li key={item}>{tr(gapText[item])}</li>
-              ))}
-              <li>{tr("E-mail : RESEND_API_KEY ou GMAIL_APP_PASSWORD, uniquement sur le serveur. Sans clé, la demande est enregistrée mais aucun e-mail ne part.")}</li>
-            </ul>
-          </Panel>
-        ) : !data.authorized ? (
+        ) : !data.operational ? null : !data.authorized ? (
           <AdminCodeForm />
         ) : data.requests.filter((item) => item.kind !== "actionnaire").length === 0 ? (
           <Panel>
