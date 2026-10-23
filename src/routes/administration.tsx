@@ -273,15 +273,19 @@ function PartnerQueue() {
                   {item.email} · {item.country} · {item.profile}
                 </p>
                 {item.whatsapp ? <p className="mt-1 text-sm text-muted">{item.whatsapp}</p> : null}
-                {item.txRef ? <p className="mt-1 text-sm text-muted tabular-nums">{tr("Hash de transaction")} : {item.txRef}</p> : null}
+                {item.txRef ? (
+                  <p className="mt-1 break-all text-sm text-muted">
+                    {tr("Hash de transaction")} : {item.txRef.replace(/^\.+/, "")}
+                  </p>
+                ) : null}
                 {item.message ? <p className="mt-3 text-sm">{item.message}</p> : null}
                 <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
-                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                <div className="mt-4 grid gap-2">
                   {(Object.keys(partnerStatusLabel) as PartnerStatus[]).map((status) => (
                     <button
                       key={status}
                       type="button"
-                      className="min-h-12 rounded-full border border-line px-4 text-sm font-semibold"
+                      className={`min-h-12 w-full rounded-full px-4 text-sm font-semibold ${item.status === status ? "bg-gold text-ink" : "border border-line"}`}
                       onClick={() => choose(item.id, status)}
                     >
                       {tr(partnerStatusLabel[status])}
@@ -344,12 +348,12 @@ function ShopQueue() {
                 <p className="mt-2 text-sm text-muted">{item.email} · {item.partnerId}</p>
                 <p className="mt-3 text-sm">{item.description}</p>
                 <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
-                <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                <div className="mt-4 grid gap-2">
                   {(Object.keys(partnerStatusLabel) as PartnerStatus[]).map((status) => (
                     <button
                       key={status}
                       type="button"
-                      className="min-h-12 rounded-2xl border border-line px-4 text-sm font-semibold"
+                      className={`min-h-12 w-full rounded-full px-4 text-sm font-semibold ${item.status === status ? "bg-gold text-ink" : "border border-line"}`}
                       onClick={() => choose(item.id, status)}
                     >
                       {tr(partnerStatusLabel[status])}
