@@ -55,6 +55,8 @@ test("le formulaire ne peut pas choisir le statut approuvé", () => {
   const source = readFileSync(new URL("./partner.server.ts", import.meta.url), "utf8");
   const submit = source.slice(source.indexOf("export async function submitPartnerApplication"), source.indexOf("export async function listPartnerApplications"));
   assert.match(submit, /"en_attente"/);
+  assert.match(submit, /lower\(email\)/);
+  assert.ok(submit.indexOf("lower(email)") < submit.indexOf("insert into partner_applications"));
   assert.equal(submit.includes("input.status"), false);
   assert.equal(allowed("visitor@example.com"), false);
   assert.equal(allowed("adjibodoufelix7@gmail.com"), true);
