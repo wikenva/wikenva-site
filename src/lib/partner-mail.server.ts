@@ -57,16 +57,35 @@ export function candidateDecisionMail(input: {
   status: PartnerStatus;
 }): OutboundMail | null {
   if (input.status === "en_attente") return null;
+  const reference = line(input.id, 20);
+  if (input.status === "approuvee") {
+    return {
+      to: line(input.email),
+      subject: line(`WIKENVA — candidature ${reference} : partenaire validé`),
+      text: [
+        `Bonjour ${line(input.name)},`,
+        "",
+        "VALIDÉ 🎉🎉🎉",
+        "",
+        "Vous êtes maintenant partenaire de WIKENVA.",
+        `Référence : ${reference}`,
+        "",
+        "Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.",
+        "https://www.wikenva-platforme.com",
+        "",
+        "WIKENVA",
+      ].join("\n"),
+    };
+  }
   const label = statusLabel[input.status];
   return {
     to: line(input.email),
-    subject: line(`WIKENVA — candidature ${input.id} : ${label}`),
+    subject: line(`WIKENVA — candidature ${reference} : ${label}`),
     text: [
       `Bonjour ${line(input.name)},`,
       "",
-      `Votre candidature ${line(input.id, 20)} a le statut : ${label}.`,
+      `Votre candidature ${reference} a le statut : ${label}.`,
       "Cette décision vient d'un administrateur autorisé.",
-      "Un hash de transaction ne suffit jamais à approuver une demande.",
       "",
       "WIKENVA",
     ].join("\n"),
