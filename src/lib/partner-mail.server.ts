@@ -7,6 +7,7 @@ export type OutboundMail = {
   to: string;
   subject: string;
   text: string;
+  html?: string;
 };
 
 const statusLabel: Record<Exclude<PartnerStatus, "en_attente">, string> = {
@@ -75,6 +76,7 @@ export function candidateDecisionMail(input: {
         "",
         "WIKENVA",
       ].join("\n"),
+      html: approvedHtml(line(input.name), reference),
     };
   }
   const label = statusLabel[input.status];
@@ -90,6 +92,28 @@ export function candidateDecisionMail(input: {
       "WIKENVA",
     ].join("\n"),
   };
+}
+
+function approvedHtml(name: string, reference: string) {
+  const safeName = name
+    .replace(/&/g, "&" + "amp;")
+    .replace(/</g, "&" + "lt;")
+    .replace(/>/g, "&" + "gt;")
+    .replace(/"/g, "&" + "quot;");
+  return `<!DOCTYPE html><html><body style="margin:0;background:#07111f;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#07111f;padding:28px 12px;">
+<tr><td align="center">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:460px;background:#10233a;border:1px solid #d4b06a;border-radius:20px;">
+<tr><td style="padding:28px 22px;font-family:Georgia,serif;color:#ffffff;text-align:center;">
+<p style="margin:0;color:#d4b06a;letter-spacing:0.22em;font-size:12px;">WIKENVA</p>
+<p style="margin:18px 0 0;font-size:32px;line-height:1.2;color:#f3d48a;font-weight:bold;">VALIDÉ 🎉🎉🎉</p>
+<p style="margin:16px 0 0;font-size:18px;line-height:1.45;">Vous êtes maintenant partenaire de WIKENVA.</p>
+<p style="margin:8px 0 0;color:#c9d4e3;font-size:14px;">Bonjour ${safeName}</p>
+<p style="margin:18px auto 0;display:inline-block;border:1px solid #d4b06a;border-radius:999px;padding:8px 16px;color:#f3d48a;letter-spacing:0.08em;font-size:14px;">${reference}</p>
+<p style="margin:18px 0 0;font-size:15px;line-height:1.5;color:#e8eef6;">Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.</p>
+<p style="margin:22px 0 0;"><a href="https://www.wikenva-platforme.com" style="display:inline-block;background:#d4b06a;color:#10233a;text-decoration:none;font-weight:bold;border-radius:999px;padding:12px 22px;">Découvrir WIKENVA</a></p>
+</td></tr></table>
+</td></tr></table></body></html>`;
 }
 
 export async function deliverMail(mail: OutboundMail): Promise<boolean> {
@@ -109,7 +133,7 @@ async function sendResend(mail: OutboundMail, key: string) {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { authorization: `Bearer ${key}`, "content-type": "application/json" },
-      body: JSON.stringify({ from, to: [mail.to], subject: mail.subject, text: mail.text }),
+      body: JSON.stringify({ from, to: [mail.to], subject: mail.subject, text: mail.text, html: mail.html }),
       signal: controller.signal,
     });
     return response.ok;
@@ -118,6 +142,22 @@ async function sendResend(mail: OutboundMail, key: string) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+function mimeBody(mail: OutboundMail) {
+  if (!mail.html) return mail.text;
+  return [
+    "--wikenva",
+    "Content-Type: text/plain; charset=UTF-8",
+    "",
+    mail.text,
+    "--wikenva",
+    "Content-Type: text/html; charset=UTF-8",
+    "",
+    mail.html,
+    "--wikenva--",
+    "",
+  ].join("\r\n");
 }
 
 function sendGmail(mail: OutboundMail, user: string, pass: string) {
@@ -154,14 +194,18 @@ function sendGmail(mail: OutboundMail, user: string, pass: string) {
       }
       if (!wroteBody) {
         wroteBody = true;
+        const encoded = Buffer.from(mimeBody(mail), "utf8").toString("base64").replace(/.{1,76}/g, "$&\r\n");
         const body = [
           `From: WIKENVA <${user}>`,
           `To: ${mail.to}`,
           `Subject: ${mail.subject}`,
           "MIME-Version: 1.0",
-          "Content-Type: text/plain; charset=UTF-8",
+          mail.html
+            ? 'Content-Type: multipart/alternative; boundary="wikenva"'
+            : "Content-Type: text/plain; charset=UTF-8",
+          "Content-Transfer-Encoding: base64",
           "",
-          mail.text.replace(/^\./gm, ".."),
+          encoded.trimEnd(),
           ".",
         ].join("\r\n");
         socket.write(`${body}\r\n`);
