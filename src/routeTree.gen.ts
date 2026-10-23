@@ -16,6 +16,7 @@ import { Route as CommunauteRouteImport } from './routes/communaute'
 import { Route as ConditionsRouteImport } from './routes/conditions'
 import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as DocumentsRouteImport } from './routes/documents'
+import { Route as EspaceRouteImport } from './routes/espace'
 import { Route as FeuilleDeRouteRouteImport } from './routes/feuille-de-route'
 import { Route as InvestisseursRouteImport } from './routes/investisseurs'
 import { Route as LoginRouteImport } from './routes/login'
@@ -64,6 +65,11 @@ const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
 const DocumentsRoute = DocumentsRouteImport.update({
   id: '/documents',
   path: '/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EspaceRoute = EspaceRouteImport.update({
+  id: '/espace',
+  path: '/espace',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FeuilleDeRouteRoute = FeuilleDeRouteRouteImport.update({
@@ -145,6 +151,7 @@ export interface FileRoutesByFullPath {
   '/conditions': typeof ConditionsRoute
   '/confidentialite': typeof ConfidentialiteRoute
   '/documents': typeof DocumentsRoute
+  '/espace': typeof EspaceRoute
   '/feuille-de-route': typeof FeuilleDeRouteRoute
   '/investisseurs': typeof InvestisseursRoute
   '/login': typeof LoginRoute
@@ -168,6 +175,7 @@ export interface FileRoutesByTo {
   '/conditions': typeof ConditionsRoute
   '/confidentialite': typeof ConfidentialiteRoute
   '/documents': typeof DocumentsRoute
+  '/espace': typeof EspaceRoute
   '/feuille-de-route': typeof FeuilleDeRouteRoute
   '/investisseurs': typeof InvestisseursRoute
   '/login': typeof LoginRoute
@@ -192,6 +200,7 @@ export interface FileRoutesById {
   '/conditions': typeof ConditionsRoute
   '/confidentialite': typeof ConfidentialiteRoute
   '/documents': typeof DocumentsRoute
+  '/espace': typeof EspaceRoute
   '/feuille-de-route': typeof FeuilleDeRouteRoute
   '/investisseurs': typeof InvestisseursRoute
   '/login': typeof LoginRoute
@@ -217,6 +226,7 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/confidentialite'
     | '/documents'
+    | '/espace'
     | '/feuille-de-route'
     | '/investisseurs'
     | '/login'
@@ -240,6 +250,7 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/confidentialite'
     | '/documents'
+    | '/espace'
     | '/feuille-de-route'
     | '/investisseurs'
     | '/login'
@@ -263,6 +274,7 @@ export interface FileRouteTypes {
     | '/conditions'
     | '/confidentialite'
     | '/documents'
+    | '/espace'
     | '/feuille-de-route'
     | '/investisseurs'
     | '/login'
@@ -287,6 +299,7 @@ export interface RootRouteChildren {
   ConditionsRoute: typeof ConditionsRoute
   ConfidentialiteRoute: typeof ConfidentialiteRoute
   DocumentsRoute: typeof DocumentsRoute
+  EspaceRoute: typeof EspaceRoute
   FeuilleDeRouteRoute: typeof FeuilleDeRouteRoute
   InvestisseursRoute: typeof InvestisseursRoute
   LoginRoute: typeof LoginRoute
@@ -352,6 +365,13 @@ declare module '@tanstack/react-router' {
       path: '/documents'
       fullPath: '/documents'
       preLoaderRoute: typeof DocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/espace': {
+      id: '/espace'
+      path: '/espace'
+      fullPath: '/espace'
+      preLoaderRoute: typeof EspaceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/feuille-de-route': {
@@ -463,6 +483,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConditionsRoute: ConditionsRoute,
   ConfidentialiteRoute: ConfidentialiteRoute,
   DocumentsRoute: DocumentsRoute,
+  EspaceRoute: EspaceRoute,
   FeuilleDeRouteRoute: FeuilleDeRouteRoute,
   InvestisseursRoute: InvestisseursRoute,
   LoginRoute: LoginRoute,
