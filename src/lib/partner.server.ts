@@ -63,6 +63,8 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
     id: null,
     missing: [],
     error: null,
+    duplicate: false,
+    status: null,
   };
   if (input.consentTerms !== true || input.consentPrivacy !== true) return { ...empty, error: "consent" };
   const email = clean(input.email, 160).toLowerCase();
@@ -86,8 +88,27 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
   const reception = currentReception();
   if (!reception.operational) return { ...empty, missing: reception.missing };
 
-  const id = `WK-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
   const sql = await getSql();
+  const existing = await sql<{ id: string; status: string }>`
+    select id, status from partner_applications
+    where lower(email) = ${email}
+    order by created_at desc
+    limit 1
+  `;
+  const previous = existing[0];
+  if (previous) {
+    return {
+      recorded: true,
+      notified: false,
+      id: previous.id,
+      missing: [],
+      error: null,
+      duplicate: true,
+      status: asStatus(previous.status),
+    };
+  }
+
+  const id = `WK-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
   await sql`
     insert into partner_applications (
       id, name, email, country, whatsapp, profile, tx_ref, message, consent_terms, consent_privacy, status
@@ -107,7 +128,7 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
   `;
   const mailed = await deliverMail(adminApplicationMail({ id, name, email, country, txRef }));
   const hooked = await notify("wikenva.partner.received", id, "en_attente");
-  return { recorded: true, notified: mailed || hooked, id, missing: [], error: null };
+  return { recorded: true, notified: mailed || hooked, id, missing: [], error: null, duplicate: false, status: "en_attente" };
 }
 
 export async function listPartnerApplications(): Promise<PartnerList> {
