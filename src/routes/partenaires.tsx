@@ -252,7 +252,8 @@ function PartnerForm() {
 
 function PartnerResult({ result }: { result: PartnerSubmitResult }) {
   const tr = useTr();
-  if (!result.recorded) {
+  const [copied, setCopied] = useState(false);
+  if (!result.recorded || !result.id) {
     return (
       <p className="text-sm text-muted" role="status">
         {tr("Demande non enregistrée. Aucune notification n'a été envoyée.")}{" "}
@@ -261,14 +262,24 @@ function PartnerResult({ result }: { result: PartnerSubmitResult }) {
     );
   }
   return (
-    <p className="text-sm" role="status">
-      <span className="font-semibold tabular-nums">{result.id}</span>
-      <span className="mt-1 block text-muted">
-        {result.notified
-          ? tr("En attente. E-mail après la décision.")
-          : tr("Enregistrée. E-mail non envoyé.")}
-      </span>
-    </p>
+    <div className="text-sm" role="status">
+      <button
+        type="button"
+        className="font-semibold tabular-nums text-gold"
+        onClick={() => {
+          void navigator.clipboard.writeText(result.id ?? "").then(() => {
+            setCopied(true);
+            window.setTimeout(() => setCopied(false), 1600);
+          });
+        }}
+      >
+        {result.id}
+      </button>
+      <p className="mt-1 text-gold">{copied ? tr("Copié.") : tr("Copiez cette référence pour suivre votre demande.")}</p>
+      <p className="mt-1 text-muted">
+        {result.notified ? tr("En attente. E-mail après la décision.") : tr("Enregistrée. E-mail non envoyé.")}
+      </p>
+    </div>
   );
 }
 
