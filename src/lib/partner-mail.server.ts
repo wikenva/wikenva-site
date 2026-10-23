@@ -144,33 +144,17 @@ async function sendResend(mail: OutboundMail, key: string) {
   }
 }
 
-function dotStuff(value: string) {
-  return value.replace(/^\./gm, "..");
-}
-
 function messageBody(mail: OutboundMail, user: string) {
-  const headers = [
+  const content = mail.html ?? mail.text;
+  const type = mail.html ? "text/html" : "text/plain";
+  return [
     `From: WIKENVA <${user}>`,
     `To: ${mail.to}`,
     `Subject: ${mail.subject}`,
     "MIME-Version: 1.0",
-  ];
-  if (!mail.html) {
-    return [...headers, "Content-Type: text/plain; charset=UTF-8", "", dotStuff(mail.text), "."].join("\r\n");
-  }
-  return [
-    ...headers,
-    'Content-Type: multipart/alternative; boundary="wikenva"',
+    `Content-Type: ${type}; charset=UTF-8`,
     "",
-    "--wikenva",
-    "Content-Type: text/plain; charset=UTF-8",
-    "",
-    dotStuff(mail.text),
-    "--wikenva",
-    "Content-Type: text/html; charset=UTF-8",
-    "",
-    dotStuff(mail.html),
-    "--wikenva--",
+    content.replace(/^\./gm, ".."),
     ".",
   ].join("\r\n");
 }
