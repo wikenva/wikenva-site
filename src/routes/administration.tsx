@@ -146,14 +146,19 @@ function AdminCodeForm() {
   async function sendCode() {
     setPending(true);
     setMessage("");
-    const result = await requestAdminCode({ data: { email } });
-    setPending(false);
-    if (result.sent) {
-      setSent(true);
-      setMessage(tr("Code envoyé. Ouvrez ce Gmail."));
-      return;
+    try {
+      const result = await requestAdminCode({ data: { email } });
+      if (result.sent) {
+        setSent(true);
+        setMessage(tr("Code envoyé. Ouvrez adjibodoufelix7@gmail.com, pas l'autre adresse."));
+        return;
+      }
+      setMessage(tr(result.error === "denied" ? "Cet e-mail n'est pas autorisé." : "Le code n'a pas pu être envoyé. Réessayez."));
+    } catch {
+      setMessage(tr("Le code n'a pas pu être envoyé. Réessayez."));
+    } finally {
+      setPending(false);
     }
-    setMessage(tr(result.error === "denied" ? "Cet e-mail n'est pas autorisé." : "Le code n'a pas pu être envoyé."));
   }
 
   async function enter() {
