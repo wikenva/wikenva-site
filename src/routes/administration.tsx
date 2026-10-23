@@ -216,7 +216,7 @@ function AdminCodeForm() {
 const partnerStatusLabel: Record<PartnerStatus, string> = {
   en_attente: "En attente",
   verification: "En vérification",
-  approuvee: "Approuvée",
+  approuvee: "Partenaire validé",
   refusee: "Refusée",
 };
 
@@ -255,6 +255,8 @@ function PartnerQueue() {
     );
   }
 
+  const validated = data.requests.filter((item) => item.status === "approuvee");
+
   return (
     <section className="grid gap-4">
       <h2 className="font-display text-2xl font-semibold">{tr("Candidatures partenaires")}</h2>
@@ -269,34 +271,58 @@ function PartnerQueue() {
               <Panel>
                 <p className="text-sm font-semibold text-gold">{tr(partnerStatusLabel[item.status])}</p>
                 <h3 className="mt-2 font-display text-2xl font-semibold">{item.name}</h3>
-                <p className="mt-2 text-sm text-muted">
-                  {item.email} · {item.country} · {item.profile}
+                <p className="mt-2 break-all text-sm text-muted">
+                  {item.email} · {item.country}
                 </p>
-                {item.whatsapp ? <p className="mt-1 text-sm text-muted">{item.whatsapp}</p> : null}
                 {item.txRef ? (
                   <p className="mt-1 break-all text-sm text-muted">
                     {tr("Hash de transaction")} : {item.txRef.replace(/^\.+/, "")}
                   </p>
                 ) : null}
-                {item.message ? <p className="mt-3 text-sm">{item.message}</p> : null}
                 <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
-                <div className="mt-4 grid gap-2">
-                  {(Object.keys(partnerStatusLabel) as PartnerStatus[]).map((status) => (
-                    <button
-                      key={status}
-                      type="button"
-                      className={`min-h-12 w-full rounded-full px-4 text-sm font-semibold ${item.status === status ? "bg-gold text-ink" : "border border-line"}`}
-                      onClick={() => choose(item.id, status)}
-                    >
-                      {tr(partnerStatusLabel[status])}
-                    </button>
-                  ))}
+                <button
+                  type="button"
+                  className={`mt-4 min-h-12 w-full rounded-full px-4 text-sm font-semibold ${item.status === "approuvee" ? "bg-gold text-ink" : "border border-gold text-gold"}`}
+                  onClick={() => choose(item.id, "approuvee")}
+                >
+                  {tr("Partenaire validé")}
+                </button>
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <button type="button" className="min-h-11 rounded-full border border-line px-3 text-sm" onClick={() => choose(item.id, "verification")}>
+                    {tr("En vérification")}
+                  </button>
+                  <button type="button" className="min-h-11 rounded-full border border-line px-3 text-sm" onClick={() => choose(item.id, "refusee")}>
+                    {tr("Refusée")}
+                  </button>
                 </div>
               </Panel>
             </li>
           ))}
         </ul>
       )}
+      <Panel>
+        <h2 className="font-display text-2xl font-semibold">{tr("Partenaires validés")}</h2>
+        {validated.length === 0 ? (
+          <p className="mt-3 text-sm text-muted">{tr("Aucun partenaire validé.")}</p>
+        ) : (
+          <table className="mt-4 w-full text-left text-sm">
+            <thead>
+              <tr className="text-faint">
+                <th className="pb-2 font-medium">{tr("Nom")}</th>
+                <th className="pb-2 font-medium">{tr("Gmail")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {validated.map((item) => (
+                <tr key={item.id} className="border-t border-line">
+                  <td className="py-3 pr-3">{item.name}</td>
+                  <td className="py-3 break-all">{item.email}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </Panel>
     </section>
   );
 }
