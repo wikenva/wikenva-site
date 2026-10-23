@@ -7,6 +7,7 @@ export const en: Record<string, string> = {
   "Enregistrée. E-mail non envoyé.": "Saved. Email not sent.",
   "Copiez cette référence pour suivre votre demande.": "Copy this reference to follow your application.",
   "Copié.": "Copied.",
+  "Copier": "Copy",
   "Référence et e-mail pour voir le statut.": "Reference and email to see the status.",
   "En vérification. Aucun partenariat n'est encore confirmé.": "Under review. No partnership is confirmed yet.",
   "E-mail : RESEND_API_KEY ou GMAIL_APP_PASSWORD, uniquement sur le serveur. Sans clé, la demande est enregistrée mais aucun e-mail ne part.":
