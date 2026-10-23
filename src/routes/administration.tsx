@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import { pageMeta } from "@/content/site";
 import { decideApplication, listCaptures, listInterests, type CaptureRow, type InterestList } from "@/lib/interest";
 import { decidePartner, decideShop, listPartners, listShops, type PartnerList, type PartnerStatus, type ShopList } from "@/lib/partner";
-import { signIn } from "@/lib/auth/client";
-import { GROK_PROVIDERS } from "@/lib/auth/providers";
+import { confirmAdminCode, requestAdminCode } from "@/lib/admin-login";
 import { useTr } from "@/lib/locale";
 import { SiteShell } from "@/components/site/shell";
 import { PageHero, Panel } from "@/components/site/ui";
@@ -69,24 +68,7 @@ function AdminPage() {
             </ul>
           </Panel>
         ) : !data.authorized ? (
-          <Panel>
-            <h2 className="font-display text-2xl font-semibold">{tr("Accès réservé")}</h2>
-            <p className="mt-3 text-muted">
-              {tr("Connectez-vous avec un compte dont l'e-mail figure dans WIKENVA_ADMIN_EMAILS. Les coordonnées ne sont pas affichées aux autres visiteurs.")}
-            </p>
-            <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-              {GROK_PROVIDERS.map((provider) => (
-                <button
-                  key={provider.providerId}
-                  type="button"
-                  className="min-h-12 rounded-full bg-gold px-5 text-sm font-semibold text-ink"
-                  onClick={() => signIn(provider.providerId, { callbackURL: "/administration" })}
-                >
-                  {provider.label}
-                </button>
-              ))}
-            </div>
-          </Panel>
+          <AdminCodeForm />
         ) : data.requests.filter((item) => item.kind !== "actionnaire").length === 0 ? (
           <Panel>
             <h2 className="font-display text-2xl font-semibold">{tr("Aucune demande reçue")}</h2>
@@ -150,6 +132,79 @@ function AdminPage() {
         {data?.authorized ? <ShareholderQueue requests={data.requests.filter((item) => item.kind === "actionnaire")} /> : null}
       </div>
     </SiteShell>
+  );
+}
+
+function AdminCodeForm() {
+  const tr = useTr();
+  const [email, setEmail] = useState("adjibodoufelix7@gmail.com");
+  const [code, setCode] = useState("");
+  const [sent, setSent] = useState(false);
+  const [message, setMessage] = useState("");
+  const [pending, setPending] = useState(false);
+
+  async function sendCode() {
+    setPending(true);
+    setMessage("");
+    const result = await requestAdminCode({ data: { email } });
+    setPending(false);
+    if (result.sent) {
+      setSent(true);
+      setMessage(tr("Code envoyé. Ouvrez ce Gmail."));
+      return;
+    }
+    setMessage(tr(result.error === "denied" ? "Cet e-mail n'est pas autorisé." : "Le code n'a pas pu être envoyé."));
+  }
+
+  async function enter() {
+    setPending(true);
+    const result = await confirmAdminCode({ data: { email, code } });
+    setPending(false);
+    if (!result.ok) {
+      setMessage(tr("Code incorrect."));
+      return;
+    }
+    window.location.reload();
+  }
+
+  return (
+    <Panel>
+      <h2 className="font-display text-2xl font-semibold">{tr("Accès réservé")}</h2>
+      <p className="mt-3 text-sm text-muted">{tr("Un code est envoyé au Gmail administrateur. Google n'est pas nécessaire.")}</p>
+      <label className="mt-5 block text-sm font-semibold" htmlFor="admin-email">
+        {tr("Adresse e-mail")}
+      </label>
+      <input
+        id="admin-email"
+        type="email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        className="mt-2 min-h-12 w-full rounded-full border border-line bg-ink px-4"
+      />
+      {sent ? (
+        <>
+          <label className="mt-4 block text-sm font-semibold" htmlFor="admin-code">
+            {tr("Code reçu")}
+          </label>
+          <input
+            id="admin-code"
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            value={code}
+            onChange={(event) => setCode(event.target.value)}
+            className="mt-2 min-h-12 w-full rounded-full border border-line bg-ink px-4 tracking-[0.3em]"
+          />
+          <button type="button" disabled={pending} onClick={enter} className="mt-4 min-h-12 w-full rounded-full bg-gold px-5 text-sm font-semibold text-ink">
+            {pending ? tr("Chargement…") : tr("Entrer")}
+          </button>
+        </>
+      ) : (
+        <button type="button" disabled={pending} onClick={sendCode} className="mt-4 min-h-12 w-full rounded-full bg-gold px-5 text-sm font-semibold text-ink">
+          {pending ? tr("Chargement…") : tr("Recevoir le code")}
+        </button>
+      )}
+      {message ? <p className="mt-3 text-sm text-gold">{message}</p> : null}
+    </Panel>
   );
 }
 
