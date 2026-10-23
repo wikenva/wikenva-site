@@ -2,7 +2,6 @@ import { configuredAdminEmails } from "@/lib/admin-allowlist.server";
 import { getSql } from "@/lib/db";
 import { assertSameSiteRequest } from "@/lib/auth/isolation.server";
 import { resolveAdminEmail } from "@/lib/admin-login.server";
-import { getSessionUser } from "@/lib/auth/verify.server";
 import {
   receptionStatus,
   type ApplicationDecision,
@@ -173,8 +172,7 @@ export async function listCaptureRequests(): Promise<{ authorized: boolean; capt
   assertSameSiteRequest();
   const reception = currentReception();
   if (!reception.operational) return { authorized: false, captures: [] };
-  const user = await getSessionUser();
-  const email = user?.email?.trim().toLowerCase() ?? "";
+  const email = (await resolveAdminEmail()) ?? "";
   if (!email || !reception.admins.includes(email)) return { authorized: false, captures: [] };
   const sql = await getSql();
   const rows = await sql<{
