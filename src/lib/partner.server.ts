@@ -1,4 +1,5 @@
 import { parsePhoneNumberFromString } from "libphonenumber-js";
+import { adminApplicationMail, candidateDecisionMail, deliverMail } from "@/lib/partner-mail.server";
 import { configuredAdminEmails } from "@/lib/admin-allowlist.server";
 import { assertSameSiteRequest } from "@/lib/auth/isolation.server";
 import { getSessionUser } from "@/lib/auth/verify.server";
@@ -104,8 +105,9 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
       ${"en_attente"}
     )
   `;
-  const notified = await notify("wikenva.partner.received", id, "en_attente");
-  return { recorded: true, notified, id, missing: [], error: null };
+  const mailed = await deliverMail(adminApplicationMail({ id, name, email, country, txRef }));
+  const hooked = await notify("wikenva.partner.received", id, "en_attente");
+  return { recorded: true, notified: mailed || hooked, id, missing: [], error: null };
 }
 
 export async function listPartnerApplications(): Promise<PartnerList> {
@@ -194,15 +196,18 @@ export async function decidePartnerApplication(
   const users = await sql<{ email: string }>`select email from "user" where id = ${userId} limit 1`;
   const email = users[0]?.email?.trim().toLowerCase() ?? "";
   if (!email || !reception.admins.includes(email)) return { ok: false, notified: false };
-  const updated = await sql<{ id: string }>`
+  const updated = await sql<{ id: string; name: string; email: string }>`
     update partner_applications
     set status = ${input.status}, decided_at = now(), decided_by = ${email}
     where id = ${id}
-    returning id
+    returning id, name, email
   `;
-  if (updated.length === 0) return { ok: false, notified: false };
-  const notified = await notify("wikenva.partner.updated", id, input.status);
-  return { ok: true, notified };
+  const row = updated[0];
+  if (!row) return { ok: false, notified: false };
+  const letter = candidateDecisionMail({ id: row.id, name: row.name, email: row.email, status: input.status });
+  const mailed = letter ? await deliverMail(letter) : false;
+  const hooked = await notify("wikenva.partner.updated", id, input.status);
+  return { ok: true, notified: mailed || hooked };
 }
 
 export async function submitPartnerShop(input: ShopInput): Promise<ShopSubmitResult> {
