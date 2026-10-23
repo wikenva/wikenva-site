@@ -2,6 +2,14 @@
 export const en: Record<string, string> = {
   "À compléter": "To be completed",
   "En cours": "In progress",
+  "En vérification": "Under review",
+  "Les administrateurs ont reçu un avis. Aucune approbation n'est automatique. Un e-mail vous sera envoyé après la décision.":
+    "The administrators have been notified. Nothing is approved automatically. You will receive an email after the decision.",
+  "Candidature enregistrée dans la base. Aucun e-mail n'a pu être envoyé. Le suivi se fait avec la référence et l'adresse e-mail.":
+    "The application is stored. No email could be sent. Follow it with the reference and the email address.",
+  "En vérification. Aucun partenariat n'est encore confirmé.": "Under review. No partnership is confirmed yet.",
+  "E-mail : RESEND_API_KEY ou GMAIL_APP_PASSWORD, uniquement sur le serveur. Sans clé, la demande est enregistrée mais aucun e-mail ne part.":
+    "Email: RESEND_API_KEY or GMAIL_APP_PASSWORD, server-side only. Without a key, the request is stored but no email is sent.",
   "À préciser": "To be specified",
   "Une vision claire, un écosystème pour tous.": "A clear vision, an ecosystem for everyone.",
   "Actualités WIKENVA": "WIKENVA News",
