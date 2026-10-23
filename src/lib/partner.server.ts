@@ -2,7 +2,7 @@ import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { adminApplicationMail, candidateDecisionMail, deliverMail } from "@/lib/partner-mail.server";
 import { configuredAdminEmails } from "@/lib/admin-allowlist.server";
 import { assertSameSiteRequest } from "@/lib/auth/isolation.server";
-import { getSessionUser } from "@/lib/auth/verify.server";
+import { resolveAdminEmail } from "@/lib/admin-login.server";
 import { getSql } from "@/lib/db";
 import { receptionStatus } from "@/lib/interest-config";
 import { partnerProfiles, type PartnerInput, type PartnerList, type PartnerLookup, type PartnerStatus, type PartnerSubmitResult, type ShopInput, type ShopList, type ShopSubmitResult } from "@/lib/partner";
@@ -137,8 +137,7 @@ export async function listPartnerApplications(): Promise<PartnerList> {
   if (!reception.operational) {
     return { operational: false, authorized: false, missing: reception.missing, requests: [] };
   }
-  const user = await getSessionUser();
-  const email = user?.email?.trim().toLowerCase() ?? "";
+  const email = (await resolveAdminEmail()) ?? "";
   if (!email || !reception.admins.includes(email)) {
     return { operational: true, authorized: false, missing: [], requests: [] };
   }
@@ -203,20 +202,19 @@ export async function lookupPartnerApplication(input: { id: string; email: strin
   };
 }
 
-export async function decidePartnerApplication(
-  input: { id: string; status: PartnerStatus },
-  userId: string,
-): Promise<{ ok: boolean; notified: boolean }> {
+export async function decidePartnerApplication(input: {
+  id: string;
+  status: PartnerStatus;
+}): Promise<{ ok: boolean; notified: boolean }> {
   assertSameSiteRequest();
   if (!["en_attente", "verification", "approuvee", "refusee"].includes(input.status)) return { ok: false, notified: false };
   const id = input.id.trim().toUpperCase();
   if (!/^WK-[A-Z0-9]{8}$/.test(id)) return { ok: false, notified: false };
   const reception = currentReception();
   if (!reception.operational) return { ok: false, notified: false };
-  const sql = await getSql();
-  const users = await sql<{ email: string }>`select email from "user" where id = ${userId} limit 1`;
-  const email = users[0]?.email?.trim().toLowerCase() ?? "";
+  const email = (await resolveAdminEmail()) ?? "";
   if (!email || !reception.admins.includes(email)) return { ok: false, notified: false };
+  const sql = await getSql();
   const updated = await sql<{ id: string; name: string; email: string }>`
     update partner_applications
     set status = ${input.status}, decided_at = now(), decided_by = ${email}
@@ -269,8 +267,7 @@ export async function listPartnerShops(): Promise<ShopList> {
   assertSameSiteRequest();
   const reception = currentReception();
   if (!reception.operational) return { operational: false, authorized: false, shops: [] };
-  const user = await getSessionUser();
-  const email = user?.email?.trim().toLowerCase() ?? "";
+  const email = (await resolveAdminEmail()) ?? "";
   if (!email || !reception.admins.includes(email)) return { operational: true, authorized: false, shops: [] };
   const sql = await getSql();
   const rows = await sql<{
@@ -304,20 +301,16 @@ export async function listPartnerShops(): Promise<ShopList> {
   };
 }
 
-export async function decidePartnerShop(
-  input: { id: string; status: PartnerStatus },
-  userId: string,
-): Promise<{ ok: boolean }> {
+export async function decidePartnerShop(input: { id: string; status: PartnerStatus }): Promise<{ ok: boolean }> {
   assertSameSiteRequest();
   if (!["en_attente", "verification", "approuvee", "refusee"].includes(input.status)) return { ok: false };
   const id = input.id.trim().toUpperCase();
   if (!/^SH-[A-Z0-9]{8}$/.test(id)) return { ok: false };
   const reception = currentReception();
   if (!reception.operational) return { ok: false };
-  const sql = await getSql();
-  const users = await sql<{ email: string }>`select email from "user" where id = ${userId} limit 1`;
-  const email = users[0]?.email?.trim().toLowerCase() ?? "";
+  const email = (await resolveAdminEmail()) ?? "";
   if (!email || !reception.admins.includes(email)) return { ok: false };
+  const sql = await getSql();
   const updated = await sql<{ id: string }>`
     update partner_shops
     set status = ${input.status}, decided_at = now(), decided_by = ${email}
