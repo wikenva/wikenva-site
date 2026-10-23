@@ -1,6 +1,7 @@
 import { configuredAdminEmails } from "@/lib/admin-allowlist.server";
 import { getSql } from "@/lib/db";
 import { assertSameSiteRequest } from "@/lib/auth/isolation.server";
+import { resolveAdminEmail } from "@/lib/admin-login.server";
 import { getSessionUser } from "@/lib/auth/verify.server";
 import {
   receptionStatus,
@@ -51,7 +52,7 @@ export async function submitInterestRequest(input: InterestInput): Promise<Submi
   if (input.kind === "actionnaire" && name.length < 2) return { ...empty, error: "name" };
   const amountText = clean(input.amount, 40);
   const amount = amountText ? parseAmount(amountText) : null;
-  if (input.kind === "actionnaire" && (amount === null || amount < 3000)) return { ...empty, error: "amount" };
+  if (input.kind === "actionnaire" && (amount === null || amount < 1000)) return { ...empty, error: "amount" };
   if (input.kind === "contribution" && amountText && amount === null) return { ...empty, error: "amount" };
 
   const reception = currentReception();
@@ -106,8 +107,7 @@ export async function listInterestRequests(): Promise<InterestList> {
   if (!reception.operational) {
     return { operational: false, authorized: false, missing: reception.missing, requests: [] };
   }
-  const user = await getSessionUser();
-  const email = user?.email?.trim().toLowerCase() ?? "";
+  const email = (await resolveAdminEmail()) ?? "";
   if (!email || !reception.admins.includes(email)) {
     return { operational: true, authorized: false, missing: [], requests: [] };
   }
