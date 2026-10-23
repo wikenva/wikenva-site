@@ -29,7 +29,7 @@ export const Route = createFileRoute("/partenaires")({
 
 const statusCopy = {
   en_attente: "En attente. La candidature est reçue. Elle n'est pas approuvée.",
-  verification: "En cours de vérification. Aucun partenariat n'est encore confirmé.",
+  verification: "En vérification. Aucun partenariat n'est encore confirmé.",
   approuvee: "Approuvée par un CEO autorisé. Cela ne confirme pas un versement ni un rendement.",
   refusee: "Refusée. La candidature n'a pas été retenue.",
 } as const;
@@ -264,8 +264,8 @@ function PartnerResult({ result }: { result: PartnerSubmitResult }) {
     <p className="text-sm" role="status">
       {tr("Candidature enregistrée.")} {tr("Référence")} <span className="tabular-nums">{result.id}</span>. {tr(statusCopy.en_attente)}{" "}
       {result.notified
-        ? tr("Un avis a été envoyé, sans vos coordonnées.")
-        : tr("Aucun e-mail ne vous a été envoyé. Le suivi se fait avec la référence et l'adresse e-mail.")}
+        ? tr("Les administrateurs ont reçu un avis. Aucune approbation n'est automatique. Un e-mail vous sera envoyé après la décision.")
+        : tr("Candidature enregistrée dans la base. Aucun e-mail n'a pu être envoyé. Le suivi se fait avec la référence et l'adresse e-mail.")}
     </p>
   );
 }
