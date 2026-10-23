@@ -19,6 +19,14 @@ function PartnerSpace() {
   return (
     <SiteShell>
       <main className="mx-auto grid w-full max-w-lg px-5 py-16 text-center">
+        <img
+          src="/media/logo-mark-ui.webp"
+          alt="WIKENVA"
+          width={480}
+          height={266}
+          decoding="async"
+          className="mx-auto h-16 w-auto bg-transparent"
+        />
         <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">{tr("Espace partenaire")}</p>
         <h1 className="mt-4 font-display text-4xl font-semibold">{tr("Bienvenue.")}</h1>
         <p className="mt-3 text-lg text-gold">{tr("VALIDÉ. Vous êtes partenaire de WIKENVA.")}</p>
