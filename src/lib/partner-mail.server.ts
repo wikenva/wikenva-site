@@ -77,7 +77,7 @@ export async function deliverMail(mail: OutboundMail): Promise<boolean> {
   const key = process.env.RESEND_API_KEY?.trim();
   if (key) return sendResend(mail, key);
   const user = process.env.GMAIL_USER?.trim();
-  const pass = process.env.GMAIL_APP_PASSWORD?.trim();
+  const pass = process.env.GMAIL_APP_PASSWORD?.replace(/\s/g, "");
   if (user && pass) return sendGmail(mail, user, pass);
   return false;
 }
