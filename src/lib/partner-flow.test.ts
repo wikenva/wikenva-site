@@ -38,8 +38,9 @@ test("le candidat n'est prévenu qu'après une décision", () => {
   });
   assert.ok(mail);
   assert.equal(mail.to, "awa@example.com");
-  assert.match(mail.subject, /Approuvée/);
-  assert.match(mail.text, /ne suffit jamais/);
+  assert.match(mail.subject, /validé/);
+  assert.match(mail.text, /VALIDÉ/);
+  assert.match(mail.text, /partenaire de WIKENVA/);
 });
 
 test("aucun e-mail ne part sans clé serveur", async () => {
@@ -111,6 +112,6 @@ test("PostgreSQL enregistre la demande en attente, puis seulement un admin déci
     email: "awa@example.com",
     status: "approuvee",
   });
-  assert.match(letter?.text ?? "", /Approuvée/);
+  assert.match(letter?.text ?? "", /VALIDÉ/);
   await db.close();
 });
