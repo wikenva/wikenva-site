@@ -144,26 +144,19 @@ async function sendResend(mail: OutboundMail, key: string) {
   }
 }
 
-function b64(value: string) {
-  return Buffer.from(value, "utf8").toString("base64").replace(/.{1,76}/g, "$&\r\n").trim();
+function dotStuff(value: string) {
+  return value.replace(/^\./gm, "..");
 }
 
 function messageBody(mail: OutboundMail, user: string) {
   const headers = [
     `From: WIKENVA <${user}>`,
     `To: ${mail.to}`,
-    `Subject: =?UTF-8?B?${Buffer.from(mail.subject, "utf8").toString("base64")}?=`,
+    `Subject: ${mail.subject}`,
     "MIME-Version: 1.0",
   ];
   if (!mail.html) {
-    return [
-      ...headers,
-      "Content-Type: text/plain; charset=UTF-8",
-      "Content-Transfer-Encoding: base64",
-      "",
-      b64(mail.text),
-      ".",
-    ].join("\r\n");
+    return [...headers, "Content-Type: text/plain; charset=UTF-8", "", dotStuff(mail.text), "."].join("\r\n");
   }
   return [
     ...headers,
@@ -171,14 +164,12 @@ function messageBody(mail: OutboundMail, user: string) {
     "",
     "--wikenva",
     "Content-Type: text/plain; charset=UTF-8",
-    "Content-Transfer-Encoding: base64",
     "",
-    b64(mail.text),
+    dotStuff(mail.text),
     "--wikenva",
     "Content-Type: text/html; charset=UTF-8",
-    "Content-Transfer-Encoding: base64",
     "",
-    b64(mail.html),
+    dotStuff(mail.html),
     "--wikenva--",
     ".",
   ].join("\r\n");
