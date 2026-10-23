@@ -144,19 +144,43 @@ async function sendResend(mail: OutboundMail, key: string) {
   }
 }
 
-function mimeBody(mail: OutboundMail) {
-  if (!mail.html) return mail.text;
+function b64(value: string) {
+  return Buffer.from(value, "utf8").toString("base64").replace(/.{1,76}/g, "$&\r\n").trim();
+}
+
+function messageBody(mail: OutboundMail, user: string) {
+  const headers = [
+    `From: WIKENVA <${user}>`,
+    `To: ${mail.to}`,
+    `Subject: =?UTF-8?B?${Buffer.from(mail.subject, "utf8").toString("base64")}?=`,
+    "MIME-Version: 1.0",
+  ];
+  if (!mail.html) {
+    return [
+      ...headers,
+      "Content-Type: text/plain; charset=UTF-8",
+      "Content-Transfer-Encoding: base64",
+      "",
+      b64(mail.text),
+      ".",
+    ].join("\r\n");
+  }
   return [
+    ...headers,
+    'Content-Type: multipart/alternative; boundary="wikenva"',
+    "",
     "--wikenva",
     "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
     "",
-    mail.text,
+    b64(mail.text),
     "--wikenva",
     "Content-Type: text/html; charset=UTF-8",
+    "Content-Transfer-Encoding: base64",
     "",
-    mail.html,
+    b64(mail.html),
     "--wikenva--",
-    "",
+    ".",
   ].join("\r\n");
 }
 
@@ -194,21 +218,7 @@ function sendGmail(mail: OutboundMail, user: string, pass: string) {
       }
       if (!wroteBody) {
         wroteBody = true;
-        const encoded = Buffer.from(mimeBody(mail), "utf8").toString("base64").replace(/.{1,76}/g, "$&\r\n");
-        const body = [
-          `From: WIKENVA <${user}>`,
-          `To: ${mail.to}`,
-          `Subject: ${mail.subject}`,
-          "MIME-Version: 1.0",
-          mail.html
-            ? 'Content-Type: multipart/alternative; boundary="wikenva"'
-            : "Content-Type: text/plain; charset=UTF-8",
-          "Content-Transfer-Encoding: base64",
-          "",
-          encoded.trimEnd(),
-          ".",
-        ].join("\r\n");
-        socket.write(`${body}\r\n`);
+        socket.write(`${messageBody(mail, user)}\r\n`);
         return;
       }
       socket.write("QUIT\r\n");
