@@ -72,7 +72,7 @@ export function candidateDecisionMail(input: {
         `Référence : ${reference}`,
         "",
         "Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.",
-        "https://www.wikenva-platforme.com",
+        "https://www.wikenva-platforme.com/espace",
         "",
         "WIKENVA",
       ].join("\n"),
@@ -111,7 +111,7 @@ function approvedHtml(name: string, reference: string) {
 <p style="margin:8px 0 0;color:#c9d4e3;font-size:14px;">Bonjour ${safeName}</p>
 <p style="margin:18px auto 0;display:inline-block;border:1px solid #d4b06a;border-radius:999px;padding:8px 16px;color:#f3d48a;letter-spacing:0.08em;font-size:14px;">${reference}</p>
 <p style="margin:18px 0 0;font-size:15px;line-height:1.5;color:#e8eef6;">Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.</p>
-<p style="margin:22px 0 0;"><a href="https://www.wikenva-platforme.com" style="display:inline-block;background:#d4b06a;color:#10233a;text-decoration:none;font-weight:bold;border-radius:999px;padding:12px 22px;">Découvrir WIKENVA</a></p>
+<p style="margin:22px 0 0;"><a href="https://www.wikenva-platforme.com/espace" style="display:inline-block;background:#d4b06a;color:#10233a;text-decoration:none;font-weight:bold;border-radius:999px;padding:12px 22px;">Découvrir WIKENVA</a></p>
 </td></tr></table>
 </td></tr></table></body></html>`;
 }
