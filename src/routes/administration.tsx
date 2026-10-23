@@ -273,7 +273,7 @@ function PartnerQueue() {
                   className={`mt-4 min-h-12 w-full rounded-full px-4 text-sm font-semibold ${item.status === "approuvee" ? "bg-gold text-ink" : "border border-gold text-gold"}`}
                   onClick={() => choose(item.id, "approuvee")}
                 >
-                  {tr("Partenaire validé")}
+                  {item.status === "approuvee" ? tr("Partenaire validé") : tr("Valider")}
                 </button>
                 <div className="mt-2 grid grid-cols-2 gap-2">
                   <button type="button" className="min-h-11 rounded-full border border-line px-3 text-sm" onClick={() => choose(item.id, "verification")}>
