@@ -262,10 +262,12 @@ function PartnerResult({ result }: { result: PartnerSubmitResult }) {
   }
   return (
     <p className="text-sm" role="status">
-      {tr("Candidature enregistrée.")} {tr("Référence")} <span className="tabular-nums">{result.id}</span>. {tr(statusCopy.en_attente)}{" "}
-      {result.notified
-        ? tr("Les administrateurs ont reçu un avis. Aucune approbation n'est automatique. Un e-mail vous sera envoyé après la décision.")
-        : tr("Candidature enregistrée dans la base. Aucun e-mail n'a pu être envoyé. Le suivi se fait avec la référence et l'adresse e-mail.")}
+      <span className="font-semibold tabular-nums">{result.id}</span>
+      <span className="mt-1 block text-muted">
+        {result.notified
+          ? tr("En attente. E-mail après la décision.")
+          : tr("Enregistrée. E-mail non envoyé.")}
+      </span>
     </p>
   );
 }
@@ -291,7 +293,7 @@ function PartnerLookupPanel() {
     <Panel>
       <h2 className="font-display text-2xl font-semibold">{tr("Suivre ma candidature")}</h2>
       <p className="mt-3 text-sm text-muted">
-        {tr("La référence et l'e-mail utilisés à l'envoi affichent le statut réel. Une approbation ne confirme pas un versement.")}
+        {tr("Référence et e-mail pour voir le statut.")}
       </p>
       <form className="mt-5 grid gap-4" onSubmit={onSubmit}>
         <Field id="lookup-id" label={tr("Référence")} value={id} onChange={setId} />
