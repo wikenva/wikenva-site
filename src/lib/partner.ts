@@ -1,5 +1,4 @@
 import { createServerFn } from "@tanstack/react-start";
-import { authMiddleware } from "@/lib/auth/middleware";
 import type { ReceptionGap } from "@/lib/interest-config";
 
 export const partnerProfiles = ["entrepreneur", "createur", "commercial", "technique", "autre"] as const;
@@ -76,11 +75,10 @@ export const lookupPartner = createServerFn({ method: "POST" })
   });
 
 export const decidePartner = createServerFn({ method: "POST" })
-  .middleware([authMiddleware])
   .validator((input: { id: string; status: PartnerStatus }) => input)
-  .handler(async ({ data, context }): Promise<{ ok: boolean; notified: boolean }> => {
+  .handler(async ({ data }): Promise<{ ok: boolean; notified: boolean }> => {
     const { decidePartnerApplication } = await import("./partner.server");
-    return decidePartnerApplication(data, context.userId);
+    return decidePartnerApplication(data);
   });
 
 export type ShopInput = {
@@ -126,10 +124,9 @@ export const listShops = createServerFn({ method: "GET" }).handler(async (): Pro
 });
 
 export const decideShop = createServerFn({ method: "POST" })
-  .middleware([authMiddleware])
   .validator((input: { id: string; status: PartnerStatus }) => input)
-  .handler(async ({ data, context }): Promise<{ ok: boolean }> => {
+  .handler(async ({ data }): Promise<{ ok: boolean }> => {
     const { decidePartnerShop } = await import("./partner.server");
-    return decidePartnerShop(data, context.userId);
+    return decidePartnerShop(data);
   });
 
