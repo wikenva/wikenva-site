@@ -31,47 +31,48 @@ export function HomePage() {
               <PromotionClock compact />
             </div>
           </div>
-          <nav className="mt-6" aria-label={tr("Découvrir maintenant")}>
-            <p className="text-sm font-semibold tracking-wide">{tr("Découvrir maintenant")}</p>
-            <div className="mt-3 flex flex-col items-center" aria-hidden>
-              <span className="h-3 w-px bg-gold/80" />
-              <ChevronDown className="-mt-1 size-4 stroke-[1.75] text-gold" />
-            </div>
-            <div className="mt-4 grid grid-cols-3 gap-2">
+          <nav className="mt-5" aria-label={tr("Découvrir maintenant")}>
+            <p className="text-sm font-semibold">{tr("Découvrir maintenant")}</p>
+            <ChevronDown className="mx-auto mt-2 size-4 stroke-[1.75] text-gold" aria-hidden />
+            <div className="mt-3 grid grid-cols-3 gap-2">
               <a
                 href={site.investUrl ?? ""}
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-20 min-w-0 flex-col items-center justify-center gap-1.5 rounded-2xl border border-gold/50 bg-panel px-1.5 py-2.5 text-center text-[11px] leading-tight font-semibold active:scale-[0.98]"
+                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
               >
-                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
+                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
                   <Wallet className="size-3.5 stroke-[1.75]" aria-hidden />
                 </span>
-                SidraStart
+                <span className="text-[11px] leading-tight font-semibold">SidraStart</span>
               </a>
               <Link
                 to="/presentation"
-                className="flex min-h-20 min-w-0 flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-panel px-1.5 py-2.5 text-center text-[11px] leading-tight font-semibold active:scale-[0.98]"
+                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
               >
-                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
+                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
                   <Store className="size-3.5 stroke-[1.75]" aria-hidden />
                 </span>
-                {tr("Marketplace WIKENVA")}
+                <span className="text-[11px] leading-tight font-semibold">
+                  Marketplace
+                  <br />
+                  WIKENVA
+                </span>
               </Link>
               <Link
                 to="/sidrachain"
-                className="flex min-h-20 min-w-0 flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-panel px-1.5 py-2.5 text-center text-[11px] leading-tight font-semibold active:scale-[0.98]"
+                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
               >
-                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
+                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
                   <Blocks className="size-3.5 stroke-[1.75]" aria-hidden />
                 </span>
-                SidraChain
+                <span className="text-[11px] leading-tight font-semibold">SidraChain</span>
               </Link>
             </div>
-            <div className="mt-5 flex items-center gap-3">
-              <span className="h-px flex-1 bg-gold/35" aria-hidden />
-              <p className="font-display text-lg font-semibold tracking-[0.28em] text-gold">WIKENVA</p>
-              <span className="h-px flex-1 bg-gold/35" aria-hidden />
+            <div className="mt-4 flex items-center gap-3">
+              <span className="h-px flex-1 bg-gold/30" aria-hidden />
+              <p className="font-display text-sm font-semibold tracking-[0.22em] text-gold">WIKENVA</p>
+              <span className="h-px flex-1 bg-gold/30" aria-hidden />
             </div>
           </nav>
         </div>
@@ -313,7 +314,7 @@ function NewsCarousel() {
 
   return (
     <div
-      className="relative mt-5"
+      className="relative mt-3"
       role="region"
       aria-roledescription="carousel"
       aria-label={tr("Actualités WIKENVA")}
