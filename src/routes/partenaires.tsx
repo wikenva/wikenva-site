@@ -192,6 +192,9 @@ function PartnerForm() {
             value={values.txRef}
             onChange={(value) => set("txRef", value)}
           />
+          <p className="-mt-2 text-xs leading-relaxed text-gold">
+            {tr("N'envoyez jamais votre clé privée ni votre phrase de récupération.")}
+          </p>
           <Check
             checked={values.consent}
             onChange={(value) => set("consent", value)}
