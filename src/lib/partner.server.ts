@@ -224,7 +224,10 @@ export async function decidePartnerApplication(input: {
   const row = updated[0];
   if (!row) return { ok: false, notified: false };
   const letter = candidateDecisionMail({ id: row.id, name: row.name, email: row.email, status: input.status });
-  const mailed = letter ? await deliverMail(letter) : false;
+  let mailed = letter ? await deliverMail(letter) : false;
+  if (!mailed && letter) {
+    mailed = await deliverMail({ to: letter.to, subject: letter.subject, text: letter.text });
+  }
   const hooked = await notify("wikenva.partner.updated", id, input.status);
   return { ok: true, notified: mailed || hooked };
 }
