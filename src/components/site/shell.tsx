@@ -180,7 +180,7 @@ function SiteSearch() {
   }, [pathname]);
 
   return (
-    <form className="relative w-32 shrink-0 sm:w-48 lg:w-56" role="search" onSubmit={(event) => event.preventDefault()}>
+    <form className="relative w-44 shrink-0 sm:w-56" role="search" onSubmit={(event) => event.preventDefault()}>
       <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-gold" aria-hidden />
       <input
         value={query}
@@ -261,7 +261,6 @@ function Shell({ children }: { children: ReactNode }) {
             <MoreMenu />
           </nav>
           <div className="ml-auto flex shrink-0 items-center gap-2">
-            <SiteSearch />
             <PartnerButton className="hidden px-4 lg:inline-flex" />
             <LanguageMenu />
             <button
@@ -307,6 +306,9 @@ function Shell({ children }: { children: ReactNode }) {
           </nav>
         ) : null}
       </header>
+      <div className="mx-auto flex w-full max-w-6xl justify-end px-4 pt-3 md:px-8">
+        <SiteSearch />
+      </div>
       <main id="contenu" className="min-w-0 overflow-x-hidden">{children}</main>
       <footer className="border-t border-line bg-ink pb-8 text-fg print:hidden">
         <div className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8">
