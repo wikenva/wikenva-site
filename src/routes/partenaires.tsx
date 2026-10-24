@@ -170,6 +170,10 @@ function PartnerForm() {
           consentPrivacy: true,
         },
       });
+      if (next.error === "hash") {
+        setError(tr("Ce hash de transaction a déjà été utilisé."));
+        return;
+      }
       setResult(next);
       if (next.error === "proof") setError(tr("Indiquez le hash de transaction."));
     } finally {
