@@ -1294,6 +1294,7 @@ export const en: Record<string, string> = {
   "Événements": "Events",
   Investissements: "Investments",
   "2 000 SDA · jusqu'au 30 novembre 2026": "2,000 SDA · until 30 November 2026",
+  "Temps restant pour demander le partenariat": "Time left to request the partnership",
   "Aucun résultat": "No result",
   "« À compléter » veut dire : pas encore officiel.": "“To be completed” means: not official yet.",
   "Le bouton ouvre SidraStart. Il ne confirme pas un investissement.": "The button opens SidraStart. It does not confirm an investment.",
