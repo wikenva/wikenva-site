@@ -46,10 +46,10 @@ export function HomePage() {
               </a>
               <Link
                 to="/presentation"
-                className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-panel px-3 py-4 text-sm font-semibold"
+                className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-panel px-3 py-4 text-center text-sm font-semibold leading-tight"
               >
                 <Store className="size-5 stroke-[1.75] text-gold" aria-hidden />
-                {tr("Marketplace")}
+                {tr("Marketplace WIKENVA")}
               </Link>
             </div>
             <Link
