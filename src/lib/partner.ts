@@ -22,7 +22,7 @@ export type PartnerSubmitResult = {
   notified: boolean;
   id: string | null;
   missing: ReceptionGap[];
-  error: "consent" | "email" | "name" | "country" | "profile" | "message" | "proof" | "phone" | null;
+  error: "consent" | "email" | "name" | "country" | "profile" | "message" | "proof" | "phone" | "hash" | null;
   duplicate: boolean;
   status: PartnerStatus | null;
 };
