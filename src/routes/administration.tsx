@@ -211,6 +211,7 @@ const partnerStatusLabel: Record<PartnerStatus, string> = {
 function PartnerQueue() {
   const tr = useTr();
   const [data, setData] = useState<PartnerList | null>(null);
+  const [notice, setNotice] = useState<Record<string, string>>({});
 
   useEffect(() => {
     let active = true;
@@ -229,8 +230,16 @@ function PartnerQueue() {
   if (!data?.authorized) return null;
 
   async function choose(id: string, status: PartnerStatus) {
-    const result = await decidePartner({ data: { id, status } });
-    if (!result.ok) return;
+    setNotice((current) => ({ ...current, [id]: "Envoi de l'e-mail…" }));
+    const result = await decidePartner({ data: { id, status } }).catch(() => ({ ok: false, notified: false }));
+    if (!result.ok) {
+      setNotice((current) => ({ ...current, [id]: "La validation n'a pas été enregistrée." }));
+      return;
+    }
+    setNotice((current) => ({
+      ...current,
+      [id]: result.notified ? "E-mail envoyé au Gmail du candidat." : "Validé, mais l'e-mail n'est pas parti. Appuie encore sur Valider.",
+    }));
     setData((current) =>
       current
         ? {
@@ -268,6 +277,7 @@ function PartnerQueue() {
                   </p>
                 ) : null}
                 <p className="mt-3 text-sm text-faint tabular-nums">{item.id}</p>
+                {notice[item.id] ? <p className="mt-3 text-sm text-gold">{tr(notice[item.id])}</p> : null}
                 <button
                   type="button"
                   className={`mt-4 min-h-12 w-full rounded-full px-4 text-sm font-semibold ${item.status === "approuvee" ? "bg-gold text-ink" : "border border-gold text-gold"}`}
