@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronRight, Users } from "lucide-react";
+import { BadgeCheck, BookOpen, ChevronRight, FileText, Globe, Megaphone, Users } from "lucide-react";
 import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
@@ -285,7 +285,7 @@ function NewsCarousel() {
       aria-label={tr("Actualités WIKENVA")}
     >
       <div
-        className="relative h-36 overflow-hidden rounded-2xl border border-line bg-panel"
+        className="relative overflow-hidden rounded-2xl border border-line bg-panel"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -293,7 +293,7 @@ function NewsCarousel() {
         onPointerCancel={onPointerUp}
       >
         <div
-          className="flex h-full"
+          className="flex"
           style={{
             width: `${count * 100}%`,
             transform: `translate3d(calc(${(-index * 100) / count}% + ${offset}px), 0, 0)`,
@@ -301,34 +301,22 @@ function NewsCarousel() {
           }}
         >
           {news.map((item, slide) => (
-            <article key={item.slug} className="h-full shrink-0" style={{ width: `${100 / count}%` }} aria-hidden={slide !== index}>
+            <article key={item.slug} className="shrink-0" style={{ width: `${100 / count}%` }} aria-hidden={slide !== index}>
               <Link
                 to="/actualites/$slug"
                 params={{ slug: item.slug }}
-                className="flex h-full items-start gap-3 px-4 py-4"
+                className="flex min-h-[5.25rem] items-center gap-4 px-4 py-4"
               >
-                <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl border border-gold/30 bg-gold/10 text-gold">
+                <span aria-hidden className="grid size-12 shrink-0 place-items-center rounded-2xl border border-gold/40 bg-ink text-gold">
                   <NewsMark slug={item.slug} />
                 </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{tr(item.date)}</span>
-                  <span className="mt-1 line-clamp-2 text-[15px] leading-snug font-semibold text-balance">{tr(item.title)}</span>
+                <span className="min-w-0 flex-1 font-display text-lg leading-snug font-semibold text-balance">
+                  {tr(item.title)}
                 </span>
-                <ChevronRight className="mt-1 size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
+                <ChevronRight className="size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
               </Link>
             </article>
           ))}
-        </div>
-        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-white/10" aria-hidden>
-          <div
-            key={paused || dragging || reduced ? "hold" : index}
-            className="h-full bg-gold"
-            style={
-              paused || dragging || reduced
-                ? { width: "0%" }
-                : { animation: "news-run 4.5s linear forwards" }
-            }
-          />
         </div>
       </div>
       <div className="mt-3 flex justify-center gap-1.5">
@@ -350,36 +338,11 @@ function NewsCarousel() {
 }
 
 function NewsMark({ slug }: { slug: string }) {
-  const common = { viewBox: "0 0 24 24", className: "size-4", fill: "none", stroke: "currentColor", strokeWidth: 1.8 };
-  if (slug === "promotion-partenaire") {
-    return (
-      <svg {...common}>
-        <path d="M8 13l2.5 2.5L16 9" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="12" cy="12" r="8" />
-      </svg>
-    );
-  }
-  if (slug === "fiche-sidrastart") {
-    return (
-      <svg {...common}>
-        <path d="M7 4.5h7l3 3V19.5H7z" strokeLinejoin="round" />
-        <path d="M14 4.5V8h3.5M9 12h6M9 15.5h4" strokeLinecap="round" />
-      </svg>
-    );
-  }
-  if (slug === "espace-information-en-ligne") {
-    return (
-      <svg {...common}>
-        <path d="M5 7.5h14M5 12h14M5 16.5h9" strokeLinecap="round" />
-      </svg>
-    );
-  }
-  return (
-    <svg {...common}>
-      <circle cx="12" cy="12" r="8" />
-      <path d="M4 12h16M12 4c2.2 2.4 3.3 5.1 3.3 8S14.2 17.6 12 20c-2.2-2.4-3.3-5.1-3.3-8S9.8 6.4 12 4z" />
-    </svg>
-  );
+  const icon = "size-5 stroke-[1.75]";
+  if (slug === "promotion-partenaire") return <BadgeCheck className={icon} aria-hidden />;
+  if (slug === "fiche-sidrastart") return <FileText className={icon} aria-hidden />;
+  if (slug === "espace-information-en-ligne") return <Megaphone className={icon} aria-hidden />;
+  return <Globe className={icon} aria-hidden />;
 }
 
 function Faq({ q, a }: { q: string; a: string }) {
