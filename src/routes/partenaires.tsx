@@ -109,7 +109,7 @@ function PartnersPage() {
             {tr("Les règles de calcul, les conditions d'éligibilité et les modalités de distribution seront communiquées prochainement.")}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            {tr("15 % des revenus sont prévus pour le partenariat, et 3 % pour la zakat.")}
+            {tr("Une part de 15 % des revenus est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.")}
           </p>
         </div>
       </section>
