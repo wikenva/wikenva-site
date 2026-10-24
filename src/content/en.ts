@@ -1160,6 +1160,7 @@ export const en: Record<string, string> = {
   "Hash de transaction": "Transaction hash",
   "N'envoyez jamais votre clé privée ni votre phrase de récupération.": "Never send your private key or your recovery phrase.",
   "Indiquez le hash de transaction.": "Enter the transaction hash.",
+  "Ce hash de transaction a déjà été utilisé.": "This transaction hash has already been used.",
   Pays: "Country",
   "Votre message": "Your message",
   "Écrivez au moins une phrase.": "Write at least one sentence.",
