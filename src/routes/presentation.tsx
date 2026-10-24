@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, Cpu, PenLine, Store, Sparkles, Users } from "lucide-react";
+import { BookOpen, Cpu, PenLine, ShoppingBag, Sparkles, Store, Users } from "lucide-react";
 import { pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
 import { Portrait } from "@/components/site/portrait";
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/presentation")({
   head: () =>
     pageMeta(
       "Présentation — WIKENVA",
-      "WIKENVA est en cours de développement. Six espaces sont envisagés pour les créateurs, les auteurs, les lecteurs et la communauté. Aucun rendement n'est promis.",
+      "WIKENVA est en cours de développement. Sept espaces sont envisagés pour les créateurs, les auteurs, les lecteurs et la communauté. Aucun rendement n'est promis.",
     ),
   component: PresentationPage,
 });
@@ -45,6 +45,11 @@ const spaces = [
     icon: Cpu,
     title: "Technologies avancées pour les créateurs",
     text: "Des outils envisagés pour la création et le développement d'une audience. Ils ne sont pas en service.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Boutique en ligne des utilisateurs",
+    text: "Une boutique envisagée pour que chaque utilisateur présente ses produits numériques. Elle n'est pas ouverte.",
   },
 ] as const;
 
@@ -86,7 +91,7 @@ function PresentationPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("Six espaces envisagés")}</h2>
+          <h2 className="font-display text-2xl font-semibold">{tr("Sept espaces envisagés")}</h2>
           <ol className="mt-5 grid gap-4 sm:grid-cols-2">
             {spaces.map((space, index) => (
               <li key={space.title} className="rounded-3xl border border-line bg-ink p-5">
