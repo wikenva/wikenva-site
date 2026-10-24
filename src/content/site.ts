@@ -261,7 +261,7 @@ export const news: NewsItem[] = [
     paragraphs: [
       "Minimum 2 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.",
       "Le minimum ne confirme pas le statut. Un CEO décide.",
-      "15 % partenariat. 3 % zakat. Aucun rendement promis.",
+      "Une part de 15 % est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Aucun rendement promis.",
     ],
   },
   {
