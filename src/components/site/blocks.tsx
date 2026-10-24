@@ -506,22 +506,25 @@ export function RoleBoard() {
     >
       <div key={role.name} className="role-in">
         <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
-        <h3 className="mt-2 pr-2 text-xl font-semibold leading-tight">{tr(role.name)}</h3>
-        <p className="mt-3 text-base leading-relaxed break-words text-fg">{tr(role.detail)}</p>
+        <h3 className="mt-1 text-xl font-semibold leading-tight">{tr(role.name)}</h3>
+        <p className="mt-1.5 text-sm leading-relaxed break-words text-fg">{tr(role.detail)}</p>
       </div>
-      <div className="mt-5 flex items-center gap-3">
+      <div className="mt-4 flex items-center gap-3">
         <button
           type="button"
           aria-label={tr("Précédent")}
           disabled={active === 0}
           onClick={() => go(active - 1)}
-          className="grid size-10 shrink-0 place-items-center rounded-full border border-line text-gold disabled:opacity-30"
+          className={
+            "grid size-10 shrink-0 place-items-center rounded-full border " +
+            (active === 0 ? "border-white/10 text-white/25" : "border-gold/50 text-gold")
+          }
         >
           <ChevronLeft className="size-4 stroke-[1.75]" aria-hidden />
         </button>
         <div className="flex min-w-0 flex-1 gap-1.5" aria-hidden>
           {roles.map((item, index) => (
-            <span key={item.name} className={"h-0.5 flex-1 rounded-full " + (index <= active ? "bg-gold" : "bg-white/15")} />
+            <span key={item.name} className={"h-1 flex-1 rounded-full " + (index === active ? "bg-gold" : "bg-white/20")} />
           ))}
         </div>
         <button
@@ -529,7 +532,10 @@ export function RoleBoard() {
           aria-label={tr("Suivant")}
           disabled={active === roles.length - 1}
           onClick={() => go(active + 1)}
-          className="grid size-10 shrink-0 place-items-center rounded-full bg-gold text-ink disabled:opacity-30"
+          className={
+            "grid size-10 shrink-0 place-items-center rounded-full " +
+            (active === roles.length - 1 ? "border border-white/10 text-white/25" : "bg-gold text-ink")
+          }
         >
           <ChevronRight className="size-4 stroke-[1.75]" aria-hidden />
         </button>
