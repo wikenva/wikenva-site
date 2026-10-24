@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { BadgeCheck, BookOpen, ChevronRight, FileText, Globe, Megaphone, Users } from "lucide-react";
+import { BadgeCheck, BookOpen, Blocks, ChevronDown, ChevronRight, FileText, Globe, Megaphone, Store, Users, Wallet } from "lucide-react";
 import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
@@ -30,16 +30,37 @@ export function HomePage() {
               <PromotionClock compact />
             </div>
           </div>
-          <div className="mt-6 grid gap-3 text-left">
-            <a href="#decouvrir" className="flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-line px-4 text-sm font-semibold">
-              <span>{text.discover}</span>
-              <ChevronRight className="size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
-            </a>
-            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-gold/70 bg-panel px-4 text-sm font-semibold text-gold">
-              <span>{text.invest}</span>
-              <ChevronRight className="size-4 shrink-0 stroke-[1.75]" aria-hidden />
-            </a>
-          </div>
+          <nav className="mt-6" aria-label={tr("Découvrir maintenant")}>
+            <p className="text-sm font-semibold tracking-wide">{tr("Découvrir maintenant")}</p>
+            <ChevronDown className="mx-auto mt-2 size-4 stroke-[1.75] text-gold" aria-hidden />
+            <ChevronDown className="-mt-1.5 mx-auto size-4 stroke-[1.75] text-gold/70" aria-hidden />
+            <div className="mt-4 grid grid-cols-2 gap-3">
+              <a
+                href={site.investUrl ?? ""}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-gold/50 bg-panel px-3 py-4 text-sm font-semibold"
+              >
+                <Wallet className="size-5 stroke-[1.75] text-gold" aria-hidden />
+                SidraStart
+              </a>
+              <Link
+                to="/presentation"
+                className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-panel px-3 py-4 text-sm font-semibold"
+              >
+                <Store className="size-5 stroke-[1.75] text-gold" aria-hidden />
+                {tr("Marketplace")}
+              </Link>
+            </div>
+            <Link
+              to="/sidrachain"
+              className="mx-auto mt-3 flex min-h-24 w-[calc(50%-0.375rem)] flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-panel px-3 py-4 text-sm font-semibold"
+            >
+              <Blocks className="size-5 stroke-[1.75] text-gold" aria-hidden />
+              SidraChain
+            </Link>
+            <p className="mt-5 font-display text-xl font-semibold tracking-[0.28em] text-gold">WIKENVA</p>
+          </nav>
         </div>
       </section>
 
