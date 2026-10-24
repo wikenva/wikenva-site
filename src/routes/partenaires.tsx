@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { ChevronRight, Compass, Megaphone, ShieldCheck, Wallet } from "lucide-react";
-import { narrative, pageMeta, site } from "@/content/site";
+import { ChevronRight, FileText, Sparkles, Store } from "lucide-react";
+import { pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
-import { ExternalLink, PageHero, Panel } from "@/components/site/ui";
-import { PathBoard, HSlide } from "@/components/site/paths";
+import { ExternalLink, Panel } from "@/components/site/ui";
 import { PromotionClock } from "@/components/site/promotion";
 import { CountrySelect } from "@/components/site/country-select";
 import { findCountry } from "@/lib/countries";
@@ -36,171 +35,91 @@ const statusCopy = {
 
 function PartnersPage() {
   const tr = useTr();
+  const advantages = [
+    [FileText, "Publication gratuite d'articles."],
+    [Store, "Création d'une boutique en ligne gratuite."],
+    [Sparkles, "Accès aux fonctionnalités Premium."],
+  ] as const;
+  const steps = [
+    ["1", "Contribuer sur SidraStart", "Depuis votre propre compte. Jamais auprès d'un membre de WIKENVA."],
+    ["2", "Atteindre 2 000 SDA", "Ce seuil permet de demander le statut de partenaire. La demande est vérifiée."],
+    ["3", "Envoyer la demande", "Le formulaire est sur cette page. Rien n'est accordé automatiquement."],
+  ] as const;
   return (
     <SiteShell>
-      <PageHero
-        eyebrow="Partenaires"
-        title="Devenez partenaire de WIKENVA."
-        lede="Le minimum est de 2 000 SDA sur SidraStart. La demande est vérifiée."
-      />
-      <div className="mx-auto grid w-full min-w-0 max-w-6xl grid-cols-1 gap-8 px-5 py-8 md:px-8">
-        <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row">
-          <a href="#candidature" className="inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-gold px-5 text-sm font-semibold text-ink sm:flex-1">
-            {tr("Devenir partenaire")}
-          </a>
-          <a href="#programme" className="inline-flex min-h-12 w-full items-center justify-center rounded-2xl border border-line px-5 text-sm font-semibold sm:flex-1">
-            {tr("Comprendre le programme")}
-          </a>
-        </div>
-
-        <HSlide auto={false} label={tr("Vision")}>
-          <Panel>
-            <h2 className="font-display text-xl font-semibold">{tr("Vision")}</h2>
-            <p className="mt-3 text-sm text-muted">{tr(narrative.vision[0])}</p>
-          </Panel>
-          <Panel>
-            <h2 className="font-display text-xl font-semibold">{tr("Mission")}</h2>
-            <p className="mt-3 text-sm text-muted">{tr(narrative.mission[0])}</p>
-          </Panel>
-          <Panel>
-            <h2 className="font-display text-xl font-semibold">{tr("Objectif")}</h2>
-            <p className="mt-3 text-sm text-muted">{tr(narrative.vision[2])}</p>
-          </Panel>
-        </HSlide>
-
-        <Panel className="border-gold/50">
-          <p className="text-sm font-semibold text-gold">{tr("Partenaires")}</p>
-          <p className="mt-1 text-sm text-muted">{tr("La demande se fait ici. L'investissement se fait sur SidraStart.")}</p>
-        </Panel>
-
-        <PathBoard here="partner" auto={false} />
-
-        <section id="programme" className="scroll-mt-24">
-          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Programme")}</p>
-          <h2 className="mt-2 font-display text-2xl font-semibold leading-tight md:text-3xl">
+      <section className="border-b border-line">
+        <div className="mx-auto w-full max-w-lg px-5 py-8 md:max-w-3xl md:py-10">
+          <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">{tr("Devenir partenaire")}</p>
+          <h1 className="mt-2 font-display text-3xl font-semibold leading-tight">
             {tr("Partenaires et investisseurs WIKENVA")}
-          </h2>
+          </h1>
           <p className="mt-4 inline-flex rounded-full border border-gold/50 px-4 py-2 text-sm font-semibold text-gold">
             {tr("2 000 SDA pour demander le partenariat")}
           </p>
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
-            <article className="rounded-3xl border border-gold/40 bg-panel p-5">
-              <p className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">{tr("Partenaires")}</p>
-              <h3 className="mt-2 text-lg font-semibold">{tr("Avantages")}</h3>
-              <ul className="mt-3 grid gap-2">
-                {[
-                  "Publication gratuite d'articles.",
-                  "Création d'une boutique en ligne gratuite.",
-                  "Accès aux fonctionnalités Premium.",
-                  "Possibilité de participer au programme de partage des revenus, selon les conditions officielles.",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed">
-                    <span className="text-gold" aria-hidden>✓</span>
-                    <span>{tr(item)}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-3 text-sm text-muted">{tr("15 % des revenus sont prévus pour le partenariat, et 3 % pour la zakat.")}</p>
-              <h3 className="mt-5 text-lg font-semibold">{tr("Comment devenir partenaire ?")}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {tr("Toute personne intéressée peut contribuer au projet Digital Marketplace Ebook Halal sur SidraStart, depuis son propre compte.")}
-              </p>
-              <ul className="mt-3 grid gap-2 text-sm leading-relaxed text-muted">
-                <li>{tr("Toute contribution est possible, quel que soit son montant.")}</li>
-                <li>{tr("À partir de 2 000 SDA, le contributeur peut demander à devenir partenaire, sous réserve de validation.")}</li>
-                <li>{tr("Les contributions se font directement sur SidraStart, jamais auprès d'un membre de WIKENVA.")}</li>
-              </ul>
-              <a href="#candidature" className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold tracking-wide text-ink uppercase">
-                {tr("Devenir partenaire")}
-              </a>
-            </article>
-            <article className="rounded-3xl border border-line bg-panel p-5">
-              <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">{tr("Investisseurs")}</p>
-              <h3 className="mt-2 text-lg font-semibold">{tr("Programme de partage des revenus")}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
-                {tr("Les contributeurs qui investissent plus de 2 000 SDA pourront être éligibles au programme de partage des revenus de la plateforme.")}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {tr("Le montant sera calculé selon le montant investi et les modalités officielles, qui seront publiées ultérieurement.")}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {tr("Les règles de calcul, les conditions d'éligibilité et les modalités de distribution seront communiquées prochainement.")}
-              </p>
-              <p className="mt-3 rounded-2xl border border-line px-4 py-3 text-sm leading-relaxed">
-                {tr("Les dividendes ne sont pas garantis. Ils dépendent des revenus réellement générés et des conditions officielles du programme.")}
-              </p>
-              <ExternalLink href={site.investUrl ?? ""} variant="gold" className="mt-5 w-full uppercase tracking-wide">
-                {tr("Contribuer sur SidraStart")}
-              </ExternalLink>
-            </article>
+          <p className="mt-4 text-sm leading-relaxed text-muted">
+            {tr("Toute personne intéressée peut contribuer au projet Digital Marketplace Ebook Halal sur SidraStart, depuis son propre compte.")}
+          </p>
+
+          <div className="mt-6 grid gap-3">
+            {advantages.map(([Icon, label]) => (
+              <article key={label} className="flex items-center gap-4 rounded-2xl border border-line bg-panel px-4 py-4">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-ink text-gold">
+                  <Icon className="size-5" aria-hidden />
+                </span>
+                <p className="text-sm font-semibold leading-snug">{tr(label)}</p>
+              </article>
+            ))}
           </div>
-        </section>
 
-        <section className="scroll-mt-24">
-          <h2 className="font-display text-2xl font-semibold">{tr("Le parcours")}</h2>
-          <HSlide auto={false} className="mt-4" label={tr("Le parcours")}>
-            <Step icon={Compass} index="1" title="Lire les conditions." text="Cette page explique la promotion. Elle ne valide aucune demande." />
-            <Step icon={Megaphone} index="2" title="Ouvrir SidraStart." text="La fiche s'appelle Digital Marketplace Ebook." />
-            <Step icon={Wallet} index="3" title="Investir 2 000 SDA." text="Depuis votre compte, jusqu'au 30 novembre 2026." />
-            <Step icon={ShieldCheck} index="4" title="Envoyer la demande." text="Indiquez votre nom et votre e-mail. Ne donnez jamais une clé privée." />
-            <Step icon={ShieldCheck} index="5" title="Attendre la confirmation." text="Un CEO décide. Rien n'est accordé automatiquement." />
-          </HSlide>
-        </section>
-
-        <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("L'affiche des avantages")}</h2>
-          <img
-            src="/media/wikenva-avantages-partenaires.png"
-            alt={tr("Affiche des avantages prévus pour les partenaires WIKENVA à 2 000 SDA")}
-            width={1080}
-            height={1080}
-            className="mt-4 w-full max-w-sm rounded-2xl border border-line"
-          />
-        </section>
-
-        <PromotionClock />
-
-        <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("À savoir")}</h2>
-          <ul className="mt-3 grid gap-2 text-sm text-muted">
-            <li>{tr("WIKENVA est une marketplace d'ebooks licites.")}</li>
-            <li>{tr("3 % des revenus sont destinés à la zakat.")}</li>
-            <li>{tr("Aucun rendement n'est garanti.")}</li>
-            <li>{tr("Aucune certification charia n'est publiée ici.")}</li>
+          <h2 className="mt-8 text-lg font-semibold">{tr("Conditions")}</h2>
+          <ul className="mt-3 grid gap-2 text-sm leading-relaxed text-muted">
+            <li className="rounded-2xl border border-line px-4 py-3">{tr("Toute contribution est possible, quel que soit son montant.")}</li>
+            <li className="rounded-2xl border border-gold/40 bg-panel px-4 py-3 text-fg">
+              {tr("À partir de 2 000 SDA, le contributeur peut demander à devenir partenaire, sous réserve de validation.")}
+            </li>
+            <li className="rounded-2xl border border-line px-4 py-3">
+              {tr("Les contributeurs qui investissent plus de 2 000 SDA pourront être éligibles au programme de partage des revenus de la plateforme.")}
+            </li>
           </ul>
-        </section>
 
+          <h2 className="mt-8 text-lg font-semibold">{tr("Trois étapes")}</h2>
+          <ol className="mt-3 grid gap-3">
+            {steps.map(([index, title, text]) => (
+              <li key={index} className="flex gap-3 rounded-2xl border border-line bg-panel p-4">
+                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-gold text-sm font-semibold text-ink">{index}</span>
+                <div>
+                  <p className="font-semibold">{tr(title)}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">{tr(text)}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-6 grid gap-3">
+            <a href="#candidature" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-ink">
+              {tr("Devenir partenaire")}
+            </a>
+            <ExternalLink href={site.investUrl ?? ""} className="w-full">
+              {tr("Contribuer sur SidraStart")}
+            </ExternalLink>
+          </div>
+
+          <p className="mt-5 rounded-2xl border border-line bg-panel px-4 py-3 text-sm leading-relaxed text-muted">
+            {tr("Les dividendes ne sont pas garantis. Ils dépendent des revenus réellement générés et des conditions officielles du programme.")}{" "}
+            {tr("Les règles de calcul, les conditions d'éligibilité et les modalités de distribution seront communiquées prochainement.")}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            {tr("15 % des revenus sont prévus pour le partenariat, et 3 % pour la zakat.")}
+          </p>
+        </div>
+      </section>
+      <div className="mx-auto grid w-full min-w-0 max-w-lg gap-8 px-5 py-8 md:max-w-3xl md:px-8">
+        <PromotionClock />
         <PartnerForm />
         <PartnerLookupPanel />
         <Faq />
       </div>
     </SiteShell>
-  );
-}
-
-function Step({
-  icon: Icon,
-  index,
-  title,
-  text,
-}: {
-  icon: typeof Compass;
-  index: string;
-  title: string;
-  text: string;
-}) {
-  const tr = useTr();
-  return (
-    <article className="rounded-3xl border border-line bg-panel p-5">
-      <div className="flex items-center gap-3">
-        <span className="grid size-10 place-items-center rounded-full bg-ink text-gold">
-          <Icon aria-hidden className="size-5" />
-        </span>
-        <span className="text-sm font-semibold text-gold">{index}</span>
-      </div>
-      <h3 className="mt-4 font-display text-xl font-semibold">{tr(title)}</h3>
-      <p className="mt-2 text-sm text-muted">{tr(text)}</p>
-    </article>
   );
 }
 
