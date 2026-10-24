@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { goals, isPending, narrative, pageMeta } from "@/content/site";
+import { goals, isPending, narrative, pageMeta, site } from "@/content/site";
 import { useTr } from "@/lib/locale";
 import { DocumentList, InvestActions, Roadmap } from "@/components/site/blocks";
 import { PathBoard } from "@/components/site/paths";
