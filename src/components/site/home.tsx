@@ -32,34 +32,46 @@ export function HomePage() {
           </div>
           <nav className="mt-6" aria-label={tr("Découvrir maintenant")}>
             <p className="text-sm font-semibold tracking-wide">{tr("Découvrir maintenant")}</p>
-            <ChevronDown className="mx-auto mt-2 size-4 stroke-[1.75] text-gold" aria-hidden />
-            <ChevronDown className="-mt-1.5 mx-auto size-4 stroke-[1.75] text-gold/70" aria-hidden />
+            <div className="mt-3 flex flex-col items-center" aria-hidden>
+              <span className="h-3 w-px bg-gold/80" />
+              <ChevronDown className="-mt-1 size-4 stroke-[1.75] text-gold" />
+            </div>
             <div className="mt-4 grid grid-cols-2 gap-3">
               <a
                 href={site.investUrl ?? ""}
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-gold/50 bg-panel px-3 py-4 text-sm font-semibold"
+                className="flex min-h-[4.5rem] flex-col items-center justify-center gap-1.5 rounded-2xl border border-gold/50 bg-panel px-3 py-3 text-sm font-semibold active:scale-[0.98]"
               >
-                <Wallet className="size-5 stroke-[1.75] text-gold" aria-hidden />
+                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
+                  <Wallet className="size-4 stroke-[1.75]" aria-hidden />
+                </span>
                 SidraStart
               </a>
               <Link
                 to="/presentation"
-                className="flex min-h-24 flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-panel px-3 py-4 text-center text-sm font-semibold leading-tight"
+                className="flex min-h-[4.5rem] flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-panel px-3 py-3 text-center text-sm font-semibold leading-tight active:scale-[0.98]"
               >
-                <Store className="size-5 stroke-[1.75] text-gold" aria-hidden />
+                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
+                  <Store className="size-4 stroke-[1.75]" aria-hidden />
+                </span>
                 {tr("Marketplace WIKENVA")}
               </Link>
             </div>
             <Link
               to="/sidrachain"
-              className="mx-auto mt-3 flex min-h-24 w-[calc(50%-0.375rem)] flex-col items-center justify-center gap-2 rounded-2xl border border-line bg-panel px-3 py-4 text-sm font-semibold"
+              className="mx-auto mt-3 flex min-h-[4.5rem] w-[calc(50%-0.375rem)] flex-col items-center justify-center gap-1.5 rounded-2xl border border-line bg-panel px-3 py-3 text-sm font-semibold active:scale-[0.98]"
             >
-              <Blocks className="size-5 stroke-[1.75] text-gold" aria-hidden />
+              <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
+                <Blocks className="size-4 stroke-[1.75]" aria-hidden />
+              </span>
               SidraChain
             </Link>
-            <p className="mt-5 font-display text-xl font-semibold tracking-[0.28em] text-gold">WIKENVA</p>
+            <div className="mt-5 flex items-center gap-3">
+              <span className="h-px flex-1 bg-gold/35" aria-hidden />
+              <p className="font-display text-lg font-semibold tracking-[0.28em] text-gold">WIKENVA</p>
+              <span className="h-px flex-1 bg-gold/35" aria-hidden />
+            </div>
           </nav>
         </div>
       </section>
