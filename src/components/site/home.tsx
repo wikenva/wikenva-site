@@ -25,7 +25,8 @@ export function HomePage() {
           <div className="mx-auto mt-5 h-px w-12 bg-gold" aria-hidden />
           <PartnerButton className="mt-6 min-h-12 w-full text-base" />
           <div className="mt-5 rounded-2xl border border-gold/40 bg-panel px-3 py-4">
-            <p className="text-sm font-semibold tracking-wide text-gold">{tr("2 000 SDA · jusqu'au 30 novembre 2026")}</p>
+            <p className="text-sm font-semibold">{tr("Temps restant pour demander le partenariat")}</p>
+            <p className="mt-1 text-sm font-semibold tracking-wide text-gold">{tr("2 000 SDA · jusqu'au 30 novembre 2026")}</p>
             <div className="mx-auto mt-3 max-w-xs">
               <PromotionClock compact />
             </div>
