@@ -1141,6 +1141,8 @@ export const en: Record<string, string> = {
   "La demande se fait ici. L'investissement se fait sur SidraStart.": "The request is made here. The investment is made on SidraStart.",
   "L'investissement se fait sur SidraStart. La demande est vérifiée, et aucun rendement n'est promis.": "The investment is made on SidraStart. The request is checked, and no yield is promised.",
   "15 % des revenus sont prévus pour le partenariat, et 3 % pour la zakat.": "15% of revenue is planned for the partnership, and 3% for zakat.",
+  "Une part de 15 % des revenus est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.": "A 15% share of revenue is planned for the partnership. A 3% share is being considered for zakat. This does not replace anyone's personal zakat, and the rules will be published before any distribution.",
+  "Une part de 15 % est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Aucun rendement promis.": "A 15% share is planned for the partnership. A 3% share is being considered for zakat. No yield is promised.",
   "Lire les conditions.": "Read the conditions.",
   "Cette page explique la promotion. Elle ne valide aucune demande.": "This page explains the promotion. It does not approve any request.",
   "Ouvrir SidraStart.": "Open SidraStart.",
