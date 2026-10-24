@@ -176,7 +176,7 @@ function sendGmail(mail: OutboundMail, user: string, pass: string) {
     const timer = setTimeout(() => {
       socket.destroy();
       resolve(false);
-    }, 8000);
+    }, 20000);
     const done = (ok: boolean) => {
       clearTimeout(timer);
       socket.end();
