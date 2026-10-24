@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { ChevronRight } from "lucide-react";
+import { BookOpen, ChevronRight } from "lucide-react";
 import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
@@ -17,7 +17,7 @@ export function HomePage() {
   return (
     <>
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-md px-5 py-12 text-center md:py-16">
+        <div className="mx-auto w-full max-w-md px-5 py-8 text-center md:py-10">
           <p className="text-xs font-semibold tracking-[0.28em] text-gold uppercase">WIKENVA</p>
           <h1 className="mx-auto mt-4 font-display text-[1.7rem] font-semibold leading-tight md:text-4xl">
             {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
@@ -30,29 +30,25 @@ export function HomePage() {
               <PromotionClock compact />
             </div>
           </div>
-          <div className="mt-10 grid gap-3 text-left">
-            <a href="#decouvrir" className="mr-6 flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-line px-4 text-sm font-semibold">
+          <div className="mt-6 grid gap-3 text-left">
+            <a href="#decouvrir" className="flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-line px-4 text-sm font-semibold">
               <span>{text.discover}</span>
-              <span className="grid size-7 shrink-0 place-items-center rounded-full border border-gold/50 text-gold" aria-hidden>
-                <ChevronRight className="size-4" />
-              </span>
+              <ChevronRight className="size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
             </a>
-            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="ml-6 flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-line px-4 text-sm font-semibold">
+            <a href={site.investUrl ?? ""} target="_blank" rel="noreferrer" className="flex min-h-12 items-center justify-between gap-3 rounded-2xl border border-gold/70 bg-panel px-4 text-sm font-semibold text-gold">
               <span>{text.invest}</span>
-              <span className="grid size-7 shrink-0 place-items-center rounded-full border border-gold/50 text-gold" aria-hidden>
-                <ChevronRight className="size-4" />
-              </span>
+              <ChevronRight className="size-4 shrink-0 stroke-[1.75]" aria-hidden />
             </a>
           </div>
         </div>
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-xl px-5 py-8 md:px-8">
+        <div className="mx-auto w-full max-w-xl px-5 py-6 md:px-8">
           <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Actualités")}</p>
           <h2 className="mt-1 text-base font-semibold">{tr("Ce qui est confirmé")}</h2>
           <NewsCarousel />
-          <TextLink to="/actualites" variant="ghost" className="mt-3 w-full">
+          <TextLink to="/actualites" variant="ghost" className="mt-4 w-full">
             {tr("Toutes les actualités")}
           </TextLink>
         </div>
@@ -60,6 +56,7 @@ export function HomePage() {
 
       <Section
         id="decouvrir"
+        className="py-8 md:py-10"
         eyebrow="Découvrir"
         title="Découvrir WIKENVA"
         lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert."
@@ -75,11 +72,14 @@ export function HomePage() {
           <PlatformButton variant="ghost" className="w-full" />
         </div>
         <div className="mt-6 overflow-hidden rounded-2xl border border-line bg-panel">
-          <div className="px-4 py-3.5">
-            <p className="text-base font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
-            <p className="mt-1 text-xs leading-relaxed text-muted">
-              {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
-            </p>
+          <div className="flex items-start gap-3 px-4 py-3.5">
+            <BookOpen className="mt-0.5 size-5 shrink-0 stroke-[1.75] text-gold" aria-hidden />
+            <div>
+              <p className="text-base font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted">
+                {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
+              </p>
+            </div>
           </div>
           <div className="border-t border-line px-4 py-3">
             <TextLink to="/presentation" className="w-full">
@@ -284,7 +284,7 @@ function NewsCarousel() {
       aria-label={tr("Actualités WIKENVA")}
     >
       <div
-        className="relative h-[7.25rem] overflow-hidden rounded-2xl border border-line bg-panel"
+        className="relative h-36 overflow-hidden rounded-2xl border border-line bg-panel"
         style={{ touchAction: "pan-y" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -304,7 +304,7 @@ function NewsCarousel() {
               <Link
                 to="/actualites/$slug"
                 params={{ slug: item.slug }}
-                className="flex h-full items-center gap-3 px-4 pb-5"
+                className="flex h-full items-start gap-3 px-4 py-4"
               >
                 <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-xl border border-gold/30 bg-gold/10 text-gold">
                   <NewsMark slug={item.slug} />
@@ -313,9 +313,7 @@ function NewsCarousel() {
                   <span className="block text-[10px] font-semibold tracking-[0.14em] text-gold uppercase">{tr(item.date)}</span>
                   <span className="mt-1 line-clamp-2 text-[15px] leading-snug font-semibold text-balance">{tr(item.title)}</span>
                 </span>
-                <span aria-hidden className="shrink-0 text-lg leading-none text-gold">
-                  ›
-                </span>
+                <ChevronRight className="mt-1 size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
               </Link>
             </article>
           ))}
