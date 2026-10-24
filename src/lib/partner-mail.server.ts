@@ -1,5 +1,6 @@
 import tls from "node:tls";
 import type { PartnerStatus } from "@/lib/partner";
+import { logoMailPng } from "./logo-mail.embedded.ts";
 
 export const adminGmail = "contact.wikenva@gmail.com";
 
@@ -74,6 +75,12 @@ export function candidateDecisionMail(input: {
         "Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.",
         "https://www.wikenva-platforme.com/espace",
         "",
+        "Réseaux WIKENVA",
+        "Facebook : https://www.facebook.com/people/Wikenva/61594737553362/",
+        "WhatsApp : https://whatsapp.com/channel/0029Vb9KneTEgGfK0t46G00V",
+        "Telegram : https://t.me/+-vHI1dIZj-xlMzE0",
+        "X : https://x.com/Wikenva",
+        "",
         "WIKENVA",
       ].join("\n"),
       html: approvedHtml(line(input.name), reference),
@@ -103,15 +110,24 @@ function approvedHtml(name: string, reference: string) {
   return `<!DOCTYPE html><html><body style="margin:0;background:#07111f;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#07111f;padding:28px 12px;">
 <tr><td align="center">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:460px;background:#10233a;border:1px solid #d4b06a;border-radius:20px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:460px;background:#10233a;border-radius:20px;">
 <tr><td style="padding:28px 22px;font-family:Georgia,serif;color:#ffffff;text-align:center;">
-<p style="margin:0;"><img src="https://www.wikenva-platforme.com/media/logo-mark-mail.png" alt="WIKENVA" width="150" height="82" style="display:block;margin:0 auto;border:0;outline:none;background:transparent;"></p>
+<p style="margin:0;"><img src="cid:wikenva-logo" alt="WIKENVA" width="220" style="display:block;margin:0 auto;border:0;outline:none;"></p>
 <p style="margin:18px 0 0;font-size:32px;line-height:1.2;color:#f3d48a;font-weight:bold;">VALIDÉ 🎉🎉🎉</p>
 <p style="margin:16px 0 0;font-size:18px;line-height:1.45;">Vous êtes maintenant partenaire de WIKENVA.</p>
 <p style="margin:8px 0 0;color:#c9d4e3;font-size:14px;">Bonjour ${safeName}</p>
 <p style="margin:18px auto 0;display:inline-block;border:1px solid #d4b06a;border-radius:999px;padding:8px 16px;color:#f3d48a;letter-spacing:0.08em;font-size:14px;">${reference}</p>
 <p style="margin:18px 0 0;font-size:15px;line-height:1.5;color:#e8eef6;">Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.</p>
 <p style="margin:22px 0 0;"><a href="https://www.wikenva-platforme.com/espace" style="display:inline-block;background:#f6c453;background-image:linear-gradient(180deg,#fff1c2 0%,#f6c453 42%,#c8962e 100%);color:#1a1408;text-decoration:none;font-weight:bold;letter-spacing:0.03em;border:1px solid #ffe7a3;border-radius:999px;padding:14px 28px;">Découvrir WIKENVA</a></p>
+<p style="margin:22px 0 0;font-size:13px;line-height:1.8;">
+<a href="https://www.facebook.com/people/Wikenva/61594737553362/" style="color:#f3d48a;text-decoration:none;">Facebook</a>
+&nbsp;·&nbsp;
+<a href="https://whatsapp.com/channel/0029Vb9KneTEgGfK0t46G00V" style="color:#f3d48a;text-decoration:none;">WhatsApp</a>
+&nbsp;·&nbsp;
+<a href="https://t.me/+-vHI1dIZj-xlMzE0" style="color:#f3d48a;text-decoration:none;">Telegram</a>
+&nbsp;·&nbsp;
+<a href="https://x.com/Wikenva" style="color:#f3d48a;text-decoration:none;">X</a>
+</p>
 </td></tr></table>
 </td></tr></table></body></html>`;
 }
@@ -144,19 +160,46 @@ async function sendResend(mail: OutboundMail, key: string) {
   }
 }
 
+function logoBytes() {
+  return Buffer.from(logoMailPng, "base64");
+}
+
+function b64(value: Buffer | string) {
+  return Buffer.from(value).toString("base64").replace(/.{1,76}/g, "$&\r\n").trim();
+}
+
 function messageBody(mail: OutboundMail, user: string) {
-  const content = mail.html ?? mail.text;
-  const type = mail.html ? "text/html" : "text/plain";
-  return [
+  const headers = [
     `From: WIKENVA <${user}>`,
     `To: ${mail.to}`,
     `Subject: ${mail.subject}`,
     "MIME-Version: 1.0",
-    `Content-Type: ${type}; charset=UTF-8`,
-    "",
-    content.replace(/^\./gm, ".."),
-    ".",
-  ].join("\r\n");
+  ];
+  const logo = mail.html ? logoBytes() : null;
+  if (mail.html && logo) {
+    return [
+      ...headers,
+      'Content-Type: multipart/related; boundary="wikenva"',
+      "",
+      "--wikenva",
+      "Content-Type: text/html; charset=UTF-8",
+      "Content-Transfer-Encoding: base64",
+      "",
+      b64(mail.html),
+      "--wikenva",
+      "Content-Type: image/png",
+      "Content-Transfer-Encoding: base64",
+      "Content-ID: <wikenva-logo>",
+      'Content-Disposition: inline; filename="wikenva.png"',
+      "",
+      b64(logo),
+      "--wikenva--",
+      ".",
+    ].join("\r\n");
+  }
+  const content = mail.html ?? mail.text;
+  const type = mail.html ? "text/html" : "text/plain";
+  return [...headers, `Content-Type: ${type}; charset=UTF-8`, "", content.replace(/^\./gm, ".."), "."].join("\r\n");
 }
 
 function sendGmail(mail: OutboundMail, user: string, pass: string) {
