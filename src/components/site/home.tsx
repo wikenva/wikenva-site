@@ -111,7 +111,7 @@ export function HomePage() {
             <div>
               <p className="text-sm font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
               <p className="mt-1 text-sm leading-relaxed text-muted">
-                {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
+                {tr("Les sept espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
               </p>
             </div>
           </div>
