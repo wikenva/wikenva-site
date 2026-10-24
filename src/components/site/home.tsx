@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { BookOpen, ChevronRight } from "lucide-react";
+import { BookOpen, ChevronRight, Users } from "lucide-react";
 import { narrative, news, site } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { useLang, useTr } from "@/lib/locale";
@@ -56,33 +56,34 @@ export function HomePage() {
 
       <Section
         id="decouvrir"
-        className="py-8 md:py-10"
+        className="py-6 md:py-8"
         eyebrow="Découvrir"
         title="Découvrir WIKENVA"
         lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert."
       >
         <RoleBoard />
-        <div className="mt-5 flex flex-col gap-3">
-          <TextLink to="/vision" className="w-full">
+        <div className="mt-4 flex flex-col gap-2">
+          <TextLink to="/vision" className="min-h-12 w-full rounded-2xl">
             {tr("En savoir plus")}
           </TextLink>
-          <TextLink to="/communaute" variant="ghost" className="w-full">
+          <TextLink to="/communaute" variant="ghost" className="min-h-12 w-full rounded-2xl border-white/15 font-medium text-muted">
+            <Users className="size-4 stroke-[1.75]" aria-hidden />
             {text.community}
           </TextLink>
-          <PlatformButton variant="ghost" className="w-full" />
+          <PlatformButton variant="ghost" className="min-h-12 w-full rounded-2xl border-white/15 font-medium text-muted" />
         </div>
-        <div className="mt-6 overflow-hidden rounded-2xl border border-line bg-panel">
-          <div className="flex items-start gap-3 px-4 py-3.5">
-            <BookOpen className="mt-0.5 size-5 shrink-0 stroke-[1.75] text-gold" aria-hidden />
+        <div className="mt-4 overflow-hidden rounded-2xl border border-line bg-panel">
+          <div className="flex items-start gap-3 px-4 py-3">
+            <BookOpen className="mt-0.5 size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
             <div>
-              <p className="text-base font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
+              <p className="text-sm font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
               <p className="mt-1 text-sm leading-relaxed text-muted">
                 {tr("Les six espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
               </p>
             </div>
           </div>
-          <div className="border-t border-line px-4 py-3">
-            <TextLink to="/presentation" className="w-full">
+          <div className="border-t border-line px-3 py-3">
+            <TextLink to="/presentation" className="min-h-12 w-full rounded-2xl">
               {tr("Voir la présentation")}
             </TextLink>
           </div>
