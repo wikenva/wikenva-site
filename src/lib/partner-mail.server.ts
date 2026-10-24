@@ -105,13 +105,13 @@ function approvedHtml(name: string, reference: string) {
 <tr><td align="center">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:460px;background:#10233a;border:1px solid #d4b06a;border-radius:20px;">
 <tr><td style="padding:28px 22px;font-family:Georgia,serif;color:#ffffff;text-align:center;">
-<p style="margin:0;"><img src="https://www.wikenva-platforme.com/media/logo-mark-ui.webp" alt="WIKENVA" width="168" height="93" style="display:block;margin:0 auto;border:0;background:transparent;"></p>
+<p style="margin:0;"><img src="https://www.wikenva-platforme.com/media/logo-mark-mail.png" alt="WIKENVA" width="150" height="82" style="display:block;margin:0 auto;border:0;outline:none;background:transparent;"></p>
 <p style="margin:18px 0 0;font-size:32px;line-height:1.2;color:#f3d48a;font-weight:bold;">VALIDÉ 🎉🎉🎉</p>
 <p style="margin:16px 0 0;font-size:18px;line-height:1.45;">Vous êtes maintenant partenaire de WIKENVA.</p>
 <p style="margin:8px 0 0;color:#c9d4e3;font-size:14px;">Bonjour ${safeName}</p>
 <p style="margin:18px auto 0;display:inline-block;border:1px solid #d4b06a;border-radius:999px;padding:8px 16px;color:#f3d48a;letter-spacing:0.08em;font-size:14px;">${reference}</p>
 <p style="margin:18px 0 0;font-size:15px;line-height:1.5;color:#e8eef6;">Restez connecté pour les mises à jour à venir, et pour découvrir l'espace de la plateforme WIKENVA.</p>
-<p style="margin:22px 0 0;"><a href="https://www.wikenva-platforme.com/espace" style="display:inline-block;background:#d4b06a;color:#10233a;text-decoration:none;font-weight:bold;border-radius:999px;padding:12px 22px;">Découvrir WIKENVA</a></p>
+<p style="margin:22px 0 0;"><a href="https://www.wikenva-platforme.com/espace" style="display:inline-block;background:#f6c453;background-image:linear-gradient(180deg,#fff1c2 0%,#f6c453 42%,#c8962e 100%);color:#1a1408;text-decoration:none;font-weight:bold;letter-spacing:0.03em;border:1px solid #ffe7a3;border-radius:999px;padding:14px 28px;">Découvrir WIKENVA</a></p>
 </td></tr></table>
 </td></tr></table></body></html>`;
 }
