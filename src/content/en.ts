@@ -870,6 +870,7 @@ export const en: Record<string, string> = {
   "Ce qui est confirmé": "What is confirmed",
   "Découvrir maintenant": "Discover now",
   "Marketplace": "Marketplace",
+  "Marketplace WIKENVA": "WIKENVA Marketplace",
   "2 000 SDA jusqu'au 30 novembre 2026": "2,000 SDA until 30 November 2026",
   "Avant d'investir sur SidraStart": "Before investing on SidraStart",
   "Mission et vision": "Mission and vision",
