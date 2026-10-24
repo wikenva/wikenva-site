@@ -178,15 +178,6 @@ html.is-ready #boot {
   }
 }
 
-@keyframes news-run {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 .role-in {
   animation: role-in 0.35s ease;
 }
