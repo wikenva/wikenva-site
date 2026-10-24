@@ -1153,6 +1153,7 @@ export const en: Record<string, string> = {
   "Envoyer la demande": "Send the request",
   "Nom, e-mail, pays et le hash de transaction. Jamais de clé privée.": "Name, email, country and the transaction hash. Never a private key.",
   "Hash de transaction": "Transaction hash",
+  "N'envoyez jamais votre clé privée ni votre phrase de récupération.": "Never send your private key or your recovery phrase.",
   "Indiquez le hash de transaction.": "Enter the transaction hash.",
   Pays: "Country",
   "Votre message": "Your message",
