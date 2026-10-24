@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check, Copy } from "lucide-react";
+import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Copy } from "lucide-react";
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import {
   categoryLabels,
@@ -497,7 +497,7 @@ export function RoleBoard() {
   return (
     <div
       role="tabpanel"
-      className="min-w-0 overflow-hidden rounded-2xl border border-gold/40 bg-panel p-5"
+      className="min-w-0 overflow-hidden rounded-2xl border border-gold/40 bg-panel p-4"
       style={{ touchAction: "pan-y" }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
@@ -506,7 +506,7 @@ export function RoleBoard() {
     >
       <div key={role.name} className="role-in">
         <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
-        <h3 className="mt-2 pr-2 font-display text-2xl font-semibold leading-tight">{tr(role.name)}</h3>
+        <h3 className="mt-2 pr-2 text-xl font-semibold leading-tight">{tr(role.name)}</h3>
         <p className="mt-3 text-base leading-relaxed break-words text-fg">{tr(role.detail)}</p>
       </div>
       <div className="mt-5 flex items-center gap-3">
@@ -515,9 +515,9 @@ export function RoleBoard() {
           aria-label={tr("Précédent")}
           disabled={active === 0}
           onClick={() => go(active - 1)}
-          className="grid size-11 shrink-0 place-items-center rounded-full border border-line text-xl text-gold disabled:opacity-30"
+          className="grid size-10 shrink-0 place-items-center rounded-full border border-line text-gold disabled:opacity-30"
         >
-          ‹
+          <ChevronLeft className="size-4 stroke-[1.75]" aria-hidden />
         </button>
         <div className="flex min-w-0 flex-1 gap-1.5" aria-hidden>
           {roles.map((item, index) => (
@@ -529,9 +529,9 @@ export function RoleBoard() {
           aria-label={tr("Suivant")}
           disabled={active === roles.length - 1}
           onClick={() => go(active + 1)}
-          className="grid size-11 shrink-0 place-items-center rounded-full bg-gold text-xl font-semibold text-ink disabled:opacity-30"
+          className="grid size-10 shrink-0 place-items-center rounded-full bg-gold text-ink disabled:opacity-30"
         >
-          ›
+          <ChevronRight className="size-4 stroke-[1.75]" aria-hidden />
         </button>
       </div>
     </div>
