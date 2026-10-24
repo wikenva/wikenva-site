@@ -34,26 +34,26 @@ export function HomePage() {
           <nav className="mt-5" aria-label={tr("Découvrir maintenant")}>
             <p className="text-sm font-semibold">{tr("Découvrir maintenant")}</p>
             <ChevronDown className="mx-auto mt-2 size-4 stroke-[1.75] text-gold" aria-hidden />
-            <div className="mt-3 grid grid-cols-3 gap-2">
+            <div className="mx-auto mt-3 grid w-[92%] grid-cols-3 gap-2">
               <a
                 href={site.investUrl ?? ""}
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
+                className="flex min-h-[4.6rem] min-w-0 flex-col items-center justify-start gap-1.5 rounded-xl border border-gold/40 bg-panel px-1 pt-2 pb-2 text-center active:scale-[0.98]"
               >
-                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
-                  <Wallet className="size-3.5 stroke-[1.75]" aria-hidden />
+                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
+                  <Wallet className="size-3 stroke-[1.75]" aria-hidden />
                 </span>
-                <span className="text-[11px] leading-tight font-semibold">SidraStart</span>
+                <span className="text-[10px] leading-tight font-semibold">SidraStart</span>
               </a>
               <Link
                 to="/presentation"
-                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
+                className="flex min-h-[4.6rem] min-w-0 flex-col items-center justify-start gap-1.5 rounded-xl border border-gold/40 bg-panel px-1 pt-2 pb-2 text-center active:scale-[0.98]"
               >
-                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
-                  <Store className="size-3.5 stroke-[1.75]" aria-hidden />
+                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
+                  <Store className="size-3 stroke-[1.75]" aria-hidden />
                 </span>
-                <span className="text-[11px] leading-tight font-semibold">
+                <span className="text-[10px] leading-tight font-semibold">
                   Marketplace
                   <br />
                   WIKENVA
@@ -61,12 +61,12 @@ export function HomePage() {
               </Link>
               <Link
                 to="/sidrachain"
-                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
+                className="flex min-h-[4.6rem] min-w-0 flex-col items-center justify-start gap-1.5 rounded-xl border border-gold/40 bg-panel px-1 pt-2 pb-2 text-center active:scale-[0.98]"
               >
-                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
-                  <Blocks className="size-3.5 stroke-[1.75]" aria-hidden />
+                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
+                  <Blocks className="size-3 stroke-[1.75]" aria-hidden />
                 </span>
-                <span className="text-[11px] leading-tight font-semibold">SidraChain</span>
+                <span className="text-[10px] leading-tight font-semibold">SidraChain</span>
               </Link>
             </div>
             <div className="mt-4 flex items-center gap-3">
