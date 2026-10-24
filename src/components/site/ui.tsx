@@ -46,6 +46,7 @@ export function PlatformButton({
         </button>
       ) : (
         <Button variant={variant} className={className} onClick={() => setOpen(true)}>
+          {variant === "ghost" ? <AppWindow aria-hidden className="size-4 shrink-0 stroke-[1.75]" /> : null}
           {text.platform}
         </Button>
       )}
