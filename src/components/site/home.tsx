@@ -293,15 +293,19 @@ function NewsCarousel() {
         onPointerCancel={onPointerUp}
       >
         <div
-          className="flex"
+          className={"flex " + (reduced || dragging ? "" : "transition-transform duration-700 ease-[cubic-bezier(.22,.8,.24,1)]")}
           style={{
             width: `${count * 100}%`,
             transform: `translate3d(calc(${(-index * 100) / count}% + ${offset}px), 0, 0)`,
-            transition: dragging || reduced ? "none" : "transform 480ms cubic-bezier(.22,.8,.24,1)",
           }}
         >
           {news.map((item, slide) => (
-            <article key={item.slug} className="shrink-0" style={{ width: `${100 / count}%` }} aria-hidden={slide !== index}>
+            <article
+              key={item.slug}
+              className={"shrink-0 " + (reduced ? "" : "transition-opacity duration-700 ") + (slide === index ? "opacity-100" : "opacity-40")}
+              style={{ width: `${100 / count}%` }}
+              aria-hidden={slide !== index}
+            >
               <Link
                 to="/actualites/$slug"
                 params={{ slug: item.slug }}
@@ -329,7 +333,7 @@ function NewsCarousel() {
             onClick={() => go(dot)}
             className="grid h-3 w-3 place-items-center"
           >
-            <span className={"block rounded-full " + (dot === index ? "h-1 w-3 bg-gold" : "h-1 w-1 bg-white/35")} />
+            <span className={"block rounded-full transition-all duration-500 " + (dot === index ? "h-1 w-4 bg-gold" : "h-1 w-1 bg-white/35")} />
           </button>
         ))}
       </div>
