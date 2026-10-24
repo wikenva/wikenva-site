@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Copy } from "lucide-react";
+import { ArrowUpRight, BookOpen, Boxes, Briefcase, Check, ChevronLeft, ChevronRight, Copy, PenLine, Sparkles, Users } from "lucide-react";
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import {
   categoryLabels,
@@ -464,6 +464,7 @@ export function RoleBoard() {
   const [active, setActive] = useState(0);
   const drag = useRef<{ x: number; y: number; locked: boolean | null } | null>(null);
   const role = roles[active];
+  const RoleIcon = [PenLine, BookOpen, Sparkles, Boxes, Briefcase, Users][active] ?? Users;
 
   function go(next: number) {
     setActive(Math.min(roles.length - 1, Math.max(0, next)));
@@ -504,10 +505,15 @@ export function RoleBoard() {
       onPointerUp={onPointerUp}
       onPointerCancel={onPointerUp}
     >
-      <div key={role.name} className="role-in">
-        <p className="text-xs font-semibold tracking-widest text-gold">0{active + 1}</p>
-        <h3 className="mt-1 text-xl font-semibold leading-tight">{tr(role.name)}</h3>
-        <p className="mt-1.5 text-sm leading-relaxed break-words text-fg">{tr(role.detail)}</p>
+      <div key={role.name} className="role-in flex items-center gap-3">
+        <span className="grid size-11 shrink-0 place-items-center rounded-2xl border border-gold/40 bg-ink text-gold">
+          <RoleIcon className="size-5 stroke-[1.75]" aria-hidden />
+        </span>
+        <div className="min-w-0">
+          <p className="text-[11px] font-semibold tracking-[0.16em] text-gold">0{active + 1}</p>
+          <h3 className="text-lg font-semibold leading-tight">{tr(role.name)}</h3>
+          <p className="mt-0.5 text-sm leading-snug text-muted">{tr(role.detail)}</p>
+        </div>
       </div>
       <div className="mt-4 flex items-center gap-3">
         <button
