@@ -868,6 +868,8 @@ export const en: Record<string, string> = {
   "La demande n'est pas l'investissement. Le statut n'est pas automatique.": "The request is not the investment. The status is not automatic.",
   "La page d'accueil": "The home page",
   "Ce qui est confirmé": "What is confirmed",
+  "Découvrir maintenant": "Discover now",
+  "Marketplace": "Marketplace",
   "2 000 SDA jusqu'au 30 novembre 2026": "2,000 SDA until 30 November 2026",
   "Avant d'investir sur SidraStart": "Before investing on SidraStart",
   "Mission et vision": "Mission and vision",
