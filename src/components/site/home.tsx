@@ -48,9 +48,9 @@ export function HomePage() {
               </a>
               <Link
                 to="/presentation"
-                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-gold/40 bg-panel px-1.5 pt-3 pb-2.5 text-center active:scale-[0.98]"
+                className="flex min-h-[5.5rem] min-w-0 flex-col items-center justify-start gap-2 rounded-2xl border border-[#f6c453] bg-[#f6c453] px-1.5 pt-3 pb-2.5 text-center text-ink shadow-[0_0_24px_rgba(246,196,83,0.45)] active:scale-[0.98]"
               >
-                <span className="grid size-8 place-items-center rounded-full border border-gold/40 text-gold">
+                <span className="grid size-8 place-items-center rounded-full bg-ink/10 text-ink">
                   <Store className="size-3.5 stroke-[1.75]" aria-hidden />
                 </span>
                 <span className="text-[11px] leading-tight font-semibold">
