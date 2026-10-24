@@ -7,7 +7,7 @@ import { useLang, useTr } from "@/lib/locale";
 import { RoleBoard } from "./blocks";
 import { PathBoard } from "./paths";
 import { PromotionClock } from "./promotion";
-import { PartnerButton, PlatformButton, Section, TextLink } from "./ui";
+import { PartnerButton, PlatformButton, Section, TextLink, ExternalLink } from "./ui";
 
 export function HomePage() {
   const { lang } = useLang();
@@ -124,42 +124,65 @@ export function HomePage() {
 
       <section id="partenariat" className="border-y border-line bg-panel/40 py-8">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Partenaires")}</p>
-          <h2 className="mt-2 text-xl font-semibold">{tr("Devenir partenaire")}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            {tr("Jusqu'au 30 novembre 2026. Minimum 2 000 SDA. La demande est vérifiée.")}
+          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Programme")}</p>
+          <h2 className="mt-2 font-display text-2xl font-semibold leading-tight md:text-3xl">
+            {tr("Partenaires et investisseurs WIKENVA")}
+          </h2>
+          <p className="mt-4 inline-flex rounded-full border border-gold/50 bg-ink px-4 py-2 text-sm font-semibold text-gold">
+            {tr("2 000 SDA pour demander le partenariat")}
           </p>
-          <ul className="mt-4 grid gap-2">
-            {[
-              "Publication gratuite des articles",
-              "Boutique en ligne gratuite",
-              "Fonctions Premium",
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-ink px-4 py-3 text-sm font-semibold">
-                <span className="text-gold" aria-hidden>
-                  ✓
-                </span>
-                {tr(item)}
-              </li>
-            ))}
-          </ul>
-          <ol className="mt-4 grid gap-2">
-            {[
-              "Lire les conditions.",
-              "Ouvrir la fiche SidraStart.",
-              "Investir au minimum 2 000 SDA depuis son compte.",
-              "Envoyer la demande. Ne jamais donner une clé privée.",
-              "Attendre la confirmation.",
-            ].map((item, index) => (
-              <li key={item} className="flex items-start gap-3 rounded-2xl border border-line bg-ink px-4 py-3">
-                <span className="font-semibold text-gold">{index + 1}</span>
-                <p className="text-sm leading-relaxed">{tr(item)}</p>
-              </li>
-            ))}
-          </ol>
-          <TextLink to="/partenaires" className="mt-4 w-full">
-            {tr("Devenir partenaire")}
-          </TextLink>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            <article className="rounded-3xl border border-gold/40 bg-ink p-5">
+              <p className="text-xs font-semibold tracking-[0.16em] text-gold uppercase">{tr("Partenaires")}</p>
+              <h3 className="mt-2 text-lg font-semibold">{tr("Avantages")}</h3>
+              <ul className="mt-3 grid gap-2">
+                {[
+                  "Publication gratuite d'articles.",
+                  "Création d'une boutique en ligne gratuite.",
+                  "Accès aux fonctionnalités Premium.",
+                  "Possibilité de participer au programme de partage des revenus, selon les conditions officielles.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm leading-relaxed">
+                    <span className="text-gold" aria-hidden>
+                      ✓
+                    </span>
+                    <span>{tr(item)}</span>
+                  </li>
+                ))}
+              </ul>
+              <h3 className="mt-5 text-lg font-semibold">{tr("Comment devenir partenaire ?")}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {tr("Toute personne intéressée peut contribuer au projet Digital Marketplace Ebook Halal sur SidraStart, depuis son propre compte.")}
+              </p>
+              <ul className="mt-3 grid gap-2 text-sm leading-relaxed text-muted">
+                <li>{tr("Toute contribution est possible, quel que soit son montant.")}</li>
+                <li>{tr("À partir de 2 000 SDA, le contributeur peut demander à devenir partenaire, sous réserve de validation.")}</li>
+                <li>{tr("Les contributions se font directement sur SidraStart, jamais auprès d'un membre de WIKENVA.")}</li>
+              </ul>
+              <TextLink to="/partenaires" className="mt-5 w-full uppercase tracking-wide">
+                {tr("Devenir partenaire")}
+              </TextLink>
+            </article>
+            <article className="rounded-3xl border border-line bg-ink p-5">
+              <p className="text-xs font-semibold tracking-[0.16em] text-muted uppercase">{tr("Investisseurs")}</p>
+              <h3 className="mt-2 text-lg font-semibold">{tr("Programme de partage des revenus")}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {tr("Les contributeurs qui investissent plus de 2 000 SDA pourront être éligibles au programme de partage des revenus de la plateforme.")}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {tr("Le montant sera calculé selon le montant investi et les modalités officielles, qui seront publiées ultérieurement.")}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {tr("Les règles de calcul, les conditions d'éligibilité et les modalités de distribution seront communiquées prochainement.")}
+              </p>
+              <p className="mt-3 rounded-2xl border border-line bg-panel px-4 py-3 text-sm leading-relaxed">
+                {tr("Les dividendes ne sont pas garantis. Ils dépendent des revenus réellement générés et des conditions officielles du programme.")}
+              </p>
+              <ExternalLink href={site.investUrl ?? ""} variant="gold" className="mt-5 w-full uppercase tracking-wide">
+                {tr("Contribuer sur SidraStart")}
+              </ExternalLink>
+            </article>
+          </div>
         </div>
       </section>
 
