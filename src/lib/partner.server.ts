@@ -108,6 +108,13 @@ export async function submitPartnerApplication(input: PartnerInput): Promise<Par
     };
   }
 
+  const reused = await sql<{ id: string }>`
+    select id from partner_applications
+    where lower(tx_ref) = ${txRef.toLowerCase()}
+    limit 1
+  `;
+  if (reused[0]) return { ...empty, error: "hash", duplicate: true };
+
   const id = `WK-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
   await sql`
     insert into partner_applications (
