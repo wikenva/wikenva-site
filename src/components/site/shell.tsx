@@ -180,34 +180,32 @@ function SiteSearch() {
   }, [pathname]);
 
   return (
-    <div className="border-t border-line/80">
-      <form className="relative mx-auto w-full max-w-6xl px-4 py-2 md:px-8" role="search" onSubmit={(event) => event.preventDefault()}>
-        <Search className="pointer-events-none absolute top-1/2 left-7 size-4 -translate-y-1/2 text-gold md:left-11" aria-hidden />
-        <input
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder={tr("Rechercher")}
-          aria-label={tr("Rechercher")}
-          className="h-10 w-full rounded-full border border-line bg-panel pr-4 pl-10 text-sm outline-none placeholder:text-faint focus:border-gold"
-        />
-        {q ? (
-          <ul className="absolute right-4 left-4 z-50 mt-2 overflow-hidden rounded-2xl border border-line bg-panel md:right-8 md:left-8">
-            {matches.length === 0 ? (
-              <li className="px-4 py-3 text-sm text-muted">{tr("Aucun résultat")}</li>
-            ) : (
-              matches.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="block px-4 py-3 hover:bg-ink">
-                    <span className="block text-sm font-semibold">{tr(item.label)}</span>
-                    <span className="mt-0.5 block text-xs text-muted">{tr(item.hint)}</span>
-                  </a>
-                </li>
-              ))
-            )}
-          </ul>
-        ) : null}
-      </form>
-    </div>
+    <form className="relative w-32 shrink-0 sm:w-48 lg:w-56" role="search" onSubmit={(event) => event.preventDefault()}>
+      <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-gold" aria-hidden />
+      <input
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+        placeholder={tr("Rechercher")}
+        aria-label={tr("Rechercher")}
+        className="h-9 w-full rounded-full border border-line bg-panel pr-3 pl-9 text-sm outline-none placeholder:text-faint focus:border-gold"
+      />
+      {q ? (
+        <ul className="absolute right-0 z-50 mt-2 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-line bg-panel">
+          {matches.length === 0 ? (
+            <li className="px-4 py-3 text-sm text-muted">{tr("Aucun résultat")}</li>
+          ) : (
+            matches.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="block px-4 py-3 hover:bg-ink">
+                  <span className="block text-sm font-semibold">{tr(item.label)}</span>
+                  <span className="mt-0.5 block text-xs text-muted">{tr(item.hint)}</span>
+                </a>
+              </li>
+            ))
+          )}
+        </ul>
+      ) : null}
+    </form>
   );
 }
 
@@ -262,7 +260,8 @@ function Shell({ children }: { children: ReactNode }) {
             ))}
             <MoreMenu />
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="ml-auto flex shrink-0 items-center gap-2">
+            <SiteSearch />
             <PartnerButton className="hidden px-4 lg:inline-flex" />
             <LanguageMenu />
             <button
@@ -277,7 +276,6 @@ function Shell({ children }: { children: ReactNode }) {
             </button>
           </div>
         </div>
-        <SiteSearch />
         {open ? (
           <nav id="menu-mobile" className="border-t border-line bg-ink lg:hidden" aria-label="Menu">
             <ul className="mx-auto w-full max-w-6xl px-6 py-3">
