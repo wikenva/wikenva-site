@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Phone, Search, Wallet, X } from "lucide-react";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { legalNav, mainNav, moreNav, news, socials } from "@/content/site";
+import { Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Phone, Wallet, X } from "lucide-react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { mainNav, moreNav, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { languages, useLang, useTr, type Lang } from "@/lib/locale";
@@ -142,73 +142,6 @@ function MoreMenu() {
   );
 }
 
-function SiteSearch() {
-  const tr = useTr();
-  const pathname = useRouterState({ select: (state) => state.location.pathname });
-  const [query, setQuery] = useState("");
-  const pages = useMemo(
-    () => [
-      { href: "/", label: "Accueil", hint: "La page d'accueil" },
-      { href: "/actualites", label: "Actualités", hint: "Ce qui est confirmé" },
-      { href: "/partenaires", label: "Partenaires", hint: "1 000 SDA jusqu'au 30 novembre 2026" },
-      { href: "/investisseurs", label: "Investisseurs", hint: "Avant d'investir sur SidraStart" },
-      { href: "/vision", label: "Vision", hint: "Mission et vision" },
-      { href: "/presentation", label: "Présentation", hint: "La plateforme en cours" },
-      { href: "/feuille-de-route", label: "Feuille de route", hint: "Les phases du projet" },
-      { href: "/token", label: "Token", hint: "Le token de la plateforme" },
-      { href: "/documents", label: "Documents", hint: "Documents officiels" },
-      { href: "/communaute", label: "Communauté", hint: "Contact et réseaux" },
-      { href: "/sidrachain", label: "SidraChain", hint: "L'écosystème SidraChain", keywords: "sidra blockchain" },
-      { href: "/sidrachain#fondateur", label: "Dr. Mohammed Al Jefairi", hint: "Fondateur présenté de SidraChain", keywords: "pdg ceo mj fondateur jefairi" },
-      { href: "/sidrachain#vision-sidrastart", label: "Vision de SidraStart", hint: "Découvrir un projet, investir depuis son compte", keywords: "sidrastart vision" },
-      { href: "/white-paper", label: "White paper", hint: "Le livre blanc" },
-      ...legalNav.map((item) => ({ href: item.to, label: item.label, hint: "Information légale" })),
-      ...news.map((item) => ({ href: `/actualites/${item.slug}`, label: item.title, hint: "Actualité" })),
-    ],
-    [],
-  );
-  const q = query.trim().toLowerCase();
-  const matches = q
-    ? pages.filter((item) => {
-        const blob = `${item.label} ${item.hint} ${"keywords" in item ? item.keywords : ""}`.toLowerCase();
-        return blob.includes(q) || tr(item.label).toLowerCase().includes(q) || tr(item.hint).toLowerCase().includes(q);
-      }).slice(0, 6)
-    : [];
-
-  useEffect(() => {
-    setQuery("");
-  }, [pathname]);
-
-  return (
-    <form className="relative w-44 shrink-0 sm:w-56" role="search" onSubmit={(event) => event.preventDefault()}>
-      <Search className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-gold" aria-hidden />
-      <input
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-        placeholder={tr("Rechercher")}
-        aria-label={tr("Rechercher")}
-        className="h-9 w-full rounded-full border border-line bg-panel pr-3 pl-9 text-sm outline-none placeholder:text-faint focus:border-gold"
-      />
-      {q ? (
-        <ul className="absolute right-0 z-50 mt-2 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-line bg-panel">
-          {matches.length === 0 ? (
-            <li className="px-4 py-3 text-sm text-muted">{tr("Aucun résultat")}</li>
-          ) : (
-            matches.map((item) => (
-              <li key={item.href}>
-                <a href={item.href} className="block px-4 py-3 hover:bg-ink">
-                  <span className="block text-sm font-semibold">{tr(item.label)}</span>
-                  <span className="mt-0.5 block text-xs text-muted">{tr(item.hint)}</span>
-                </a>
-              </li>
-            ))
-          )}
-        </ul>
-      ) : null}
-    </form>
-  );
-}
-
 function Shell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const [open, setOpen] = useState(false);
@@ -306,9 +239,6 @@ function Shell({ children }: { children: ReactNode }) {
           </nav>
         ) : null}
       </header>
-      <div className="mx-auto flex w-full max-w-6xl justify-end px-4 pt-3 md:px-8">
-        <SiteSearch />
-      </div>
       <main id="contenu" className="min-w-0 overflow-x-hidden">{children}</main>
       <footer className="border-t border-line bg-ink pb-8 text-fg print:hidden">
         <div className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8">
