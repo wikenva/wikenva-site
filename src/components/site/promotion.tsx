@@ -25,7 +25,7 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
         </p>
       ) : compact ? null : (
         <p className="mx-auto mt-4 max-w-[16rem] text-balance text-sm leading-relaxed text-muted">
-          {tr("Minimum 2 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.")}
+          {tr("Minimum 1 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.")}
         </p>
       )}
     </div>

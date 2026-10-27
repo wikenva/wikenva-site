@@ -150,7 +150,7 @@ function SiteSearch() {
     () => [
       { href: "/", label: "Accueil", hint: "La page d'accueil" },
       { href: "/actualites", label: "Actualités", hint: "Ce qui est confirmé" },
-      { href: "/partenaires", label: "Partenaires", hint: "2 000 SDA jusqu'au 30 novembre 2026" },
+      { href: "/partenaires", label: "Partenaires", hint: "1 000 SDA jusqu'au 30 novembre 2026" },
       { href: "/investisseurs", label: "Investisseurs", hint: "Avant d'investir sur SidraStart" },
       { href: "/vision", label: "Vision", hint: "Mission et vision" },
       { href: "/presentation", label: "Présentation", hint: "La plateforme en cours" },

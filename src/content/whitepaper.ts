@@ -240,8 +240,8 @@ export const paperSections: PaperSection[] = [
       {
         type: "p",
         text: t(
-          "Une campagne de contribution est présentée sur SidraStart. Le seuil indiqué pour la promotion en cours est de 2 000 SDA, selon les conditions officielles de cette campagne. La date de fin indiquée pour cette promotion est le 25 décembre 2026.",
-          "A contribution campaign is presented on SidraStart. The threshold shown for the current promotion is 2,000 SDA, under that campaign's official conditions. The end date stated for this promotion is 25 December 2026.",
+          "Une campagne de contribution est présentée sur SidraStart. Le seuil indiqué pour la promotion en cours est de 1 000 SDA, selon les conditions officielles de cette campagne. La date de fin indiquée pour cette promotion est le 25 décembre 2026.",
+          "A contribution campaign is presented on SidraStart. The threshold shown for the current promotion is 1,000 SDA, under that campaign's official conditions. The end date stated for this promotion is 25 December 2026.",
         ),
       },
       {

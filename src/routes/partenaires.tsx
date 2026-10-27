@@ -21,7 +21,7 @@ export const Route = createFileRoute("/partenaires")({
   head: () =>
     pageMeta(
       "Devenez partenaire de WIKENVA",
-      "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 2 000 SDA sur SidraStart.",
+      "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. Minimum promotionnel : 1 000 SDA sur SidraStart.",
     ),
   component: PartnersPage,
 });
@@ -42,7 +42,7 @@ function PartnersPage() {
   ] as const;
   const steps = [
     ["1", "Contribuer sur SidraStart", "Depuis votre propre compte. Jamais auprès d'un membre de WIKENVA."],
-    ["2", "Atteindre 2 000 SDA", "Ce seuil permet de demander le statut de partenaire. La demande est vérifiée."],
+    ["2", "Atteindre 1 000 SDA", "Ce seuil permet de demander le statut de partenaire. La demande est vérifiée."],
     ["3", "Envoyer la demande", "Le formulaire est sur cette page. Rien n'est accordé automatiquement."],
   ] as const;
   return (
@@ -54,7 +54,7 @@ function PartnersPage() {
             {tr("Partenaires et investisseurs WIKENVA")}
           </h1>
           <p className="mt-4 inline-flex rounded-full border border-gold/50 px-4 py-2 text-sm font-semibold text-gold">
-            {tr("2 000 SDA pour demander le partenariat")}
+            {tr("1 000 SDA pour demander le partenariat")}
           </p>
           <p className="mt-4 text-sm leading-relaxed text-muted">
             {tr("Toute personne intéressée peut contribuer au projet Digital Marketplace Ebook Halal sur SidraStart, depuis son propre compte.")}
@@ -75,10 +75,10 @@ function PartnersPage() {
           <ul className="mt-3 grid gap-2 text-sm leading-relaxed text-muted">
             <li className="rounded-2xl border border-line px-4 py-3">{tr("Toute contribution est possible, quel que soit son montant.")}</li>
             <li className="rounded-2xl border border-gold/40 bg-panel px-4 py-3 text-fg">
-              {tr("À partir de 2 000 SDA, le contributeur peut demander à devenir partenaire, sous réserve de validation.")}
+              {tr("À partir de 1 000 SDA, le contributeur peut demander à devenir partenaire, sous réserve de validation.")}
             </li>
             <li className="rounded-2xl border border-line px-4 py-3">
-              {tr("Les contributeurs qui investissent plus de 2 000 SDA pourront être éligibles au programme de partage des revenus de la plateforme.")}
+              {tr("Les contributeurs qui investissent plus de 1 000 SDA pourront être éligibles au programme de partage des revenus de la plateforme.")}
             </li>
           </ul>
 
@@ -384,7 +384,7 @@ function ApprovedMark() {
 function Faq() {
   const tr = useTr();
   const items = [
-    ["Minimum pour être partenaire ?", "2 000 SDA sur SidraStart. Cela ne valide pas la demande."],
+    ["Minimum pour être partenaire ?", "1 000 SDA sur SidraStart. Cela ne valide pas la demande."],
     ["Comment investir ?", "Ouvrez la fiche SidraStart, puis suivez les étapes là-bas."],
     ["Le bonus ?", "15 % prévus. Pas un rendement. Rien n'est versé ici."],
     ["Qui vérifie ?", "Un CEO. Le départ est « en attente »."],
