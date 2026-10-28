@@ -14,11 +14,11 @@ export const languages = [
   { id: "pt", label: "Português", short: "PT", flag: "🇵🇹" },
 ] as const;
 
-const KEY = "wikenva-lang";
+const KEY = "wikenva-lang-2";
 const packs: Record<Exclude<Lang, "fr">, Record<string, string>> = { en, es, pt, ar };
 
 const LocaleContext = createContext<{ lang: Lang; setLang: (lang: Lang) => void }>({
-  lang: "fr",
+  lang: "en",
   setLang: () => {},
 });
 
@@ -27,20 +27,11 @@ function isLang(value: string | null): value is Lang {
 }
 
 function browserLang(): Lang {
-  const list = typeof navigator === "undefined" ? [] : navigator.languages?.length ? navigator.languages : [navigator.language];
-  for (const item of list) {
-    const code = item.toLowerCase();
-    if (code.startsWith("ar")) return "ar";
-    if (code.startsWith("es")) return "es";
-    if (code.startsWith("pt")) return "pt";
-    if (code.startsWith("en")) return "en";
-    if (code.startsWith("fr")) return "fr";
-  }
-  return "fr";
+  return "en";
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("fr");
+  const [lang, setLangState] = useState<Lang>("en");
 
   useLayoutEffect(() => {
     let saved: string | null = null;
