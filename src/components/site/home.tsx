@@ -1,17 +1,11 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
-import { Link } from "@tanstack/react-router";
-import { BadgeCheck, BookOpen, Blocks, ChevronDown, ChevronRight, FileText, Globe, Megaphone, Store, Users, Wallet } from "lucide-react";
-import { narrative, news, site } from "@/content/site";
-import { ui } from "@/content/ui-copy";
-import { useLang, useTr } from "@/lib/locale";
-import { RoleBoard } from "./blocks";
-import { PathBoard } from "./paths";
+import { BadgeCheck, ChevronRight, FileText, Globe, Megaphone } from "lucide-react";
+import { narrative, news } from "@/content/site";
+import { useTr } from "@/lib/locale";
 import { PromotionClock } from "./promotion";
-import { PartnerButton, PlatformButton, Section, TextLink } from "./ui";
+import { PartnerButton } from "./ui";
 
 export function HomePage() {
-  const { lang } = useLang();
-  const text = ui(lang);
   const tr = useTr();
 
   return (
@@ -26,10 +20,7 @@ export function HomePage() {
           <p className="mt-5 text-xs font-semibold tracking-[0.2em] text-gold uppercase">{tr("Vision")}</p>
           <p className="mt-2 font-display text-xl font-semibold leading-tight">{tr("Commerce numérique licite.")}</p>
           <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-muted">{tr(narrative.vision[0])}</p>
-          <Link to="/vision" className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-gold">
-            {tr("Lire la vision")}
-          </Link>
-          <PartnerButton className="mt-2 min-h-12 w-full text-base" />
+          <PartnerButton className="mt-6 min-h-12 w-full text-base" />
           <div className="mt-5 rounded-2xl border border-gold/40 bg-panel px-3 py-4">
             <p className="text-sm font-semibold">{tr("Temps restant pour demander le partenariat")}</p>
             <p className="mt-1 text-sm font-semibold tracking-wide text-gold">{tr("1 000 SDA · jusqu'au 30 novembre 2026")}</p>
@@ -37,50 +28,6 @@ export function HomePage() {
               <PromotionClock compact />
             </div>
           </div>
-          <nav className="mt-5" aria-label={tr("Découvrir maintenant")}>
-            <p className="text-sm font-semibold">{tr("Découvrir maintenant")}</p>
-            <ChevronDown className="mx-auto mt-2 size-4 stroke-[1.75] text-gold" aria-hidden />
-            <div className="mx-auto mt-3 grid w-[92%] grid-cols-3 gap-2">
-              <a
-                href={site.investUrl ?? ""}
-                target="_blank"
-                rel="noreferrer"
-                className="flex min-h-[4.6rem] min-w-0 flex-col items-center justify-start gap-1.5 rounded-xl border border-gold/40 bg-panel px-1 pt-2 pb-2 text-center active:scale-[0.98]"
-              >
-                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
-                  <Wallet className="size-3 stroke-[1.75]" aria-hidden />
-                </span>
-                <span className="text-[10px] leading-tight font-semibold">SidraStart</span>
-              </a>
-              <Link
-                to="/presentation"
-                className="flex min-h-[4.6rem] min-w-0 flex-col items-center justify-start gap-1.5 rounded-xl border border-gold/40 bg-panel px-1 pt-2 pb-2 text-center active:scale-[0.98]"
-              >
-                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
-                  <Store className="size-3 stroke-[1.75]" aria-hidden />
-                </span>
-                <span className="text-[10px] leading-tight font-semibold">
-                  Marketplace
-                  <br />
-                  WIKENVA
-                </span>
-              </Link>
-              <Link
-                to="/sidrachain"
-                className="flex min-h-[4.6rem] min-w-0 flex-col items-center justify-start gap-1.5 rounded-xl border border-gold/40 bg-panel px-1 pt-2 pb-2 text-center active:scale-[0.98]"
-              >
-                <span className="grid size-7 place-items-center rounded-full border border-gold/40 text-gold">
-                  <Blocks className="size-3 stroke-[1.75]" aria-hidden />
-                </span>
-                <span className="text-[10px] leading-tight font-semibold">SidraChain</span>
-              </Link>
-            </div>
-            <div className="mt-4 flex items-center gap-3">
-              <span className="h-px flex-1 bg-gold/30" aria-hidden />
-              <p className="font-display text-sm font-semibold tracking-[0.22em] text-gold">WIKENVA</p>
-              <span className="h-px flex-1 bg-gold/30" aria-hidden />
-            </div>
-          </nav>
         </div>
       </section>
 
@@ -89,58 +36,6 @@ export function HomePage() {
           <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Actualités")}</p>
           <h2 className="mt-1 text-base font-semibold">{tr("Ce qui est confirmé")}</h2>
           <NewsCarousel />
-          <TextLink to="/actualites" variant="ghost" className="mt-4 w-full">
-            {tr("Toutes les actualités")}
-          </TextLink>
-        </div>
-      </section>
-
-      <Section
-        id="decouvrir"
-        className="py-6 md:py-8"
-        eyebrow="Découvrir"
-        title="Découvrir WIKENVA"
-        lede="Créer, lire et participer. Le catalogue n'est pas encore ouvert."
-      >
-        <RoleBoard />
-        <div className="mt-4 flex flex-col gap-2">
-          <TextLink to="/vision" className="min-h-12 w-full rounded-2xl">
-            {tr("En savoir plus")}
-          </TextLink>
-          <TextLink to="/communaute" variant="ghost" className="min-h-12 w-full rounded-2xl border-white/15 font-medium text-muted">
-            <Users className="size-4 stroke-[1.75]" aria-hidden />
-            {text.community}
-          </TextLink>
-          <PlatformButton variant="ghost" className="min-h-12 w-full rounded-2xl border-white/15 font-medium text-muted" />
-        </div>
-        <div className="mt-4 overflow-hidden rounded-2xl border border-line bg-panel">
-          <div className="flex items-start gap-3 px-4 py-3">
-            <BookOpen className="mt-0.5 size-4 shrink-0 stroke-[1.75] text-gold" aria-hidden />
-            <div>
-              <p className="text-sm font-semibold leading-snug">{tr("WIKENVA est en cours de développement")}</p>
-              <p className="mt-1 text-sm leading-relaxed text-muted">
-                {tr("Les sept espaces sont envisagés. Ils peuvent évoluer. Aucun n'est ouvert.")}
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-line px-3 py-3">
-            <TextLink to="/presentation" className="min-h-12 w-full rounded-2xl">
-              {tr("Voir la présentation")}
-            </TextLink>
-          </div>
-        </div>
-      </Section>
-
-      <section className="border-y border-line bg-panel/40 py-8">
-        <div className="mx-auto grid w-full min-w-0 max-w-6xl gap-3 px-5 md:grid-cols-2 md:px-8">
-          <article className="rounded-2xl border border-line bg-ink p-5">
-            <h2 className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Mission")}</h2>
-            <p className="mt-3 text-base leading-relaxed">{tr(narrative.mission[1])}</p>
-          </article>
-          <article className="rounded-2xl border border-line bg-ink p-5">
-            <h2 className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Vision")}</h2>
-            <p className="mt-3 text-base leading-relaxed">{tr(narrative.vision[2])}</p>
-          </article>
         </div>
       </section>
 
@@ -148,10 +43,9 @@ export function HomePage() {
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Fonctionnement")}</p>
         <ol className="mt-4 grid gap-3">
           {[
-            ["1", "Comprendre le projet", "Le site dit ce qui est confirmé. Le reste n'est pas inventé."],
-            ["2", "Les produits numériques", "Les ebooks sont en préparation. Aucun achat sur ce site."],
-            ["3", "La communauté", "Les annonces passent par Facebook, WhatsApp, Telegram et X."],
-            ["4", "Participer", "Investir et devenir partenaire sont deux parcours distincts."],
+            ["1", "Comprendre le projet", "Le site dit ce qui est confirmé. La boutique n'est pas ouverte."],
+            ["2", "Devenir partenaire", "Jusqu'au 30 novembre 2026. Minimum 1 000 SDA. La demande est vérifiée."],
+            ["3", "Aucun rendement promis", "Investir se fait sur SidraStart. Le partenariat se demande ensuite."],
           ].map(([index, title, text]) => (
             <li key={index} className="flex gap-3 rounded-2xl border border-line bg-panel p-4">
               <span className="font-semibold text-gold">{index}</span>
@@ -162,40 +56,6 @@ export function HomePage() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section id="partenariat" className="border-y border-line bg-panel/40 py-8">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-          <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Partenaires")}</p>
-          <h2 className="mt-2 text-xl font-semibold">{tr("Devenir partenaire")}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-muted">
-            {tr("Jusqu'au 30 novembre 2026. Minimum 1 000 SDA. La demande est vérifiée.")}
-          </p>
-          <TextLink to="/partenaires" className="mt-4 w-full">
-            {tr("Devenir partenaire")}
-          </TextLink>
-        </div>
-      </section>
-
-      <section id="parcours" className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
-        <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Parcours")}</p>
-        <p className="mt-2 text-sm leading-relaxed text-muted">
-          {tr("Deux décisions distinctes. Aucun rendement n'est promis.")}
-        </p>
-        <div className="mt-4">
-          <PathBoard auto={false} />
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-6xl px-5 py-8 md:px-8">
-        <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("SidraChain")}</p>
-        <p className="mt-2 text-sm leading-relaxed text-muted">{tr("WIKENVA souhaite faire partie de SidraChain.")}</p>
-        <p className="mt-2 text-sm leading-relaxed">
-          {tr("Découvrez le projet, le fondateur et les initiatives. Aucun rendement n'est promis.")}
-        </p>
-        <TextLink to="/sidrachain" variant="gold" className="mt-4 w-full">
-          {tr("Découvrir SidraChain")}
-        </TextLink>
       </section>
 
       <section className="border-t border-line py-8">
@@ -215,31 +75,11 @@ export function HomePage() {
               a="Investir au moins 1 000 SDA sur SidraStart, puis déposer une demande. Elle est vérifiée."
             />
             <Faq
-              q="Investir et devenir partenaire, est-ce la même chose ?"
-              a="Non. Investir se fait sur SidraStart. Le partenaire se demande ensuite, après vérification."
-            />
-            <Faq
               q="Un investissement garantit-il un rendement ?"
               a="Non. Ce site ne promet aucun rendement."
             />
-            <Faq
-              q="Où lire les documents et nous écrire ?"
-              a="White paper, page Communauté, contact.wikenva@gmail.com, +229 01 96 41 21 17."
-            />
           </div>
-          <TextLink to="/white-paper" variant="ghost" className="mt-4 w-full">
-            {tr("Lire le white paper")}
-          </TextLink>
         </div>
-      </section>
-
-      <section className="border-t border-line py-8">
-        <ul className="mx-auto grid w-full max-w-6xl gap-2 px-5 md:px-8">
-          <More to="/feuille-de-route" title="Feuille de route" text="Les cinq phases publiques du projet." />
-          <More to="/token" title="WIKENVA TOKEN" text="La fiche du token, sans chiffre inventé." />
-          <More to="/actualites" title="Actualités" text="Les annonces confirmées, au fur et à mesure." />
-          <More to="/documents" title="Documents officiels" text="Livre blanc, fiche du token et liens Sidra." />
-        </ul>
       </section>
     </>
   );
@@ -397,17 +237,5 @@ function Faq({ q, a }: { q: string; a: string }) {
       <summary className="cursor-pointer text-sm font-semibold leading-snug text-balance">{tr(q)}</summary>
       <p className="mt-3 text-sm text-muted">{tr(a)}</p>
     </details>
-  );
-}
-
-function More({ to, title, text }: { to: string; title: string; text: string }) {
-  const tr = useTr();
-  return (
-    <li>
-      <TextLink to={to} variant="ghost" className="h-auto w-full flex-col items-start gap-1 rounded-2xl px-4 py-3 text-left">
-        <span className="text-base font-semibold">{tr(title)}</span>
-        <span className="text-sm font-normal text-muted">{tr(text)}</span>
-      </TextLink>
-    </li>
   );
 }

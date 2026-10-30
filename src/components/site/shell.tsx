@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Phone, Wallet, X } from "lucide-react";
+import { BookOpen, Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Phone, Wallet, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { mainNav, moreNav, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
@@ -214,11 +214,13 @@ function Shell({ children }: { children: ReactNode }) {
               {(
                 [
                   ["/", "Accueil", Home],
+                  ["/vision", "Vision", BookOpen],
                   ["/actualites", "Actualités", Newspaper],
-                  ["/feuille-de-route", "Événements", CalendarDays],
-                  ["/investisseurs", "Investissements", Wallet],
-                  ["/token", "Token", Landmark],
                   ["/partenaires", "Partenaires", Briefcase],
+                  ["/presentation", "Présentation", FileText],
+                  ["/feuille-de-route", "Feuille de route", CalendarDays],
+                  ["/sidrachain", "SidraChain", Landmark],
+                  ["/token", "Token", Wallet],
                   ["/documents", "Documents", FileText],
                   ["/communaute", "Communauté", MessagesSquare],
                 ] as const

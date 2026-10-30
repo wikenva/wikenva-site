@@ -1025,6 +1025,8 @@ export const en: Record<string, string> = {
   "Le message doit contenir au moins 10 caractères.": "The message must contain at least 10 characters.",
   "Le montant doit être supérieur ou égal à 1 000 SDA.": "The amount must be at least 1,000 SDA.",
   "Le site dit ce qui est confirmé. Le reste n'est pas inventé.": "The site states what is confirmed. The rest is not invented.",
+  "Le site dit ce qui est confirmé. La boutique n'est pas ouverte.": "The site states what is confirmed. The shop is not open.",
+  "Investir se fait sur SidraStart. Le partenariat se demande ensuite.": "Investing is done on SidraStart. Partnership is requested afterwards.",
   "Le suivi n'est pas disponible.": "Follow-up is not available.",
   "Le taux, la base de calcul, les conditions d'attribution, le délai et la période de validité ne sont pas confirmés. Aucun bonus n'est affiché et aucun versement n'est simulé.": "The rate, the calculation basis, the grant conditions, the delay and the validity period are not confirmed. No bonus is shown and no payment is simulated.",
   "Les annonces confirmées sont publiées sur le site et sur les canaux officiels de la communauté.": "Confirmed announcements are published on the site and on the official community channels.",
