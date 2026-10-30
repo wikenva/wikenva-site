@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { Link } from "@tanstack/react-router";
 import { BadgeCheck, ChevronRight, FileText, Globe, Megaphone } from "lucide-react";
 import { narrative, news } from "@/content/site";
 import { useTr } from "@/lib/locale";
