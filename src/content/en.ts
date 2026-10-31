@@ -1030,6 +1030,8 @@ export const en: Record<string, string> = {
   "Informations": "Information",
   "Marketplace numérique d'ebooks licites": "Digital Marketplace Ebook Halal",
   "Notre vision": "Our vision",
+  "WIKENVA, marketplace numérique d'ebooks licites. Là où le savoir, le commerce et l'innovation se rejoignent.": "WIKENVA, Digital Marketplace Ebook Halal. Where knowledge, commerce, and innovation come together.",
+  "WIKENVA relie les auteurs, les lecteurs, les créateurs et les entreprises.": "WIKENVA connects authors, readers, creators, and businesses.",
   "WIKENVA est une marketplace numérique conçue pour relier les auteurs, les lecteurs, les créateurs de contenu et les entreprises sur une plateforme mondiale.": "WIKENVA is an innovative digital marketplace designed to connect authors, readers, content creators, and businesses through a global platform.",
   "📚 Ebooks et produits numériques": "📚 Ebooks & Digital Products",
   "✍️ Auteurs et créateurs de contenu": "✍️ Authors & Content Creators",

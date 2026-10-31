@@ -11,27 +11,24 @@ export function HomePage() {
 
   return (
     <>
-      <section className="mx-auto w-full max-w-lg px-5 pt-8 pb-2 text-center">
-        <h1 className="font-display text-4xl font-semibold tracking-wide">WIKENVA</h1>
-        <div className="mx-auto mt-6 flex max-w-sm items-center gap-3 rounded-full border border-line bg-panel py-2 pr-5 pl-2">
-          <img src="/media/logo-mark-ui.webp" alt="" width={480} height={266} className="h-14 w-auto" />
-          <span className="font-display text-xl font-semibold tracking-wide text-gold">WIKENVA</span>
-        </div>
-        <p className="mt-6 text-lg font-semibold leading-snug">
-          {tr("Lecteurs, auteurs et créateurs, dans le même écosystème.")}
-        </p>
-      </section>
-
-      <section className="mx-auto grid w-full max-w-lg grid-cols-[1fr_auto] items-center gap-4 px-5 py-6">
-        <div>
-          <p className="text-xs font-semibold tracking-[0.16em] text-gold">WIKENVA</p>
-          <p className="mt-2 font-display text-2xl font-semibold leading-tight">{tr("Marketplace numérique d'ebooks licites")}</p>
-        </div>
-        <div className="relative h-28 w-36">
-          <img src="/media/book.jpg" alt="" className="absolute top-3 left-0 size-16 rounded-full border-2 border-gold object-cover" />
-          <img src="/media/globe.jpg" alt="" className="absolute top-0 left-10 size-20 rounded-full border-4 border-ink object-cover ring-2 ring-gold" />
-          <img src="/media/token-coin.png" alt="" className="absolute top-4 right-0 size-14 rounded-full border-2 border-gold bg-ink object-cover" />
-        </div>
+      <section className="mx-auto w-full max-w-3xl px-4 pt-4 pb-2">
+        <img
+          src="/media/hero-marketplace.png"
+          alt={tr("WIKENVA, marketplace numérique d'ebooks licites. Là où le savoir, le commerce et l'innovation se rejoignent.")}
+          width={1376}
+          height={768}
+          decoding="async"
+          fetchPriority="high"
+          className="w-full rounded-2xl border border-line"
+        />
+        <img
+          src="/media/hero-creators.png"
+          alt={tr("WIKENVA relie les auteurs, les lecteurs, les créateurs et les entreprises.")}
+          width={1376}
+          height={768}
+          decoding="async"
+          className="mt-3 w-full rounded-2xl border border-line"
+        />
       </section>
 
       <section className="mx-auto w-full max-w-lg px-5">
