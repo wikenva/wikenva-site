@@ -48,7 +48,7 @@ function PartnersPage() {
   return (
     <SiteShell>
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-lg px-5 py-8 md:max-w-3xl md:py-10">
+        <div className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8 md:py-14">
           <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">{tr("Devenir partenaire")}</p>
           <h1 className="mt-2 font-display text-3xl font-semibold leading-tight">
             {tr("Partenaires et investisseurs WIKENVA")}
@@ -60,7 +60,7 @@ function PartnersPage() {
             {tr("Toute personne intéressée peut contribuer au projet Digital Marketplace Ebook Halal sur SidraStart, depuis son propre compte.")}
           </p>
 
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
             {advantages.map(([Icon, label]) => (
               <article key={label} className="flex items-center gap-4 rounded-2xl border border-line bg-panel px-4 py-4">
                 <span className="grid size-11 shrink-0 place-items-center rounded-full bg-ink text-gold">
@@ -113,7 +113,7 @@ function PartnersPage() {
           </p>
         </div>
       </section>
-      <div className="mx-auto grid w-full min-w-0 max-w-lg gap-8 px-5 py-8 md:max-w-3xl md:px-8">
+      <div className="mx-auto grid w-full min-w-0 max-w-3xl gap-8 px-5 py-8 md:px-8">
         <PromotionClock />
         <PartnerForm />
         <PartnerLookupPanel />

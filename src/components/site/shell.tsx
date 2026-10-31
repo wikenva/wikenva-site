@@ -178,7 +178,7 @@ function Shell({ children }: { children: ReactNode }) {
               WIKENVA
             </span>
           </Link>
-          <nav className="hidden items-center gap-5 lg:flex" aria-label="Navigation principale">
+          <nav className="hidden items-center gap-4 lg:flex" aria-label="Navigation principale">
             {mainNav.map((item) => (
               <Link
                 key={item.to}

@@ -338,9 +338,11 @@ export const documents: OfficialDocument[] = [
 ];
 
 export const mainNav = [
+  { to: "/", label: "Accueil" },
   { to: "/vision", label: "Vision" },
+  { to: "/presentation", label: "Marketplace" },
   { to: "/partenaires", label: "Partenaires" },
-  { to: "/communaute", label: "Communauté" },
+  { to: "/communaute", label: "Contact" },
 ] as const;
 
 export const moreNav = [
