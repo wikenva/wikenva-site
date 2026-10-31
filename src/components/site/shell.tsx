@@ -301,27 +301,35 @@ function Shell({ children }: { children: ReactNode }) {
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={item.name}
-                  className={
-                    "grid size-11 place-items-center rounded-full " +
-                    (item.id === "twitter" ? "bg-white" : "")
-                  }
+                  aria-label={item.id === "whatsapp" ? tr("Groupe WhatsApp") : item.name}
+                  className="grid justify-items-center gap-1"
                 >
-                  <img
-                    src={
-                      item.id === "facebook"
-                        ? "/media/social/facebook.svg"
-                        : item.id === "whatsapp"
-                          ? "/media/social/whatsapp.svg"
-                          : item.id === "telegram"
-                            ? "/media/social/telegram.svg"
-                            : "/media/social/x.svg"
+                  <span
+                    className={
+                      "grid size-11 place-items-center rounded-full " +
+                      (item.id === "twitter" ? "bg-white" : "")
                     }
-                    alt=""
-                    width={28}
-                    height={28}
-                    className={item.id === "twitter" ? "size-5" : "size-7"}
-                  />
+                  >
+                    <img
+                      src={
+                        item.id === "facebook"
+                          ? "/media/social/facebook.svg"
+                          : item.id === "whatsapp"
+                            ? "/media/social/whatsapp.svg"
+                            : item.id === "telegram"
+                              ? "/media/social/telegram.svg"
+                              : "/media/social/x.svg"
+                      }
+                      alt=""
+                      width={28}
+                      height={28}
+                      className={item.id === "twitter" ? "size-5" : "size-7"}
+                    />
+                  </span>
+                  {item.id === "whatsapp" ? (
+                    <span className="text-[11px] font-semibold text-gold">{tr("Groupe")}</span>
+                  ) : null}
+                </a>
                 </a>
               </li>
             ))}

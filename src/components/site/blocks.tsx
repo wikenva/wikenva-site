@@ -587,9 +587,12 @@ export function SocialGrid() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={tr(item.name)}
-                className="block"
+                className="grid justify-items-center gap-2"
               >
                 {icon}
+                {item.id === "whatsapp" ? (
+                  <span className="text-xs font-semibold text-gold">{tr("Groupe")}</span>
+                ) : null}
               </a>
             ) : (
               <div className="opacity-60">{icon}</div>
