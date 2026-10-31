@@ -76,7 +76,7 @@ export function candidateDecisionMail(input: {
         "",
         "Réseaux WIKENVA",
         "Facebook : https://www.facebook.com/people/Wikenva/61594737553362/",
-        "WhatsApp : https://whatsapp.com/channel/0029Vb9KneTEgGfK0t46G00V",
+        "WhatsApp : https://chat.whatsapp.com/F4uZIGgqIYzDTP4PnInAIa?s=cl&p=a&iam=2",
         "Telegram : https://t.me/+-vHI1dIZj-xlMzE0",
         "X : https://x.com/Wikenva",
         "",
@@ -124,7 +124,7 @@ function approvedHtml(name: string, reference: string) {
 <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin:22px auto 0;">
 <tr>
 ${icon("facebook-mail.png", "Facebook", "https://www.facebook.com/people/Wikenva/61594737553362/")}
-${icon("whatsapp-mail.png", "WhatsApp", "https://whatsapp.com/channel/0029Vb9KneTEgGfK0t46G00V")}
+${icon("whatsapp-mail.png", "WhatsApp", "https://chat.whatsapp.com/F4uZIGgqIYzDTP4PnInAIa?s=cl&p=a&iam=2")}
 ${icon("telegram-mail.png", "Telegram", "https://t.me/+-vHI1dIZj-xlMzE0")}
 ${icon("x-mail.png", "X", "https://x.com/Wikenva")}
 </tr>

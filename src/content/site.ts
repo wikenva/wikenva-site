@@ -295,7 +295,7 @@ export const news: NewsItem[] = [
 
 export const socials: SocialLink[] = [
   { id: "facebook", name: "Facebook", href: "https://www.facebook.com/people/Wikenva/61594737553362/", hint: "Page officielle" },
-  { id: "whatsapp", name: "WhatsApp", href: "https://whatsapp.com/channel/0029Vb9KneTEgGfK0t46G00V", hint: "Chaîne officielle" },
+  { id: "whatsapp", name: "WhatsApp", href: "https://chat.whatsapp.com/F4uZIGgqIYzDTP4PnInAIa?s=cl&p=a&iam=2", hint: "Groupe officiel" },
   { id: "telegram", name: "Telegram", href: "https://t.me/+-vHI1dIZj-xlMzE0", hint: "Canal officiel" },
   { id: "twitter", name: "Twitter", href: "https://x.com/Wikenva", hint: "Compte officiel" },
 ];
