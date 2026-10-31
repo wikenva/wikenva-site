@@ -299,8 +299,8 @@ function Shell({ children }: { children: ReactNode }) {
               <li key={item.id}>
                 <a
                   href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
+                  target={item.id === "whatsapp" ? "_top" : "_blank"}
+                  rel={item.id === "whatsapp" ? undefined : "noreferrer"}
                   aria-label={item.id === "whatsapp" ? tr("Groupe WhatsApp") : item.name}
                   className="grid justify-items-center gap-1"
                 >

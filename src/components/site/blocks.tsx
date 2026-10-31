@@ -584,8 +584,8 @@ export function SocialGrid() {
             {isUrl(item.href) ? (
               <a
                 href={item.href}
-                target="_blank"
-                rel="noreferrer"
+                target={item.id === "whatsapp" ? "_top" : "_blank"}
+                rel={item.id === "whatsapp" ? undefined : "noreferrer"}
                 aria-label={tr(item.name)}
                 className="grid justify-items-center gap-2"
               >

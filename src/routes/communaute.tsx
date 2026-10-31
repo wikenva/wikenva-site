@@ -29,9 +29,8 @@ function CommunityPage() {
           </div>
           <a
             href="https://chat.whatsapp.com/F4uZIGgqIYzDTP4PnInAIa?s=cl&p=a&iam=2"
-            target="_blank"
-            rel="noreferrer"
-            className="mx-auto mt-5 inline-flex min-h-12 items-center justify-center rounded-full bg-[#25D366] px-6 text-sm font-semibold text-[#06210f]"
+            target="_top"
+            className="mx-auto mt-5 flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-[#25D366] px-6 text-base font-semibold text-[#06210f]"
           >
             {tr("Groupe WhatsApp")}
           </a>
