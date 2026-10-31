@@ -5,12 +5,9 @@ import { PartnerButton } from "./ui";
 
 export function HomePage() {
   const tr = useTr();
-  const points = [
-    "Partager des ebooks et des idées. La boutique n'est pas ouverte.",
-    "Demander le partenariat après 1 000 SDA. La demande est vérifiée.",
-    "Rejoindre SidraChain après examen de la Core Team.",
-    "Aucun rendement n'est promis.",
-  ];
+  const points = narrative.vision.slice(1, 6);
+  const close = narrative.vision[6];
+  const powered = narrative.vision[7];
 
   return (
     <>
@@ -28,7 +25,7 @@ export function HomePage() {
       <section className="mx-auto grid w-full max-w-lg grid-cols-[1fr_auto] items-center gap-4 px-5 py-6">
         <div>
           <p className="text-xs font-semibold tracking-[0.16em] text-gold">WIKENVA</p>
-          <p className="mt-2 font-display text-2xl font-semibold leading-tight">{tr("Commerce numérique licite.")}</p>
+          <p className="mt-2 font-display text-2xl font-semibold leading-tight">{tr("Marketplace numérique d'ebooks licites")}</p>
         </div>
         <div className="relative h-28 w-36">
           <img src="/media/book.jpg" alt="" className="absolute top-3 left-0 size-16 rounded-full border-2 border-gold object-cover" />
@@ -61,7 +58,18 @@ export function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-lg px-5 py-8 text-center">
-        <p className="text-sm leading-relaxed text-muted">{tr(narrative.vision[0])}</p>
+        <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">{tr("Notre vision")}</p>
+        <h2 className="mt-3 font-display text-2xl font-semibold leading-tight">{tr("Marketplace numérique d'ebooks licites")}</h2>
+        <p className="mt-4 text-sm leading-relaxed text-muted">{tr(narrative.vision[0])}</p>
+        <ul className="mx-auto mt-5 grid max-w-sm gap-2 text-left text-sm">
+          {points.map((point) => (
+            <li key={point} className="rounded-xl border border-line bg-panel px-3 py-2">
+              {tr(point)}
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 font-semibold">{tr(close)}</p>
+        <p className="mt-2 text-sm text-gold">{tr(powered)}</p>
         <PartnerButton className="mx-auto mt-5 min-h-12 w-full max-w-xs rounded-full" />
       </section>
 
@@ -88,7 +96,7 @@ export function HomePage() {
         <div className="mx-auto w-full max-w-lg">
           <h2 className="text-lg font-semibold text-gold">{tr("À propos")}</h2>
           <p className="mt-3 text-sm leading-relaxed">{tr(narrative.vision[0])}</p>
-          <h3 className="mt-6 text-base font-semibold text-gold">{tr("Ce que WIKENVA prépare")}</h3>
+          <h3 className="mt-6 text-base font-semibold text-gold">{tr("Notre vision")}</h3>
           <ul className="mt-3 grid gap-2 text-sm leading-relaxed">
             {points.map((point) => (
               <li key={point} className="flex gap-2">

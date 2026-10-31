@@ -209,9 +209,14 @@ export const roles = [
 
 export const narrative = {
   vision: [
-    "WIKENVA propose des produits numériques licites, selon les principes de l'Islam.",
-    "Les échanges reposent sur l'honnêteté, la transparence et l'équité.",
-    "L'innovation se fait sans tromperie.",
+    "WIKENVA est une marketplace numérique conçue pour relier les auteurs, les lecteurs, les créateurs de contenu et les entreprises sur une plateforme mondiale.",
+    "📚 Ebooks et produits numériques",
+    "✍️ Auteurs et créateurs de contenu",
+    "🛍️ Marketplace pour les activités en ligne",
+    "🌍 Opportunités numériques dans le monde",
+    "🤝 Commerce numérique licite",
+    "Une vision, un avenir, de nouvelles opportunités.",
+    "Porté par l'innovation dans l'écosystème SidraChain.",
   ],
   mission: [
     "La mission est de relier les créateurs, les entrepreneurs et les lecteurs.",

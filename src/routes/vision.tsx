@@ -27,8 +27,8 @@ function VisionPage() {
     <SiteShell>
       <PageHero
         eyebrow="Vision"
-        title="Commerce numérique licite."
-        lede="Boutique pas encore ouverte. Aucun rendement promis."
+        title="Marketplace numérique d'ebooks licites"
+        lede="Une vision, un avenir, de nouvelles opportunités."
       />
       <div className="mx-auto grid w-full max-w-6xl gap-6 px-5 py-8 md:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
         <div className="grid gap-10">
