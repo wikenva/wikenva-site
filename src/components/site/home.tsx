@@ -61,6 +61,19 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="border-b border-line">
+        <div className="mx-auto w-full max-w-xl px-5 py-8 text-center md:px-8">
+          <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">25 {tr("décembre")} 2026</p>
+          <h2 className="mt-2 font-display text-2xl font-semibold md:text-3xl">{tr("Fin de la contribution")}</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">
+            {tr("La contribution WIKENVA sur SidraStart se termine le 25 décembre 2026.")}
+          </p>
+          <div className="mx-auto mt-5 max-w-md">
+            <PromotionClock caption={false} />
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto w-full max-w-6xl px-5 py-12 md:px-8">
         <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Qui nous réunissons")}</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
@@ -128,8 +141,7 @@ export function HomePage() {
               </div>
             </div>
             <div className="rounded-3xl border border-gold/30 bg-ink p-5">
-              <PromotionClock compact />
-              <ul className="mt-5 grid gap-3">
+              <ul className="grid gap-3">
                 {advantages.map(([title, text]) => (
                   <li key={title} className="rounded-2xl border border-line px-4 py-3">
                     <p className="font-semibold">{tr(title)}</p>

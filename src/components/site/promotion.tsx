@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/content/site";
 import { useTr } from "@/lib/locale";
 
-export function PromotionClock({ compact = false }: { compact?: boolean }) {
+export function PromotionClock({ compact = false, caption = true }: { compact?: boolean; caption?: boolean }) {
   const tr = useTr();
   const ends = site.partnerPromotionEnds;
   const [now, setNow] = useState(() => Date.now());
@@ -23,11 +23,11 @@ export function PromotionClock({ compact = false }: { compact?: boolean }) {
         <p className="mt-4 text-sm text-muted">
           {tr("Cette promotion est close. Le compte à rebours n'est plus affiché. Le programme pourra être révisé.")}
         </p>
-      ) : compact ? null : (
-        <p className="mx-auto mt-4 max-w-[16rem] text-balance text-sm leading-relaxed text-muted">
-          {tr("La demande de partenaire est vérifiée. Il n'y a pas de montant minimum.")}
+      ) : caption ? (
+        <p className="mx-auto mt-4 max-w-md text-balance text-sm leading-relaxed text-muted">
+          {tr("La contribution WIKENVA sur SidraStart se termine le 25 décembre 2026.")}
         </p>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -48,7 +48,7 @@ function Countdown({ left, compact }: { left: number; compact?: boolean }) {
           <p suppressHydrationWarning className={"font-display font-semibold tabular-nums leading-none text-fg " + (compact ? "text-xl" : "text-2xl")}>
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-1 text-[9px] leading-none font-semibold tracking-wide text-gold uppercase">{label}</p>
+          <p className="mt-1 text-[11px] leading-none font-semibold tracking-wide text-gold uppercase">{label}</p>
         </div>
       ))}
     </div>

@@ -83,7 +83,7 @@ export const site = {
    * Fin officielle de la promotion SidraStart, au format ISO.
    * `null` tant que la date n'est pas publiée : aucun compte à rebours.
    */
-  partnerPromotionEnds: "2026-11-30T23:59:59+01:00",
+  partnerPromotionEnds: "2026-12-25T23:59:59+01:00",
   /** Site officiel de l'écosystème. */
   sidrachainUrl: "https://www.sidrachain.com",
   /** Interface WIKENVA. Intégration après validation de la core team SidraChain. */
