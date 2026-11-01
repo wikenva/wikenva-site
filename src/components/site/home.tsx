@@ -48,6 +48,13 @@ export function HomePage() {
                 {tr("Notre vision")}
               </Link>
             </div>
+            <div className="mt-6 max-w-md rounded-2xl border border-gold/35 bg-ink px-4 py-4">
+              <p className="text-center text-xs font-semibold tracking-[0.18em] text-gold uppercase">25 {tr("décembre")} 2026</p>
+              <p className="mt-1 text-center text-sm font-semibold">{tr("Fin de la contribution WIKENVA sur SidraStart")}</p>
+              <div className="mt-4">
+                <PromotionClock caption={false} />
+              </div>
+            </div>
           </div>
           <img
             src="/media/hero-creators.png"
@@ -58,19 +65,6 @@ export function HomePage() {
             fetchPriority="high"
             className="w-full rounded-3xl border border-line"
           />
-        </div>
-      </section>
-
-      <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-xl px-5 py-8 text-center md:px-8">
-          <p className="text-xs font-semibold tracking-[0.2em] text-gold uppercase">25 {tr("décembre")} 2026</p>
-          <h2 className="mt-2 font-display text-2xl font-semibold md:text-3xl">{tr("Fin de la contribution")}</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">
-            {tr("La contribution WIKENVA sur SidraStart se termine le 25 décembre 2026.")}
-          </p>
-          <div className="mx-auto mt-5 max-w-md">
-            <PromotionClock caption={false} />
-          </div>
         </div>
       </section>
 

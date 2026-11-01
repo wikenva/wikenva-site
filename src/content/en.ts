@@ -5,7 +5,7 @@ export const en: Record<string, string> = {
   "En vérification": "Under review",
   "Programme": "Program",
   "Partenaires et investisseurs WIKENVA": "WIKENVA partners and investors",
-  "Fin de la contribution": "End of the contribution",
+  "Fin de la contribution WIKENVA sur SidraStart": "End of the WIKENVA contribution on SidraStart",
   "décembre": "December",
   "La contribution WIKENVA sur SidraStart se termine le 25 décembre 2026.": "The WIKENVA contribution on SidraStart ends on 25 December 2026.",
   "La demande est vérifiée. Il n'y a pas de montant minimum.": "The request is checked. There is no minimum amount.",
