@@ -1548,4 +1548,7 @@ export const en: Record<string, string> = {
   "Transmise": "Sent",
   "Félix Adjibodou est le CEO de WIKENVA. Cette page présente uniquement son rôle dans le projet.": "Félix Adjibodou is the CEO of WIKENVA. This page presents only his role in the project.",
   "Retour à WIKENVA": "Back to WIKENVA",
+  "Notre vision": "Our vision",
+  "Un créateur WIKENVA, avec l'Afrique numérique.": "A WIKENVA creator, with digital Africa.",
+  "En attente. E-mail après la décision.": "Pending. Email after the decision.",
 };
