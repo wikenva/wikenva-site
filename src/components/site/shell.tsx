@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { BookOpen, Briefcase, Check, ChevronDown, Home, Menu, MessagesSquare, Phone, Store, X } from "lucide-react";
+import { BookOpen, Briefcase, Calendar, Check, ChevronDown, Home, Menu, MessagesSquare, Phone, Store, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { mainNav, moreNav, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
@@ -149,6 +149,7 @@ function Shell({ children }: { children: ReactNode }) {
   const text = ui(lang);
   const tr = useTr();
   const label = (to: string, fallback: string) => text.nav[to] ?? fallback;
+  const whatsapp = socials.find((item) => item.id === "whatsapp")?.href;
 
   useEffect(() => {
     setOpen(false);
@@ -331,6 +332,25 @@ function Shell({ children }: { children: ReactNode }) {
           <p className="mt-8 border-t border-line pt-4 text-xs text-faint">{tr("© 2026 WIKENVA")}</p>
         </div>
       </footer>
+      {whatsapp ? (
+        <div className="fixed right-4 bottom-5 z-40 flex flex-col gap-3 print:hidden">
+          <a
+            href={whatsapp}
+            target="_top"
+            aria-label={tr("Groupe WhatsApp")}
+            className="grid size-14 place-items-center rounded-full bg-[#25D366] shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
+          >
+            <img src="/media/social/whatsapp.svg" alt="" width={28} height={28} className="size-7" />
+          </a>
+          <Link
+            to="/partenaires"
+            aria-label={tr("Envoyer la demande")}
+            className="grid size-14 place-items-center rounded-full bg-[#1f6feb] text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
+          >
+            <Calendar className="size-6" aria-hidden />
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 }
