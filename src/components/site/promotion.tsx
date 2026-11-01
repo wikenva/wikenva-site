@@ -42,13 +42,13 @@ function Countdown({ left, compact }: { left: number; compact?: boolean }) {
     [total % 60, tr("secondes")],
   ] as const;
   return (
-    <div className={compact ? "grid grid-cols-4 gap-1" : "grid grid-cols-4 gap-1.5"} aria-live="polite">
+    <div className="grid grid-cols-4 gap-2" aria-live="polite">
       {parts.map(([value, label]) => (
-        <div key={label} className={"rounded-xl border border-line bg-ink text-center " + (compact ? "px-0.5 py-2" : "px-0.5 py-2.5")}>
-          <p suppressHydrationWarning className={"font-display font-semibold tabular-nums leading-none text-fg " + (compact ? "text-xl" : "text-3xl")}>
+        <div key={label} className="text-center">
+          <p suppressHydrationWarning className={"font-display font-semibold tabular-nums leading-none text-gold " + (compact ? "text-2xl" : "text-4xl")}>
             {String(value).padStart(2, "0")}
           </p>
-          <p className="mt-1 text-[11px] leading-none font-semibold tracking-wide text-gold uppercase">{label}</p>
+          <p className="mt-2 text-[10px] leading-none font-semibold tracking-[0.14em] text-muted uppercase">{label}</p>
         </div>
       ))}
     </div>
