@@ -42,7 +42,7 @@ export function HomePage() {
                 rel="noreferrer"
                 className="inline-flex min-h-14 items-center justify-center rounded-full bg-gradient-to-b from-[#f3d78a] to-[#c9a24d] px-6 text-center text-sm font-semibold tracking-wide text-ink shadow-[0_10px_30px_rgba(201,162,77,0.35)]"
               >
-                {tr("Découvrir WIKENVA sur SidraStart")}
+                {tr("Contribuer dans WIKENVA")}
               </a>
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link to="/partenaires" className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-line px-6 text-sm font-semibold">
@@ -119,7 +119,7 @@ export function HomePage() {
               <p className="mt-3 text-sm text-muted">{tr("Contribuez sur SidraStart, puis envoyez une demande.")}</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <a href={site.investUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-b from-[#f3d78a] to-[#c9a24d] px-6 text-center text-sm font-semibold text-ink">
-                  {tr("Découvrir WIKENVA sur SidraStart")}
+                  {tr("Contribuer dans WIKENVA")}
                 </a>
                 <Link to="/partenaires" className="inline-flex min-h-12 items-center justify-center rounded-full border border-gold/40 px-6 text-sm font-semibold text-gold">
                   {tr("Envoyer la demande")}

@@ -17,7 +17,7 @@ export const en: Record<string, string> = {
   "Contenus": "Content",
   "Activités": "Activities",
   "Demande vérifiée": "Request checked",
-  "Découvrir WIKENVA sur SidraStart": "Discover WIKENVA on SidraStart",
+  "Contribuer dans WIKENVA": "Contribute in WIKENVA",
   "L'Afrique reliée, de Dakar à Nairobi.": "Africa connected, from Dakar to Nairobi.",
   "La marketplace : boutique, paiement et livraison.": "The marketplace: shop, payment and delivery.",
   "Contribuer": "Contribute",
