@@ -150,7 +150,10 @@ export function HomePage() {
                 ))}
               </ul>
               <p className="mt-4 text-sm leading-relaxed text-muted">
-                {tr("Une part de 15 % des revenus est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.")}
+                {tr("Contribuez sur SidraStart, puis envoyez une demande de partenariat.")}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                {tr("Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.")}
               </p>
             </div>
           </div>

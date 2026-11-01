@@ -78,7 +78,7 @@ function PartnersPage() {
               {tr("Le statut de partenaire se demande sur cette page. Il n'y a pas de montant minimum. La demande est vérifiée.")}
             </li>
             <li className="rounded-2xl border border-line px-4 py-3">
-              {tr("Le partage des revenus sera publié plus tard. Aucun rendement n'est promis.")}
+              {tr("Contribuez sur SidraStart, puis envoyez une demande de partenariat.")}
             </li>
           </ul>
 
@@ -109,7 +109,10 @@ function PartnersPage() {
             {tr("Les règles de calcul, les conditions d'éligibilité et les modalités de distribution seront communiquées prochainement.")}
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted">
-            {tr("Une part de 15 % des revenus est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.")}
+            {tr("Contribuez sur SidraStart, puis envoyez une demande de partenariat.")}
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-muted">
+            {tr("Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.")}
           </p>
         </div>
       </section>
@@ -386,7 +389,7 @@ function Faq() {
   const items = [
     ["Y a-t-il un montant minimum ?", "Non. La demande est vérifiée. Aucun montant n'est exigé sur ce site."],
     ["Comment investir ?", "Ouvrez la fiche SidraStart, puis suivez les étapes là-bas."],
-    ["Le bonus ?", "15 % prévus. Pas un rendement. Rien n'est versé ici."],
+    ["Comment devenir partenaire ?", "Contribuez sur SidraStart, puis envoyez une demande de partenariat."],
     ["Qui vérifie ?", "Un CEO. Le départ est « en attente »."],
     ["Après le 30 novembre 2026 ?", "Les conditions pourront changer. Rien n'est encore défini."],
     ["Mes données ?", "Réservées aux administrateurs. Le public ne voit que le statut."],

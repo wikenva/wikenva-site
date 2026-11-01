@@ -106,13 +106,13 @@ export const site = {
    */
   shareholderProgram: {
     minimum: "",
-    revenueShare: "15 %",
+    revenueShare: "",
     revenueLabel: "Part prévue des revenus de la plateforme",
     status: "Conditions du programme à officialiser",
-    revenueNote: "15 % des revenus prévus pour les actionnaires. Ce n'est pas un rendement.",
+    revenueNote: "",
     sidraStartShare: "34 %",
     sidraStartNote:
-      "Les 34 % des actions sont confirmés par la plateforme SidraStart. Cette allocation est distincte des 15 % des revenus de la plateforme prévus pour les actionnaires WIKENVA. Elle n'est pas un rendement garanti.",
+      "Les 34 % des actions sont confirmés par la plateforme SidraStart. Cette allocation n'est pas un rendement garanti.",
   },
   token: {
     name: "WIKENVA TOKEN",
@@ -266,7 +266,8 @@ export const news: NewsItem[] = [
     paragraphs: [
       "Il n'y a pas de montant minimum pour demander le statut de partenaire.",
       "Un CEO décide. La demande n'est pas automatique.",
-      "Une part de 15 % est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Aucun rendement promis.",
+      "Contribuez sur SidraStart, puis envoyez une demande de partenariat.",
+      "Une part de 3 % est envisagée pour la zakat. Aucun rendement promis.",
     ],
   },
   {
