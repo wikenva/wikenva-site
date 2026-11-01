@@ -63,7 +63,7 @@ export function HomePage() {
           </div>
           <img
             src="/media/hero-accueil.jpg"
-            alt={tr("Un créateur WIKENVA, avec l'Afrique numérique.")}
+            alt={tr("Un créateur WIKENVA sur une plateforme internationale.")}
             width={1024}
             height={1024}
             decoding="async"
@@ -89,7 +89,7 @@ export function HomePage() {
         <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-12 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <img
             src="/media/vision-afrique.jpg"
-            alt={tr("L'Afrique reliée, de Dakar à Nairobi.")}
+            alt={tr("Une plateforme numérique ouverte au monde.")}
             width={1376}
             height={768}
             decoding="async"

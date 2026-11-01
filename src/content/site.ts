@@ -231,8 +231,8 @@ export const narrative = {
     "Aucun certificat charia n'est publié ici.",
   ],
   africa: [
-    "WIKENVA veut servir l'économie numérique africaine.",
-    "Les créations doivent devenir accessibles à un plus large public.",
+    "WIKENVA est une plateforme internationale.",
+    "Elle s'adresse aux auteurs, aux lecteurs et aux créateurs partout dans le monde.",
   ],
 };
 

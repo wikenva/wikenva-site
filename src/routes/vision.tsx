@@ -8,7 +8,7 @@ import { PageHero, TextLink } from "@/components/site/ui";
 const chapters = [
   { title: "La vision", paragraphs: narrative.vision },
   { title: "La mission", paragraphs: narrative.mission },
-  { title: "L'Afrique", paragraphs: narrative.africa },
+  { title: "Internationale", paragraphs: narrative.africa },
   { title: "SidraChain", paragraphs: narrative.place },
 ];
 

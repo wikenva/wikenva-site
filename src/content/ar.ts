@@ -1145,4 +1145,9 @@ export const ar: Record<string, string> = {
   "Boutique gratuite": "متجر مجاني",
   "Accès Premium": "وصول مميز",
   "Entreprises": "الشركات",
+  "Internationale": "دولية",
+  "WIKENVA est une plateforme internationale.": "WIKENVA منصة دولية.",
+  "Elle s'adresse aux auteurs, aux lecteurs et aux créateurs partout dans le monde.": "وهي موجّهة إلى المؤلفين والقرّاء والمبدعين في كل العالم.",
+  "Un créateur WIKENVA sur une plateforme internationale.": "مبدع في WIKENVA على منصة دولية.",
+  "Une plateforme numérique ouverte au monde.": "منصة رقمية مفتوحة على العالم.",
 };
