@@ -35,13 +35,23 @@ export function HomePage() {
             <p className="mt-4 text-lg leading-snug font-semibold">
               {tr("Là où le savoir, le commerce et l'innovation se rejoignent.")}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link to="/partenaires" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-6 text-sm font-semibold text-ink">
-                {tr("Devenir partenaire")}
-              </Link>
-              <Link to="/vision" className="inline-flex min-h-12 items-center justify-center rounded-full border border-line px-6 text-sm font-semibold">
-                {tr("Notre vision")}
-              </Link>
+            <div className="mt-8 flex max-w-md flex-col gap-3">
+              <a
+                href={site.investUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-gradient-to-b from-[#f3d78a] to-[#c9a24d] px-6 text-center text-sm font-semibold tracking-wide text-ink shadow-[0_10px_30px_rgba(201,162,77,0.35)]"
+              >
+                {tr("Découvrir WIKENVA sur SidraStart")}
+              </a>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link to="/partenaires" className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-line px-6 text-sm font-semibold">
+                  {tr("Devenir partenaire")}
+                </Link>
+                <Link to="/vision" className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-line px-6 text-sm font-semibold">
+                  {tr("Notre vision")}
+                </Link>
+              </div>
             </div>
             <div className="mt-6 max-w-md rounded-2xl border border-gold/35 bg-ink px-4 py-4">
               <p className="text-center text-xs font-semibold tracking-[0.18em] text-gold uppercase">24 {tr("décembre")} 2026</p>
@@ -108,8 +118,8 @@ export function HomePage() {
               <h2 className="mt-2 font-display text-3xl font-semibold md:text-4xl">{tr("Devenir partenaire")}</h2>
               <p className="mt-3 text-sm text-muted">{tr("Contribuez sur SidraStart, puis envoyez une demande.")}</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a href={site.investUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-6 text-sm font-semibold text-ink">
-                  SidraStart
+                <a href={site.investUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-b from-[#f3d78a] to-[#c9a24d] px-6 text-center text-sm font-semibold text-ink">
+                  {tr("Découvrir WIKENVA sur SidraStart")}
                 </a>
                 <Link to="/partenaires" className="inline-flex min-h-12 items-center justify-center rounded-full border border-gold/40 px-6 text-sm font-semibold text-gold">
                   {tr("Envoyer la demande")}
