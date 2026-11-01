@@ -42,7 +42,7 @@ export const Route = createRootRoute({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){if(document.getElementById("boot"))return;var label="Loading";try{var saved=localStorage.getItem("wikenva-lang-2");if(saved==="fr")label="Chargement";if(saved==="es")label="Cargando";if(saved==="pt")label="A carregar";if(saved==="ar")label="جار التحميل"}catch(e){}var d=document.createElement("div");d.id="boot";d.setAttribute("role","status");d.innerHTML='<div><img class="boot-mark" src="/media/logo-mark-ui.webp" alt="WIKENVA" width="480" height="266"><div class="boot-spin" aria-hidden="true"></div><p class="boot-label">'+label+"</p></div>";document.documentElement.appendChild(d);function hide(){if(d.parentNode)d.remove()}setTimeout(hide,900);setTimeout(hide,2500)})();`,
+            __html: `(function(){if(document.getElementById("boot"))return;var key="wikenva-lang-3";var saved=null;try{saved=localStorage.getItem(key)}catch(e){}if(saved!=="fr"&&saved!=="en"&&saved!=="ar"&&saved!=="es"&&saved!=="pt"){saved="en";try{localStorage.setItem(key,"en")}catch(e){}}var label="Loading";if(saved==="fr")label="Chargement";if(saved==="es")label="Cargando";if(saved==="pt")label="A carregar";if(saved==="ar")label="جار التحميل";var d=document.createElement("div");d.id="boot";d.setAttribute("role","status");d.innerHTML='<div><img class="boot-mark" src="/media/logo-mark-ui.webp" alt="WIKENVA" width="480" height="266"><div class="boot-spin" aria-hidden="true"></div><p class="boot-label">'+label+"</p></div>";document.documentElement.appendChild(d);function hide(){if(d.parentNode)d.remove()}setTimeout(hide,900);setTimeout(hide,2500)})();`,
           }}
         />
       </head>

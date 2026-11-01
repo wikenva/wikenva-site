@@ -14,7 +14,7 @@ export const languages = [
   { id: "pt", label: "Português", short: "PT", flag: "🇵🇹" },
 ] as const;
 
-const KEY = "wikenva-lang-2";
+const KEY = "wikenva-lang-3";
 const packs: Record<Exclude<Lang, "fr">, Record<string, string>> = { en, es, pt, ar };
 
 const LocaleContext = createContext<{ lang: Lang; setLang: (lang: Lang) => void }>({
