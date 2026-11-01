@@ -345,7 +345,7 @@ function Shell({ children }: { children: ReactNode }) {
           <Link
             to="/partenaires"
             aria-label={tr("Envoyer la demande")}
-            className="grid size-14 place-items-center rounded-full bg-[#1f6feb] text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
+            className="grid size-14 place-items-center rounded-full bg-gold text-ink shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
           >
             <Calendar className="size-6" aria-hidden />
           </Link>
