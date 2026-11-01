@@ -21,7 +21,7 @@ export const Route = createFileRoute("/partenaires")({
   head: () =>
     pageMeta(
       "Devenez partenaire de WIKENVA",
-      "Participez au développement de l'économie numérique au sein de l'écosystème SidraChain. La demande est vérifiée. Il n'y a pas de montant minimum.",
+      "Contribuez sur SidraStart, puis envoyez une demande.",
     ),
   component: PartnersPage,
 });
@@ -36,84 +36,53 @@ const statusCopy = {
 function PartnersPage() {
   const tr = useTr();
   const advantages = [
-    [FileText, "Publication gratuite d'articles."],
-    [Store, "Création d'une boutique en ligne gratuite."],
-    [Sparkles, "Accès aux fonctionnalités Premium."],
+    [FileText, "Articles gratuits"],
+    [Store, "Boutique gratuite"],
+    [Sparkles, "Accès Premium"],
   ] as const;
-  const steps = [
-    ["1", "Contribuer sur SidraStart", "Depuis votre propre compte. Jamais auprès d'un membre de WIKENVA."],
-    ["2", "Indiquer le hash", "Le hash sert à la vérification. Il ne fixe aucun montant minimum."],
-    ["3", "Envoyer la demande", "Le formulaire est sur cette page. Rien n'est accordé automatiquement."],
+  const facts = [
+    ["SidraStart", "Contribuer"],
+    ["Demande", "Sur cette page"],
+    ["Minimum", "Aucun"],
+    ["Zakat", "3 %"],
+    ["Fin", "24 décembre 2026"],
   ] as const;
   return (
     <SiteShell>
       <section className="border-b border-line">
-        <div className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8 md:py-14">
-          <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">{tr("Devenir partenaire")}</p>
-          <h1 className="mt-2 font-display text-3xl font-semibold leading-tight">
-            {tr("Partenaires et investisseurs WIKENVA")}
-          </h1>
-          <p className="mt-4 inline-flex rounded-full border border-gold/50 px-4 py-2 text-sm font-semibold text-gold">
-            {tr("La demande est vérifiée. Il n'y a pas de montant minimum.")}
+        <div className="mx-auto w-full max-w-3xl px-5 py-10 md:px-8">
+          <p className="text-xs font-semibold tracking-[0.22em] text-gold uppercase">{tr("Partenariat")}</p>
+          <h1 className="mt-2 font-display text-3xl font-semibold">{tr("Devenir partenaire")}</h1>
+          <p className="mt-4 rounded-2xl border border-line bg-panel px-4 py-4 text-sm leading-relaxed">
+            {tr("Contribuez sur SidraStart, puis envoyez une demande.")}
           </p>
-          <p className="mt-4 text-sm leading-relaxed text-muted">
-            {tr("Toute personne intéressée peut contribuer au projet Digital Marketplace Ebook Halal sur SidraStart, depuis son propre compte.")}
-          </p>
-
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
+          <div className="mt-4 overflow-hidden rounded-2xl border border-line">
+            <p className="bg-gold px-4 py-3 text-sm font-semibold tracking-wide text-ink uppercase">{tr("À retenir")}</p>
+            <dl>
+              {facts.map(([label, value]) => (
+                <div key={label} className="grid grid-cols-2 gap-3 border-t border-line px-4 py-3 text-sm">
+                  <dt className="text-muted">{tr(label)}</dt>
+                  <dd className="text-right font-semibold">{tr(value)}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
             {advantages.map(([Icon, label]) => (
-              <article key={label} className="flex items-center gap-4 rounded-2xl border border-line bg-panel px-4 py-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-ink text-gold">
-                  <Icon className="size-5" aria-hidden />
-                </span>
-                <p className="text-sm font-semibold leading-snug">{tr(label)}</p>
+              <article key={label} className="rounded-2xl border border-line bg-panel px-4 py-4 text-sm font-semibold">
+                <Icon className="mb-2 size-5 text-gold" aria-hidden />
+                {tr(label)}
               </article>
             ))}
           </div>
-
-          <h2 className="mt-8 text-lg font-semibold">{tr("Conditions")}</h2>
-          <ul className="mt-3 grid gap-2 text-sm leading-relaxed text-muted">
-            <li className="rounded-2xl border border-line px-4 py-3">{tr("Toute contribution est possible, quel que soit son montant.")}</li>
-            <li className="rounded-2xl border border-gold/40 bg-panel px-4 py-3 text-fg">
-              {tr("Le statut de partenaire se demande sur cette page. Il n'y a pas de montant minimum. La demande est vérifiée.")}
-            </li>
-            <li className="rounded-2xl border border-line px-4 py-3">
-              {tr("Contribuez sur SidraStart, puis envoyez une demande de partenariat.")}
-            </li>
-          </ul>
-
-          <h2 className="mt-8 text-lg font-semibold">{tr("Trois étapes")}</h2>
-          <ol className="mt-3 grid gap-3">
-            {steps.map(([index, title, text]) => (
-              <li key={index} className="flex gap-3 rounded-2xl border border-line bg-panel p-4">
-                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-gold text-sm font-semibold text-ink">{index}</span>
-                <div>
-                  <p className="font-semibold">{tr(title)}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-muted">{tr(text)}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-6 grid gap-3">
-            <a href="#candidature" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-ink">
-              {tr("Devenir partenaire")}
-            </a>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <ExternalLink href={site.investUrl ?? ""} className="w-full">
-              {tr("Contribuer sur SidraStart")}
+              SidraStart
             </ExternalLink>
+            <a href="#candidature" className="inline-flex min-h-12 items-center justify-center rounded-full bg-gold px-5 text-sm font-semibold text-ink">
+              {tr("Envoyer la demande")}
+            </a>
           </div>
-
-          <p className="mt-5 rounded-2xl border border-line bg-panel px-4 py-3 text-sm leading-relaxed text-muted">
-            {tr("Les dividendes ne sont pas garantis. Ils dépendent des revenus réellement générés et des conditions officielles du programme.")}{" "}
-            {tr("Les règles de calcul, les conditions d'éligibilité et les modalités de distribution seront communiquées prochainement.")}
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
-            {tr("Contribuez sur SidraStart, puis envoyez une demande de partenariat.")}
-          </p>
-          <p className="mt-3 text-sm leading-relaxed text-muted">
-            {tr("Une part de 3 % est envisagée pour la zakat. Cela ne remplace pas la zakat personnelle, et les règles seront publiées avant toute répartition.")}
-          </p>
         </div>
       </section>
       <div className="mx-auto grid w-full min-w-0 max-w-3xl gap-8 px-5 py-8 md:px-8">
@@ -387,12 +356,12 @@ function ApprovedMark() {
 function Faq() {
   const tr = useTr();
   const items = [
-    ["Y a-t-il un montant minimum ?", "Non. La demande est vérifiée. Aucun montant n'est exigé sur ce site."],
-    ["Comment investir ?", "Ouvrez la fiche SidraStart, puis suivez les étapes là-bas."],
-    ["Comment devenir partenaire ?", "Contribuez sur SidraStart, puis envoyez une demande de partenariat."],
-    ["Qui vérifie ?", "Un CEO. Le départ est « en attente »."],
-    ["Après le 30 novembre 2026 ?", "Les conditions pourront changer. Rien n'est encore défini."],
-    ["Mes données ?", "Réservées aux administrateurs. Le public ne voit que le statut."],
+    ["Y a-t-il un montant minimum ?", "Non."],
+    ["Comment contribuer ?", "Sur SidraStart."],
+    ["Comment devenir partenaire ?", "SidraStart, puis la demande."],
+    ["Qui vérifie ?", "Un CEO."],
+    ["Après le 24 décembre 2026 ?", "Les conditions pourront changer."],
+    ["Mes données ?", "Réservées aux administrateurs."],
     ["Y a-t-il un risque ?", "Oui. La valeur peut tomber à zéro."],
   ] as const;
   return (
