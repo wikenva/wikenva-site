@@ -27,6 +27,13 @@ function CommunityPage() {
           <div className="mt-6">
             <SocialGrid />
           </div>
+          <a
+            href="https://chat.whatsapp.com/F4uZIGgqIYzDTP4PnInAIa?s=cl&p=a&iam=2"
+            target="_top"
+            className="mx-auto mt-5 flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-[#25D366] px-6 text-base font-semibold text-[#06210f]"
+          >
+            {tr("Groupe WhatsApp")}
+          </a>
           <div className="mx-auto mt-8 grid max-w-md gap-3 text-left">
             <a href="mailto:contact.wikenva@gmail.com" className="flex items-center gap-3 rounded-2xl border border-line bg-panel px-4 py-3">
               <GmailMark />
