@@ -49,7 +49,7 @@ export function HomePage() {
               </Link>
             </div>
             <div className="mt-6 max-w-md rounded-2xl border border-gold/35 bg-ink px-4 py-4">
-              <p className="text-center text-xs font-semibold tracking-[0.18em] text-gold uppercase">25 {tr("décembre")} 2026</p>
+              <p className="text-center text-xs font-semibold tracking-[0.18em] text-gold uppercase">24 {tr("décembre")} 2026</p>
               <p className="mt-1 text-center text-sm font-semibold">{tr("Fin de la contribution WIKENVA sur SidraStart")}</p>
               <div className="mt-4">
                 <PromotionClock caption={false} />

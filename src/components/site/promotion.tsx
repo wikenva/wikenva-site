@@ -25,7 +25,7 @@ export function PromotionClock({ compact = false, caption = true }: { compact?: 
         </p>
       ) : caption ? (
         <p className="mx-auto mt-4 max-w-md text-balance text-sm leading-relaxed text-muted">
-          {tr("La contribution WIKENVA sur SidraStart se termine le 25 décembre 2026.")}
+          {tr("La contribution WIKENVA sur SidraStart se termine le 24 décembre 2026.")}
         </p>
       ) : null}
     </div>

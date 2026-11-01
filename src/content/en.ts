@@ -7,7 +7,7 @@ export const en: Record<string, string> = {
   "Partenaires et investisseurs WIKENVA": "WIKENVA partners and investors",
   "Fin de la contribution WIKENVA sur SidraStart": "End of the WIKENVA contribution on SidraStart",
   "décembre": "December",
-  "La contribution WIKENVA sur SidraStart se termine le 25 décembre 2026.": "The WIKENVA contribution on SidraStart ends on 25 December 2026.",
+  "La contribution WIKENVA sur SidraStart se termine le 24 décembre 2026.": "The WIKENVA contribution on SidraStart ends on 24 December 2026.",
   "La demande est vérifiée. Il n'y a pas de montant minimum.": "The request is checked. There is no minimum amount.",
   "Indiquer le hash": "Enter the hash",
   "Le hash sert à la vérification. Il ne fixe aucun montant minimum.": "The hash is for verification. It does not set a minimum amount.",
