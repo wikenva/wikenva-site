@@ -347,12 +347,7 @@ export const mainNav = [
 ] as const;
 
 export const moreNav = [
-  { to: "/presentation", label: "Présentation" },
-  { to: "/feuille-de-route", label: "Feuille de route" },
-  { to: "/token", label: "Token" },
   { to: "/actualites", label: "Actualités" },
-  { to: "/white-paper", label: "White paper" },
-  { to: "/investisseurs", label: "Investisseurs" },
   { to: "/sidrachain", label: "SidraChain" },
 ] as const;
 

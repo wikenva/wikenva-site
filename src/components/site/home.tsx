@@ -4,11 +4,11 @@ import { useTr } from "@/lib/locale";
 import { PromotionClock } from "./promotion";
 
 const people = [
-  ["Auteurs", "Ebooks"],
-  ["Lecteurs", "Catalogue"],
-  ["Créateurs", "Contenus"],
-  ["Entreprises", "Activités"],
-  ["Partenaires", "Demande vérifiée"],
+  ["Auteurs", "Publier un ebook"],
+  ["Lecteurs", "Lire un ouvrage licite"],
+  ["Créateurs", "Partager un contenu"],
+  ["Entreprises", "Présenter une activité"],
+  ["Partenaires", "Rejoindre le programme"],
 ] as const;
 
 const facts = [

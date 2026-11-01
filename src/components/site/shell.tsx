@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { BookOpen, Briefcase, CalendarDays, Check, ChevronDown, FileText, Home, Landmark, Menu, MessagesSquare, Newspaper, Phone, Wallet, X } from "lucide-react";
+import { BookOpen, Briefcase, Check, ChevronDown, Home, Menu, MessagesSquare, Phone, Store, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { mainNav, moreNav, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
@@ -215,14 +215,9 @@ function Shell({ children }: { children: ReactNode }) {
                 [
                   ["/", "Accueil", Home],
                   ["/vision", "Vision", BookOpen],
-                  ["/actualites", "Actualités", Newspaper],
+                  ["/presentation", "Marketplace", Store],
                   ["/partenaires", "Partenaires", Briefcase],
-                  ["/presentation", "Présentation", FileText],
-                  ["/feuille-de-route", "Feuille de route", CalendarDays],
-                  ["/sidrachain", "SidraChain", Landmark],
-                  ["/token", "Token", Wallet],
-                  ["/documents", "Documents", FileText],
-                  ["/communaute", "Communauté", MessagesSquare],
+                  ["/communaute", "Contact", MessagesSquare],
                 ] as const
               ).map(([to, name, Icon]) => {
                 const active = to === "/" ? pathname === "/" : isActive(pathname, to);

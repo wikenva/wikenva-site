@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { BookOpen, Cpu, PenLine, ShoppingBag, Sparkles, Store, Users } from "lucide-react";
 import { pageMeta, site } from "@/content/site";
 import { SiteShell } from "@/components/site/shell";
@@ -10,55 +10,22 @@ export const Route = createFileRoute("/presentation")({
   head: () =>
     pageMeta(
       "Présentation — WIKENVA",
-      "WIKENVA est en cours de développement. Sept espaces sont envisagés pour les créateurs, les auteurs, les lecteurs et la communauté. Aucun rendement n'est promis.",
+      "Ebooks, auteurs, lecteurs et commerces licites.",
     ),
   component: PresentationPage,
 });
 
 const spaces = [
-  {
-    icon: Sparkles,
-    title: "Espace des créateurs de contenu avec IA",
-    text: "Un environnement envisagé pour aider les créateurs à concevoir, organiser et publier leurs contenus avec des outils d'intelligence artificielle. Il n'est pas ouvert.",
-  },
-  {
-    icon: PenLine,
-    title: "Espace des auteurs",
-    text: "Un espace envisagé pour présenter des œuvres, publier des livres numériques et, si la fonction est développée, les proposer. Il n'est pas ouvert.",
-  },
-  {
-    icon: BookOpen,
-    title: "Espace des lecteurs",
-    text: "Un espace envisagé pour découvrir des livres et des contenus numériques utiles. Le catalogue n'est pas encore disponible.",
-  },
-  {
-    icon: Users,
-    title: "Espace communauté et visiteurs",
-    text: "Un accueil envisagé pour découvrir le projet, suivre son évolution et échanger. Les annonces passent aujourd'hui par les réseaux officiels.",
-  },
-  {
-    icon: Store,
-    title: "Grande marketplace numérique",
-    text: "Une marketplace envisagée pour des livres électroniques, des formations, des logiciels et d'autres produits licites. Aucun achat n'est possible sur ce site.",
-  },
-  {
-    icon: Cpu,
-    title: "Technologies avancées pour les créateurs",
-    text: "Des outils envisagés pour la création et le développement d'une audience. Ils ne sont pas en service.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "Boutique en ligne des utilisateurs",
-    text: "Une boutique envisagée pour que chaque utilisateur présente ses produits numériques. Elle n'est pas ouverte.",
-  },
+  [Sparkles, "Créateurs"],
+  [PenLine, "Auteurs"],
+  [BookOpen, "Lecteurs"],
+  [Users, "Communauté"],
+  [Store, "Marketplace"],
+  [Cpu, "Outils"],
+  [ShoppingBag, "Boutiques"],
 ] as const;
 
-const products = [
-  { title: "Ebooks", text: "Livres numériques. Pas encore en vente." },
-  { title: "Formations", text: "Parcours de formation. Pas encore en vente." },
-  { title: "Logiciels", text: "Outils numériques. Pas encore en vente." },
-  { title: "Modèles numériques", text: "Modèles et ressources. Pas encore en vente." },
-] as const;
+const products = ["Ebooks", "Formations", "Logiciels", "Modèles numériques"] as const;
 
 function PresentationPage() {
   const tr = useTr();
@@ -78,31 +45,23 @@ function PresentationPage() {
           <h1 className="mt-2 font-display text-3xl font-semibold md:text-5xl">
             {tr("La plateforme des créateurs, des auteurs et des lecteurs")}
           </h1>
-          <p className="mt-3 text-base text-muted">{tr("La plateforme est en cours de développement. Rien n'est encore ouvert.")}</p>
+          <p className="mt-3 text-base text-muted">{tr("Ebooks, auteurs, lecteurs et commerces licites.")}</p>
         </div>
       </header>
 
       <div className="mx-auto grid w-full max-w-3xl gap-10 px-5 py-8 md:px-8 md:py-12">
-        <section className="rounded-3xl border border-gold/50 bg-panel p-5">
-          <p className="text-sm font-semibold tracking-widest text-gold uppercase">{tr("Statut")}</p>
-          <h2 className="mt-2 font-display text-2xl font-semibold">{tr("WIKENVA est en cours de développement")}</h2>
-          <p className="mt-3 text-sm text-muted">{tr("Les espaces peuvent encore changer, et aucun n'est ouvert.")}</p>
-          <p className="mt-3 text-sm text-muted">{tr("Le site www.wikenva.com sera intégré après validation de la Core Team SidraChain.")}</p>
-        </section>
-
         <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("Sept espaces envisagés")}</h2>
-          <ol className="mt-5 grid gap-4 sm:grid-cols-2">
-            {spaces.map((space, index) => (
-              <li key={space.title} className="rounded-3xl border border-line bg-ink p-5">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold">
-                    <space.icon className="size-5" aria-hidden />
-                  </span>
-                  <span className="text-sm font-semibold text-gold">{index + 1}</span>
+          <h2 className="font-display text-2xl font-semibold">{tr("Sept espaces")}</h2>
+          <ol className="mt-5 grid gap-3 sm:grid-cols-2">
+            {spaces.map(([Icon, title], index) => (
+              <li key={title} className="flex items-center gap-3 rounded-2xl border border-line bg-ink px-4 py-4">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full border border-gold/40 text-gold">
+                  <Icon className="size-5" aria-hidden />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold text-gold">{index + 1}</p>
+                  <h3 className="font-semibold">{tr(title)}</h3>
                 </div>
-                <h3 className="mt-4 font-display text-lg font-semibold">{tr(space.title)}</h3>
-                <p className="mt-2 text-sm text-muted">{tr(space.text)}</p>
               </li>
             ))}
           </ol>
@@ -124,16 +83,11 @@ function PresentationPage() {
         </section>
 
         <section>
-          <h2 className="font-display text-2xl font-semibold">{tr("Produits envisagés")}</h2>
-          <p className="mt-3 text-muted">
-            {tr("La boutique est fermée, et aucun prix n'est affiché.")}
-          </p>
-          <ul className="mt-5 grid gap-4 sm:grid-cols-2">
-            {products.map((item) => (
-              <li key={item.title} className="rounded-3xl border border-line bg-ink p-5">
-                <p className="text-sm font-semibold text-gold">{tr("Pas encore en vente")}</p>
-                <h3 className="mt-2 font-display text-lg font-semibold">{tr(item.title)}</h3>
-                <p className="mt-2 text-sm text-muted">{tr(item.text)}</p>
+          <h2 className="font-display text-2xl font-semibold">{tr("Produits")}</h2>
+          <ul className="mt-5 grid grid-cols-2 gap-3">
+            {products.map((title) => (
+              <li key={title} className="rounded-2xl border border-line bg-ink px-4 py-4 font-semibold">
+                {tr(title)}
               </li>
             ))}
           </ul>
@@ -151,9 +105,7 @@ function PresentationPage() {
             />
             <h2 className="font-display text-2xl font-semibold md:text-3xl">{tr("WIKENVA et l'écosystème SidraChain")}</h2>
           </div>
-          <p className="mt-4 text-muted">
-            {tr("WIKENVA souhaite rejoindre l'écosystème SidraChain. Ce n'est pas encore un partenariat officiel.")}
-          </p>
+          <p className="mt-4 text-muted">{tr("Dans l'écosystème SidraChain.")}</p>
           <div className="mt-5 flex flex-col gap-3 sm:flex-row">
             <TextLink to="/sidrachain" variant="ghost" className="w-full sm:w-auto">
               {tr("Découvrir SidraChain")}
@@ -164,11 +116,7 @@ function PresentationPage() {
           </div>
         </section>
 
-        <p className="text-sm text-muted">
-          <Link to="/communaute" className="font-semibold text-gold">
-            {tr("Les annonces officielles sont sur la page Communauté.")}
-          </Link>
-        </p>
+        <p className="text-sm text-muted">{tr("Intégration après validation de la Core Team SidraChain.")}</p>
       </div>
     </SiteShell>
   );
