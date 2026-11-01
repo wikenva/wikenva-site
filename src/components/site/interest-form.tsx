@@ -14,7 +14,7 @@ export function InterestResult({ result }: { result: SubmitResult }) {
   if (result.error === "consent") return <p className="text-sm text-danger">{tr("Confirmez que vous acceptez de communiquer vos coordonnées.")}</p>;
   if (result.error === "email") return <p className="text-sm text-danger">{tr("Indiquez un email valide.")}</p>;
   if (result.error === "name") return <p className="text-sm text-danger">{tr("Indiquez votre nom complet.")}</p>;
-  if (result.error === "amount") return <p className="text-sm text-danger">{tr("Le montant doit être supérieur ou égal à 1 000 SDA.")}</p>;
+  if (result.error === "amount") return <p className="text-sm text-danger">{tr("Indiquez un montant en SDA.")}</p>;
   if (!result.recorded) {
     return (
       <div className="rounded-2xl border border-line bg-ink p-4 text-sm" role="status">

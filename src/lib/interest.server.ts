@@ -51,7 +51,7 @@ export async function submitInterestRequest(input: InterestInput): Promise<Submi
   if (input.kind === "actionnaire" && name.length < 2) return { ...empty, error: "name" };
   const amountText = clean(input.amount, 40);
   const amount = amountText ? parseAmount(amountText) : null;
-  if (input.kind === "actionnaire" && (amount === null || amount < 1000)) return { ...empty, error: "amount" };
+  if (input.kind === "actionnaire" && amountText && amount === null) return { ...empty, error: "amount" };
   if (input.kind === "contribution" && amountText && amount === null) return { ...empty, error: "amount" };
 
   const reception = currentReception();

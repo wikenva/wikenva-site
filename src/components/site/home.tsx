@@ -8,7 +8,7 @@ const people = [
   ["Lecteurs", "Découvrir des ouvrages licites, quand le catalogue ouvrira."],
   ["Créateurs", "Préparer des contenus numériques. Rien ne se vend encore ici."],
   ["Entreprises", "Présenter une activité en ligne. L'espace n'est pas ouvert."],
-  ["Partenaires", "Demander le statut après 1 000 SDA. La demande est vérifiée."],
+  ["Partenaires", "La demande est vérifiée. Il n'y a pas de montant minimum."],
 ] as const;
 
 const advantages = [
@@ -19,7 +19,7 @@ const advantages = [
 
 const steps = [
   ["1", "Contribuer sur SidraStart", "Depuis votre propre compte. Jamais auprès d'un membre de WIKENVA."],
-  ["2", "Atteindre 1 000 SDA", "Ce seuil permet de demander le statut de partenaire. La demande est vérifiée."],
+  ["2", "Indiquer le hash", "Le hash sert à la vérification. Il ne fixe aucun montant minimum."],
   ["3", "Envoyer la demande", "Le formulaire est sur la page Partenaires. Rien n'est accordé automatiquement."],
 ] as const;
 
@@ -104,9 +104,8 @@ export function HomePage() {
             <div>
               <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Programme de partenariat")}</p>
               <h2 className="mt-2 font-display text-3xl font-semibold md:text-4xl">{tr("Devenir partenaire")}</h2>
-              <p className="mt-3 text-lg font-semibold text-gold">{tr("1 000 SDA · jusqu'au 30 novembre 2026")}</p>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-                {tr("À partir de 1 000 SDA, le contributeur peut demander à devenir partenaire, sous réserve de validation.")}
+                {tr("La demande est vérifiée. Il n'y a pas de montant minimum.")}
               </p>
               <ol className="mt-6 grid gap-3">
                 {steps.map(([index, title, text]) => (

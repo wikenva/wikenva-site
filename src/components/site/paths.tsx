@@ -34,7 +34,7 @@ const paths: PathCard[] = [
     id: "partner" as const,
     title: "Devenir partenaire",
     where: "Demande sur ce site, après SidraStart",
-    text: "Jusqu'au 30 novembre 2026, après au moins 1 000 SDA investis sur SidraStart, vous pouvez demander une vérification.",
+    text: "Vous pouvez demander une vérification. Il n'y a pas de montant minimum. Le statut n'est pas automatique.",
     not: "La demande n'est pas l'investissement. Le statut n'est pas automatique.",
     action: "Voir la demande partenaire",
     to: "/partenaires" as const,

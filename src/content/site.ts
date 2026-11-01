@@ -98,14 +98,14 @@ export const site = {
    * Seuil évoqué. Il n'est affiché comme condition du programme
    * que si `thresholdConfirmed` passe à true.
    */
-  pendingThreshold: "1 000 SDA",
+  pendingThreshold: "",
   thresholdConfirmed: false,
   /**
    * Conditions du programme actionnaires. À mettre à jour lorsque
    * les modalités définitives sont publiées.
    */
   shareholderProgram: {
-    minimum: "1 000 SDA",
+    minimum: "",
     revenueShare: "15 %",
     revenueLabel: "Part prévue des revenus de la plateforme",
     status: "Conditions du programme à officialiser",
@@ -262,10 +262,10 @@ export const news: NewsItem[] = [
     title: "La promotion partenaire est ouverte",
     date: "17 octobre 2026",
     category: "partenariat",
-    excerpt: "1 000 SDA jusqu'au 30 novembre 2026. Demande vérifiée.",
+    excerpt: "La demande est vérifiée. Il n'y a pas de montant minimum.",
     paragraphs: [
-      "Minimum 1 000 SDA sur SidraStart, jusqu'au 30 novembre 2026.",
-      "Le minimum ne confirme pas le statut. Un CEO décide.",
+      "Il n'y a pas de montant minimum pour demander le statut de partenaire.",
+      "Un CEO décide. La demande n'est pas automatique.",
       "Une part de 15 % est prévue pour le partenariat. Une part de 3 % est envisagée pour la zakat. Aucun rendement promis.",
     ],
   },

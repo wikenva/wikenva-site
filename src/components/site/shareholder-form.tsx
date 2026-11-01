@@ -107,12 +107,12 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
   const amount = parseSda(values.amount);
   const nameOk = values.name.trim().length >= 2;
   const mailOk = emailOk(values.email);
-  const amountOk = amount !== null && amount >= 1000;
+  const amountOk = amount !== null && amount > 0;
   const ready = nameOk && mailOk && amountOk && values.continueToSidra;
   const nameError = values.name.trim().length > 0 && !nameOk ? tr("Indiquez votre nom complet.") : undefined;
   const emailError = values.email.trim().length > 0 && !mailOk ? tr("Indiquez un email valide.") : undefined;
   const amountError =
-    values.amount.trim().length > 0 && !amountOk ? tr("Le montant doit être supérieur ou égal à 1 000 SDA.") : undefined;
+    values.amount.trim().length > 0 && !amountOk ? tr("Indiquez un montant en SDA.") : undefined;
 
   function remove(id: string) {
     const next = saved.filter((item) => item.id !== id);
@@ -205,7 +205,7 @@ export function ShareholderForm({ account }: { account?: { name: string; email: 
               label="Montant envisagé en SDA"
               value={values.amount}
               error={amountError}
-              hint={tr("Minimum prévu : 1 000 SDA.")}
+              hint={tr("Indiquez le montant en SDA. Il n'y a pas de minimum.")}
               inputMode="decimal"
               onChange={(value) => update("amount", value)}
             />
