@@ -52,13 +52,13 @@ export function HomePage() {
             </div>
           </div>
           <img
-            src="/media/hero-creators.png"
-            alt={tr("WIKENVA relie les auteurs, les lecteurs, les créateurs et les entreprises.")}
-            width={1376}
-            height={768}
+            src="/media/hero-accueil.jpg"
+            alt={tr("Un créateur WIKENVA, avec l'Afrique numérique.")}
+            width={1024}
+            height={1024}
             decoding="async"
             fetchPriority="high"
-            className="w-full rounded-3xl border border-line"
+            className="aspect-[4/5] w-full rounded-3xl border border-line object-cover object-top lg:aspect-auto lg:max-h-[640px]"
           />
         </div>
       </section>
@@ -78,12 +78,12 @@ export function HomePage() {
       <section className="border-y border-line bg-panel/40">
         <div className="mx-auto grid w-full max-w-6xl gap-8 px-5 py-12 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <img
-            src="/media/hero-marketplace.png"
-            alt={tr("WIKENVA, marketplace numérique d'ebooks licites. Là où le savoir, le commerce et l'innovation se rejoignent.")}
+            src="/media/vision-afrique.jpg"
+            alt={tr("L'Afrique reliée, de Dakar à Nairobi.")}
             width={1376}
             height={768}
             decoding="async"
-            className="w-full rounded-3xl border border-line"
+            className="aspect-video w-full rounded-3xl border border-line object-cover"
           />
           <div>
             <p className="text-xs font-semibold tracking-[0.18em] text-gold uppercase">{tr("Notre vision")}</p>
@@ -116,16 +116,26 @@ export function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-line">
-              <p className="bg-gold px-4 py-3 text-sm font-semibold tracking-wide text-ink uppercase">{tr("Partenariat")}</p>
-              <dl>
-                {facts.map(([label, value]) => (
-                  <div key={label} className="grid grid-cols-2 gap-3 border-t border-line px-4 py-3 text-sm">
-                    <dt className="text-muted">{tr(label)}</dt>
-                    <dd className="text-right font-semibold">{tr(value)}</dd>
-                  </div>
-                ))}
-              </dl>
+            <div>
+              <img
+                src="/media/marketplace-commerce.jpg"
+                alt={tr("La marketplace : boutique, paiement et livraison.")}
+                width={1376}
+                height={768}
+                decoding="async"
+                className="mb-4 aspect-video w-full rounded-2xl border border-line object-cover"
+              />
+              <div className="overflow-hidden rounded-2xl border border-line">
+                <p className="bg-gold px-4 py-3 text-sm font-semibold tracking-wide text-ink uppercase">{tr("Partenariat")}</p>
+                <dl>
+                  {facts.map(([label, value]) => (
+                    <div key={label} className="grid grid-cols-2 gap-3 border-t border-line px-4 py-3 text-sm">
+                      <dt className="text-muted">{tr(label)}</dt>
+                      <dd className="text-right font-semibold">{tr(value)}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
           </div>
         </div>
