@@ -330,7 +330,6 @@ function Shell({ children }: { children: ReactNode }) {
                     <span className="text-[11px] font-semibold text-gold">{tr("Groupe")}</span>
                   ) : null}
                 </a>
-                </a>
               </li>
             ))}
           </ul>
