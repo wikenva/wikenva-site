@@ -6,6 +6,7 @@ import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { languages, useLang, useTr, type Lang } from "@/lib/locale";
 import { SocialList } from "./blocks";
+import { PartnerButton, GmailMark } from "./ui";
 
 function isActive(pathname: string, to: string) {
   return pathname === to || pathname.startsWith(`${to}/`);
