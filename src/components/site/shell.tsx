@@ -5,7 +5,7 @@ import { mainNav, moreNav, socials } from "@/content/site";
 import { ui } from "@/content/ui-copy";
 import { cn } from "@/lib/cn";
 import { languages, useLang, useTr, type Lang } from "@/lib/locale";
-import { PartnerButton, GmailMark } from "./ui";
+import { SocialList } from "./blocks";
 
 function isActive(pathname: string, to: string) {
   return pathname === to || pathname.startsWith(`${to}/`);
@@ -150,6 +150,7 @@ function Shell({ children }: { children: ReactNode }) {
   const tr = useTr();
   const label = (to: string, fallback: string) => text.nav[to] ?? fallback;
   const whatsapp = socials.find((item) => item.id === "whatsapp")?.href;
+  const facebook = socials.find((item) => item.id === "facebook")?.href;
 
   useEffect(() => {
     setOpen(false);
@@ -290,58 +291,35 @@ function Shell({ children }: { children: ReactNode }) {
               </li>
             </ul>
           </nav>
-          <ul className="mt-8 flex items-center gap-4">
-            {socials.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={item.href}
-                  target={item.id === "whatsapp" ? "_top" : "_blank"}
-                  rel={item.id === "whatsapp" ? undefined : "noreferrer"}
-                  aria-label={item.id === "whatsapp" ? tr("Groupe WhatsApp") : item.name}
-                  className="grid justify-items-center gap-1"
-                >
-                  <span
-                    className={
-                      "grid size-11 place-items-center rounded-full " +
-                      (item.id === "twitter" ? "bg-white" : "")
-                    }
-                  >
-                    <img
-                      src={
-                        item.id === "facebook"
-                          ? "/media/social/facebook.svg"
-                          : item.id === "whatsapp"
-                            ? "/media/social/whatsapp.svg"
-                            : item.id === "telegram"
-                              ? "/media/social/telegram.svg"
-                              : "/media/social/x.svg"
-                      }
-                      alt=""
-                      width={28}
-                      height={28}
-                      className={item.id === "twitter" ? "size-5" : "size-7"}
-                    />
-                  </span>
-                  {item.id === "whatsapp" ? (
-                    <span className="text-[11px] font-semibold text-gold">{tr("Groupe")}</span>
-                  ) : null}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="mt-8 max-w-xl">
+            <SocialList />
+          </div>
           <p className="mt-8 border-t border-line pt-4 text-xs text-faint">{tr("© 2026 WIKENVA")}</p>
         </div>
       </footer>
-      {whatsapp ? (
+      {whatsapp || facebook ? (
         <div className="fixed right-4 bottom-5 z-40 flex flex-col gap-3 print:hidden">
-          <a
-            href={whatsapp}
-            target="_top"
-            aria-label={tr("Groupe WhatsApp")}
-            className="grid size-14 place-items-center rounded-full bg-[#25D366] shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
-          >
-            <img src="/media/social/whatsapp.svg" alt="" width={28} height={28} className="size-7" />
-          </a>
+          {whatsapp ? (
+            <a
+              href={whatsapp}
+              target="_top"
+              aria-label={tr("Groupe WhatsApp")}
+              className="grid size-14 place-items-center rounded-full bg-[#25D366] shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
+            >
+              <img src="/media/social/whatsapp.svg" alt="" width={28} height={28} className="size-7" />
+            </a>
+          ) : null}
+          {facebook ? (
+            <a
+              href={facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={tr("Page Facebook")}
+              className="grid size-14 place-items-center rounded-full bg-[#1877F2] shadow-[0_8px_24px_rgba(0,0,0,0.28)]"
+            >
+              <img src="/media/social/facebook.svg" alt="" width={28} height={28} className="size-7" />
+            </a>
+          ) : null}
           <Link
             to="/partenaires"
             aria-label={tr("Envoyer la demande")}
