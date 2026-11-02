@@ -1150,4 +1150,6 @@ export const ar: Record<string, string> = {
   "Elle s'adresse aux auteurs, aux lecteurs et aux créateurs partout dans le monde.": "وهي موجّهة إلى المؤلفين والقرّاء والمبدعين في كل العالم.",
   "Un créateur WIKENVA sur une plateforme internationale.": "مبدع في WIKENVA على منصة دولية.",
   "Une plateforme numérique ouverte au monde.": "منصة رقمية مفتوحة على العالم.",
+  "Nos réseaux sociaux": "شبكاتنا الاجتماعية",
+  "Page Facebook": "صفحة فيسبوك",
 };

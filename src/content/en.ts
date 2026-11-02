@@ -149,7 +149,8 @@ export const en: Record<string, string> = {
   "Chaîne WhatsApp": "WhatsApp channel",
   "Groupe officiel": "Official group",
   "Groupe": "Group",
-  "Groupe WhatsApp": "WhatsApp group",
+  "Nos réseaux sociaux": "Our social networks",
+  "Page Facebook": "Facebook page",
   "Canal officiel": "Official channel",
 
   "Contributeurs SDA": "SDA contributors",

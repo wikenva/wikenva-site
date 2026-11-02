@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { narrative, site } from "@/content/site";
 import { useTr } from "@/lib/locale";
 import { PromotionClock } from "./promotion";
+import { SocialList } from "./blocks";
 
 const people = [
   ["Auteurs", "Publier un ebook"],
@@ -202,6 +203,14 @@ export function HomePage() {
                 </span>
               ))}
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-[#f4f7fb] px-5 py-14 md:px-8">
+        <div className="mx-auto w-full max-w-xl">
+          <Reveal>
+            <SocialList />
           </Reveal>
         </div>
       </section>

@@ -604,6 +604,56 @@ export function SocialGrid() {
   );
 }
 
+export function SocialList() {
+  const tr = useTr();
+  const names: Record<string, string> = {
+    facebook: "Page Facebook",
+    whatsapp: "Groupe WhatsApp",
+    telegram: "Telegram",
+    twitter: "Twitter",
+  };
+  return (
+    <section className="overflow-hidden rounded-3xl border border-[#e6ebf2] bg-white text-[#1c2b42] shadow-[0_10px_30px_rgba(7,16,28,0.06)]">
+      <h2 className="border-b border-[#e8edf4] px-5 py-4 text-lg font-semibold tracking-wide uppercase">
+        {tr("Nos réseaux sociaux")}
+      </h2>
+      <ul className="grid gap-2 p-3">
+        {socials.map((item) => {
+          const mark = socialMarks[item.id];
+          const label = tr(names[item.id] ?? item.name);
+          const row = (
+            <>
+              <span
+                className="grid size-9 shrink-0 place-items-center rounded-lg"
+                style={{ background: mark?.plate === "transparent" || !mark ? "#eef2f7" : mark.plate }}
+              >
+                {mark ? <img src={mark.src} alt="" width={22} height={22} className={item.id === "twitter" || item.id === "whatsapp" ? "size-4" : "size-5"} /> : null}
+              </span>
+              <span className="text-base font-semibold">{label}</span>
+            </>
+          );
+          return (
+            <li key={item.id}>
+              {isUrl(item.href) ? (
+                <a
+                  href={item.href}
+                  target={item.id === "whatsapp" ? "_top" : "_blank"}
+                  rel={item.id === "whatsapp" ? undefined : "noreferrer"}
+                  className="flex min-h-14 items-center gap-3 rounded-2xl bg-[#f4f7fb] px-3"
+                >
+                  {row}
+                </a>
+              ) : (
+                <div className="flex min-h-14 items-center gap-3 rounded-2xl bg-[#f4f7fb] px-3 opacity-60">{row}</div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
+
 export function DocumentList() {
   const tr = useTr();
   return (

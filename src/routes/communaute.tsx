@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { pageMeta } from "@/content/site";
-import { SocialGrid } from "@/components/site/blocks";
+import { SocialList } from "@/components/site/blocks";
 import { SiteShell } from "@/components/site/shell";
 import { Eyebrow, GmailMark } from "@/components/site/ui";
 import { useTr } from "@/lib/locale";
@@ -24,16 +24,9 @@ function CommunityPage() {
             <Eyebrow>Communauté</Eyebrow>
           </div>
           <p className="text-lg font-light tracking-wide text-fg md:text-xl">{tr("Suivez notre communauté")}</p>
-          <div className="mt-6">
-            <SocialGrid />
+          <div className="mx-auto mt-6 max-w-xl text-left">
+            <SocialList />
           </div>
-          <a
-            href="https://chat.whatsapp.com/F4uZIGgqIYzDTP4PnInAIa?s=cl&p=a&iam=2"
-            target="_top"
-            className="mx-auto mt-5 flex min-h-14 w-full max-w-sm items-center justify-center rounded-full bg-[#25D366] px-6 text-base font-semibold text-[#06210f]"
-          >
-            {tr("Groupe WhatsApp")}
-          </a>
           <div className="mx-auto mt-8 grid max-w-md gap-3 text-left">
             <a href="mailto:contact.wikenva@gmail.com" className="flex items-center gap-3 rounded-2xl border border-line bg-panel px-4 py-3">
               <GmailMark />
