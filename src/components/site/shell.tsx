@@ -239,7 +239,7 @@ function Shell({ children }: { children: ReactNode }) {
           </nav>
         ) : null}
       </header>
-      <main id="contenu" className="min-w-0 overflow-x-hidden">{children}</main>
+      <main id="contenu" className="min-w-0 overflow-x-hidden pb-20 lg:pb-0">{children}</main>
       <footer className="border-t border-line bg-ink pb-8 text-fg print:hidden">
         <div className="mx-auto w-full max-w-6xl px-5 py-10 md:px-8">
           <div className="flex items-center gap-3">
@@ -299,7 +299,7 @@ function Shell({ children }: { children: ReactNode }) {
         </div>
       </footer>
       {whatsapp || facebook ? (
-        <div className="fixed right-4 bottom-5 z-40 flex flex-col gap-3 print:hidden">
+        <div className="fixed right-4 bottom-20 z-40 flex flex-col gap-3 print:hidden lg:bottom-5">
           {whatsapp ? (
             <a
               href={whatsapp}
@@ -325,6 +325,39 @@ function Shell({ children }: { children: ReactNode }) {
           ) : null}
         </div>
       ) : null}
+
+      <nav
+        className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-ink/95 backdrop-blur-md print:hidden lg:hidden"
+        aria-label="Navigation mobile"
+      >
+        <ul className="mx-auto grid h-16 w-full max-w-lg grid-cols-5">
+          {(
+            [
+              ["/", "Accueil", Home],
+              ["/presentation", "Marketplace", Store],
+              ["/presentation", "Favoris", BookOpen],
+              ["/presentation", "Boutique", Briefcase],
+              ["/espace", "Profil", MessagesSquare],
+            ] as const
+          ).map(([to, name, Icon]) => {
+            const active = to === "/" ? pathname === "/" : isActive(pathname, to);
+            return (
+              <li key={name}>
+                <Link
+                  to={to}
+                  className={cn(
+                    "flex h-full flex-col items-center justify-center gap-0.5 text-[10px] font-semibold",
+                    active ? "text-gold" : "text-muted",
+                  )}
+                >
+                  <Icon className="size-5" aria-hidden />
+                  <span>{tr(name)}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </div>
   );
 }
