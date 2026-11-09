@@ -1,0 +1,410 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * WIKENVA design system — « Bibliothèque moderne ».
+ * Ivoire (papier) + bleu nuit (encre) + bleu royal + or, tirés du logo.
+ * Fraunces (titres éditoriaux) + Manrope (texte).
+ * Les sections sombres utilisent la classe .theme-ink, qui redéfinit les mêmes jetons :
+ * tous les composants s'adaptent sans couleur codée en dur.
+ */
+
+@theme inline {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-cyan: var(--cyan);
+  --color-royal: var(--royal);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-success: var(--success);
+  --color-profile-card: var(--profile-card);
+  --color-profile-card-foreground: var(--profile-card-foreground);
+  --color-profile-card-muted: var(--profile-card-muted);
+  --color-profile-card-border: var(--profile-card-border);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Constantes de marque (identiques dans tous les thèmes) */
+  --ink: oklch(0.2 0.065 266);
+  --ink-foreground: oklch(0.975 0.012 85);
+  --brand-foreground: oklch(0.985 0.008 85);
+  --gold-bright: oklch(0.82 0.15 80);
+  --gold-deep: oklch(0.7 0.16 62);
+
+  /* Cartes profils de l'équipe : blanc pur + bordure gris clair, identiques dans tous les thèmes */
+  --profile-card: oklch(1 0 0);
+  --profile-card-foreground: oklch(0.2 0.03 265);
+  --profile-card-muted: oklch(0.27 0.02 265);
+  --profile-card-border: oklch(0.9 0.004 265);
+  --shadow-profile: 0 0 44px -10px oklch(0.2 0.02 265 / 0.14);
+
+  /* Thème papier (par défaut) */
+  --background: oklch(0.975 0.011 85);
+  --foreground: oklch(0.21 0.06 268);
+  --surface: oklch(0.952 0.016 82);
+  --surface-strong: oklch(0.935 0.034 84);
+  --card: oklch(0.993 0.005 85);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.993 0.005 85);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.47 0.19 264);
+  --primary-foreground: oklch(0.985 0.008 85);
+  --secondary: oklch(0.935 0.018 255);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.94 0.014 82);
+  --muted-foreground: oklch(0.45 0.035 265);
+  --accent: oklch(0.93 0.03 255);
+  --accent-foreground: var(--foreground);
+  --gold: oklch(0.58 0.13 66);
+  --gold-foreground: oklch(0.2 0.065 266);
+  --cyan: oklch(0.6 0.12 225);
+  --royal: oklch(0.5 0.2 262);
+  --success: oklch(0.52 0.13 155);
+  --destructive: oklch(0.56 0.2 25);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.21 0.06 268 / 11%);
+  --input: oklch(0.21 0.06 268 / 18%);
+  --ring: oklch(0.47 0.19 264);
+  --pattern: oklch(0.21 0.06 268 / 6%);
+
+  --gradient-brand: linear-gradient(125deg, var(--royal), oklch(0.62 0.15 238));
+  --gradient-gold: linear-gradient(120deg, oklch(0.88 0.14 92), var(--gold-bright) 45%, var(--gold-deep));
+  --gradient-text: linear-gradient(100deg, var(--foreground) 0%, var(--royal) 55%, var(--gold) 100%);
+  --gradient-hero:
+    radial-gradient(55% 45% at 85% 0%, oklch(0.5 0.2 262 / 0.12), transparent 70%),
+    radial-gradient(40% 40% at 0% 100%, oklch(0.82 0.15 80 / 0.14), transparent 70%);
+  --gradient-card: linear-gradient(170deg, oklch(1 0 0 / 85%), oklch(1 0 0 / 55%));
+  --shadow-glow: 0 18px 40px -18px oklch(0.47 0.19 264 / 0.55);
+  --shadow-gold: 0 18px 44px -20px oklch(0.7 0.16 62 / 0.7);
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 70%) inset, 0 1px 2px oklch(0.21 0.06 268 / 6%), 0 22px 44px -30px oklch(0.21 0.06 268 / 0.35);
+
+  --chart-1: var(--royal);
+  --chart-2: var(--gold);
+  --chart-3: var(--cyan);
+  --chart-4: oklch(0.7 0.1 200);
+  --chart-5: oklch(0.6 0.12 280);
+  --sidebar: var(--surface);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+/* Thème encre : sections sombres (en-tête de page, partenariat, pied de page) */
+.theme-ink {
+  --background: oklch(0.2 0.065 266);
+  --foreground: oklch(0.975 0.012 85);
+  --surface: oklch(0.235 0.072 265);
+  --surface-strong: oklch(0.27 0.08 264);
+  --card: oklch(0.25 0.072 265);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.25 0.072 265);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.8 0.11 232);
+  --primary-foreground: oklch(0.2 0.065 266);
+  --secondary: oklch(0.28 0.075 264);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.26 0.07 265);
+  --muted-foreground: oklch(0.8 0.03 255);
+  --accent: oklch(0.3 0.08 262);
+  --accent-foreground: var(--foreground);
+  --gold: oklch(0.84 0.14 82);
+  --cyan: oklch(0.8 0.12 220);
+  --royal: oklch(0.62 0.18 262);
+  --success: oklch(0.8 0.14 160);
+  --destructive: oklch(0.7 0.19 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.8 0.11 232);
+  --pattern: oklch(0.84 0.14 82 / 9%);
+
+  --gradient-text: linear-gradient(100deg, var(--foreground) 5%, oklch(0.84 0.1 230) 50%, var(--gold) 100%);
+  --gradient-hero:
+    radial-gradient(60% 55% at 85% 5%, oklch(0.55 0.2 262 / 0.55), transparent 70%),
+    radial-gradient(45% 45% at 5% 95%, oklch(0.82 0.15 80 / 0.16), transparent 70%);
+  --gradient-card: linear-gradient(165deg, oklch(1 0 0 / 8%), oklch(1 0 0 / 3%));
+  --shadow-glow: 0 20px 50px -20px oklch(0.8 0.11 232 / 0.5);
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 7%) inset, 0 24px 48px -28px oklch(0 0 0 / 0.6);
+
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  /* Mobile : un élément de grille ne doit jamais dépasser l'écran à cause d'un long mot. */
+  .grid > * {
+    min-width: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: oklch(0.82 0.15 80 / 0.4);
+  }
+}
+
+@utility bg-hero {
+  background-image: var(--gradient-hero);
+}
+@utility bg-brand {
+  background-image: var(--gradient-brand);
+}
+@utility bg-gold-gradient {
+  background-image: var(--gradient-gold);
+}
+@utility bg-card-glass {
+  background-image: var(--gradient-card);
+  backdrop-filter: blur(12px);
+}
+@utility text-gradient {
+  background-image: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility shadow-profile {
+  box-shadow: var(--shadow-profile);
+}
+
+/* Motif géométrique (étoile à huit branches), teinté par le jeton --pattern */
+@utility pattern-star {
+  background-color: var(--pattern);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='black' stroke-width='1.2'%3E%3Crect x='22' y='22' width='28' height='28'/%3E%3Crect x='22' y='22' width='28' height='28' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='5'/%3E%3Cpath d='M0 0 L14 14 M72 0 L58 14 M0 72 L14 58 M72 72 L58 58'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='black' stroke-width='1.2'%3E%3Crect x='22' y='22' width='28' height='28'/%3E%3Crect x='22' y='22' width='28' height='28' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='5'/%3E%3Cpath d='M0 0 L14 14 M72 0 L58 14 M0 72 L14 58 M72 72 L58 58'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-size: 72px 72px;
+  mask-size: 72px 72px;
+}
+/* Ancien nom conservé : même motif */
+@utility grid-lines {
+  background-color: var(--pattern);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='black' stroke-width='1.2'%3E%3Crect x='22' y='22' width='28' height='28'/%3E%3Crect x='22' y='22' width='28' height='28' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='black' stroke-width='1.2'%3E%3Crect x='22' y='22' width='28' height='28'/%3E%3Crect x='22' y='22' width='28' height='28' transform='rotate(45 36 36)'/%3E%3Ccircle cx='36' cy='36' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-size: 72px 72px;
+  mask-size: 72px 72px;
+}
+/* Arche : forme d'inspiration architecturale pour les visuels */
+@utility arch {
+  border-radius: 999px 999px 1.75rem 1.75rem;
+}
+
+@utility gold-rule {
+  &::before {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    border-radius: 999px;
+    background-image: var(--gradient-gold);
+    margin-bottom: 1rem;
+  }
+}
+
+@utility gold-arc {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.2em;
+    height: 0.12em;
+    border-radius: 999px;
+    background-image: var(--gradient-gold);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@utility animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
+@utility animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.22, 0.8, 0.24, 1) both;
+}
+@utility animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 6s linear infinite;
+}
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Révélation au défilement — activée seulement après chargement JS (aucun contenu caché sans JS) */
+.reveal-ready [data-rv] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--rv-i, 0) * 80ms);
+  will-change: opacity, transform;
+}
+.reveal-ready [data-rv][data-rv-on] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-rv] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@utility scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 2px;
+  z-index: 60;
+  transform-origin: 0 50%;
+  transform: scaleX(var(--scroll, 0));
+  background-image: var(--gradient-gold);
+  pointer-events: none;
+}
+
+[data-rv="0"] { --rv-i: 0; }
+[data-rv="1"] { --rv-i: 1; }
+[data-rv="2"] { --rv-i: 2; }
+[data-rv="3"] { --rv-i: 3; }
+[data-rv="4"] { --rv-i: 4; }
+[data-rv="5"] { --rv-i: 5; }
