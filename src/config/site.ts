@@ -46,7 +46,7 @@ export const links = {
   sidraStart: "https://www.sidrastart.com",
   sidraChain: "https://www.sidrachain.com",
   sidraChainExplorer: "https://ledger.sidrachain.com",
-  sidraDex: "https://sidradex.com",
+  sidraDex: "https://dex.sidrachain.com",
 };
 
 export const contact = {
