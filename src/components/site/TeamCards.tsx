@@ -35,13 +35,13 @@ export function TeamCards() {
           key={p.lastName}
           className="w-[10.25rem] overflow-hidden rounded-[1.1rem] border border-profile-card-border bg-profile-card shadow-profile sm:w-[13rem] md:rounded-[1.4rem] lg:w-[15.5rem]"
         >
-          <div className="aspect-[3/3.4] w-full overflow-hidden bg-muted pb-1">
+          <div className="aspect-[3/3.8] w-full overflow-hidden bg-muted">
             <img
               src={p.photo}
               alt={`${p.firstName} ${p.lastName}`}
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover object-[50%_22%]"
+              className="h-full w-full object-cover object-[50%_28%]"
             />
           </div>
           <div className="px-5 pb-6 pt-6 md:px-6 md:pb-7 md:pt-7">
