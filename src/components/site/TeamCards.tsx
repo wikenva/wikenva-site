@@ -35,20 +35,20 @@ export function TeamCards() {
           key={p.lastName}
           className="w-[10.25rem] overflow-hidden rounded-[1.1rem] border border-profile-card-border bg-profile-card shadow-profile sm:w-[13rem] md:rounded-[1.4rem] lg:w-[15.5rem]"
         >
-          <div className="aspect-[3/3.8] w-full overflow-hidden bg-muted">
+          <div className="aspect-[3/3.6] w-full overflow-hidden bg-muted">
             <img
               src={p.photo}
               alt={`${p.firstName} ${p.lastName}`}
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover object-[50%_28%]"
+              className="h-full w-full object-cover object-[50%_25%]"
             />
           </div>
-          <div className="px-5 pb-6 pt-6 md:px-6 md:pb-7 md:pt-7">
+          <div className="px-5 pb-7 pt-8 md:px-6 md:pb-8 md:pt-9">
             <h3 className="font-sans text-[1.08rem] font-bold leading-[1.3] tracking-[-0.01em] text-profile-card-foreground md:text-[1.2rem]">
               {p.firstName} {p.lastName}
             </h3>
-            <div className="mt-2">
+            <div className="mt-2.5">
               {p.roles.map((r) => (
                 <p key={r} className="text-[0.94rem] font-normal leading-[1.65] text-profile-card-muted md:text-base">
                   {r}
