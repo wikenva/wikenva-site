@@ -7,6 +7,7 @@
 import felixPhoto from "@/assets/team/felix_adjibodou_portrait.jpg.asset.json";
 import evaristePhoto from "@/assets/team/evariste_gbaguidi_portrait.jpg.asset.json";
 import collinsPhoto from "@/assets/team/collins_isibor_portrait.jpg.asset.json";
+import mahamadouPhoto from "@/assets/team/mahamadou_djamilou_portrait.jpg.asset.json";
 
 /** Équipe affichée sur la page Vision (cartes profils). Une ligne par fonction dans `roles`. */
 export const team = [
@@ -27,6 +28,12 @@ export const team = [
     lastName: "ISIBOR",
     roles: ["Spécialiste Marketing"],
     photo: collinsPhoto.url,
+  },
+  {
+    firstName: "MAHAMADOU",
+    lastName: "Djamilou",
+    roles: ["Leader AT", "Entrepreneur & Visionnaire Web3 | Nigérien"],
+    photo: mahamadouPhoto.url,
   },
 ];
 
